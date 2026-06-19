@@ -1,0 +1,56 @@
+learned_rules:
+  page.get_by_text("Brand Level 3").click(): The action here is clicking on "Brand
+    Level 3". When the user performs this action, you will see a dropdown expand of
+    Different Brands like "ABO COUNTRY" or "ABO KETO BREAD". The exact Brands are
+    subject to change, but they will be easily identifiable. Apart from this, you
+    will see a checkbox beside each Brand in the dropdown. These boxes may be ticked,
+    this is indicated by filling the box with blue color and a checkmark, or the boxes
+    may be blank, indicating that the Brans is not selected. You will also see a "Select
+    All" option right below "Brand Level 3". This is the main change in the UI. DO
+    NOT expect other visual highlights, change in the background color, etc. This
+    action PURELY opens up the Brand Level 3 for users to select products within Brand
+    Level 3.
+  page.get_by_text("Brand Level 4 28 selected").click(): This Particular action does
+    not expand "Brand Level 4", instead it closes Brand Level 4. This allows the user
+    to focus on the other Brand Levels without cluttering the screen. The closing
+    of Brand Level 4 is the MAIN ACTION in this exact step. THere should NOT BE any
+    other visible change in the UI.
+  page.locator("div:nth-child(3) > esp-filter-sub-accordion-v1 > .sub-accordion-element > .d-flex").click(): This
+    Particular action clicks on "Brand Level 3" to expand it. Observe closely and
+    notice that the "Select All" option is now visible under Brand Level 3. This proves
+    that Brand Level 3 was indeed expanded as expected.
+  page.locator(".d-flex.p-l-32").first.click(): This action is clicking the "Product
+    Level 4". This will cause the Product Level 4 to expand into a dropdown list of
+    different products like "Bagels", "BROWNIES", etc. Exact product names are subject
+    to change, but they are easily identifiable. Now, also notice CAREFULLY the "Select
+    All" option right below "Product Level 4", if this Select All button is checked,
+    then all the Products Below it ("BAGELS", "BROWNIES", etc) should also be checked.
+  page.locator(".filter-icon-wrapper").click(): This action closes up the Filter Panel
+    Sidebar on the Left Hand Side and makes the Filter Icon in the Top Left turn Grey.
+    If you CANNOT see a Sidebar on the Left and the Funnel Icon in the top Left of
+    the page is Grey, this is a SUCCESS.
+  page.get_by_role("checkbox", name="Toggle All Columns Visibility").uncheck(): This
+    particular action toggles the "Toggle All Column" visibility. If this button is
+    checked, you should expect to see several columns on the grid. However, if this
+    button is unchecked, you should expect to see an empty grid with ONLY the Customer
+    Column. The Customer Column is a CONSTANT and will never be affected by the "Toggle
+    Column Visibility".
+  page.locator(".pointer.zeb-adjustments").first.click(): The action here is the Preference
+    section click. Upon Clicking this, user is supposed to see a small section saying
+    "Save Preferences" and "Reset Preferences"
+  ? page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.background-primary-color
+    > .pointer").click()
+  : The Aggregate Values Button SHOULD be Unchecked here.
+  page.get_by_text("Brand Level 4").click(): This step closes the 'Brand Level 4'
+    after selections were made in the previous steps. Ensure that the Brand Level
+    4 section is closed. The page will not reflect any other changes at this stage,
+    since we are yet to apply the filters. We are still in the process of selecting
+    them.
+  page.get_by_text("Attribute").click(): This step closes the 'Brand Level 3'. The
+    UI should show the Brand Level 3 collapsed. You should not expect any additional
+    channges here since the filters are yet to be applied to the page.
+  page.locator("esp-simple-side-filter-panel-v1").get_by_text("Location").click(): This
+    step clicks the select All button to select all options under Product Level 4.
+  page.get_by_text("Sales Level 5").click(): This action clicks the Select All, selecting
+    all options under Sales level 5. There are no other changes in the UI apart from
+    the clicking of the Select All button.

@@ -1,0 +1,2995 @@
+cached_chunks:
+  page.locator(".zeb-filter").first.click()|page.locator("div").filter(has_text=re.compile(r"^Hierarchy$")).nth(2).click():
+    ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: true
+            hierarchy_filter:
+              selected: true
+    verification_plan:
+    - step_id_checkpoint: '1_2'
+      what_to_verify: Verify Hierarchy filter is selected
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+  ? page.locator(".d-flex.p-l-32").first.click()|page.get_by_text("Team", exact=True).click()|page.locator(".filter-values.d-flex.align-items-center.p-l-32.p-r-24
+    > .custom-checkbox-wrapper > .pointer").first.click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: true
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+    verification_plan:
+    - step_id_checkpoint: '1_3'
+      what_to_verify: Verify the first clickable element in '.d-flex.p-l-32' was clicked.
+    - step_id_checkpoint: '1_4'
+      what_to_verify: Verify 'Team' was selected in the hierarchy filter.
+    - step_id_checkpoint: '1_5'
+      what_to_verify: Verify the first checkbox in '.filter-values.d-flex.align-items-center.p-l-32.p-r-24
+        > .custom-checkbox-wrapper > .pointer' was checked.
+    - step_id_checkpoint: END
+      what_to_verify: Verify the sidebar remains open.
+  ? page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: true
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: unchecked
+                  BALTIMORE ORIOLES: unchecked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: unchecked
+    verification_plan:
+    - step_id_checkpoint: '1_9'
+      what_to_verify: Verify all checkboxes are UNCHECKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+  ? page.locator("div:nth-child(8) > .custom-checkbox-wrapper > .pointer").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator("#SideFilterproducthierarchyId").get_by_text("Department").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
+    > .pointer").first.click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: true
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: unchecked
+            department_filter:
+              selected: true
+    verification_plan:
+    - step_id_checkpoint: '1_13'
+      what_to_verify: Verify Checkbox for 'BALTIMORE ORIOLES' is CHECKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+  page.get_by_role("button", name="Apply Filters").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: unchecked
+            department_filter:
+              selected: true
+    verification_plan:
+    - step_id_checkpoint: '1_14'
+      what_to_verify: Verify Sidebar is CLOSED after clicking 'Apply Filters'.
+    - step_id_checkpoint: END
+      what_to_verify: Verify applied filters are reflected in the main content area.
+  ? page.locator(".aggrigate-panel > .custom-checkbox-wrapper > .pointer").click()|page.get_by_role("button",
+    name="Apply Filters").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+      confidence_score: 0.95
+      confusing_step_id: null
+      verification_plan:
+      - step_id_checkpoint: '1_15'
+        what_to_verify: Verify 'Aggregate Values' checkbox is CHECKED
+      - step_id_checkpoint: END
+        what_to_verify: Verify Sidebar is CLOSED after 'Apply Filters' is clicked
+    verification_plan:
+    - step_id_checkpoint: '1_15'
+      what_to_verify: Verify 'Aggregate Values' checkbox is CHECKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is CLOSED after 'Apply Filters' is clicked
+  page.locator(".notification-circle").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+    verification_plan:
+    - step_id_checkpoint: '1_15'
+      what_to_verify: Verify 'Aggregate Values' checkbox is CHECKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is CLOSED after 'Apply Filters' is clicked
+  page.locator(".zeb-filter").first.click():
+    ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: true
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+    verification_plan:
+    - step_id_checkpoint: '1_18'
+      what_to_verify: Verify Filter Section is EXPANDED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+  ? page.locator(".dropdown-caret.p-l-16").first.click()|page.locator(".d-flex.dropdown-option.align-items-center.p-v-5.p-l-32
+    > .d-flex").first.click()|page.locator(".dropdown-caret.p-l-16").first.click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: true
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+    verification_plan:
+    - step_id_checkpoint: '2_3'
+      what_to_verify: Verify dropdown caret is clicked and option is selected.
+    - step_id_checkpoint: END
+      what_to_verify: Verify sidebar remains open and dropdown state is updated.
+  ? page.locator("#seasontype-filterId > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown
+    > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator("#seasontype-filterId
+    > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown > div > .w-100 > .d-flex.align-items-center
+    > .dropdown-caret").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: true
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+    verification_plan:
+    - step_id_checkpoint: '2_4'
+      what_to_verify: Verify dropdown caret for Season Type is clicked
+    - step_id_checkpoint: END
+      what_to_verify: Verify sidebar remains open and dropdown state is updated
+  ? page.locator("#product-line-filterId > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown
+    > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator("#product-line-filterId
+    > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown > div > .w-100 > .d-flex.align-items-center
+    > .dropdown-caret").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: true
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+    verification_plan:
+    - step_id_checkpoint: '2_6'
+      what_to_verify: Verify Product Line dropdown caret is clicked
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+  ? page.locator("#time-filterId > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown
+    > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator("#time-filterId
+    > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown > div > .w-100 > .d-flex.align-items-center
+    > .dropdown-caret").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: true
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+    verification_plan:
+    - step_id_checkpoint: '2_8'
+      what_to_verify: Verify Time Filter dropdown is expanded after first click.
+    - step_id_checkpoint: '2_9'
+      what_to_verify: Verify Time Filter dropdown is collapsed after second click.
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN.
+  page.get_by_role("button", name="Apply").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+    verification_plan:
+    - step_id_checkpoint: '2_10'
+      what_to_verify: Verify Sidebar is CLOSED after clicking Apply
+    - step_id_checkpoint: END
+      what_to_verify: Verify all filters are applied correctly
+  ? page.locator("svg").get_by_text("Actual Sales & ROY Fcst ($)").click()|page.locator("svg").get_by_text("Sales
+    Fcst Adjusted ($)", exact=True).click()|page.get_by_text("GD Sales Fcst Adjusted
+    ($)", exact=True).click()|page.get_by_text("Non GD Sales Fcst Adjusted ($)").click()|page.get_by_text("GD
+    Sales Fcst Override ($)", exact=True).click()|page.get_by_text("Non GD Sales Fcst
+    Override ($)").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+    verification_plan:
+    - step_id_checkpoint: '3_6'
+      what_to_verify: Verify all metrics are selected in the chart.
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still CLOSED.
+  ? page.locator("svg").get_by_text("TY Actual Sales ($)").click()|page.locator("svg").get_by_text("System
+    Sales Fcst ($)").click()|page.get_by_text("GD Sales Fcst ($)", exact=True).click()|page.get_by_text("Non
+    GD Sales Fcst ($)").click()|page.locator("svg").get_by_text("LY Sales ($)", exact=True).click()|page.locator("svg").get_by_text("%
+    Change vs LY").click()|page.locator("svg").get_by_text("LLY Sales ($)").click()|page.locator("svg").get_by_text("%
+    Change vs LLY").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+    verification_plan:
+    - step_id_checkpoint: '3_14'
+      what_to_verify: Verify all selected metrics are displayed on the chart.
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still CLOSED.
+  ? page.locator(".ellipses > esp-multiselect-dropdown > .multiselect-dropdown > div
+    > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.zeb-check").first.click()|page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.zeb-check").first.click()|page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.zeb-check").first.click()|page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.zeb-check").first.click()|page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.zeb-check").first.click()|page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.zeb-check").first.click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+    verification_plan:
+    - step_id_checkpoint: '3_22'
+      what_to_verify: Verify the checkbox state changes after multiple clicks.
+    - step_id_checkpoint: END
+      what_to_verify: Verify the dropdown remains open and the sidebar state is unchanged.
+  ? page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.zeb-check").first.click()|page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.zeb-check").first.click()|page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.zeb-check").first.click()|page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.zeb-check").first.click()|page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.zeb-check").first.click()|page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.zeb-check").first.click()|page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.zeb-check").click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+    verification_plan:
+    - step_id_checkpoint: '3_29'
+      what_to_verify: Verify Checkbox is toggled correctly
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+  ? page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.deselected").first.click()|page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.deselected").first.click()|page.locator(".overflow-auto
+    > div:nth-child(4)").click()|page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.deselected").first.click()|page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.deselected").first.click()|page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.deselected").first.click()|page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.deselected").first.click()|page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.deselected").first.click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+    verification_plan:
+    - step_id_checkpoint: '3_38'
+      what_to_verify: Verify Checkbox is toggled correctly after multiple clicks
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+  ? page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.deselected").first.click()|page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.deselected").first.click()|page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.deselected").first.click()|page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.deselected").click()|page.locator(".ellipses
+    > esp-multiselect-dropdown > .multiselect-dropdown > div > .w-100 > .d-flex.align-items-center
+    > .dropdown-caret").click()|page.locator(".pointer.zeb-adjustments").first.click()|page.get_by_text("Save
+    Preference").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+        checkbox_interactions:
+          Step_3_39: clicked
+          Step_3_40: clicked
+          Step_3_41: clicked
+          Step_3_42: clicked
+        dropdown_interactions:
+          Step_3_43: dropdown_caret_clicked
+        save_preference:
+          Step_3_45: clicked
+    verification_plan:
+    - step_id_checkpoint: '3_42'
+      what_to_verify: Verify Checkbox is clicked multiple times
+    - step_id_checkpoint: END
+      what_to_verify: Verify Save Preference is clicked
+  page.locator("i").nth(3).click()|page.locator("i").nth(5).click():
+    ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+        checkbox_interactions:
+          Step_3_39: clicked
+          Step_3_40: clicked
+          Step_3_41: clicked
+          Step_3_42: clicked
+        dropdown_interactions:
+          Step_3_43: dropdown_caret_clicked
+        save_preference:
+          Step_3_45: clicked
+        icon_interactions:
+          Step_4_1: clicked
+          Step_4_2: clicked
+    verification_plan:
+    - step_id_checkpoint: Step_4_1
+      what_to_verify: Verify the 4th icon was clicked.
+    - step_id_checkpoint: Step_4_2
+      what_to_verify: Verify the 6th icon was clicked.
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still CLOSED.
+  ? page.locator(".wr-20.font-weight-normal > esp-multiselect-dropdown > .multiselect-dropdown
+    > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.locator("div:nth-child(14)
+    > .d-flex").click()|page.locator("div:nth-child(13) > .d-flex").click()|page.locator("div:nth-child(12)
+    > .d-flex").click()|page.locator("div:nth-child(11) > .d-flex").click()|page.locator("div:nth-child(10)
+    > .d-flex").click()|page.locator("div:nth-child(9) > .d-flex").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+          multiselect_dropdown:
+            caret_clicked: true
+            options_clicked:
+            - div:nth-child(14)
+            - div:nth-child(13)
+            - div:nth-child(12)
+            - div:nth-child(11)
+            - div:nth-child(10)
+            - div:nth-child(9)
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+        checkbox_interactions:
+          Step_3_39: clicked
+          Step_3_40: clicked
+          Step_3_41: clicked
+          Step_3_42: clicked
+        dropdown_interactions:
+          Step_3_43: dropdown_caret_clicked
+          Step_4_3: dropdown_caret_clicked
+        save_preference:
+          Step_3_45: clicked
+        icon_interactions:
+          Step_4_1: clicked
+          Step_4_2: clicked
+    verification_plan:
+    - step_id_checkpoint: '4_10'
+      what_to_verify: Verify all dropdown options from div:nth-child(14) to div:nth-child(9)
+        are clicked.
+    - step_id_checkpoint: END
+      what_to_verify: Verify dropdown remains open after interactions.
+  ? page.locator(".wr-20.font-weight-normal > esp-multiselect-dropdown > .multiselect-dropdown
+    > div > .w-100").click()|page.locator(".wr-20.font-weight-normal > esp-multiselect-dropdown
+    > .multiselect-dropdown > div > .w-100").click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.locator(".wr-20.font-weight-normal
+    > esp-multiselect-dropdown > .multiselect-dropdown > div > .w-100 > .d-flex.align-items-center
+    > .dropdown-caret").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+          multiselect_dropdown:
+            caret_clicked: true
+            options_clicked:
+            - div:nth-child(14)
+            - div:nth-child(13)
+            - div:nth-child(12)
+            - div:nth-child(11)
+            - div:nth-child(10)
+            - div:nth-child(9)
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+        checkbox_interactions:
+          Step_3_39: clicked
+          Step_3_40: clicked
+          Step_3_41: clicked
+          Step_3_42: clicked
+        dropdown_interactions:
+          Step_3_43: dropdown_caret_clicked
+          Step_4_3: dropdown_caret_clicked
+          Step_4_11: clicked
+          Step_4_12: clicked
+          Step_4_13: clicked
+          Step_4_14: dropdown_caret_clicked
+        save_preference:
+          Step_3_45: clicked
+        icon_interactions:
+          Step_4_1: clicked
+          Step_4_2: clicked
+    verification_plan:
+    - step_id_checkpoint: Step_4_14
+      what_to_verify: Verify dropdown caret is clicked and dropdown options are visible.
+    - step_id_checkpoint: END
+      what_to_verify: Verify all dropdown interactions and sidebar states are consistent.
+  ? page.locator("esp-card-component").filter(has_text="Monthly Summary All columns
+    (").get_by_role("button").click()|page.get_by_role("checkbox", name="Toggle All
+    Columns Visibility").uncheck()|page.get_by_role("treeitem", name="Feb-26 Column").get_by_label("Press
+    SPACE to toggle").check()|page.get_by_role("treeitem", name="Mar-26 Column").get_by_label("Press
+    SPACE to toggle").check()|page.get_by_role("treeitem", name="Apr-26 Column").get_by_label("Press
+    SPACE to toggle").check()|page.get_by_role("treeitem", name="May-26 Column").get_by_label("Press
+    SPACE to toggle").check()|page.get_by_role("treeitem", name="Jun-26 Column").get_by_label("Press
+    SPACE to toggle").check()|page.get_by_role("treeitem", name="Jul-26 Column").get_by_label("Press
+    SPACE to toggle").check()|page.get_by_role("treeitem", name="Aug-26 Column").get_by_label("Press
+    SPACE to toggle visibility (hidden)").check()|page.get_by_role("checkbox", name="Press
+    SPACE to toggle visibility (hidden)").check()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+          multiselect_dropdown:
+            caret_clicked: true
+            options_clicked:
+            - div:nth-child(14)
+            - div:nth-child(13)
+            - div:nth-child(12)
+            - div:nth-child(11)
+            - div:nth-child(10)
+            - div:nth-child(9)
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+          column_visibility:
+            Toggle All Columns Visibility: unchecked
+            Feb-26 Column: checked
+            Mar-26 Column: checked
+            Apr-26 Column: checked
+            May-26 Column: checked
+            Jun-26 Column: checked
+            Jul-26 Column: checked
+            Aug-26 Column: checked
+            Press SPACE to toggle visibility (hidden): checked
+        checkbox_interactions:
+          Step_3_39: clicked
+          Step_3_40: clicked
+          Step_3_41: clicked
+          Step_3_42: clicked
+          Step_4_16: unchecked
+          Step_4_17: checked
+          Step_4_18: checked
+          Step_4_19: checked
+          Step_4_20: checked
+          Step_4_21: checked
+          Step_4_22: checked
+          Step_4_23: checked
+          Step_4_24: checked
+        dropdown_interactions:
+          Step_3_43: dropdown_caret_clicked
+          Step_4_3: dropdown_caret_clicked
+          Step_4_11: clicked
+          Step_4_12: clicked
+          Step_4_13: clicked
+          Step_4_14: dropdown_caret_clicked
+        save_preference:
+          Step_3_45: clicked
+        icon_interactions:
+          Step_4_1: clicked
+          Step_4_2: clicked
+          Step_4_15: clicked
+    verification_plan:
+    - step_id_checkpoint: Step_4_15
+      what_to_verify: Verify 'Monthly Summary' button was clicked.
+    - step_id_checkpoint: Step_4_16
+      what_to_verify: Verify 'Toggle All Columns Visibility' checkbox is UNCHECKED.
+    - step_id_checkpoint: Step_4_24
+      what_to_verify: Verify all specified columns are CHECKED.
+    - step_id_checkpoint: END
+      what_to_verify: Verify sidebar remains OPEN.
+  ? 'page.locator("esp-card-component").filter(has_text="Monthly Summary All columns
+    (").get_by_role("button").click()|page.locator("div:nth-child(5) > #preference-iconId
+    > .legend-font > .multiselect-dropdown > .pointer").click()|page.locator("div:nth-child(5)
+    > #preference-iconId > .legend-font > .multiselect-dropdown > .pointer").click()|page.get_by_text("Save
+    Preference").click()'
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+          multiselect_dropdown:
+            caret_clicked: true
+            options_clicked:
+            - div:nth-child(14)
+            - div:nth-child(13)
+            - div:nth-child(12)
+            - div:nth-child(11)
+            - div:nth-child(10)
+            - div:nth-child(9)
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+          column_visibility:
+            Toggle All Columns Visibility: unchecked
+            Feb-26 Column: checked
+            Mar-26 Column: checked
+            Apr-26 Column: checked
+            May-26 Column: checked
+            Jun-26 Column: checked
+            Jul-26 Column: checked
+            Aug-26 Column: checked
+            Press SPACE to toggle visibility (hidden): checked
+        checkbox_interactions:
+          Step_3_39: clicked
+          Step_3_40: clicked
+          Step_3_41: clicked
+          Step_3_42: clicked
+          Step_4_16: unchecked
+          Step_4_17: checked
+          Step_4_18: checked
+          Step_4_19: checked
+          Step_4_20: checked
+          Step_4_21: checked
+          Step_4_22: checked
+          Step_4_23: checked
+          Step_4_24: checked
+        dropdown_interactions:
+          Step_3_43: dropdown_caret_clicked
+          Step_4_3: dropdown_caret_clicked
+          Step_4_11: clicked
+          Step_4_12: clicked
+          Step_4_13: clicked
+          Step_4_14: dropdown_caret_clicked
+        save_preference:
+          Step_3_45: clicked
+          Step_4_28: clicked
+        icon_interactions:
+          Step_4_1: clicked
+          Step_4_2: clicked
+          Step_4_15: clicked
+          Step_4_25: clicked
+          Step_4_26: clicked
+          Step_4_27: clicked
+    verification_plan:
+    - step_id_checkpoint: Step_4_27
+      what_to_verify: Verify multiselect dropdown pointer was clicked twice
+    - step_id_checkpoint: END
+      what_to_verify: Verify Save Preference button was clicked and preference saved
+  ? 'page.locator("div:nth-child(5) > #preference-iconId > .legend-font > .multiselect-dropdown
+    > .pointer").click()|page.get_by_text("Reset Preference").click()'
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+          multiselect_dropdown:
+            caret_clicked: true
+            options_clicked:
+            - div:nth-child(14)
+            - div:nth-child(13)
+            - div:nth-child(12)
+            - div:nth-child(11)
+            - div:nth-child(10)
+            - div:nth-child(9)
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+          column_visibility:
+            Toggle All Columns Visibility: unchecked
+            Feb-26 Column: checked
+            Mar-26 Column: checked
+            Apr-26 Column: checked
+            May-26 Column: checked
+            Jun-26 Column: checked
+            Jul-26 Column: checked
+            Aug-26 Column: checked
+            Press SPACE to toggle visibility (hidden): checked
+        checkbox_interactions:
+          Step_3_39: clicked
+          Step_3_40: clicked
+          Step_3_41: clicked
+          Step_3_42: clicked
+          Step_4_16: unchecked
+          Step_4_17: checked
+          Step_4_18: checked
+          Step_4_19: checked
+          Step_4_20: checked
+          Step_4_21: checked
+          Step_4_22: checked
+          Step_4_23: checked
+          Step_4_24: checked
+        dropdown_interactions:
+          Step_3_43: dropdown_caret_clicked
+          Step_4_3: dropdown_caret_clicked
+          Step_4_11: clicked
+          Step_4_12: clicked
+          Step_4_13: clicked
+          Step_4_14: dropdown_caret_clicked
+        save_preference:
+          Step_3_45: clicked
+          Step_4_28: clicked
+        icon_interactions:
+          Step_4_1: clicked
+          Step_4_2: clicked
+          Step_4_15: clicked
+          Step_4_25: clicked
+          Step_4_26: clicked
+          Step_4_27: clicked
+          Step_4_29: clicked
+          Step_4_30: clicked
+    verification_plan:
+    - step_id_checkpoint: '4_29'
+      what_to_verify: Verify multiselect dropdown is clicked
+    - step_id_checkpoint: '4_30'
+      what_to_verify: Verify Reset Preference is clicked
+    - step_id_checkpoint: END
+      what_to_verify: Verify sidebar and dropdown states remain consistent
+  ? page.locator(".ag-group-contracted > .ag-icon").first.click()|page.locator(".ag-group-contracted
+    > .ag-icon").first.click()|page.locator(".ag-group-contracted > .ag-icon").first.click()|page.locator(".ag-group-contracted
+    > .ag-icon").first.click()|page.locator(".ag-group-contracted > .ag-icon").first.click()|page.locator(".ag-group-contracted
+    > .ag-icon").first.click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+          multiselect_dropdown:
+            caret_clicked: true
+            options_clicked:
+            - div:nth-child(14)
+            - div:nth-child(13)
+            - div:nth-child(12)
+            - div:nth-child(11)
+            - div:nth-child(10)
+            - div:nth-child(9)
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+          column_visibility:
+            Toggle All Columns Visibility: unchecked
+            Feb-26 Column: checked
+            Mar-26 Column: checked
+            Apr-26 Column: checked
+            May-26 Column: checked
+            Jun-26 Column: checked
+            Jul-26 Column: checked
+            Aug-26 Column: checked
+            Press SPACE to toggle visibility (hidden): checked
+        checkbox_interactions:
+          Step_3_39: clicked
+          Step_3_40: clicked
+          Step_3_41: clicked
+          Step_3_42: clicked
+          Step_4_16: unchecked
+          Step_4_17: checked
+          Step_4_18: checked
+          Step_4_19: checked
+          Step_4_20: checked
+          Step_4_21: checked
+          Step_4_22: checked
+          Step_4_23: checked
+          Step_4_24: checked
+        dropdown_interactions:
+          Step_3_43: dropdown_caret_clicked
+          Step_4_3: dropdown_caret_clicked
+          Step_4_11: clicked
+          Step_4_12: clicked
+          Step_4_13: clicked
+          Step_4_14: dropdown_caret_clicked
+        save_preference:
+          Step_3_45: clicked
+          Step_4_28: clicked
+        icon_interactions:
+          Step_4_1: clicked
+          Step_4_2: clicked
+          Step_4_15: clicked
+          Step_4_25: clicked
+          Step_4_26: clicked
+          Step_4_27: clicked
+          Step_4_29: clicked
+          Step_4_30: clicked
+          Step_5_1: clicked
+          Step_5_2: clicked
+          Step_5_3: clicked
+          Step_5_4: clicked
+          Step_5_5: clicked
+          Step_5_6: clicked
+    verification_plan:
+    - step_id_checkpoint: '5_6'
+      what_to_verify: Verify all icons in '.ag-group-contracted > .ag-icon' were clicked
+        successfully.
+    - step_id_checkpoint: END
+      what_to_verify: Verify the sidebar and dropdown states remain unchanged.
+  ? page.locator(".ag-row-no-focus > .ag-cell-value.ag-cell.ag-cell-not-inline-editing.ag-cell-normal-height.ag-column-first
+    > .ag-cell-wrapper > .ag-group-contracted > .ag-icon").first.click()|page.locator(".ag-row-no-focus
+    > .ag-cell-value.ag-cell.ag-cell-not-inline-editing.ag-cell-normal-height.ag-column-first
+    > .ag-cell-wrapper > .ag-group-contracted > .ag-icon").first.click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+          multiselect_dropdown:
+            caret_clicked: true
+            options_clicked:
+            - div:nth-child(14)
+            - div:nth-child(13)
+            - div:nth-child(12)
+            - div:nth-child(11)
+            - div:nth-child(10)
+            - div:nth-child(9)
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+          column_visibility:
+            Toggle All Columns Visibility: unchecked
+            Feb-26 Column: checked
+            Mar-26 Column: checked
+            Apr-26 Column: checked
+            May-26 Column: checked
+            Jun-26 Column: checked
+            Jul-26 Column: checked
+            Aug-26 Column: checked
+            Press SPACE to toggle visibility (hidden): checked
+          row_expansion:
+            JERSEYS: expanded
+            KIDS: collapsed
+            MENS: collapsed
+            NON INVENTORY: collapsed
+        checkbox_interactions:
+          Step_3_39: clicked
+          Step_3_40: clicked
+          Step_3_41: clicked
+          Step_3_42: clicked
+          Step_4_16: unchecked
+          Step_4_17: checked
+          Step_4_18: checked
+          Step_4_19: checked
+          Step_4_20: checked
+          Step_4_21: checked
+          Step_4_22: checked
+          Step_4_23: checked
+          Step_4_24: checked
+        dropdown_interactions:
+          Step_3_43: dropdown_caret_clicked
+          Step_4_3: dropdown_caret_clicked
+          Step_4_11: clicked
+          Step_4_12: clicked
+          Step_4_13: clicked
+          Step_4_14: dropdown_caret_clicked
+        save_preference:
+          Step_3_45: clicked
+          Step_4_28: clicked
+        icon_interactions:
+          Step_4_1: clicked
+          Step_4_2: clicked
+          Step_4_15: clicked
+          Step_4_25: clicked
+          Step_4_26: clicked
+          Step_4_27: clicked
+          Step_4_29: clicked
+          Step_4_30: clicked
+          Step_5_1: clicked
+          Step_5_2: clicked
+          Step_5_3: clicked
+          Step_5_4: clicked
+          Step_5_5: clicked
+          Step_5_6: clicked
+          Step_5_7: clicked
+          Step_5_8: clicked
+    verification_plan:
+    - step_id_checkpoint: '5_7'
+      what_to_verify: Verify JERSEYS row is expanded
+    - step_id_checkpoint: '5_8'
+      what_to_verify: Verify JERSEYS row is collapsed
+    - step_id_checkpoint: END
+      what_to_verify: Verify final state of row expansion
+  page.get_by_role("gridcell", name="Actual Sales & ROY Fcst ($)").nth(4).click():
+    ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+          multiselect_dropdown:
+            caret_clicked: true
+            options_clicked:
+            - div:nth-child(14)
+            - div:nth-child(13)
+            - div:nth-child(12)
+            - div:nth-child(11)
+            - div:nth-child(10)
+            - div:nth-child(9)
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+          column_visibility:
+            Toggle All Columns Visibility: unchecked
+            Feb-26 Column: checked
+            Mar-26 Column: checked
+            Apr-26 Column: checked
+            May-26 Column: checked
+            Jun-26 Column: checked
+            Jul-26 Column: checked
+            Aug-26 Column: checked
+            Press SPACE to toggle visibility (hidden): checked
+          row_expansion:
+            JERSEYS: expanded
+            KIDS: collapsed
+            MENS: expanded
+            NON INVENTORY: collapsed
+        checkbox_interactions:
+          Step_3_39: clicked
+          Step_3_40: clicked
+          Step_3_41: clicked
+          Step_3_42: clicked
+          Step_4_16: unchecked
+          Step_4_17: checked
+          Step_4_18: checked
+          Step_4_19: checked
+          Step_4_20: checked
+          Step_4_21: checked
+          Step_4_22: checked
+          Step_4_23: checked
+          Step_4_24: checked
+        dropdown_interactions:
+          Step_3_43: dropdown_caret_clicked
+          Step_4_3: dropdown_caret_clicked
+          Step_4_11: clicked
+          Step_4_12: clicked
+          Step_4_13: clicked
+          Step_4_14: dropdown_caret_clicked
+        save_preference:
+          Step_3_45: clicked
+          Step_4_28: clicked
+        icon_interactions:
+          Step_4_1: clicked
+          Step_4_2: clicked
+          Step_4_15: clicked
+          Step_4_25: clicked
+          Step_4_26: clicked
+          Step_4_27: clicked
+          Step_4_29: clicked
+          Step_4_30: clicked
+          Step_5_1: clicked
+          Step_5_2: clicked
+          Step_5_3: clicked
+          Step_5_4: clicked
+          Step_5_5: clicked
+          Step_5_6: clicked
+          Step_5_7: clicked
+          Step_5_8: clicked
+          Step_5_9: clicked
+    verification_plan:
+    - step_id_checkpoint: '5_9'
+      what_to_verify: Verify 'Actual Sales & ROY Fcst ($)' grid cell was clicked successfully.
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+  ? page.locator("esp-card-component").filter(has_text="Department Summary columns
+    (0").get_by_role("button").click()|page.get_by_role("checkbox", name="Toggle All
+    Columns Visibility").uncheck()|page.get_by_role("treeitem", name="Department Column").get_by_label("Press
+    SPACE to toggle").check()|page.get_by_role("treeitem", name="Measure Column").get_by_label("Press
+    SPACE to toggle").check()|page.get_by_role("treeitem", name="Jan-26 Column").get_by_label("Press
+    SPACE to toggle").check()|page.get_by_role("treeitem", name="Feb-26 Column").get_by_label("Press
+    SPACE to toggle").check()|page.get_by_role("treeitem", name="Mar-26 Column").get_by_label("Press
+    SPACE to toggle").check()|page.get_by_role("treeitem", name="Apr-26 Column").get_by_label("Press
+    SPACE to toggle visibility (hidden)").check()|page.get_by_role("treeitem", name="May-26
+    Column").get_by_label("Press SPACE to toggle visibility (hidden)").check()|page.get_by_role("treeitem",
+    name="Jun-26 Column").get_by_label("Press SPACE to toggle visibility (hidden)").check()|page.get_by_role("treeitem",
+    name="Jul-26 Column").get_by_label("Press SPACE to toggle visibility (hidden)").check()|page.get_by_role("treeitem",
+    name="Aug-26 Column").get_by_label("Press SPACE to toggle visibility (hidden)").check()|page.get_by_role("treeitem",
+    name="Sep-26 Column").get_by_label("Press SPACE to toggle visibility (hidden)").check()|page.get_by_role("treeitem",
+    name="Oct-26 Column").get_by_label("Press SPACE to toggle visibility (hidden)").check()|page.get_by_role("treeitem",
+    name="Nov-26 Column").get_by_label("Press SPACE to toggle visibility (hidden)").check()|page.get_by_role("checkbox",
+    name="Press SPACE to toggle visibility (hidden)").check()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+          multiselect_dropdown:
+            caret_clicked: true
+            options_clicked:
+            - div:nth-child(14)
+            - div:nth-child(13)
+            - div:nth-child(12)
+            - div:nth-child(11)
+            - div:nth-child(10)
+            - div:nth-child(9)
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+          column_visibility:
+            Toggle All Columns Visibility: unchecked
+            Feb-26 Column: checked
+            Mar-26 Column: checked
+            Apr-26 Column: checked
+            May-26 Column: checked
+            Jun-26 Column: checked
+            Jul-26 Column: checked
+            Aug-26 Column: checked
+            Sep-26 Column: checked
+            Oct-26 Column: checked
+            Nov-26 Column: checked
+            Press SPACE to toggle visibility (hidden): checked
+            Department Column: checked
+            Measure Column: checked
+            Jan-26 Column: checked
+          row_expansion:
+            JERSEYS: expanded
+            KIDS: collapsed
+            MENS: expanded
+            NON INVENTORY: collapsed
+        checkbox_interactions:
+          Step_3_39: clicked
+          Step_3_40: clicked
+          Step_3_41: clicked
+          Step_3_42: clicked
+          Step_4_16: unchecked
+          Step_4_17: checked
+          Step_4_18: checked
+          Step_4_19: checked
+          Step_4_20: checked
+          Step_4_21: checked
+          Step_4_22: checked
+          Step_4_23: checked
+          Step_4_24: checked
+          Step_5_11: unchecked
+          Step_5_12: checked
+          Step_5_13: checked
+          Step_5_14: checked
+          Step_5_15: checked
+          Step_5_16: checked
+          Step_5_17: checked
+          Step_5_18: checked
+          Step_5_19: checked
+          Step_5_20: checked
+          Step_5_21: checked
+          Step_5_22: checked
+          Step_5_23: checked
+          Step_5_24: checked
+          Step_5_25: checked
+        dropdown_interactions:
+          Step_3_43: dropdown_caret_clicked
+          Step_4_3: dropdown_caret_clicked
+          Step_4_11: clicked
+          Step_4_12: clicked
+          Step_4_13: clicked
+          Step_4_14: dropdown_caret_clicked
+        save_preference:
+          Step_3_45: clicked
+          Step_4_28: clicked
+        icon_interactions:
+          Step_4_1: clicked
+          Step_4_2: clicked
+          Step_4_15: clicked
+          Step_4_25: clicked
+          Step_4_26: clicked
+          Step_4_27: clicked
+          Step_4_29: clicked
+          Step_4_30: clicked
+          Step_5_1: clicked
+          Step_5_2: clicked
+          Step_5_3: clicked
+          Step_5_4: clicked
+          Step_5_5: clicked
+          Step_5_6: clicked
+          Step_5_7: clicked
+          Step_5_8: clicked
+          Step_5_9: clicked
+          Step_5_10: clicked
+    verification_plan:
+    - step_id_checkpoint: '5_11'
+      what_to_verify: Verify 'Toggle All Columns Visibility' is UNCHECKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify all specified columns are CHECKED
+  page.locator("esp-card-component").filter(has_text="Department Summary columns (0").get_by_role("button").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+          multiselect_dropdown:
+            caret_clicked: true
+            options_clicked:
+            - div:nth-child(14)
+            - div:nth-child(13)
+            - div:nth-child(12)
+            - div:nth-child(11)
+            - div:nth-child(10)
+            - div:nth-child(9)
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+          column_visibility:
+            Toggle All Columns Visibility: unchecked
+            Feb-26 Column: checked
+            Mar-26 Column: checked
+            Apr-26 Column: checked
+            May-26 Column: checked
+            Jun-26 Column: checked
+            Jul-26 Column: checked
+            Aug-26 Column: checked
+            Sep-26 Column: checked
+            Oct-26 Column: checked
+            Nov-26 Column: checked
+            Press SPACE to toggle visibility (hidden): checked
+            Department Column: checked
+            Measure Column: checked
+            Jan-26 Column: checked
+            Dec-26 Column: unchecked
+          row_expansion:
+            JERSEYS: expanded
+            KIDS: collapsed
+            MENS: expanded
+            NON INVENTORY: collapsed
+        checkbox_interactions:
+          Step_3_39: clicked
+          Step_3_40: clicked
+          Step_3_41: clicked
+          Step_3_42: clicked
+          Step_4_16: unchecked
+          Step_4_17: checked
+          Step_4_18: checked
+          Step_4_19: checked
+          Step_4_20: checked
+          Step_4_21: checked
+          Step_4_22: checked
+          Step_4_23: checked
+          Step_4_24: checked
+          Step_5_11: unchecked
+          Step_5_12: checked
+          Step_5_13: checked
+          Step_5_14: checked
+          Step_5_15: checked
+          Step_5_16: checked
+          Step_5_17: checked
+          Step_5_18: checked
+          Step_5_19: checked
+          Step_5_20: checked
+          Step_5_21: checked
+          Step_5_22: checked
+          Step_5_23: checked
+          Step_5_24: checked
+          Step_5_25: checked
+          Step_5_26: clicked
+        dropdown_interactions:
+          Step_3_43: dropdown_caret_clicked
+          Step_4_3: dropdown_caret_clicked
+          Step_4_11: clicked
+          Step_4_12: clicked
+          Step_4_13: clicked
+          Step_4_14: dropdown_caret_clicked
+        save_preference:
+          Step_3_45: clicked
+          Step_4_28: clicked
+        icon_interactions:
+          Step_4_1: clicked
+          Step_4_2: clicked
+          Step_4_15: clicked
+          Step_4_25: clicked
+          Step_4_26: clicked
+          Step_4_27: clicked
+          Step_4_29: clicked
+          Step_4_30: clicked
+          Step_5_1: clicked
+          Step_5_2: clicked
+          Step_5_3: clicked
+          Step_5_4: clicked
+          Step_5_5: clicked
+          Step_5_6: clicked
+          Step_5_7: clicked
+          Step_5_8: clicked
+          Step_5_9: clicked
+          Step_5_10: clicked
+    verification_plan:
+    - step_id_checkpoint: '5_26'
+      what_to_verify: Verify 'Dec-26 Column' is now UNCHECKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+  ? page.locator(".d-flex > esp-multiselect-dropdown > .multiselect-dropdown > div
+    > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.get_by_text("View
+    10 row(s)").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+          multiselect_dropdown:
+            caret_clicked: true
+            options_clicked:
+            - div:nth-child(14)
+            - div:nth-child(13)
+            - div:nth-child(12)
+            - div:nth-child(11)
+            - div:nth-child(10)
+            - div:nth-child(9)
+            dropdown_caret_clicked: true
+            view_rows_selected: View 10 row(s)
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+          column_visibility:
+            Toggle All Columns Visibility: unchecked
+            Feb-26 Column: checked
+            Mar-26 Column: checked
+            Apr-26 Column: checked
+            May-26 Column: checked
+            Jun-26 Column: checked
+            Jul-26 Column: checked
+            Aug-26 Column: checked
+            Sep-26 Column: checked
+            Oct-26 Column: checked
+            Nov-26 Column: checked
+            Press SPACE to toggle visibility (hidden): checked
+            Department Column: checked
+            Measure Column: checked
+            Jan-26 Column: checked
+            Dec-26 Column: unchecked
+          row_expansion:
+            JERSEYS: expanded
+            KIDS: collapsed
+            MENS: expanded
+            NON INVENTORY: collapsed
+        checkbox_interactions:
+          Step_3_39: clicked
+          Step_3_40: clicked
+          Step_3_41: clicked
+          Step_3_42: clicked
+          Step_4_16: unchecked
+          Step_4_17: checked
+          Step_4_18: checked
+          Step_4_19: checked
+          Step_4_20: checked
+          Step_4_21: checked
+          Step_4_22: checked
+          Step_4_23: checked
+          Step_4_24: checked
+          Step_5_11: unchecked
+          Step_5_12: checked
+          Step_5_13: checked
+          Step_5_14: checked
+          Step_5_15: checked
+          Step_5_16: checked
+          Step_5_17: checked
+          Step_5_18: checked
+          Step_5_19: checked
+          Step_5_20: checked
+          Step_5_21: checked
+          Step_5_22: checked
+          Step_5_23: checked
+          Step_5_24: checked
+          Step_5_25: checked
+          Step_5_26: clicked
+        dropdown_interactions:
+          Step_3_43: dropdown_caret_clicked
+          Step_4_3: dropdown_caret_clicked
+          Step_4_11: clicked
+          Step_4_12: clicked
+          Step_4_13: clicked
+          Step_4_14: dropdown_caret_clicked
+          Step_5_27: dropdown_caret_clicked
+          Step_5_28: view_rows_selected
+        save_preference:
+          Step_3_45: clicked
+          Step_4_28: clicked
+        icon_interactions:
+          Step_4_1: clicked
+          Step_4_2: clicked
+          Step_4_15: clicked
+          Step_4_25: clicked
+          Step_4_26: clicked
+          Step_4_27: clicked
+          Step_4_29: clicked
+          Step_4_30: clicked
+          Step_5_1: clicked
+          Step_5_2: clicked
+          Step_5_3: clicked
+          Step_5_4: clicked
+          Step_5_5: clicked
+          Step_5_6: clicked
+          Step_5_7: clicked
+          Step_5_8: clicked
+          Step_5_9: clicked
+          Step_5_10: clicked
+    verification_plan:
+    - step_id_checkpoint: '5_27'
+      what_to_verify: Verify dropdown caret is clicked
+    - step_id_checkpoint: '5_28'
+      what_to_verify: Verify 'View 10 row(s)' is selected
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+  ? 'page.locator("div:nth-child(3) > #preference-iconId > .legend-font > .multiselect-dropdown
+    > .pointer").click()|page.get_by_text("Save Preference").click()'
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+          multiselect_dropdown:
+            caret_clicked: true
+            options_clicked:
+            - div:nth-child(14)
+            - div:nth-child(13)
+            - div:nth-child(12)
+            - div:nth-child(11)
+            - div:nth-child(10)
+            - div:nth-child(9)
+            dropdown_caret_clicked: true
+            view_rows_selected: View 10 row(s)
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+          column_visibility:
+            Toggle All Columns Visibility: unchecked
+            Feb-26 Column: checked
+            Mar-26 Column: checked
+            Apr-26 Column: checked
+            May-26 Column: checked
+            Jun-26 Column: checked
+            Jul-26 Column: checked
+            Aug-26 Column: checked
+            Sep-26 Column: checked
+            Oct-26 Column: checked
+            Nov-26 Column: checked
+            Press SPACE to toggle visibility (hidden): checked
+            Department Column: checked
+            Measure Column: checked
+            Jan-26 Column: checked
+            Dec-26 Column: unchecked
+          row_expansion:
+            JERSEYS: expanded
+            KIDS: collapsed
+            MENS: expanded
+            NON INVENTORY: collapsed
+        checkbox_interactions:
+          Step_3_39: clicked
+          Step_3_40: clicked
+          Step_3_41: clicked
+          Step_3_42: clicked
+          Step_4_16: unchecked
+          Step_4_17: checked
+          Step_4_18: checked
+          Step_4_19: checked
+          Step_4_20: checked
+          Step_4_21: checked
+          Step_4_22: checked
+          Step_4_23: checked
+          Step_4_24: checked
+          Step_5_11: unchecked
+          Step_5_12: checked
+          Step_5_13: checked
+          Step_5_14: checked
+          Step_5_15: checked
+          Step_5_16: checked
+          Step_5_17: checked
+          Step_5_18: checked
+          Step_5_19: checked
+          Step_5_20: checked
+          Step_5_21: checked
+          Step_5_22: checked
+          Step_5_23: checked
+          Step_5_24: checked
+          Step_5_25: checked
+          Step_5_26: clicked
+        dropdown_interactions:
+          Step_3_43: dropdown_caret_clicked
+          Step_4_3: dropdown_caret_clicked
+          Step_4_11: clicked
+          Step_4_12: clicked
+          Step_4_13: clicked
+          Step_4_14: dropdown_caret_clicked
+          Step_5_27: dropdown_caret_clicked
+          Step_5_28: view_rows_selected
+          Step_5_29: dropdown_caret_clicked
+        save_preference:
+          Step_3_45: clicked
+          Step_4_28: clicked
+          Step_5_30: clicked
+        icon_interactions:
+          Step_4_1: clicked
+          Step_4_2: clicked
+          Step_4_15: clicked
+          Step_4_25: clicked
+          Step_4_26: clicked
+          Step_4_27: clicked
+          Step_4_29: clicked
+          Step_4_30: clicked
+          Step_5_1: clicked
+          Step_5_2: clicked
+          Step_5_3: clicked
+          Step_5_4: clicked
+          Step_5_5: clicked
+          Step_5_6: clicked
+          Step_5_7: clicked
+          Step_5_8: clicked
+          Step_5_9: clicked
+          Step_5_10: clicked
+    verification_plan:
+    - step_id_checkpoint: '5_29'
+      what_to_verify: Verify dropdown caret is clicked for preference icon.
+    - step_id_checkpoint: '5_30'
+      what_to_verify: Verify Save Preference action is triggered.
+    - step_id_checkpoint: END
+      what_to_verify: Verify all UI changes are applied and saved.
+  'page.locator("div:nth-child(2) > #export-iconId > .icon-color-toolbar-active").click()':
+    ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+          multiselect_dropdown:
+            caret_clicked: true
+            options_clicked:
+            - div:nth-child(14)
+            - div:nth-child(13)
+            - div:nth-child(12)
+            - div:nth-child(11)
+            - div:nth-child(10)
+            - div:nth-child(9)
+            dropdown_caret_clicked: true
+            view_rows_selected: View 10 row(s)
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+          column_visibility:
+            Toggle All Columns Visibility: unchecked
+            Feb-26 Column: checked
+            Mar-26 Column: checked
+            Apr-26 Column: checked
+            May-26 Column: checked
+            Jun-26 Column: checked
+            Jul-26 Column: checked
+            Aug-26 Column: checked
+            Sep-26 Column: checked
+            Oct-26 Column: checked
+            Nov-26 Column: checked
+            Press SPACE to toggle visibility (hidden): checked
+            Department Column: checked
+            Measure Column: checked
+            Jan-26 Column: checked
+            Dec-26 Column: unchecked
+          row_expansion:
+            JERSEYS: expanded
+            KIDS: collapsed
+            MENS: expanded
+            NON INVENTORY: collapsed
+        checkbox_interactions:
+          Step_3_39: clicked
+          Step_3_40: clicked
+          Step_3_41: clicked
+          Step_3_42: clicked
+          Step_4_16: unchecked
+          Step_4_17: checked
+          Step_4_18: checked
+          Step_4_19: checked
+          Step_4_20: checked
+          Step_4_21: checked
+          Step_4_22: checked
+          Step_4_23: checked
+          Step_4_24: checked
+          Step_5_11: unchecked
+          Step_5_12: checked
+          Step_5_13: checked
+          Step_5_14: checked
+          Step_5_15: checked
+          Step_5_16: checked
+          Step_5_17: checked
+          Step_5_18: checked
+          Step_5_19: checked
+          Step_5_20: checked
+          Step_5_21: checked
+          Step_5_22: checked
+          Step_5_23: checked
+          Step_5_24: checked
+          Step_5_25: checked
+          Step_5_26: clicked
+        dropdown_interactions:
+          Step_3_43: dropdown_caret_clicked
+          Step_4_3: dropdown_caret_clicked
+          Step_4_11: clicked
+          Step_4_12: clicked
+          Step_4_13: clicked
+          Step_4_14: dropdown_caret_clicked
+          Step_5_27: dropdown_caret_clicked
+          Step_5_28: view_rows_selected
+          Step_5_29: dropdown_caret_clicked
+        save_preference:
+          Step_3_45: clicked
+          Step_4_28: clicked
+          Step_5_30: clicked
+        icon_interactions:
+          Step_4_1: clicked
+          Step_4_2: clicked
+          Step_4_15: clicked
+          Step_4_25: clicked
+          Step_4_26: clicked
+          Step_4_27: clicked
+          Step_4_29: clicked
+          Step_4_30: clicked
+          Step_5_1: clicked
+          Step_5_2: clicked
+          Step_5_3: clicked
+          Step_5_4: clicked
+          Step_5_5: clicked
+          Step_5_6: clicked
+          Step_5_7: clicked
+          Step_5_8: clicked
+          Step_5_9: clicked
+          Step_5_10: clicked
+          Step_5_31: clicked
+    verification_plan:
+    - step_id_checkpoint: '5_31'
+      what_to_verify: Verify Export Icon was clicked
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still CLOSED
+  page.get_by_role("gridcell", name="BRANDED").click(button="right")|page.get_by_text("Drill down").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+          multiselect_dropdown:
+            caret_clicked: true
+            options_clicked:
+            - div:nth-child(14)
+            - div:nth-child(13)
+            - div:nth-child(12)
+            - div:nth-child(11)
+            - div:nth-child(10)
+            - div:nth-child(9)
+            dropdown_caret_clicked: true
+            view_rows_selected: View 10 row(s)
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+          column_visibility:
+            Toggle All Columns Visibility: unchecked
+            Feb-26 Column: checked
+            Mar-26 Column: checked
+            Apr-26 Column: checked
+            May-26 Column: checked
+            Jun-26 Column: checked
+            Jul-26 Column: checked
+            Aug-26 Column: checked
+            Sep-26 Column: checked
+            Oct-26 Column: checked
+            Nov-26 Column: checked
+            Press SPACE to toggle visibility (hidden): checked
+            Department Column: checked
+            Measure Column: checked
+            Jan-26 Column: checked
+            Dec-26 Column: unchecked
+          row_expansion:
+            JERSEYS: expanded
+            KIDS: collapsed
+            MENS: expanded
+            NON INVENTORY: collapsed
+            BRANDED: expanded
+        checkbox_interactions:
+          Step_3_39: clicked
+          Step_3_40: clicked
+          Step_3_41: clicked
+          Step_3_42: clicked
+          Step_4_16: unchecked
+          Step_4_17: checked
+          Step_4_18: checked
+          Step_4_19: checked
+          Step_4_20: checked
+          Step_4_21: checked
+          Step_4_22: checked
+          Step_4_23: checked
+          Step_4_24: checked
+          Step_5_11: unchecked
+          Step_5_12: checked
+          Step_5_13: checked
+          Step_5_14: checked
+          Step_5_15: checked
+          Step_5_16: checked
+          Step_5_17: checked
+          Step_5_18: checked
+          Step_5_19: checked
+          Step_5_20: checked
+          Step_5_21: checked
+          Step_5_22: checked
+          Step_5_23: checked
+          Step_5_24: checked
+          Step_5_25: checked
+          Step_5_26: clicked
+        dropdown_interactions:
+          Step_3_43: dropdown_caret_clicked
+          Step_4_3: dropdown_caret_clicked
+          Step_4_11: clicked
+          Step_4_12: clicked
+          Step_4_13: clicked
+          Step_4_14: dropdown_caret_clicked
+          Step_5_27: dropdown_caret_clicked
+          Step_5_28: view_rows_selected
+          Step_5_29: dropdown_caret_clicked
+        save_preference:
+          Step_3_45: clicked
+          Step_4_28: clicked
+          Step_5_30: clicked
+        icon_interactions:
+          Step_4_1: clicked
+          Step_4_2: clicked
+          Step_4_15: clicked
+          Step_4_25: clicked
+          Step_4_26: clicked
+          Step_4_27: clicked
+          Step_4_29: clicked
+          Step_4_30: clicked
+          Step_5_1: clicked
+          Step_5_2: clicked
+          Step_5_3: clicked
+          Step_5_4: clicked
+          Step_5_5: clicked
+          Step_5_6: clicked
+          Step_5_7: clicked
+          Step_5_8: clicked
+          Step_5_9: clicked
+          Step_5_10: clicked
+          Step_5_31: clicked
+    verification_plan:
+    - step_id_checkpoint: '5_33'
+      what_to_verify: Verify 'BRANDED' row is expanded and drill-down action is applied.
+    - step_id_checkpoint: END
+      what_to_verify: Verify the sidebar and dropdown states remain unchanged.
+  ? page.locator("esp-bi-dimensional-grid").get_by_role("gridcell", name="Actual Sales
+    & ROY Fcst ($)").click(button="right")|page.locator("esp-bi-dimensional-grid").get_by_role("gridcell",
+    name="Actual Sales & ROY Fcst ($)").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+          multiselect_dropdown:
+            caret_clicked: true
+            options_clicked:
+            - div:nth-child(14)
+            - div:nth-child(13)
+            - div:nth-child(12)
+            - div:nth-child(11)
+            - div:nth-child(10)
+            - div:nth-child(9)
+            dropdown_caret_clicked: true
+            view_rows_selected: View 10 row(s)
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+          column_visibility:
+            Toggle All Columns Visibility: unchecked
+            Feb-26 Column: checked
+            Mar-26 Column: checked
+            Apr-26 Column: checked
+            May-26 Column: checked
+            Jun-26 Column: checked
+            Jul-26 Column: checked
+            Aug-26 Column: checked
+            Sep-26 Column: checked
+            Oct-26 Column: checked
+            Nov-26 Column: checked
+            Press SPACE to toggle visibility (hidden): checked
+            Department Column: checked
+            Measure Column: checked
+            Jan-26 Column: checked
+            Dec-26 Column: unchecked
+          row_expansion:
+            JERSEYS: expanded
+            KIDS: collapsed
+            MENS: expanded
+            NON INVENTORY: collapsed
+            BRANDED: expanded
+          cell_interactions:
+            Actual Sales & ROY Fcst ($):
+              right_clicked: true
+              clicked: true
+        checkbox_interactions:
+          Step_3_39: clicked
+          Step_3_40: clicked
+          Step_3_41: clicked
+          Step_3_42: clicked
+          Step_4_16: unchecked
+          Step_4_17: checked
+          Step_4_18: checked
+          Step_4_19: checked
+          Step_4_20: checked
+          Step_4_21: checked
+          Step_4_22: checked
+          Step_4_23: checked
+          Step_4_24: checked
+          Step_5_11: unchecked
+          Step_5_12: checked
+          Step_5_13: checked
+          Step_5_14: checked
+          Step_5_15: checked
+          Step_5_16: checked
+          Step_5_17: checked
+          Step_5_18: checked
+          Step_5_19: checked
+          Step_5_20: checked
+          Step_5_21: checked
+          Step_5_22: checked
+          Step_5_23: checked
+          Step_5_24: checked
+          Step_5_25: checked
+          Step_5_26: clicked
+        dropdown_interactions:
+          Step_3_43: dropdown_caret_clicked
+          Step_4_3: dropdown_caret_clicked
+          Step_4_11: clicked
+          Step_4_12: clicked
+          Step_4_13: clicked
+          Step_4_14: dropdown_caret_clicked
+          Step_5_27: dropdown_caret_clicked
+          Step_5_28: view_rows_selected
+          Step_5_29: dropdown_caret_clicked
+        save_preference:
+          Step_3_45: clicked
+          Step_4_28: clicked
+          Step_5_30: clicked
+        icon_interactions:
+          Step_4_1: clicked
+          Step_4_2: clicked
+          Step_4_15: clicked
+          Step_4_25: clicked
+          Step_4_26: clicked
+          Step_4_27: clicked
+          Step_4_29: clicked
+          Step_4_30: clicked
+          Step_5_1: clicked
+          Step_5_2: clicked
+          Step_5_3: clicked
+          Step_5_4: clicked
+          Step_5_5: clicked
+          Step_5_6: clicked
+          Step_5_7: clicked
+          Step_5_8: clicked
+          Step_5_9: clicked
+          Step_5_10: clicked
+          Step_5_31: clicked
+    verification_plan:
+    - step_id_checkpoint: '5_34'
+      what_to_verify: Verify 'Actual Sales & ROY Fcst ($)' cell was right-clicked.
+    - step_id_checkpoint: '5_35'
+      what_to_verify: Verify 'Actual Sales & ROY Fcst ($)' cell was clicked.
+    - step_id_checkpoint: END
+      what_to_verify: Verify all interactions are reflected correctly in the V-DOM.
+  page.locator(".ag-group-contracted > .ag-icon").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+          multiselect_dropdown:
+            caret_clicked: true
+            options_clicked:
+            - div:nth-child(14)
+            - div:nth-child(13)
+            - div:nth-child(12)
+            - div:nth-child(11)
+            - div:nth-child(10)
+            - div:nth-child(9)
+            dropdown_caret_clicked: true
+            view_rows_selected: View 10 row(s)
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+          column_visibility:
+            Toggle All Columns Visibility: unchecked
+            Feb-26 Column: checked
+            Mar-26 Column: checked
+            Apr-26 Column: checked
+            May-26 Column: checked
+            Jun-26 Column: checked
+            Jul-26 Column: checked
+            Aug-26 Column: checked
+            Sep-26 Column: checked
+            Oct-26 Column: checked
+            Nov-26 Column: checked
+            Press SPACE to toggle visibility (hidden): checked
+            Department Column: checked
+            Measure Column: checked
+            Jan-26 Column: checked
+            Dec-26 Column: unchecked
+          row_expansion:
+            JERSEYS: expanded
+            KIDS: collapsed
+            MENS: expanded
+            NON INVENTORY: collapsed
+            BRANDED: collapsed
+          cell_interactions:
+            Actual Sales & ROY Fcst ($):
+              right_clicked: true
+              clicked: true
+        checkbox_interactions:
+          Step_3_39: clicked
+          Step_3_40: clicked
+          Step_3_41: clicked
+          Step_3_42: clicked
+          Step_4_16: unchecked
+          Step_4_17: checked
+          Step_4_18: checked
+          Step_4_19: checked
+          Step_4_20: checked
+          Step_4_21: checked
+          Step_4_22: checked
+          Step_4_23: checked
+          Step_4_24: checked
+          Step_5_11: unchecked
+          Step_5_12: checked
+          Step_5_13: checked
+          Step_5_14: checked
+          Step_5_15: checked
+          Step_5_16: checked
+          Step_5_17: checked
+          Step_5_18: checked
+          Step_5_19: checked
+          Step_5_20: checked
+          Step_5_21: checked
+          Step_5_22: checked
+          Step_5_23: checked
+          Step_5_24: checked
+          Step_5_25: checked
+          Step_5_26: clicked
+        dropdown_interactions:
+          Step_3_43: dropdown_caret_clicked
+          Step_4_3: dropdown_caret_clicked
+          Step_4_11: clicked
+          Step_4_12: clicked
+          Step_4_13: clicked
+          Step_4_14: dropdown_caret_clicked
+          Step_5_27: dropdown_caret_clicked
+          Step_5_28: view_rows_selected
+          Step_5_29: dropdown_caret_clicked
+        save_preference:
+          Step_3_45: clicked
+          Step_4_28: clicked
+          Step_5_30: clicked
+        icon_interactions:
+          Step_4_1: clicked
+          Step_4_2: clicked
+          Step_4_15: clicked
+          Step_4_25: clicked
+          Step_4_26: clicked
+          Step_4_27: clicked
+          Step_4_29: clicked
+          Step_4_30: clicked
+          Step_5_1: clicked
+          Step_5_2: clicked
+          Step_5_3: clicked
+          Step_5_4: clicked
+          Step_5_5: clicked
+          Step_5_6: clicked
+          Step_5_7: clicked
+          Step_5_8: clicked
+          Step_5_9: clicked
+          Step_5_10: clicked
+          Step_5_31: clicked
+    verification_plan:
+    - step_id_checkpoint: '5_36'
+      what_to_verify: Verify BRANDED row is COLLAPSED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still CLOSED
+  ? page.locator(".d-flex > esp-multiselect-dropdown > .multiselect-dropdown > div
+    > .w-100").click()|page.get_by_text("View 20 row(s)").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+          multiselect_dropdown:
+            caret_clicked: true
+            options_clicked:
+            - div:nth-child(14)
+            - div:nth-child(13)
+            - div:nth-child(12)
+            - div:nth-child(11)
+            - div:nth-child(10)
+            - div:nth-child(9)
+            dropdown_caret_clicked: true
+            view_rows_selected: View 20 row(s)
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+          column_visibility:
+            Toggle All Columns Visibility: unchecked
+            Feb-26 Column: checked
+            Mar-26 Column: checked
+            Apr-26 Column: checked
+            May-26 Column: checked
+            Jun-26 Column: checked
+            Jul-26 Column: checked
+            Aug-26 Column: checked
+            Sep-26 Column: checked
+            Oct-26 Column: checked
+            Nov-26 Column: checked
+            Press SPACE to toggle visibility (hidden): checked
+            Department Column: checked
+            Measure Column: checked
+            Jan-26 Column: checked
+            Dec-26 Column: unchecked
+          row_expansion:
+            JERSEYS: expanded
+            KIDS: collapsed
+            MENS: expanded
+            NON INVENTORY: collapsed
+            BRANDED: collapsed
+          cell_interactions:
+            Actual Sales & ROY Fcst ($):
+              right_clicked: true
+              clicked: true
+        checkbox_interactions:
+          Step_3_39: clicked
+          Step_3_40: clicked
+          Step_3_41: clicked
+          Step_3_42: clicked
+          Step_4_16: unchecked
+          Step_4_17: checked
+          Step_4_18: checked
+          Step_4_19: checked
+          Step_4_20: checked
+          Step_4_21: checked
+          Step_4_22: checked
+          Step_4_23: checked
+          Step_4_24: checked
+          Step_5_11: unchecked
+          Step_5_12: checked
+          Step_5_13: checked
+          Step_5_14: checked
+          Step_5_15: checked
+          Step_5_16: checked
+          Step_5_17: checked
+          Step_5_18: checked
+          Step_5_19: checked
+          Step_5_20: checked
+          Step_5_21: checked
+          Step_5_22: checked
+          Step_5_23: checked
+          Step_5_24: checked
+          Step_5_25: checked
+          Step_5_26: clicked
+        dropdown_interactions:
+          Step_3_43: dropdown_caret_clicked
+          Step_4_3: dropdown_caret_clicked
+          Step_4_11: clicked
+          Step_4_12: clicked
+          Step_4_13: clicked
+          Step_4_14: dropdown_caret_clicked
+          Step_5_27: dropdown_caret_clicked
+          Step_5_28: view_rows_selected
+          Step_5_29: dropdown_caret_clicked
+          Step_5_37: dropdown_caret_clicked
+          Step_5_38: view_rows_selected
+        save_preference:
+          Step_3_45: clicked
+          Step_4_28: clicked
+          Step_5_30: clicked
+        icon_interactions:
+          Step_4_1: clicked
+          Step_4_2: clicked
+          Step_4_15: clicked
+          Step_4_25: clicked
+          Step_4_26: clicked
+          Step_4_27: clicked
+          Step_4_29: clicked
+          Step_4_30: clicked
+          Step_5_1: clicked
+          Step_5_2: clicked
+          Step_5_3: clicked
+          Step_5_4: clicked
+          Step_5_5: clicked
+          Step_5_6: clicked
+          Step_5_7: clicked
+          Step_5_8: clicked
+          Step_5_9: clicked
+          Step_5_10: clicked
+          Step_5_31: clicked
+    verification_plan:
+    - step_id_checkpoint: '5_38'
+      what_to_verify: Verify 'View 20 row(s)' is selected in the dropdown.
+    - step_id_checkpoint: END
+      what_to_verify: Verify the dropdown remains open and reflects the updated selection.
+  page.locator(".d-flex.p-l-32").first.click()|page.get_by_text("Team", exact=True).click():
+    ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: true
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+    verification_plan:
+    - step_id_checkpoint: '1_3'
+      what_to_verify: Verify 'Team' filter is selected
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+  ? page.locator(".filter-values.d-flex.align-items-center.p-l-32.p-r-24 > .custom-checkbox-wrapper
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator("div:nth-child(8) > .custom-checkbox-wrapper
+    > .pointer").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: true
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkboxes:
+                  ATHLETICS:
+                    checked: true
+                  BALTIMORE ORIOLES:
+                    checked: true
+                  CHICAGO WHITE SOX:
+                    checked: true
+                  Aggregate Values:
+                    checked: true
+    verification_plan:
+    - step_id_checkpoint: '1_11'
+      what_to_verify: Verify all checkboxes are CHECKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+  ? page.locator("#SideFilterproducthierarchyId").get_by_text("Department").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
+    > .pointer").first.click()|page.get_by_role("button", name="Apply Filters").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: true
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkboxes:
+                  ATHLETICS:
+                    checked: true
+                  BALTIMORE ORIOLES:
+                    checked: true
+                  CHICAGO WHITE SOX:
+                    checked: true
+                  Aggregate Values:
+                    checked: true
+              department_filter:
+                selected: true
+                checkboxes:
+                  MLB MULTI-TEAM:
+                    checked: true
+                  PITTSBURGH PIRATES:
+                    checked: true
+                  SAN FRANCISCO GIANTS:
+                    checked: true
+    verification_plan:
+    - step_id_checkpoint: '1_13'
+      what_to_verify: Verify the first checkbox in the Department section is toggled.
+    - step_id_checkpoint: END
+      what_to_verify: Verify the sidebar remains open and filters are applied correctly
+        after the page reload.
+global_rules: []
+learned_rules:
+  page.get_by_role("button", name="Apply Filters").click(): The 'Apply Filters' action
+    is incredibly heavy, trigerring a massive full scale page reload, firing off several
+    API requests and loading multiple grids. In this particular action, it is highly
+    likely to see a loading screen, or a spinner icon in the middle of the screen.
+    This is NOT a BUG, it shows that the page reload is happening as expected.
+  page.locator(".dropdown-caret.p-l-16").first.click(): This particular action shows
+    the 'Game Day' option being selected from a dropdown. The UI however does not
+    YET apply this change, because the blue color 'Apply button' has not been clicked.
+    Once the option is selected, the UI does NOT immediately change, only after the
+    apply button is clicked does the UI trigger changes in the grids and graph data.
+    This is NOT a BUG.
+  page.locator(".d-flex.flex-column.justify-content-center").first.click(): 'This
+    action shows the trends graph with different measures, color coded. A legend of
+    the graph depicts which measure is which color. The particular action here shows
+    clicking the ''''% Change vs LLY'' measure. If the measure is checked, it is represented
+    as a new line in the graph with its distinct color. If the measure is unchecked,
+    it means that particular measure has been hidden from the graph. In order to debug
+    this properly, first look at the color coding of the measures and identify whether
+    the correct measures are being shown on the graph. '
+  ? page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.deselected").first.click()
+  : This action shows the trends graph with different measures, color coded. A legend
+    of the graph depicts which measure is which color. The particular action here
+    shows clicking the ''% Change vs LLY' measure. If the measure is checked, it is
+    represented as a new line in the graph with its distinct color. If the measure
+    is unchecked, it means that particular measure has been hidden from the graph.
+    In order to debug this properly, first look at the color coding of the measures
+    and identify whether the correct measures are being shown on the graph. Look in
+    detail at the lines depicted on the graph, the number of lines should change,
+    the position and shape of the lines must be given EXTRA attention. Use maximum
+    reasoning.
+  page.get_by_role("checkbox", name="Press SPACE to toggle visibility (hidden)").check(): Clicking
+    on Sep-26 Column will show it selected with a blue checkbox or unselected with
+    no blue checkbox. There is no other major UI state change apart from this.
+  ? page.locator(".ag-row-no-focus > .ag-cell-value.ag-cell.ag-cell-not-inline-editing.ag-cell-normal-height.ag-column-first
+    > .ag-cell-wrapper > .ag-group-contracted > .ag-icon").first.click()
+  : 'this action expands the MENS row, there is no further UI state change expected
+    from this action. Verify that the MENS row has expanded. '

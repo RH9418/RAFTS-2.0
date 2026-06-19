@@ -1,0 +1,90 @@
+getUserConfiguration:
+  selector: IGNORE
+  axis: none
+getCloneWorkbooks_[workbook-template-scope]:
+  selector: IGNORE
+  axis: none
+getWorkbookByID_[workbook-template-scope]:
+  selector: IGNORE
+  axis: none
+getDashboardsWorkbooks_[workbook-template-scope]:
+  selector: IGNORE
+  axis: none
+addUserAuditLogs:
+  selector: IGNORE
+  axis: none
+getPlannerFlagType_[planner_flag_type]:
+  selector: IGNORE
+  axis: none
+fetchTimeData_[time-week]:
+  selector: IGNORE
+  axis: none
+getStatusOptions_[alert_status]:
+  selector: IGNORE
+  axis: none
+getWorkbooksByScopeID_[workbook-template-scope]:
+  selector: IGNORE
+  axis: none
+fetch_customer_pillsData_[customer4]:
+  selector: div.nunito.link-color.text-truncate.text-nowrap.font-weight-normal.font-size-16.p-h-8.pill-info
+  axis: horizontal
+fetch_product_pillsData_[product3]:
+  selector: div.nunito.link-color.text-truncate.text-nowrap.font-weight-normal.font-size-16.p-h-8.pill-info
+  axis: horizontal
+fetch_location_pillsData_[location6]:
+  selector: div.nunito.link-color.text-truncate.text-nowrap.font-weight-normal.font-size-16.p-h-8.pill-info
+  axis: horizontal
+getDefaultFilter:
+  selector: IGNORE
+  axis: none
+getAlertsData_[alert_type]:
+  selector: div.w-100.p-h-16.p-v-8.dropdown-label.background-white
+  axis: vertical
+getReasonCodesForWorkbook_[reason_code]:
+  selector: IGNORE
+  axis: none
+fetchAlertsSummaryGridPreferenceData:
+  selector: IGNORE
+  axis: none
+fetch_alerts_summary_data_[customer4]:
+  selector: div.card-content.p-b-24.p-r-24.p-h-24.m-t-0
+  axis: horizontal
+filterData_[product2]:
+  selector: div.filter-values-options.overflow-auto.scrollbar.d-flex.flex-column
+  axis: vertical
+filterData_[product3]:
+  selector: div.filter-values-options.overflow-auto.scrollbar.d-flex.flex-column
+  axis: vertical
+filterData_[product7]:
+  selector: div.filter-values-options.overflow-auto.scrollbar.d-flex.flex-column
+  axis: vertical
+fetchProductsGridPreferenceData:
+  selector: IGNORE
+  axis: none
+fetch_products_data_[product3]:
+  selector: div.card-content.p-b-24.p-r-24.p-h-24.m-t-0
+  axis: horizontal
+fetchWeeklySummaryGridPreferenceData:
+  selector: IGNORE
+  axis: none
+fetch_weekly_summary_data_[week]:
+  selector: div.card-content.p-b-24.p-r-24.p-h-24.m-t-0
+  axis: horizontal
+fetchWeeklyTrendChartPreferenceData:
+  selector: IGNORE
+  axis: none
+filterData_[product1]:
+  selector: div.filter-values-options.overflow-auto.scrollbar.d-flex.flex-column
+  axis: vertical
+filterData_[product4]:
+  selector: IGNORE
+  axis: none
+filterData_[product6]:
+  selector: div.filter-values-options.overflow-auto.scrollbar.d-flex.flex-column
+  axis: vertical
+filterData_[product5]:
+  selector: div.filter-values-options.overflow-auto.scrollbar.d-flex.flex-column
+  axis: vertical
+fetch_alerts_summary_data_[customer3]:
+  selector: div.card-content.p-b-24.p-r-24.p-h-24.m-t-0
+  axis: vertical

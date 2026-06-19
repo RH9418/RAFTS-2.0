@@ -1,0 +1,1316 @@
+learned_rules:
+  ? page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()
+  : 'This particular action shows that the ''Select All'' button was clicked, since
+    all the products were already selected before, this action deselects every product.
+    As a result, the filter cannot be applied, since there are no products selected
+    currently. Therefore, the ''apply'' button becomes disabled until the user selects
+    one or more products again. '
+  page.locator(".d-flex.flex-column.justify-content-center").first.click(): This action
+    displays the 'Select All' button being clicked. This can be verified by the blue
+    checkboxes highlighting all the rows that have been selected. The dropdown DOES
+    NOT close on its own. Even though 'Select All' has been checked, the grid will
+    not YET display all rows until the user closes up the row drop down first.
+cached_chunks:
+  page.locator(".zeb-filter").first.click()|page.get_by_text("Hierarchy").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        Filter_Sidebar:
+          state: OPEN
+          children:
+            Hierarchy_Option:
+              state: VISIBLE
+              selected: false
+    verification_plan:
+    - step_id_checkpoint: '1_2'
+      what_to_verify: Verify 'Hierarchy' option is VISIBLE and selectable
+    - step_id_checkpoint: END
+      what_to_verify: Verify Filter Sidebar remains OPEN
+  page.get_by_text("League").click()|page.get_by_role("radio", name="MLS").check()|page.get_by_text("League").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        Filter_Sidebar:
+          state: OPEN
+          children:
+            Hierarchy_Option:
+              state: VISIBLE
+              selected: false
+              children:
+                League:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    MLS:
+                      state: VISIBLE
+                      selected: true
+    verification_plan:
+    - step_id_checkpoint: '1_3'
+      what_to_verify: Verify 'League' is expanded.
+    - step_id_checkpoint: '1_4'
+      what_to_verify: Verify 'MLS' radio button is checked.
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN.
+  ? page.get_by_text("Team", exact=True).click()|page.locator(".filter-values.d-flex.align-items-center.p-l-32.p-r-24
+    > .custom-checkbox-wrapper > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.get_by_text("Team 6 selected").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Sidebar:
+          state: OPEN
+          children:
+            Hierarchy_Option:
+              state: VISIBLE
+              selected: false
+              children:
+                League:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    MLS:
+                      state: VISIBLE
+                      selected: true
+                Team:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Team 1:
+                      state: VISIBLE
+                      selected: false
+                    Team 2:
+                      state: VISIBLE
+                      selected: false
+                    Team 3:
+                      state: VISIBLE
+                      selected: false
+                    Team 4:
+                      state: VISIBLE
+                      selected: false
+                    Team 5:
+                      state: VISIBLE
+                      selected: false
+                    Team 6:
+                      state: VISIBLE
+                      selected: true
+    verification_plan:
+    - step_id_checkpoint: '1_6'
+      what_to_verify: Verify 'Team' hierarchy is expanded and visible.
+    - step_id_checkpoint: '1_13'
+      what_to_verify: Verify 'Team 6' is selected.
+    - step_id_checkpoint: END
+      what_to_verify: Verify Filter Sidebar is still OPEN.
+  ? page.get_by_text("Department").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
+    > .pointer").first.click()|page.get_by_text("Department").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Sidebar:
+          state: OPEN
+          children:
+            Hierarchy_Option:
+              state: VISIBLE
+              selected: false
+              children:
+                League:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    MLS:
+                      state: VISIBLE
+                      selected: true
+                Team:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Team 1:
+                      state: VISIBLE
+                      selected: false
+                    Team 2:
+                      state: VISIBLE
+                      selected: false
+                    Team 3:
+                      state: VISIBLE
+                      selected: false
+                    Team 4:
+                      state: VISIBLE
+                      selected: false
+                    Team 5:
+                      state: VISIBLE
+                      selected: false
+                    Team 6:
+                      state: VISIBLE
+                      selected: true
+                Department:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Checkbox_1:
+                      state: VISIBLE
+                      selected: true
+    verification_plan:
+    - step_id_checkpoint: '1_15'
+      what_to_verify: Verify Checkbox_1 is CHECKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+  ? page.get_by_text("Attribute").click()|page.get_by_text("Product Line").click()|page.locator(".pointer.custom-checkbox-checked").first.click()|page.locator(".filter-values.d-flex.align-items-center.p-l-32.p-r-24
+    > .custom-checkbox-wrapper > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Sidebar:
+          state: OPEN
+          children:
+            Hierarchy_Option:
+              state: VISIBLE
+              selected: false
+              children:
+                League:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    MLS:
+                      state: VISIBLE
+                      selected: true
+                Team:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Team 1:
+                      state: VISIBLE
+                      selected: false
+                    Team 2:
+                      state: VISIBLE
+                      selected: false
+                    Team 3:
+                      state: VISIBLE
+                      selected: false
+                    Team 4:
+                      state: VISIBLE
+                      selected: false
+                    Team 5:
+                      state: VISIBLE
+                      selected: false
+                    Team 6:
+                      state: VISIBLE
+                      selected: true
+                Department:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Checkbox_1:
+                      state: VISIBLE
+                      selected: true
+                Attribute:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Product Line:
+                      state: VISIBLE
+                      expanded: true
+                      children:
+                        Checkbox_1:
+                          state: VISIBLE
+                          selected: false
+                        Checkbox_2:
+                          state: VISIBLE
+                          selected: false
+                        Checkbox_3:
+                          state: VISIBLE
+                          selected: false
+    verification_plan:
+    - step_id_checkpoint: '1_19'
+      what_to_verify: Verify Checkbox_1 under Product Line is UNCHECKED
+    - step_id_checkpoint: '1_21'
+      what_to_verify: Verify 'Select All' deselects all checkboxes and disables the
+        Apply button
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+  ? page.get_by_text("Player").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
+    > .pointer").first.click()|page.locator(".aggrigate-panel > .custom-checkbox-wrapper
+    > .pointer").click()|page.get_by_role("button", name="Apply Filters").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Sidebar:
+          state: OPEN
+          children:
+            Hierarchy_Option:
+              state: VISIBLE
+              selected: false
+              children:
+                League:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    MLS:
+                      state: VISIBLE
+                      selected: true
+                Team:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Team 1:
+                      state: VISIBLE
+                      selected: false
+                    Team 2:
+                      state: VISIBLE
+                      selected: false
+                    Team 3:
+                      state: VISIBLE
+                      selected: false
+                    Team 4:
+                      state: VISIBLE
+                      selected: false
+                    Team 5:
+                      state: VISIBLE
+                      selected: false
+                    Team 6:
+                      state: VISIBLE
+                      selected: true
+                Department:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Checkbox_1:
+                      state: VISIBLE
+                      selected: true
+                Attribute:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Product Line:
+                      state: VISIBLE
+                      expanded: true
+                      children:
+                        Checkbox_1:
+                          state: VISIBLE
+                          selected: true
+                        Checkbox_2:
+                          state: VISIBLE
+                          selected: false
+                        Checkbox_3:
+                          state: VISIBLE
+                          selected: false
+                    Aggregate Values:
+                      state: VISIBLE
+                      selected: true
+    verification_plan:
+    - step_id_checkpoint: '1_23'
+      what_to_verify: Verify Checkbox_1 under Product Line is CHECKED
+    - step_id_checkpoint: '1_24'
+      what_to_verify: Verify Aggregate Values checkbox is CHECKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+  page.locator(".zeb-filter").first.click():
+    ui_graph:
+      Updated_VDOM_Here:
+        Filter_Sidebar:
+          state: CLOSED
+          children:
+            Hierarchy_Option:
+              state: HIDDEN
+              selected: false
+              children:
+                League:
+                  state: HIDDEN
+                  expanded: true
+                  children:
+                    MLS:
+                      state: HIDDEN
+                      selected: true
+                Team:
+                  state: HIDDEN
+                  expanded: true
+                  children:
+                    Team 1:
+                      state: HIDDEN
+                      selected: false
+                    Team 2:
+                      state: HIDDEN
+                      selected: false
+                    Team 3:
+                      state: HIDDEN
+                      selected: false
+                    Team 4:
+                      state: HIDDEN
+                      selected: false
+                    Team 5:
+                      state: HIDDEN
+                      selected: false
+                    Team 6:
+                      state: HIDDEN
+                      selected: true
+                Department:
+                  state: HIDDEN
+                  expanded: true
+                  children:
+                    Checkbox_1:
+                      state: HIDDEN
+                      selected: true
+                Attribute:
+                  state: HIDDEN
+                  expanded: true
+                  children:
+                    Product Line:
+                      state: HIDDEN
+                      expanded: true
+                      children:
+                        Checkbox_1:
+                          state: HIDDEN
+                          selected: true
+                        Checkbox_2:
+                          state: HIDDEN
+                          selected: false
+                        Checkbox_3:
+                          state: HIDDEN
+                          selected: false
+                    Aggregate Values:
+                      state: HIDDEN
+                      selected: true
+    verification_plan:
+    - step_id_checkpoint: '1_26'
+      what_to_verify: Verify Filter Sidebar is CLOSED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Filter Sidebar remains CLOSED
+  ? page.locator(".dropdown-caret.p-l-16").first.click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.locator(".overflow-auto
+    > div:nth-child(2) > .d-flex").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Sidebar:
+          state: OPEN
+          children:
+            Hierarchy_Option:
+              state: VISIBLE
+              selected: false
+              children:
+                League:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    MLS:
+                      state: VISIBLE
+                      selected: true
+                Team:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Team 1:
+                      state: VISIBLE
+                      selected: false
+                    Team 2:
+                      state: VISIBLE
+                      selected: false
+                    Team 3:
+                      state: VISIBLE
+                      selected: false
+                    Team 4:
+                      state: VISIBLE
+                      selected: false
+                    Team 5:
+                      state: VISIBLE
+                      selected: false
+                    Team 6:
+                      state: VISIBLE
+                      selected: true
+                Department:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Checkbox_1:
+                      state: VISIBLE
+                      selected: true
+                Attribute:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Product Line:
+                      state: VISIBLE
+                      expanded: true
+                      children:
+                        Checkbox_1:
+                          state: VISIBLE
+                          selected: true
+                        Checkbox_2:
+                          state: VISIBLE
+                          selected: false
+                        Checkbox_3:
+                          state: VISIBLE
+                          selected: false
+                    Aggregate Values:
+                      state: VISIBLE
+                      selected: true
+    verification_plan:
+    - step_id_checkpoint: '2_2'
+      what_to_verify: Verify Checkbox is CHECKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+  ? page.locator("#location-filterId > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown
+    > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator("#seasontype-filterId
+    > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown > div > .w-100 > .d-flex.align-items-center
+    > .dropdown-caret").click()|page.get_by_role("button", name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Sidebar:
+          state: OPEN
+          children:
+            Hierarchy_Option:
+              state: VISIBLE
+              selected: false
+              children:
+                League:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    MLS:
+                      state: VISIBLE
+                      selected: true
+                Team:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Team 1:
+                      state: VISIBLE
+                      selected: false
+                    Team 2:
+                      state: VISIBLE
+                      selected: false
+                    Team 3:
+                      state: VISIBLE
+                      selected: false
+                    Team 4:
+                      state: VISIBLE
+                      selected: false
+                    Team 5:
+                      state: VISIBLE
+                      selected: false
+                    Team 6:
+                      state: VISIBLE
+                      selected: true
+                Department:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Checkbox_1:
+                      state: VISIBLE
+                      selected: true
+                Attribute:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Product Line:
+                      state: VISIBLE
+                      expanded: true
+                      children:
+                        Checkbox_1:
+                          state: VISIBLE
+                          selected: true
+                        Checkbox_2:
+                          state: VISIBLE
+                          selected: false
+                        Checkbox_3:
+                          state: VISIBLE
+                          selected: false
+                    Aggregate Values:
+                      state: VISIBLE
+                      selected: true
+        Dropdowns:
+          Location:
+            state: OPEN
+            selected: null
+          Season Type:
+            state: OPEN
+            selected: null
+    verification_plan:
+    - step_id_checkpoint: '2_5'
+      what_to_verify: Verify both Location and Season Type dropdowns are OPEN
+    - step_id_checkpoint: END
+      what_to_verify: Verify Filter Sidebar is still OPEN and Apply button was clicked
+  ? page.locator(".wr-20.font-weight-normal > esp-multiselect-dropdown > .multiselect-dropdown
+    > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.locator(".d-flex.dropdown-option.align-items-center.p-v-5.p-l-32
+    > .d-flex").first.click()|page.locator(".overflow-auto > div:nth-child(2) > .d-flex").click()|page.locator(".overflow-auto
+    > div:nth-child(3) > .d-flex").click()|page.locator(".overflow-auto > div:nth-child(4)
+    > .d-flex").click()|page.locator("div:nth-child(5) > .d-flex").click()|page.locator("div:nth-child(6)
+    > .d-flex").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Sidebar:
+          state: OPEN
+          children:
+            Hierarchy_Option:
+              state: VISIBLE
+              selected: false
+              children:
+                League:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    MLS:
+                      state: VISIBLE
+                      selected: true
+                Team:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Team 1:
+                      state: VISIBLE
+                      selected: true
+                    Team 2:
+                      state: VISIBLE
+                      selected: true
+                    Team 3:
+                      state: VISIBLE
+                      selected: true
+                    Team 4:
+                      state: VISIBLE
+                      selected: true
+                    Team 5:
+                      state: VISIBLE
+                      selected: true
+                    Team 6:
+                      state: VISIBLE
+                      selected: true
+                Department:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Checkbox_1:
+                      state: VISIBLE
+                      selected: true
+                Attribute:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Product Line:
+                      state: VISIBLE
+                      expanded: true
+                      children:
+                        Checkbox_1:
+                          state: VISIBLE
+                          selected: true
+                        Checkbox_2:
+                          state: VISIBLE
+                          selected: false
+                        Checkbox_3:
+                          state: VISIBLE
+                          selected: false
+                    Aggregate Values:
+                      state: VISIBLE
+                      selected: true
+        Dropdowns:
+          Location:
+            state: OPEN
+            selected: null
+          Season Type:
+            state: OPEN
+            selected: null
+    verification_plan:
+    - step_id_checkpoint: '3_2'
+      what_to_verify: Verify 'Select All' is checked and all rows are highlighted.
+    - step_id_checkpoint: END
+      what_to_verify: Verify the Filter Sidebar remains OPEN.
+  ? page.locator("div:nth-child(7) > .d-flex").click()|page.locator(".wr-20.font-weight-normal
+    > esp-multiselect-dropdown > .multiselect-dropdown > div > .w-100").click()|page.locator(".wr-20.font-weight-normal
+    > esp-multiselect-dropdown > .multiselect-dropdown > div > .w-100 > .d-flex.align-items-center
+    > .dropdown-caret").click()|page.locator("div:nth-child(8) > .d-flex").click()|page.locator("div:nth-child(9)
+    > .d-flex").click()|page.locator("div:nth-child(10) > .d-flex").click()|page.locator("div:nth-child(11)
+    > .d-flex").click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Sidebar:
+          state: OPEN
+          children:
+            Hierarchy_Option:
+              state: VISIBLE
+              selected: false
+              children:
+                League:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    MLS:
+                      state: VISIBLE
+                      selected: true
+                Team:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Team 1:
+                      state: VISIBLE
+                      selected: true
+                    Team 2:
+                      state: VISIBLE
+                      selected: true
+                    Team 3:
+                      state: VISIBLE
+                      selected: true
+                    Team 4:
+                      state: VISIBLE
+                      selected: true
+                    Team 5:
+                      state: VISIBLE
+                      selected: true
+                    Team 6:
+                      state: VISIBLE
+                      selected: true
+                Department:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Checkbox_1:
+                      state: VISIBLE
+                      selected: true
+                Attribute:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Product Line:
+                      state: VISIBLE
+                      expanded: true
+                      children:
+                        Checkbox_1:
+                          state: VISIBLE
+                          selected: true
+                        Checkbox_2:
+                          state: VISIBLE
+                          selected: false
+                        Checkbox_3:
+                          state: VISIBLE
+                          selected: false
+                    Aggregate Values:
+                      state: VISIBLE
+                      selected: true
+        Dropdowns:
+          Location:
+            state: OPEN
+            selected: null
+          Season Type:
+            state: OPEN
+            selected: null
+          Columns:
+            state: OPEN
+            children:
+              Select All:
+                state: VISIBLE
+                selected: true
+              BOM OH:
+                state: VISIBLE
+                selected: true
+              Actual Sales:
+                state: VISIBLE
+                selected: true
+              Actual Sales ($):
+                state: VISIBLE
+                selected: true
+              Actual Sales & ROY Fcst:
+                state: VISIBLE
+                selected: true
+              Actual Sales & ROY Fcst ($):
+                state: VISIBLE
+                selected: true
+              LY Unit Sales:
+                state: VISIBLE
+                selected: true
+              LY Sales ($):
+                state: VISIBLE
+                selected: false
+              OO:
+                state: VISIBLE
+                selected: false
+              Recommended Unit Needs:
+                state: VISIBLE
+                selected: false
+              Recommended Retail Needs:
+                state: VISIBLE
+                selected: false
+    verification_plan:
+    - step_id_checkpoint: '3_16'
+      what_to_verify: Verify Checkbox is CHECKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+  ? "page.locator(\".wr-20.font-weight-normal > esp-multiselect-dropdown > .multiselect-dropdown\
+    \ > div > .w-100 > .d-flex.align-items-center > .dropdown-caret\").click()|page.get_by_role(\"\
+    button\", name=\"\uE0BFcolumns\").click()|page.get_by_role(\"checkbox\", name=\"\
+    Toggle All Columns Visibility\").uncheck()|page.get_by_role(\"treeitem\", name=\"\
+    Feb-26 Column\").get_by_label(\"Press SPACE to toggle\").check()|page.get_by_role(\"\
+    treeitem\", name=\"Mar-26 Column\").get_by_label(\"Press SPACE to toggle\").check()|page.get_by_role(\"\
+    treeitem\", name=\"Apr-26 Column\").get_by_label(\"Press SPACE to toggle\").check()|page.get_by_role(\"\
+    treeitem\", name=\"Apr-26 Column\").get_by_label(\"Press SPACE to toggle\").uncheck()|page.get_by_role(\"\
+    treeitem\", name=\"May-26 Column\").get_by_label(\"Press SPACE to toggle\").check()"
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Sidebar:
+          state: OPEN
+          children:
+            Hierarchy_Option:
+              state: VISIBLE
+              selected: false
+              children:
+                League:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    MLS:
+                      state: VISIBLE
+                      selected: true
+                Team:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Team 1:
+                      state: VISIBLE
+                      selected: true
+                    Team 2:
+                      state: VISIBLE
+                      selected: true
+                    Team 3:
+                      state: VISIBLE
+                      selected: true
+                    Team 4:
+                      state: VISIBLE
+                      selected: true
+                    Team 5:
+                      state: VISIBLE
+                      selected: true
+                    Team 6:
+                      state: VISIBLE
+                      selected: true
+                Department:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Checkbox_1:
+                      state: VISIBLE
+                      selected: true
+                Attribute:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Product Line:
+                      state: VISIBLE
+                      expanded: true
+                      children:
+                        Checkbox_1:
+                          state: VISIBLE
+                          selected: true
+                        Checkbox_2:
+                          state: VISIBLE
+                          selected: false
+                        Checkbox_3:
+                          state: VISIBLE
+                          selected: false
+                    Aggregate Values:
+                      state: VISIBLE
+                      selected: true
+        Dropdowns:
+          Location:
+            state: OPEN
+            selected: null
+          Season Type:
+            state: OPEN
+            selected: null
+          Columns:
+            state: OPEN
+            children:
+              Select All:
+                state: VISIBLE
+                selected: false
+              BOM OH:
+                state: VISIBLE
+                selected: false
+              Actual Sales:
+                state: VISIBLE
+                selected: false
+              Actual Sales ($):
+                state: VISIBLE
+                selected: false
+              Actual Sales & ROY Fcst:
+                state: VISIBLE
+                selected: false
+              Actual Sales & ROY Fcst ($):
+                state: VISIBLE
+                selected: false
+              LY Unit Sales:
+                state: VISIBLE
+                selected: false
+              LY Sales ($):
+                state: VISIBLE
+                selected: false
+              OO:
+                state: VISIBLE
+                selected: false
+              Recommended Unit Needs:
+                state: VISIBLE
+                selected: false
+              Recommended Retail Needs:
+                state: VISIBLE
+                selected: false
+              Feb-26 Column:
+                state: VISIBLE
+                selected: true
+              Mar-26 Column:
+                state: VISIBLE
+                selected: true
+              Apr-26 Column:
+                state: VISIBLE
+                selected: false
+              May-26 Column:
+                state: VISIBLE
+                selected: true
+    verification_plan:
+    - step_id_checkpoint: '3_19'
+      what_to_verify: Verify all columns are unchecked after toggling 'Select All'
+        off.
+    - step_id_checkpoint: '3_20'
+      what_to_verify: Verify 'Feb-26 Column' is checked.
+    - step_id_checkpoint: '3_21'
+      what_to_verify: Verify 'Mar-26 Column' is checked.
+    - step_id_checkpoint: '3_23'
+      what_to_verify: Verify 'Apr-26 Column' is unchecked.
+    - step_id_checkpoint: '3_24'
+      what_to_verify: Verify 'May-26 Column' is checked.
+    - step_id_checkpoint: END
+      what_to_verify: Verify the 'Columns' dropdown remains open.
+  ? page.get_by_role("treeitem", name="May-26 Column").get_by_label("Press SPACE to
+    toggle").uncheck()|page.get_by_role("treeitem", name="Jul-26 Column").get_by_label("Press
+    SPACE to toggle").check()|page.get_by_role("treeitem", name="Jul-26 Column").get_by_label("Press
+    SPACE to toggle").uncheck()|page.get_by_role("treeitem", name="Aug-26 Column").get_by_label("Press
+    SPACE to toggle").check()|page.get_by_role("treeitem", name="Aug-26 Column").get_by_label("Press
+    SPACE to toggle").uncheck()|page.get_by_role("treeitem", name="Sep-26 Column").get_by_label("Press
+    SPACE to toggle visibility (hidden)").check()|page.get_by_role("treeitem", name="Sep-26
+    Column").get_by_label("Press SPACE to toggle visibility (hidden)").uncheck()|page.get_by_role("treeitem",
+    name="Oct-26 Column").get_by_label("Press SPACE to toggle visibility (hidden)").check()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Sidebar:
+          state: OPEN
+          children:
+            Hierarchy_Option:
+              state: VISIBLE
+              selected: false
+              children:
+                League:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    MLS:
+                      state: VISIBLE
+                      selected: true
+                Team:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Team 1:
+                      state: VISIBLE
+                      selected: true
+                    Team 2:
+                      state: VISIBLE
+                      selected: true
+                    Team 3:
+                      state: VISIBLE
+                      selected: true
+                    Team 4:
+                      state: VISIBLE
+                      selected: true
+                    Team 5:
+                      state: VISIBLE
+                      selected: true
+                    Team 6:
+                      state: VISIBLE
+                      selected: true
+                Department:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Checkbox_1:
+                      state: VISIBLE
+                      selected: true
+                Attribute:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Product Line:
+                      state: VISIBLE
+                      expanded: true
+                      children:
+                        Checkbox_1:
+                          state: VISIBLE
+                          selected: true
+                        Checkbox_2:
+                          state: VISIBLE
+                          selected: false
+                        Checkbox_3:
+                          state: VISIBLE
+                          selected: false
+                    Aggregate Values:
+                      state: VISIBLE
+                      selected: true
+        Dropdowns:
+          Location:
+            state: OPEN
+            selected: null
+          Season Type:
+            state: OPEN
+            selected: null
+          Columns:
+            state: OPEN
+            children:
+              Select All:
+                state: VISIBLE
+                selected: false
+              BOM OH:
+                state: VISIBLE
+                selected: false
+              Actual Sales:
+                state: VISIBLE
+                selected: false
+              Actual Sales ($):
+                state: VISIBLE
+                selected: false
+              Actual Sales & ROY Fcst:
+                state: VISIBLE
+                selected: false
+              Actual Sales & ROY Fcst ($):
+                state: VISIBLE
+                selected: false
+              LY Unit Sales:
+                state: VISIBLE
+                selected: false
+              LY Sales ($):
+                state: VISIBLE
+                selected: false
+              OO:
+                state: VISIBLE
+                selected: false
+              Recommended Unit Needs:
+                state: VISIBLE
+                selected: false
+              Recommended Retail Needs:
+                state: VISIBLE
+                selected: false
+              Feb-26 Column:
+                state: VISIBLE
+                selected: true
+              Mar-26 Column:
+                state: VISIBLE
+                selected: true
+              Apr-26 Column:
+                state: VISIBLE
+                selected: false
+              May-26 Column:
+                state: VISIBLE
+                selected: false
+              Jul-26 Column:
+                state: VISIBLE
+                selected: false
+              Aug-26 Column:
+                state: VISIBLE
+                selected: false
+              Sep-26 Column:
+                state: VISIBLE
+                selected: false
+              Oct-26 Column:
+                state: VISIBLE
+                selected: true
+    verification_plan:
+    - step_id_checkpoint: '3_25'
+      what_to_verify: Verify May-26 Column is UNCHECKED
+    - step_id_checkpoint: '3_32'
+      what_to_verify: Verify Oct-26 Column is CHECKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+  ? "page.get_by_role(\"treeitem\", name=\"Oct-26 Column\").get_by_label(\"Press SPACE\
+    \ to toggle visibility (hidden)\").uncheck()|page.locator(\"#ag-1797-input\").check()|page.get_by_role(\"\
+    treeitem\", name=\"Nov-26 Column\").get_by_label(\"Press SPACE to toggle visibility\
+    \ (visible)\").uncheck()|page.locator(\"#ag-1797-input\").check()|page.get_by_role(\"\
+    button\", name=\"\uE0BFcolumns\").click()|page.get_by_role(\"button\", name=\"\
+    \uE0BFcolumns\").click()|page.get_by_role(\"checkbox\", name=\"Toggle All Columns\
+    \ Visibility\").check()|page.get_by_role(\"button\", name=\"\uE0BFcolumns\").click()"
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Sidebar:
+          state: OPEN
+          children:
+            Hierarchy_Option:
+              state: VISIBLE
+              selected: false
+              children:
+                League:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    MLS:
+                      state: VISIBLE
+                      selected: true
+                Team:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Team 1:
+                      state: VISIBLE
+                      selected: true
+                    Team 2:
+                      state: VISIBLE
+                      selected: true
+                    Team 3:
+                      state: VISIBLE
+                      selected: true
+                    Team 4:
+                      state: VISIBLE
+                      selected: true
+                    Team 5:
+                      state: VISIBLE
+                      selected: true
+                    Team 6:
+                      state: VISIBLE
+                      selected: true
+                Department:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Checkbox_1:
+                      state: VISIBLE
+                      selected: true
+                Attribute:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Product Line:
+                      state: VISIBLE
+                      expanded: true
+                      children:
+                        Checkbox_1:
+                          state: VISIBLE
+                          selected: true
+                        Checkbox_2:
+                          state: VISIBLE
+                          selected: false
+                        Checkbox_3:
+                          state: VISIBLE
+                          selected: false
+                    Aggregate Values:
+                      state: VISIBLE
+                      selected: true
+        Dropdowns:
+          Location:
+            state: OPEN
+            selected: null
+          Season Type:
+            state: OPEN
+            selected: null
+          Columns:
+            state: OPEN
+            children:
+              Select All:
+                state: VISIBLE
+                selected: true
+              BOM OH:
+                state: VISIBLE
+                selected: true
+              Actual Sales:
+                state: VISIBLE
+                selected: true
+              Actual Sales ($):
+                state: VISIBLE
+                selected: true
+              Actual Sales & ROY Fcst:
+                state: VISIBLE
+                selected: true
+              Actual Sales & ROY Fcst ($):
+                state: VISIBLE
+                selected: true
+              LY Unit Sales:
+                state: VISIBLE
+                selected: true
+              LY Sales ($):
+                state: VISIBLE
+                selected: true
+              OO:
+                state: VISIBLE
+                selected: true
+              Recommended Unit Needs:
+                state: VISIBLE
+                selected: true
+              Recommended Retail Needs:
+                state: VISIBLE
+                selected: true
+              Feb-26 Column:
+                state: VISIBLE
+                selected: true
+              Mar-26 Column:
+                state: VISIBLE
+                selected: true
+              Apr-26 Column:
+                state: VISIBLE
+                selected: true
+              May-26 Column:
+                state: VISIBLE
+                selected: true
+              Jul-26 Column:
+                state: VISIBLE
+                selected: true
+              Aug-26 Column:
+                state: VISIBLE
+                selected: true
+              Sep-26 Column:
+                state: VISIBLE
+                selected: true
+              Oct-26 Column:
+                state: VISIBLE
+                selected: false
+              Nov-26 Column:
+                state: VISIBLE
+                selected: false
+    verification_plan:
+    - step_id_checkpoint: '3_33'
+      what_to_verify: Verify Oct-26 Column is UNCHECKED
+    - step_id_checkpoint: '3_35'
+      what_to_verify: Verify Nov-26 Column is UNCHECKED
+    - step_id_checkpoint: '3_39'
+      what_to_verify: Verify All Columns are CHECKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Columns Dropdown is CLOSED
+  ? page.locator(".pointer.zeb-adjustments").click()|page.get_by_text("Save Preference").click()|page.locator(".icon-color-toolbar-active.zeb-download-underline").click()|page.locator(".dropdown-caret.p-l-16").first.click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.get_by_text("ResetApply").click()|page.get_by_role("button",
+    name="Apply").click()|page.locator(".ag-header-cell.ag-header-parent-hidden.ag-header-cell-sortable.ag-header-background.ag-focus-managed.ag-header-active
+    > .ag-header-cell-comp-wrapper > .ag-cell-label-container").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Sidebar:
+          state: OPEN
+          children:
+            Hierarchy_Option:
+              state: VISIBLE
+              selected: false
+              children:
+                League:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    MLS:
+                      state: VISIBLE
+                      selected: true
+                Team:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Team 1:
+                      state: VISIBLE
+                      selected: true
+                    Team 2:
+                      state: VISIBLE
+                      selected: true
+                    Team 3:
+                      state: VISIBLE
+                      selected: true
+                    Team 4:
+                      state: VISIBLE
+                      selected: true
+                    Team 5:
+                      state: VISIBLE
+                      selected: true
+                    Team 6:
+                      state: VISIBLE
+                      selected: true
+                Department:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Checkbox_1:
+                      state: VISIBLE
+                      selected: true
+                Attribute:
+                  state: VISIBLE
+                  expanded: true
+                  children:
+                    Product Line:
+                      state: VISIBLE
+                      expanded: true
+                      children:
+                        Checkbox_1:
+                          state: VISIBLE
+                          selected: true
+                        Checkbox_2:
+                          state: VISIBLE
+                          selected: false
+                        Checkbox_3:
+                          state: VISIBLE
+                          selected: false
+                    Aggregate Values:
+                      state: VISIBLE
+                      selected: true
+        Dropdowns:
+          Location:
+            state: OPEN
+            selected: null
+          Season Type:
+            state: OPEN
+            selected: null
+          Columns:
+            state: OPEN
+            children:
+              Select All:
+                state: VISIBLE
+                selected: true
+              BOM OH:
+                state: VISIBLE
+                selected: true
+              Actual Sales:
+                state: VISIBLE
+                selected: true
+              Actual Sales ($):
+                state: VISIBLE
+                selected: true
+              Actual Sales & ROY Fcst:
+                state: VISIBLE
+                selected: true
+              Actual Sales & ROY Fcst ($):
+                state: VISIBLE
+                selected: true
+              LY Unit Sales:
+                state: VISIBLE
+                selected: true
+              LY Sales ($):
+                state: VISIBLE
+                selected: true
+              OO:
+                state: VISIBLE
+                selected: true
+              Recommended Unit Needs:
+                state: VISIBLE
+                selected: true
+              Recommended Retail Needs:
+                state: VISIBLE
+                selected: true
+              Feb-26 Column:
+                state: VISIBLE
+                selected: true
+              Mar-26 Column:
+                state: VISIBLE
+                selected: true
+              Apr-26 Column:
+                state: VISIBLE
+                selected: true
+              May-26 Column:
+                state: VISIBLE
+                selected: true
+              Jul-26 Column:
+                state: VISIBLE
+                selected: true
+              Aug-26 Column:
+                state: VISIBLE
+                selected: true
+              Sep-26 Column:
+                state: VISIBLE
+                selected: true
+              Oct-26 Column:
+                state: VISIBLE
+                selected: false
+              Nov-26 Column:
+                state: VISIBLE
+                selected: false
+    verification_plan:
+    - step_id_checkpoint: '3_45'
+      what_to_verify: Verify Checkbox is CHECKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+global_rules: []

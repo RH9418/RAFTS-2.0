@@ -1,0 +1,29 @@
+# Python cache
+__pycache__/
+.pytest_cache/
+
+# Virtual environment
+env/
+
+# Log, dump, and report folders
+API_Dumps/
+Codegen_Logs/
+Data_Dumps/
+Enhanced_Logs/
+Epistemic_Agent_Reports/
+Execution_Reports/
+Naive_Agent_Reports/
+Network_Logs/
+
+# Image and screenshot folders
+Mechanical_Images/
+Screenshots/
+Test_Screenshots/
+
+# Other generated folders
+baselines/
+baselines copy/
+Regression_Runs/
+
+# Environment variables
+.env

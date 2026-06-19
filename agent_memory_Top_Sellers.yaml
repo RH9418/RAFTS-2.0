@@ -1,0 +1,1660 @@
+learned_rules: {}
+cached_chunks:
+  ? page.locator(".zeb-filter").first.click()|page.get_by_text("Hierarchy").click()|page.locator("#SideFilterproducthierarchyId").get_by_text("League").click()|page.get_by_role("radio",
+    name="MLS").check()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: All
+          Season Type: All Season Types
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - Product Line
+          - PID
+          - LW Retail Sales
+          - LY Retail Sales
+          Data: Updated to reflect MLS merchandise sales data.
+    verification_plan:
+    - step_id_checkpoint: '1_3'
+      what_to_verify: Verify that the 'League' hierarchy filter is selected and the
+        UI reflects the hierarchy options for league selection.
+    - step_id_checkpoint: '1_4'
+      what_to_verify: Verify that the 'MLS' radio button is checked, and the filter
+        is applied to update the dataset to MLS merchandise.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'Top Sellers' grid re-renders to display MLS-specific
+        merchandise data, including updated metrics for LW Retail Sales and LY Retail
+        Sales.
+  ? page.locator("#SideFilterproducthierarchyId").get_by_text("Team").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
+    > .pointer").first.click()|page.locator("#SideFilterproducthierarchyId").get_by_text("Team",
+    exact=True).click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: All
+          Season Type: All Season Types
+          Team: Selected Teams
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - Product Line
+          - PID
+          - LW Retail Sales
+          - LY Retail Sales
+          Data: Updated to reflect MLS merchandise sales data filtered by selected
+            teams.
+    verification_plan:
+    - step_id_checkpoint: '1_5'
+      what_to_verify: Verify that the 'Team' filter option is expanded in the product
+        hierarchy, allowing the user to select specific teams.
+    - step_id_checkpoint: '1_6'
+      what_to_verify: Verify that the first team checkbox is selected, indicating
+        that the corresponding team is included in the filter criteria.
+    - step_id_checkpoint: '1_7'
+      what_to_verify: Verify that the 'Team' filter is collapsed after selection,
+        and the filter criteria are applied to the dataset.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Top Sellers grid updates to display only MLS
+        merchandise sales data for the selected teams, and ensure that the data reflects
+        accurate metrics for LW Retail Sales and LY Retail Sales.
+  ? page.get_by_text("Department").click()|page.locator(".filter-values.d-flex.align-items-center.p-l-32.p-r-24
+    > .custom-checkbox-wrapper > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: All
+          Season Type: All Season Types
+          Team: Selected Teams
+          Department: Selected Departments
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - Product Line
+          - PID
+          - LW Retail Sales
+          - LY Retail Sales
+          Data: Updated to reflect MLS merchandise sales data filtered by selected
+            teams and departments.
+    verification_plan:
+    - step_id_checkpoint: '1_8'
+      what_to_verify: Verify that clicking on 'Department' expands the department
+        filter options, allowing the user to select specific departments.
+    - step_id_checkpoint: '1_9'
+      what_to_verify: Verify that the first department checkbox is selected, and the
+        filter section updates to reflect the selected department.
+    - step_id_checkpoint: '1_10'
+      what_to_verify: Verify that the second department checkbox is selected, and
+        the filter section updates to include this additional department.
+    - step_id_checkpoint: '1_11'
+      what_to_verify: Verify that the third department checkbox is selected, and the
+        filter section updates to include this additional department.
+    - step_id_checkpoint: '1_12'
+      what_to_verify: Verify that the fourth department checkbox is selected, and
+        the filter section updates to include this additional department.
+    - step_id_checkpoint: '1_13'
+      what_to_verify: Verify that the fifth department checkbox is selected, and the
+        filter section updates to include this additional department.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'Top Sellers' grid re-renders to display MLS
+        merchandise sales data filtered by the selected teams and departments, and
+        ensure the data reflects the applied filters accurately.
+  ? page.get_by_text("Attribute").click()|page.locator("#SideFilterproductattributeId").get_by_text("Product
+    Line").click()|page.get_by_text("Player").click()|page.locator(".aggrigate-panel
+    > .custom-checkbox-wrapper > .pointer").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: All
+          Season Type: All Season Types
+          Team: Selected Teams
+          Department: Selected Departments
+          Product Line: Player
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - Product Line
+          - PID
+          - LW Retail Sales
+          - LY Retail Sales
+          Data: Updated to reflect MLS merchandise sales data filtered by 'Player'
+            product line, selected teams, and departments.
+    verification_plan:
+    - step_id_checkpoint: '1_14'
+      what_to_verify: Verify that the 'Attribute' dropdown is expanded, allowing the
+        user to select a specific attribute for filtering.
+    - step_id_checkpoint: '1_15'
+      what_to_verify: Verify that the 'Product Line' option is selected within the
+        attribute dropdown, updating the filter criteria to include 'Product Line'.
+    - step_id_checkpoint: '1_16'
+      what_to_verify: Verify that the 'Player' option is selected within the 'Product
+        Line' filter, narrowing the dataset to player-related merchandise.
+    - step_id_checkpoint: '1_17'
+      what_to_verify: Verify that the 'Aggregate Values' checkbox is toggled, ensuring
+        the data in the 'Top Sellers' grid reflects aggregated sales metrics for the
+        selected filters.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'Top Sellers' grid has re-rendered to display
+        sales data filtered by 'Player' product line, selected teams, and departments,
+        and confirm that the data aligns with the applied filters.
+  page.get_by_role("button", name="Apply Filters").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: All
+          Season Type: All Season Types
+          Team: Selected Teams
+          Department: Selected Departments
+          Product Line: Player
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - Product Line
+          - PID
+          - LW Retail Sales
+          - LY Retail Sales
+          Data: Updated to reflect MLS merchandise sales data filtered by 'Player'
+            product line, selected teams, and departments.
+    verification_plan:
+    - step_id_checkpoint: '1_18'
+      what_to_verify: Verify that the 'Apply Filters' button triggers the application
+        of the selected filters, including 'MLS' as the product, 'Player' as the product
+        line, and the selected teams and departments.
+    - step_id_checkpoint: '1_18'
+      what_to_verify: Ensure that the 'Top Sellers' grid updates to display data specific
+        to MLS merchandise filtered by the selected criteria, including columns for
+        Team, Product Line, PID, LW Retail Sales, and LY Retail Sales.
+    - step_id_checkpoint: END
+      what_to_verify: Confirm that the data in the 'Top Sellers' grid reflects the
+        applied filters, showing only relevant MLS merchandise sales data for the
+        'Player' product line and selected teams and departments.
+  page.locator(".zeb-filter").first.click():
+    ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: All
+          Season Type: All Season Types
+          Team: Selected Teams
+          Department: Selected Departments
+          Product Line: Player
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - Product Line
+          - PID
+          - LW Retail Sales
+          - LY Retail Sales
+          Data: Updated to reflect MLS merchandise sales data filtered by 'Player'
+            product line, selected teams, and departments.
+    verification_plan:
+    - step_id_checkpoint: '1_19'
+      what_to_verify: Verify that the filter for 'Product Line' is set to 'Player'
+        and that the 'Team' and 'Department' filters are applied as selected in the
+        UI.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'Top Sellers' grid has updated to display MLS
+        merchandise sales data for the 'Player' product line, filtered by the selected
+        teams and departments. Ensure the columns and data reflect the applied filters,
+        and confirm that metrics like 'LW Retail Sales' and 'LY Retail Sales' are
+        accurate.
+  ? page.locator(".dropdown-caret.p-l-16").first.click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.locator(".overflow-auto
+    > div:nth-child(2) > .d-flex").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: All
+          Season Type: All Season Types
+          Team: Selected Teams
+          Department: Selected Departments
+          Product Line: Player
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - Product Line
+          - PID
+          - LW Retail Sales
+          - LY Retail Sales
+          Data: Updated to reflect MLS merchandise sales data filtered by 'Player'
+            product line, selected teams, and departments.
+    verification_plan:
+    - step_id_checkpoint: '2_1'
+      what_to_verify: Verify that the dropdown menu for the 'Product' filter is opened,
+        allowing the user to select 'MLS' as the product category.
+    - step_id_checkpoint: '2_2'
+      what_to_verify: Verify that the 'Player' product line is selected within the
+        dropdown menu, ensuring the filter is applied to focus on this specific product
+        line.
+    - step_id_checkpoint: '2_3'
+      what_to_verify: Verify that the 'Top Sellers' grid updates to display data filtered
+        by the 'Player' product line, selected teams, and departments, and that the
+        columns and data reflect the updated context.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'Filter Summary' reflects the applied filters
+        (MLS, Player, selected teams, and departments) and that the grid data aligns
+        with these filters, showing accurate sales metrics for the filtered subset.
+  ? page.locator("#location-filterId > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown
+    > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator("#seasontype-filterId
+    > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown > div > .w-100 > .d-flex.align-items-center
+    > .dropdown-caret").click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.locator(".d-flex.dropdown-option.align-items-center.p-v-5.p-l-32
+    > .d-flex").first.click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Selected Season Type
+          Team: Selected Teams
+          Department: Selected Departments
+          Product Line: Player
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - Product Line
+          - PID
+          - LW Retail Sales
+          - LY Retail Sales
+          Data: Updated to reflect MLS merchandise sales data filtered by 'Player'
+            product line, selected teams, departments, location, and season type.
+    verification_plan:
+    - step_id_checkpoint: '2_4'
+      what_to_verify: Verify that the 'Location' filter dropdown is opened, and the
+        user can select a specific location.
+    - step_id_checkpoint: '2_5'
+      what_to_verify: Verify that the 'Season Type' filter dropdown is opened, and
+        the user can select a specific season type.
+    - step_id_checkpoint: '2_6'
+      what_to_verify: Verify that the first option in the 'Location' filter dropdown
+        is selected and applied to the dataset.
+    - step_id_checkpoint: '2_7'
+      what_to_verify: Verify that the first option in the 'Season Type' filter dropdown
+        is selected and applied to the dataset.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'Top Sellers' grid updates to reflect MLS merchandise
+        sales data filtered by the selected 'Location' and 'Season Type' in addition
+        to the previously applied filters (e.g., 'Player' product line, selected teams,
+        and departments).
+  ? page.locator("#seasontype-filterId > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown
+    > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: Selected Departments
+          Product Line: Player
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - Product Line
+          - PID
+          - LW Retail Sales
+          - LY Retail Sales
+          Data: Updated to reflect MLS merchandise sales data filtered by 'Player'
+            product line, selected teams, departments, location, and Regular Season.
+    verification_plan:
+    - step_id_checkpoint: '2_8'
+      what_to_verify: Verify that the 'Season Type' dropdown is expanded, and the
+        'Regular Season' option is selected.
+    - step_id_checkpoint: '2_9'
+      what_to_verify: Verify that the 'Apply' button triggers the re-rendering of
+        the Top Sellers grid to display data filtered by the selected 'Regular Season'.
+        Ensure that the grid reflects updated sales data for MLS merchandise during
+        the Regular Season.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the filter summary reflects the applied 'Regular
+        Season' filter and that the data in the Top Sellers grid aligns with the selected
+        filter criteria.
+  ? page.locator(".d-flex > esp-multiselect-dropdown > .multiselect-dropdown > div
+    > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.get_by_text("View
+    10 row(s)").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: Selected Departments
+          Product Line: Player
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - Product Line
+          - PID
+          - LW Retail Sales
+          - LY Retail Sales
+          Data: Updated to reflect MLS merchandise sales data filtered by 'Player'
+            product line, selected teams, departments, location, and Regular Season,
+            limited to 10 rows.
+    verification_plan:
+    - step_id_checkpoint: '2_10'
+      what_to_verify: Verify that the dropdown for selecting the number of rows is
+        opened and displays the available options, including 'View 10 row(s)'.
+    - step_id_checkpoint: '2_11'
+      what_to_verify: Verify that the 'Top Sellers' grid updates to display only 10
+        rows of data, reflecting the filtered MLS merchandise sales data for the 'Player'
+        product line, selected teams, departments, location, and Regular Season.
+    - step_id_checkpoint: END
+      what_to_verify: Ensure that the pagination controls, if applicable, are updated
+        to reflect the new row limit and that the displayed data aligns with the applied
+        filters.
+  ? "page.get_by_role(\"button\", name=\"\uE0BFcolumns\").click()|page.get_by_role(\"\
+    checkbox\", name=\"Toggle All Columns Visibility\").check()|page.get_by_role(\"\
+    checkbox\", name=\"Toggle All Columns Visibility\").uncheck()|page.get_by_role(\"\
+    treeitem\", name=\"League Column\").get_by_label(\"Press SPACE to toggle\").check()|page.get_by_role(\"\
+    treeitem\", name=\"Department Column\").get_by_label(\"Press SPACE to toggle\"\
+    ).check()"
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: Selected Departments
+          Product Line: Player
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - Product Line
+          - PID
+          - LW Retail Sales
+          - LY Retail Sales
+          - League
+          - Department
+          Data: Updated to reflect MLS merchandise sales data filtered by 'Player'
+            product line, selected teams, departments, location, and Regular Season,
+            limited to 10 rows, with added 'League' and 'Department' columns.
+    verification_plan:
+    - step_id_checkpoint: '2_12'
+      what_to_verify: Verify that the column customization menu is opened, allowing
+        the user to toggle column visibility.
+    - step_id_checkpoint: '2_13'
+      what_to_verify: Verify that all columns in the 'Top Sellers' grid are temporarily
+        made visible when the 'Toggle All Columns Visibility' checkbox is checked.
+    - step_id_checkpoint: '2_14'
+      what_to_verify: Verify that all columns in the 'Top Sellers' grid are reverted
+        to their default visibility when the 'Toggle All Columns Visibility' checkbox
+        is unchecked.
+    - step_id_checkpoint: '2_15'
+      what_to_verify: Verify that the 'League' column is added to the 'Top Sellers'
+        grid and displays relevant data for MLS merchandise sales.
+    - step_id_checkpoint: '2_16'
+      what_to_verify: Verify that the 'Department' column is added to the 'Top Sellers'
+        grid and displays relevant data for MLS merchandise sales.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'Top Sellers' grid is updated to include the
+        'League' and 'Department' columns, and the data displayed aligns with the
+        applied filters for MLS merchandise sales.
+  ? page.get_by_title("Filter").nth(2).click()|page.get_by_role("textbox", name="Filter
+    Value").fill("MENS")|page.get_by_label("Column Filter").get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Player
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - Product Line
+          - PID
+          - LW Retail Sales
+          - LY Retail Sales
+          - League
+          - Department
+          Data: Updated to reflect MLS merchandise sales data filtered by 'Player'
+            product line, selected teams, location, Regular Season, and 'MENS' department,
+            limited to 10 rows, with added 'League' and 'Department' columns.
+    verification_plan:
+    - step_id_checkpoint: '2_17'
+      what_to_verify: Verify that the 'Filter' section is expanded and ready for user
+        input.
+    - step_id_checkpoint: '2_18'
+      what_to_verify: Verify that the 'Filter Value' textbox is populated with 'MENS'
+        and that the input is accepted without errors.
+    - step_id_checkpoint: '2_19'
+      what_to_verify: Verify that the 'Top Sellers' grid updates to display only data
+        relevant to the 'MENS' department, reflecting the applied filter. Ensure that
+        the grid's data aligns with the selected filters, including 'Player' product
+        line, selected teams, location, and Regular Season.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'League' and 'Department' columns remain visible
+        in the grid and that the data displayed is accurate and consistent with the
+        applied filters.
+  ? page.get_by_title("Filter").nth(2).click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Reset").click()|page.get_by_role("treeitem", name="Department Column").get_by_label("Press
+    SPACE to toggle").uncheck()|page.get_by_role("treeitem", name="Class Column").get_by_label("Press
+    SPACE to toggle").check()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Player
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - Product Line
+          - PID
+          - LW Retail Sales
+          - LY Retail Sales
+          - League
+          - Class
+          Data: Updated to reflect MLS merchandise sales data filtered by 'Player'
+            product line, selected teams, location, Regular Season, and 'MENS' department,
+            limited to 10 rows, with 'Class' column replacing 'Department'.
+    verification_plan:
+    - step_id_checkpoint: '2_20'
+      what_to_verify: Verify that the 'Filter' section is expanded, allowing the user
+        to interact with column visibility settings.
+    - step_id_checkpoint: '2_21'
+      what_to_verify: Verify that the column filter settings are reset to their default
+        state, ensuring no residual selections affect the subsequent changes.
+    - step_id_checkpoint: '2_22'
+      what_to_verify: Verify that the 'Department' column is successfully removed
+        from the 'Top Sellers' grid and no longer appears in the displayed data.
+    - step_id_checkpoint: '2_23'
+      what_to_verify: Verify that the 'Class' column is successfully added to the
+        'Top Sellers' grid and the displayed data updates to include the 'Class' information.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'Top Sellers' grid reflects the updated column
+        configuration, with 'Class' replacing 'Department', and that the data aligns
+        with the applied filters.
+  ? page.get_by_title("Filter").nth(2).click()|page.get_by_role("textbox", name="Filter
+    Value").press("CapsLock")|page.get_by_role("textbox", name="Filter Value").press("CapsLock")|page.get_by_role("textbox",
+    name="Filter Value").fill("SS TEES")|page.get_by_label("Column Filter").get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Player
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - Product Line
+          - PID
+          - LW Retail Sales
+          - LY Retail Sales
+          - League
+          - Class
+          Data: Updated to reflect MLS merchandise sales data filtered by 'Player'
+            product line, selected teams, location, Regular Season, 'MENS' department,
+            and 'SS TEES' class, limited to 10 rows.
+    verification_plan:
+    - step_id_checkpoint: '2_24'
+      what_to_verify: Verify that the 'Filter' section is expanded, allowing the user
+        to interact with the filter options.
+    - step_id_checkpoint: '2_27'
+      what_to_verify: Verify that the 'Filter Value' textbox is populated with 'SS
+        TEES' and that the input is correctly registered in the UI.
+    - step_id_checkpoint: '2_28'
+      what_to_verify: Verify that the 'Apply' button triggers the re-rendering of
+        the 'Top Sellers' grid to display only rows where the 'Class' column matches
+        'SS TEES'. Ensure that the data reflects the applied filters, including 'Player'
+        product line, selected teams, location, Regular Season, and 'MENS' department.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'Top Sellers' grid displays the updated data
+        with the 'SS TEES' filter applied, and that the grid is limited to 10 rows.
+        Confirm that the 'Class' column is visible and correctly reflects the filtered
+        data.
+  ? page.get_by_title("Filter").nth(2).click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Reset").click()|page.get_by_role("treeitem", name="Product Line Column").get_by_label("Press
+    SPACE to toggle").check()|page.get_by_title("Filter").nth(3).click()|page.get_by_role("textbox",
+    name="Filter Value").fill("CORE")
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: CORE
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - Product Line
+          - PID
+          - LW Retail Sales
+          - LY Retail Sales
+          - League
+          - Class
+          Data: Updated to reflect MLS merchandise sales data filtered by 'CORE' product
+            line, selected teams, location, Regular Season, 'MENS' department, and
+            'SS TEES' class, limited to 10 rows.
+    verification_plan:
+    - step_id_checkpoint: '2_29'
+      what_to_verify: Verify that the 'Filter' section is expanded to allow the user
+        to interact with the filtering options.
+    - step_id_checkpoint: '2_30'
+      what_to_verify: Verify that all previously applied column filters are cleared,
+        and the grid displays unfiltered data for the selected attributes.
+    - step_id_checkpoint: '2_31'
+      what_to_verify: Verify that the 'Product Line' column is enabled and visible
+        in the 'Top Sellers' grid.
+    - step_id_checkpoint: '2_33'
+      what_to_verify: Verify that the 'CORE' filter value is applied to the 'Product
+        Line' column, and the grid updates to display only rows where the 'Product
+        Line' matches 'CORE'.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'Top Sellers' grid reflects the updated data,
+        showing only MLS merchandise sales filtered by 'CORE' product line, selected
+        teams, location, Regular Season, 'MENS' department, and 'SS TEES' class, limited
+        to 10 rows.
+  ? page.locator(".ag-icon.ag-icon-small-down").first.click()|page.get_by_role("option",
+    name="Does not contain").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Excludes 'CORE'
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - Product Line
+          - PID
+          - LW Retail Sales
+          - LY Retail Sales
+          - League
+          - Class
+          Data: Updated to exclude rows where 'Product Line' contains 'CORE', reflecting
+            MLS merchandise sales data filtered by selected teams, location, Regular
+            Season, 'MENS' department, and 'SS TEES' class, limited to 10 rows.
+    verification_plan:
+    - step_id_checkpoint: '2_34'
+      what_to_verify: Verify that the dropdown for the 'Product Line' column filter
+        is expanded and the filter options are visible.
+    - step_id_checkpoint: '2_35'
+      what_to_verify: Verify that the 'Does not contain' filter option is selected
+        for the 'Product Line' column.
+    - step_id_checkpoint: '2_36'
+      what_to_verify: Verify that the 'Apply' button is clicked and the Top Sellers
+        grid re-renders to exclude rows where 'Product Line' contains 'CORE'.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Top Sellers grid displays updated data, excluding
+        rows with 'CORE' in the 'Product Line' column, and that the total row count
+        reflects this exclusion.
+  ? page.get_by_title("Filter").nth(3).click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Reset").click()|page.get_by_role("treeitem", name="Product Line Column").get_by_label("Press
+    SPACE to toggle").uncheck()|page.get_by_role("treeitem", name="PID Column").get_by_label("Press
+    SPACE to toggle").check()|page.get_by_role("treeitem", name="PID Column").get_by_label("Press
+    SPACE to toggle").uncheck()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Excludes 'CORE'
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - PID
+          - LW Retail Sales
+          - LY Retail Sales
+          - League
+          - Class
+          Data: Updated to exclude rows where 'Product Line' contains 'CORE', reflecting
+            MLS merchandise sales data filtered by selected teams, location, Regular
+            Season, 'MENS' department, and 'SS TEES' class, limited to 10 rows.
+    verification_plan:
+    - step_id_checkpoint: '2_37'
+      what_to_verify: Verify that the 'Filter' section is expanded, allowing the user
+        to interact with column visibility options.
+    - step_id_checkpoint: '2_38'
+      what_to_verify: Verify that the column filter settings are reset, ensuring all
+        columns are initially visible before further customization.
+    - step_id_checkpoint: '2_39'
+      what_to_verify: Verify that the 'Product Line' column is successfully hidden
+        from the 'Top Sellers' grid, and confirm that the grid re-renders without
+        this column.
+    - step_id_checkpoint: '2_40'
+      what_to_verify: Verify that the 'PID' column is successfully added to the 'Top
+        Sellers' grid, and confirm that the grid re-renders with this column visible.
+    - step_id_checkpoint: '2_41'
+      what_to_verify: Verify that the 'PID' column is successfully removed again from
+        the 'Top Sellers' grid, and confirm that the grid re-renders without this
+        column.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the final state of the 'Top Sellers' grid reflects
+        the updated column visibility settings, with 'Product Line' hidden and 'PID'
+        excluded, and that the data aligns with the applied filters.
+  ? page.get_by_role("treeitem", name="LW Retail Sales Column", exact=True).get_by_label("Press
+    SPACE to toggle").check()|page.get_by_role("treeitem", name="LW Retail Sales Column",
+    exact=True).get_by_label("Press SPACE to toggle").uncheck()|page.get_by_role("treeitem",
+    name="LY LW Retail Sales Column").get_by_label("Press SPACE to toggle visibility
+    (hidden)").check()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Excludes 'CORE'
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - PID
+          - LY LW Retail Sales
+          - League
+          - Class
+          Data: Updated to exclude rows where 'Product Line' contains 'CORE', reflecting
+            MLS merchandise sales data filtered by selected teams, location, Regular
+            Season, 'MENS' department, and 'SS TEES' class, limited to 10 rows.
+    verification_plan:
+    - step_id_checkpoint: '2_42'
+      what_to_verify: Verify that the 'LW Retail Sales' column is toggled on and appears
+        in the 'Top Sellers' grid, updating the displayed data to include last week's
+        retail sales figures for MLS merchandise.
+    - step_id_checkpoint: '2_43'
+      what_to_verify: Verify that the 'LW Retail Sales' column is toggled off and
+        removed from the 'Top Sellers' grid, ensuring the grid updates to exclude
+        last week's retail sales figures.
+    - step_id_checkpoint: '2_44'
+      what_to_verify: Verify that the 'LY LW Retail Sales' column is toggled on and
+        appears in the 'Top Sellers' grid, updating the displayed data to include
+        last year's retail sales figures for the same week for MLS merchandise.
+    - step_id_checkpoint: END
+      what_to_verify: Ensure the 'Top Sellers' grid reflects the correct column visibility
+        changes and that the data aligns with the applied filters, including the exclusion
+        of 'CORE' product lines and the focus on the 'MENS' department.
+  ? page.get_by_title("Filter").nth(3).click()|page.get_by_role("spinbutton", name="Filter
+    Value").fill("10")|page.locator(".ag-icon.ag-icon-small-down").first.click()|page.get_by_role("option",
+    name="Greater than or equal to").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Excludes 'CORE'
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - PID
+          - LY LW Retail Sales
+          - League
+          - Class
+          Data: Updated to display only rows where 'LY LW Retail Sales' is greater
+            than or equal to 10, reflecting MLS merchandise sales data filtered by
+            selected teams, location, Regular Season, 'MENS' department, and 'SS TEES'
+            class, limited to 10 rows.
+    verification_plan:
+    - step_id_checkpoint: '2_45'
+      what_to_verify: Verify that the 'Filter' dropdown is opened and the correct
+        column ('LY LW Retail Sales') is selected for filtering.
+    - step_id_checkpoint: '2_46'
+      what_to_verify: Verify that the filter value '10' is correctly entered into
+        the filter input field.
+    - step_id_checkpoint: '2_47'
+      what_to_verify: Verify that the dropdown for filter conditions is opened and
+        displays the available options.
+    - step_id_checkpoint: '2_48'
+      what_to_verify: Verify that the 'Greater than or equal to' condition is selected
+        for the filter.
+    - step_id_checkpoint: '2_49'
+      what_to_verify: Verify that the 'Apply' button is clicked and the 'Top Sellers'
+        grid updates to display only rows where 'LY LW Retail Sales' is greater than
+        or equal to 10.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the updated grid reflects the applied filter, showing
+        only rows with 'LY LW Retail Sales' values greater than or equal to 10, and
+        that the total row count is updated accordingly.
+  ? page.get_by_title("Filter").nth(3).click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Reset").click()|page.get_by_role("treeitem", name="LY LW Retail Sales Column").get_by_label("Press
+    SPACE to toggle visibility (visible)").uncheck()|page.get_by_role("treeitem",
+    name="LY to TY LW Retail % Var").get_by_label("Press SPACE to toggle visibility
+    (hidden)").check()|page.get_by_role("treeitem", name="LY to TY LW Retail % Var").get_by_label("Press
+    SPACE to toggle visibility (hidden)").uncheck()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Excludes 'CORE'
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - PID
+          - League
+          - Class
+          - LY to TY LW Retail % Var
+          Data: Updated to display only rows where 'LY LW Retail Sales' is greater
+            than or equal to 10, reflecting MLS merchandise sales data filtered by
+            selected teams, location, Regular Season, 'MENS' department, and 'SS TEES'
+            class, limited to 10 rows.
+    verification_plan:
+    - step_id_checkpoint: '2_50'
+      what_to_verify: Verify that the 'Filter' section is expanded, allowing the user
+        to interact with column visibility options.
+    - step_id_checkpoint: '2_51'
+      what_to_verify: Verify that the 'Column Filter' settings are reset, ensuring
+        all columns are visible by default.
+    - step_id_checkpoint: '2_52'
+      what_to_verify: Verify that the 'LY LW Retail Sales' column is hidden from the
+        'Top Sellers' grid and the column is unchecked in the column visibility menu.
+    - step_id_checkpoint: '2_53'
+      what_to_verify: Verify that the 'LY to TY LW Retail % Var' column is made visible
+        in the 'Top Sellers' grid and is checked in the column visibility menu.
+    - step_id_checkpoint: '2_54'
+      what_to_verify: Verify that the 'LY to TY LW Retail % Var' column is hidden
+        again from the 'Top Sellers' grid and is unchecked in the column visibility
+        menu.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'Top Sellers' grid reflects the final column
+        visibility settings, showing only the columns 'Team', 'PID', 'League', 'Class',
+        and 'LY to TY LW Retail % Var', and that the data displayed aligns with the
+        applied filters.
+  ? page.locator("#ag-937-input").check()|page.get_by_role("checkbox", name="Press
+    SPACE to toggle visibility (visible)").uncheck()|page.get_by_role("treeitem",
+    name="L2W Unit Sales Column", exact=True).get_by_label("Press SPACE to toggle").check()|page.get_by_role("checkbox",
+    name="Press SPACE to toggle visibility (visible)").uncheck()|page.get_by_role("treeitem",
+    name="LY L2W Unit Sales Column").get_by_label("Press SPACE to toggle").check()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Excludes 'CORE'
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - PID
+          - League
+          - Class
+          - LY to TY LW Retail % Var
+          - L2W Unit Sales
+          - LY L2W Unit Sales
+          Data: Updated to display only rows where 'LY LW Retail Sales' is greater
+            than or equal to 10, reflecting MLS merchandise sales data filtered by
+            selected teams, location, Regular Season, 'MENS' department, and 'SS TEES'
+            class, limited to 10 rows.
+    verification_plan:
+    - step_id_checkpoint: '2_55'
+      what_to_verify: Verify that the 'L2W Unit Sales' column is added to the 'Top
+        Sellers' grid and is visible in the updated dataset.
+    - step_id_checkpoint: '2_57'
+      what_to_verify: Verify that the 'LY L2W Unit Sales' column is added to the 'Top
+        Sellers' grid and is visible in the updated dataset.
+    - step_id_checkpoint: '2_56'
+      what_to_verify: Verify that any previously visible columns toggled off are no
+        longer displayed in the 'Top Sellers' grid.
+    - step_id_checkpoint: '2_59'
+      what_to_verify: Ensure that the grid re-renders correctly with the updated column
+        visibility and that the data reflects the applied filters, including the 'LY
+        LW Retail Sales' threshold.
+    - step_id_checkpoint: END
+      what_to_verify: Confirm that the final grid configuration aligns with the user's
+        intent to analyze unit sales trends, with the selected columns ('L2W Unit
+        Sales' and 'LY L2W Unit Sales') displayed alongside existing metrics.
+  ? page.get_by_role("treeitem", name="LY L2W Unit Sales Column").get_by_label("Press
+    SPACE to toggle").uncheck()|page.get_by_role("treeitem", name="LY L4W Unit Sales
+    Column").click()|page.get_by_title("Filter").nth(3).click()|page.get_by_role("spinbutton",
+    name="Filter Value").fill("20")|page.locator(".ag-icon.ag-icon-small-down").first.click()|page.get_by_role("option",
+    name="Greater than or equal to").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Excludes 'CORE'
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - PID
+          - League
+          - Class
+          - LY to TY LW Retail % Var
+          - L2W Unit Sales
+          - LY L2W Unit Sales
+          - LY L4W Unit Sales
+          Data: Updated to display only rows where 'LY L4W Unit Sales' is greater
+            than or equal to 20, reflecting MLS merchandise sales data filtered by
+            selected teams, location, Regular Season, 'MENS' department, and 'SS TEES'
+            class, limited to 10 rows.
+    verification_plan:
+    - step_id_checkpoint: '2_60'
+      what_to_verify: Verify that the 'LY L2W Unit Sales' column is unchecked in the
+        grid, ensuring it is no longer displayed.
+    - step_id_checkpoint: '2_61'
+      what_to_verify: Verify that the 'LY L4W Unit Sales' column is selected and added
+        to the grid for filtering.
+    - step_id_checkpoint: '2_62'
+      what_to_verify: Verify that the filter menu for the 'LY L4W Unit Sales' column
+        is opened.
+    - step_id_checkpoint: '2_63'
+      what_to_verify: Verify that the filter value '20' is correctly entered in the
+        filter input field.
+    - step_id_checkpoint: '2_65'
+      what_to_verify: Verify that the filter condition 'Greater than or equal to'
+        is selected for the 'LY L4W Unit Sales' column.
+    - step_id_checkpoint: '2_66'
+      what_to_verify: Verify that the filter is applied and the 'Top Sellers' grid
+        updates to display only rows where 'LY L4W Unit Sales' is greater than or
+        equal to 20.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the grid reflects the updated data, showing only
+        the top 10 rows of MLS merchandise sales data filtered by the specified criteria,
+        and confirm that the column headers and data align with the applied filters.
+  ? page.get_by_title("Filter").nth(3).click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Reset").click()|page.get_by_role("checkbox", name="Press SPACE to toggle
+    visibility (visible)").uncheck()|page.locator("#ag-955-input").check()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Excludes 'CORE'
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - PID
+          - League
+          - Class
+          - LY to TY LW Retail % Var
+          - L2W Unit Sales
+          - LY L2W Unit Sales
+          - LY L4W Unit Sales
+          Data: Updated to display only rows where 'LY L4W Unit Sales' is greater
+            than or equal to 20, reflecting MLS merchandise sales data filtered by
+            selected teams, location, Regular Season, 'MENS' department, and 'SS TEES'
+            class, limited to 10 rows.
+    verification_plan:
+    - step_id_checkpoint: '2_67'
+      what_to_verify: Verify that the 'Filter' section is expanded, allowing the user
+        to interact with column filters.
+    - step_id_checkpoint: '2_68'
+      what_to_verify: Verify that all column filters are reset, ensuring no pre-existing
+        filters are applied to the 'Top Sellers' grid.
+    - step_id_checkpoint: '2_69'
+      what_to_verify: Verify that the visibility of the selected column ('LY L4W Unit
+        Sales') is toggled off, removing it from the grid display.
+    - step_id_checkpoint: '2_70'
+      what_to_verify: Verify that the visibility of the 'L2W Unit Sales' column is
+        toggled on, ensuring it is displayed in the grid.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'Top Sellers' grid updates to reflect the new
+        column visibility settings and displays data filtered by the applied criteria,
+        including 'LY L4W Unit Sales' >= 20 and other active filters.
+  ? page.get_by_title("Filter").nth(3).click()|page.get_by_role("spinbutton", name="Filter
+    Value").fill("200")|page.locator(".ag-icon.ag-icon-small-down").first.click()|page.get_by_role("option",
+    name="Less than or equal to").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Excludes 'CORE'
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - PID
+          - League
+          - Class
+          - LY to TY LW Retail % Var
+          - L2W Unit Sales
+          - LY L2W Unit Sales
+          - LY L4W Unit Sales
+          Data: Updated to display only rows where 'LY L4W Unit Sales' is less than
+            or equal to 200, reflecting MLS merchandise sales data filtered by selected
+            teams, location, Regular Season, 'MENS' department, and 'SS TEES' class,
+            limited to 10 rows.
+    verification_plan:
+    - step_id_checkpoint: '2_71'
+      what_to_verify: Verify that the 'Filter' section is expanded, and the user can
+        interact with the column filter options.
+    - step_id_checkpoint: '2_72'
+      what_to_verify: Verify that the value '200' is correctly entered into the filter
+        input field for 'LY L4W Unit Sales'.
+    - step_id_checkpoint: '2_74'
+      what_to_verify: Verify that the filter condition 'Less than or equal to' is
+        selected for the 'LY L4W Unit Sales' column.
+    - step_id_checkpoint: '2_75'
+      what_to_verify: Verify that the 'Apply' button successfully applies the filter,
+        and the 'Top Sellers' grid updates to display only rows where 'LY L4W Unit
+        Sales' is less than or equal to 200.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the grid data reflects the applied filter, showing
+        only rows with 'LY L4W Unit Sales' <= 200, and confirm that the dataset aligns
+        with the selected filters in the 'Filter Section'.
+  ? page.get_by_title("Filter").nth(3).click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Reset").click()|page.get_by_role("checkbox", name="Press SPACE to toggle
+    visibility (visible)").uncheck()|page.get_by_role("treeitem", name="+ PIDS Column").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Excludes 'CORE'
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - PID
+          - League
+          - Class
+          - LY to TY LW Retail % Var
+          - L2W Unit Sales
+          - LY L2W Unit Sales
+          - LY L4W Unit Sales
+          Data: Updated to display only rows where 'LY L4W Unit Sales' is less than
+            or equal to 200, reflecting MLS merchandise sales data filtered by selected
+            teams, location, Regular Season, 'MENS' department, and 'SS TEES' class,
+            limited to 10 rows.
+    verification_plan:
+    - step_id_checkpoint: '2_76'
+      what_to_verify: Verify that the 'Filter' section is expanded, allowing the user
+        to interact with filter options.
+    - step_id_checkpoint: '2_77'
+      what_to_verify: Verify that all column filters in the 'Top Sellers' grid are
+        reset, ensuring no pre-applied filters affect the displayed data.
+    - step_id_checkpoint: '2_78'
+      what_to_verify: Verify that the visibility of the specified column is toggled
+        off, ensuring it is no longer displayed in the 'Top Sellers' grid.
+    - step_id_checkpoint: '2_79'
+      what_to_verify: Verify that the '+ PIDS Column' is added to the 'Top Sellers'
+        grid, ensuring the grid updates to include this column.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'Top Sellers' grid reflects the updated column
+        visibility and includes the '+ PIDS Column,' while maintaining the applied
+        data filters for MLS merchandise sales.
+  ? page.get_by_title("Filter").nth(3).click()|page.get_by_role("spinbutton", name="Filter
+    Value").fill("1")|page.get_by_label("Column Filter").get_by_role("button", name="Apply").click()|page.get_by_title("Filter").nth(3).click()|page.get_by_label("Column
+    Filter").get_by_role("button", name="Reset").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Excludes 'CORE'
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - PID
+          - League
+          - Class
+          - LY to TY LW Retail % Var
+          - L2W Unit Sales
+          - LY L2W Unit Sales
+          - LY L4W Unit Sales
+          Data: Updated to display only rows where 'LY L4W Unit Sales' is less than
+            or equal to 200, reflecting MLS merchandise sales data filtered by selected
+            teams, location, Regular Season, 'MENS' department, and 'SS TEES' class,
+            limited to 10 rows.
+    verification_plan:
+    - step_id_checkpoint: '2_80'
+      what_to_verify: Verify that the column filter interface is opened for the 'LY
+        L4W Unit Sales' column, allowing the user to input a threshold value.
+    - step_id_checkpoint: '2_81'
+      what_to_verify: Verify that the threshold value '1' is correctly entered into
+        the filter input field for 'LY L4W Unit Sales'.
+    - step_id_checkpoint: '2_82'
+      what_to_verify: Verify that the 'Apply' button successfully applies the filter,
+        updating the 'Top Sellers' grid to display only rows where 'LY L4W Unit Sales'
+        is less than or equal to 1.
+    - step_id_checkpoint: '2_83'
+      what_to_verify: Verify that the column filter interface is reopened for the
+        'LY L4W Unit Sales' column, allowing the user to reset the filter.
+    - step_id_checkpoint: '2_84'
+      what_to_verify: Verify that the 'Reset' button successfully clears the filter,
+        restoring the 'Top Sellers' grid to its default state, displaying all rows
+        without the 'LY L4W Unit Sales' filter applied.
+  ? page.get_by_role("checkbox", name="Press SPACE to toggle visibility (visible)").uncheck()|page.locator("#ag-1794-input").check()|page.get_by_title("Filter").nth(3).click()|page.get_by_role("spinbutton",
+    name="Filter Value").fill("0")|page.locator(".ag-icon.ag-icon-small-down").first.click()|page.get_by_role("option",
+    name="Does not equal").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Excludes 'CORE'
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - PID
+          - League
+          - Class
+          - LY to TY LW Retail % Var
+          - L2W Unit Sales
+          - LY L2W Unit Sales
+          - LY L4W Unit Sales
+          Data: Updated to display only rows where 'LY L4W Unit Sales' is greater
+            than 0, reflecting MLS merchandise sales data filtered by selected teams,
+            location, Regular Season, 'MENS' department, and 'SS TEES' class, limited
+            to 10 rows.
+    verification_plan:
+    - step_id_checkpoint: '2_85'
+      what_to_verify: Verify that the visibility toggle for the relevant column filter
+        is unchecked, ensuring the filter is active.
+    - step_id_checkpoint: '2_86'
+      what_to_verify: Verify that the checkbox for the 'LY L4W Unit Sales' column
+        filter is checked, enabling filtering on this column.
+    - step_id_checkpoint: '2_87'
+      what_to_verify: Verify that the filter dropdown for 'LY L4W Unit Sales' is opened,
+        allowing the user to configure the filter condition.
+    - step_id_checkpoint: '2_88'
+      what_to_verify: Verify that the filter value is set to '0', establishing the
+        baseline for the filter condition.
+    - step_id_checkpoint: '2_90'
+      what_to_verify: Verify that the filter condition is set to 'Does not equal',
+        ensuring rows with 'LY L4W Unit Sales' equal to 0 are excluded.
+    - step_id_checkpoint: '2_91'
+      what_to_verify: Verify that the 'Apply' button is clicked, and the 'Top Sellers'
+        grid updates to exclude rows where 'LY L4W Unit Sales' equals 0, displaying
+        only products with measurable sales performance.
+  ? page.get_by_title("Filter").nth(3).click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Reset").click()|page.get_by_role("checkbox", name="Press SPACE to toggle
+    visibility (visible)").uncheck()|page.locator("#ag-2449-input").check()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Excludes 'CORE'
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - PID
+          - League
+          - Class
+          - LY to TY LW Retail % Var
+          - L2W Unit Sales
+          - LY L2W Unit Sales
+          - LY L4W Unit Sales
+          Data: Updated to display only rows where 'LY L4W Unit Sales' is greater
+            than 0, reflecting MLS merchandise sales data filtered by selected teams,
+            location, Regular Season, 'MENS' department, and 'SS TEES' class, limited
+            to 10 rows.
+    verification_plan:
+    - step_id_checkpoint: '2_92'
+      what_to_verify: Verify that the 'Filter' section is expanded, allowing the user
+        to interact with the column visibility options.
+    - step_id_checkpoint: '2_93'
+      what_to_verify: Verify that the column filter is reset, and all columns are
+        visible in the 'Top Sellers' grid.
+    - step_id_checkpoint: '2_94'
+      what_to_verify: Verify that the specified column is hidden from the 'Top Sellers'
+        grid, and the grid re-renders to exclude this column from the displayed data.
+    - step_id_checkpoint: '2_95'
+      what_to_verify: Verify that the selected column is made visible in the 'Top
+        Sellers' grid, and the grid re-renders to include this column in the displayed
+        data.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'Top Sellers' grid reflects the updated column
+        visibility settings, ensuring the displayed data aligns with the user's selections
+        and supports analysis of MLS merchandise sales trends.
+  ? page.get_by_title("Filter").nth(3).click()|page.get_by_role("spinbutton", name="Filter
+    Value").fill("100")|page.locator(".ag-icon.ag-icon-small-down").first.click()|page.get_by_role("option",
+    name="Greater than or equal to").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Excludes 'CORE'
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - PID
+          - League
+          - Class
+          - LY to TY LW Retail % Var
+          - L2W Unit Sales
+          - LY L2W Unit Sales
+          - LY L4W Unit Sales
+          Data: Updated to display only rows where 'LY L4W Unit Sales' is greater
+            than or equal to 100, reflecting MLS merchandise sales data filtered by
+            selected teams, location, Regular Season, 'MENS' department, and 'SS TEES'
+            class, limited to 10 rows.
+    verification_plan:
+    - step_id_checkpoint: '2_96'
+      what_to_verify: Verify that the 'Filter' dropdown is opened and the correct
+        column ('LY L4W Unit Sales') is selected for filtering.
+    - step_id_checkpoint: '2_97'
+      what_to_verify: Verify that the filter value '100' is correctly entered in the
+        spinbutton for the 'LY L4W Unit Sales' column.
+    - step_id_checkpoint: '2_98'
+      what_to_verify: Verify that the dropdown for filter conditions is opened, allowing
+        the user to select a condition.
+    - step_id_checkpoint: '2_99'
+      what_to_verify: Verify that the 'Greater than or equal to' condition is selected
+        for the 'LY L4W Unit Sales' column.
+    - step_id_checkpoint: '2_100'
+      what_to_verify: Verify that the 'Apply' button is clicked and the Top Sellers
+        grid is updated to display only rows where 'LY L4W Unit Sales' is greater
+        than or equal to 100, reflecting the applied filter.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Top Sellers grid now displays the filtered data,
+        with only rows meeting the condition ('LY L4W Unit Sales' >= 100) and that
+        the grid is limited to 10 rows.
+  ? page.get_by_title("Filter").nth(3).click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Reset").click()|page.get_by_role("checkbox", name="Press SPACE to toggle
+    visibility (visible)").uncheck()|page.get_by_role("treeitem", name="Over/Under
+    Column").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Excludes 'CORE'
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - PID
+          - League
+          - Class
+          - LY to TY LW Retail % Var
+          - L2W Unit Sales
+          - LY L2W Unit Sales
+          - LY L4W Unit Sales
+          - Over/Under
+          Data: Updated to display only rows where 'LY L4W Unit Sales' is greater
+            than or equal to 100, reflecting MLS merchandise sales data filtered by
+            selected teams, location, Regular Season, 'MENS' department, and 'SS TEES'
+            class, limited to 10 rows.
+    verification_plan:
+    - step_id_checkpoint: '2_101'
+      what_to_verify: Verify that the 'Filter' section is expanded, allowing the user
+        to interact with the available filtering options.
+    - step_id_checkpoint: '2_102'
+      what_to_verify: Verify that all column filters in the 'Top Sellers' grid are
+        reset, and the grid displays data without any column-specific filters applied.
+    - step_id_checkpoint: '2_103'
+      what_to_verify: Verify that the selected column is hidden from the 'Top Sellers'
+        grid and the grid layout is updated accordingly.
+    - step_id_checkpoint: '2_104'
+      what_to_verify: Verify that the 'Over/Under' column is added to the 'Top Sellers'
+        grid, and the grid re-renders to include this column while maintaining the
+        applied filters.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'Top Sellers' grid displays the updated data,
+        reflecting the applied filters and column adjustments, with accurate metrics
+        for MLS merchandise sales.
+  ? page.get_by_title("Filter").nth(3).click()|page.get_by_role("spinbutton", name="Filter
+    Value").fill("75")|page.locator(".ag-icon.ag-icon-small-down").first.click()|page.get_by_role("option",
+    name="Does not equal").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Excludes 'CORE'
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - PID
+          - League
+          - Class
+          - LY to TY LW Retail % Var
+          - L2W Unit Sales
+          - LY L2W Unit Sales
+          - LY L4W Unit Sales
+          - Over/Under
+          Data: Updated to exclude rows where 'Avg Unit Sales per GM L4W' equals 75,
+            reflecting MLS merchandise sales data filtered by selected teams, location,
+            Regular Season, 'MENS' department, and 'SS TEES' class, limited to 10
+            rows.
+    verification_plan:
+    - step_id_checkpoint: '2_105'
+      what_to_verify: Verify that the filter dropdown is opened, allowing the user
+        to select a column for filtering.
+    - step_id_checkpoint: '2_106'
+      what_to_verify: Verify that the value '75' is correctly entered into the filter
+        input field for the selected column.
+    - step_id_checkpoint: '2_107'
+      what_to_verify: Verify that the filter condition dropdown is opened, allowing
+        the user to select a condition for the filter.
+    - step_id_checkpoint: '2_108'
+      what_to_verify: Verify that the 'Does not equal' condition is selected for the
+        filter.
+    - step_id_checkpoint: '2_109'
+      what_to_verify: Verify that the filter is applied, and the Top Sellers grid
+        updates to exclude rows where 'Avg Unit Sales per GM L4W' equals 75. Confirm
+        that the grid reflects the updated data and maintains the applied filters
+        for MLS merchandise sales.
+  ? page.get_by_title("Filter").nth(3).click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Reset").click()|page.get_by_role("treeitem", name="In Stock % Column").click()|page.get_by_role("treeitem",
+    name="In Stock Weighted % Column").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Excludes 'CORE'
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - PID
+          - League
+          - Class
+          - LY to TY LW Retail % Var
+          - L2W Unit Sales
+          - LY L2W Unit Sales
+          - LY L4W Unit Sales
+          - Over/Under
+          - In Stock %
+          - In Stock Weighted %
+          Data: Updated to exclude rows where 'Avg Unit Sales per GM L4W' equals 75,
+            reflecting MLS merchandise sales data filtered by selected teams, location,
+            Regular Season, 'MENS' department, and 'SS TEES' class, limited to 10
+            rows.
+    verification_plan:
+    - step_id_checkpoint: '2_110'
+      what_to_verify: Verify that the 'Filter' section is expanded, allowing the user
+        to interact with column filter options.
+    - step_id_checkpoint: '2_111'
+      what_to_verify: Verify that all previously applied column filters are cleared,
+        and the grid reflects the default column settings.
+    - step_id_checkpoint: '2_112'
+      what_to_verify: Verify that the 'In Stock %' column is added to the 'Top Sellers'
+        grid and is visible in the column headers.
+    - step_id_checkpoint: '2_113'
+      what_to_verify: Verify that the 'In Stock Weighted %' column is added to the
+        'Top Sellers' grid and is visible in the column headers.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'Top Sellers' grid re-renders to include the
+        'In Stock %' and 'In Stock Weighted %' columns, and the data reflects the
+        current filter settings for MLS merchandise.
+  ? page.locator(".pointer.zeb-adjustments").click()|page.get_by_text("Save Preference").click()|page.locator(".icon-color-toolbar-active.zeb-download-underline").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Excludes 'CORE'
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - PID
+          - League
+          - Class
+          - LY to TY LW Retail % Var
+          - L2W Unit Sales
+          - LY L2W Unit Sales
+          - LY L4W Unit Sales
+          - Over/Under
+          - In Stock %
+          - In Stock Weighted %
+          Data: Updated to exclude rows where 'Avg Unit Sales per GM L4W' equals 75,
+            reflecting MLS merchandise sales data filtered by selected teams, location,
+            Regular Season, 'MENS' department, and 'SS TEES' class, limited to 10
+            rows.
+    verification_plan:
+    - step_id_checkpoint: '2_114'
+      what_to_verify: Verify that the filter adjustments (e.g., excluding 'CORE' product
+        line and filtering by 'MENS' department) are correctly applied to the dataset,
+        and the Top Sellers grid reflects the updated data.
+    - step_id_checkpoint: '2_115'
+      what_to_verify: Verify that the 'Save Preference' action stores the current
+        filter configuration, ensuring it can be reused in future sessions.
+    - step_id_checkpoint: '2_116'
+      what_to_verify: Verify that the download action generates a file containing
+        the filtered dataset, ensuring it matches the current grid view and includes
+        the selected columns.
+  ? page.locator("div").filter(has_text="Loading...").nth(5).click()|page.locator("a").filter(has_text="2").click()|page.get_by_role("treegrid").get_by_text("League").click()|page.get_by_text("Over/Under").click()|page.get_by_text("In
+    Stock %").click()|page.get_by_text("Over/Under").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Excludes 'CORE'
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - PID
+          - League
+          - Class
+          - LY to TY LW Retail % Var
+          - L2W Unit Sales
+          - LY L2W Unit Sales
+          - LY L4W Unit Sales
+          - Over/Under
+          - In Stock %
+          - In Stock Weighted %
+          Data: Updated to exclude rows where 'Avg Unit Sales per GM L4W' equals 75,
+            reflecting MLS merchandise sales data filtered by selected teams, location,
+            Regular Season, 'MENS' department, and 'SS TEES' class, limited to 10
+            rows.
+    verification_plan:
+    - step_id_checkpoint: '2_117'
+      what_to_verify: Verify that the 'Loading...' indicator is clicked and the grid
+        begins to refresh, indicating that the data is being updated based on the
+        applied filters.
+    - step_id_checkpoint: '2_118'
+      what_to_verify: Verify that clicking on '2' navigates to the second page of
+        the 'Top Sellers' grid, displaying the next set of filtered data.
+    - step_id_checkpoint: '2_119'
+      what_to_verify: Verify that clicking on 'League' sorts the grid data by the
+        'League' column, either in ascending or descending order, and updates the
+        displayed rows accordingly.
+    - step_id_checkpoint: '2_120'
+      what_to_verify: Verify that clicking on 'Over/Under' sorts the grid data by
+        the 'Over/Under' column, updating the displayed rows to reflect the new order.
+    - step_id_checkpoint: '2_121'
+      what_to_verify: Verify that clicking on 'In Stock %' sorts the grid data by
+        the 'In Stock %' column, updating the displayed rows to reflect the new order.
+    - step_id_checkpoint: '2_122'
+      what_to_verify: Verify that clicking on 'Over/Under' again toggles the sorting
+        order for the 'Over/Under' column and updates the displayed rows accordingly.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'Top Sellers' grid reflects the correct data
+        for MLS merchandise filtered by selected teams, location, Regular Season,
+        'MENS' department, and 'SS TEES' class, with the applied sorting on the selected
+        columns.
+  ? page.locator("a").filter(has_text="3").click()|page.locator("a").filter(has_text="...").click()|page.get_by_role("tooltip",
+    name="Go to").get_by_role("textbox").click()|page.get_by_role("tooltip", name="Go
+    to").get_by_role("textbox").fill("100")|page.get_by_role("tooltip", name="Go to").get_by_role("textbox").press("Enter")
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Excludes 'CORE'
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - PID
+          - League
+          - Class
+          - LY to TY LW Retail % Var
+          - L2W Unit Sales
+          - LY L2W Unit Sales
+          - LY L4W Unit Sales
+          - Over/Under
+          - In Stock %
+          - In Stock Weighted %
+          Data: Updated to display rows from page 100, reflecting MLS merchandise
+            sales data filtered by selected teams, location, Regular Season, 'MENS'
+            department, and 'SS TEES' class, limited to 10 rows.
+    verification_plan:
+    - step_id_checkpoint: '2_123'
+      what_to_verify: Verify that the pagination control highlights page 3 after clicking
+        the corresponding link, indicating the user is on page 3 of the 'Top Sellers'
+        grid.
+    - step_id_checkpoint: '2_124'
+      what_to_verify: Verify that the '...' pagination link expands to show additional
+        page numbers, allowing navigation to higher-numbered pages.
+    - step_id_checkpoint: '2_125'
+      what_to_verify: Verify that the 'Go to' textbox is activated and ready for input
+        after being clicked.
+    - step_id_checkpoint: '2_126'
+      what_to_verify: Verify that the 'Go to' textbox correctly accepts the input
+        '100' and displays it without truncation or errors.
+    - step_id_checkpoint: '2_127'
+      what_to_verify: Verify that pressing 'Enter' in the 'Go to' textbox navigates
+        the user to page 100 of the 'Top Sellers' grid, updating the displayed data
+        to reflect the correct rows for the applied filters.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'Top Sellers' grid displays rows corresponding
+        to page 100, reflecting MLS merchandise sales data filtered by selected teams,
+        location, Regular Season, 'MENS' department, and 'SS TEES' class, limited
+        to 10 rows.
+  ? page.locator(".d-flex > esp-multiselect-dropdown > .multiselect-dropdown > div
+    > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator("div").filter(has_text=re.compile(r"^View
+    20 row\(s\)$")).nth(1).click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Excludes 'CORE'
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - PID
+          - League
+          - Class
+          - LY to TY LW Retail % Var
+          - L2W Unit Sales
+          - LY L2W Unit Sales
+          - LY L4W Unit Sales
+          - Over/Under
+          - In Stock %
+          - In Stock Weighted %
+          Data: Updated to display rows from page 100, reflecting MLS merchandise
+            sales data filtered by selected teams, location, Regular Season, 'MENS'
+            department, and 'SS TEES' class, limited to 20 rows.
+    verification_plan:
+    - step_id_checkpoint: '2_128'
+      what_to_verify: Verify that the dropdown for 'Rows per page' is successfully
+        opened, allowing the user to select a new row count.
+    - step_id_checkpoint: '2_129'
+      what_to_verify: Verify that the 'Top Sellers' grid updates to display 20 rows
+        of data, reflecting the current filter criteria (MLS merchandise, selected
+        teams, location, Regular Season, 'MENS' department, and 'SS TEES' class).
+    - step_id_checkpoint: END
+      what_to_verify: Ensure that pagination controls are updated to reflect the new
+        row count (e.g., total pages recalculated based on 20 rows per page), and
+        confirm that the data displayed in the grid remains consistent with the applied
+        filters.
+  ? "page.locator(\".pointer.zeb-adjustments\").click()|page.get_by_role(\"button\"\
+    , name=\"\uE0BFcolumns\").click()|page.get_by_role(\"checkbox\", name=\"Toggle\
+    \ All Columns Visibility\").check()|page.get_by_role(\"button\", name=\"\uE0BF\
+    columns\").click()"
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Excludes 'CORE'
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - PID
+          - League
+          - Class
+          - LY to TY LW Retail % Var
+          - L2W Unit Sales
+          - LY L2W Unit Sales
+          - LY L4W Unit Sales
+          - Over/Under
+          - In Stock %
+          - In Stock Weighted %
+          - Additional Columns (e.g., OO Retail, OO Units, OH Retail, OH Units, etc.)
+          Data: Updated to display rows from page 100, reflecting MLS merchandise
+            sales data filtered by selected teams, location, Regular Season, 'MENS'
+            department, and 'SS TEES' class, with all columns visible.
+    verification_plan:
+    - step_id_checkpoint: '2_130'
+      what_to_verify: Verify that the 'Columns' menu is opened, allowing the user
+        to toggle column visibility.
+    - step_id_checkpoint: '2_131'
+      what_to_verify: Verify that the 'Toggle All Columns Visibility' checkbox is
+        visible and actionable.
+    - step_id_checkpoint: '2_132'
+      what_to_verify: Verify that all columns in the 'Top Sellers' grid are toggled
+        to visible, ensuring the grid now displays all available data fields.
+    - step_id_checkpoint: '2_133'
+      what_to_verify: Verify that the 'Columns' menu is closed after toggling column
+        visibility, and the grid reflects the updated column visibility.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'Top Sellers' grid now displays all columns,
+        including additional data fields such as 'OO Retail', 'OO Units', 'OH Retail',
+        and 'OH Units', and that the data aligns with the applied filters for MLS
+        merchandise sales.
+  page.locator(".pointer.zeb-adjustments").click()|page.get_by_text("Save Preference").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        Filter_Section:
+          Product: MLS
+          Game Day: All Days
+          Location: Selected Location
+          Season Type: Regular Season
+          Team: Selected Teams
+          Department: MENS
+          Product Line: Excludes 'CORE'
+        Top_Sellers_Grid:
+          Columns:
+          - Team
+          - PID
+          - League
+          - Class
+          - LY to TY LW Retail % Var
+          - L2W Unit Sales
+          - LY L2W Unit Sales
+          - LY L4W Unit Sales
+          - Over/Under
+          - In Stock %
+          - In Stock Weighted %
+          - Additional Columns (e.g., OO Retail, OO Units, OH Retail, OH Units, etc.)
+          Data: Updated to display rows from page 100, reflecting MLS merchandise
+            sales data filtered by selected teams, location, Regular Season, 'MENS'
+            department, and 'SS TEES' class, with all columns visible.
+    verification_plan:
+    - step_id_checkpoint: '2_134'
+      what_to_verify: Verify that clicking the '.pointer.zeb-adjustments' element
+        opens the filter adjustment modal, allowing the user to review or modify the
+        applied filters.
+    - step_id_checkpoint: '2_135'
+      what_to_verify: Verify that clicking 'Save Preference' successfully saves the
+        current filter configuration, ensuring that the applied filters (e.g., MLS
+        product, selected teams, location, Regular Season, 'MENS' department, and
+        'SS TEES' class) are retained for future sessions.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Top Sellers grid remains consistent with the
+        applied filters after saving preferences, and confirm that the saved preferences
+        are reflected in the filter summary or upon reloading the page.
+global_rules: []
+global_domain_context: This dashboard appears to be part of a demand forecasting and
+  sales analysis tool for retail products, specifically focusing on MLB (Major League
+  Baseball) merchandise. The "Top Sellers" section displays data on high-performing
+  products, categorized by team, product line, and product ID (PID), along with metrics
+  like retail sales. Filters allow users to refine the data by game day, location,
+  and season type, enabling targeted analysis of sales trends. The tool is likely
+  used by retailers or suppliers to optimize inventory, track demand, and identify
+  best-selling products across different contexts.

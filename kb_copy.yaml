@@ -1,0 +1,1023 @@
+workflow_meta:
+  name: Auto-Generated UI Workflow
+  status: PENDING_DISCOVERY
+global_context:
+  page_description: To be populated by AI Scholar...
+  known_quirks: ''
+sections:
+- section_name: Global Filters
+  section_goal: ''
+  section_verification:
+    ai_understanding: ''
+    human_assertions: []
+  steps:
+  - step_id: '1_1'
+    raw_code: page.locator(".zeb-filter").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_1_before.png
+      intent: baselines/step_1_1_intent.png
+      after: baselines/step_1_1_after.png
+    human_assertions:
+    - ensure that the filters side panel opens on the left, there should be three
+      sections in the side panel - Product, Location and Customer
+    naive_agent_verification:
+      predicted_outcome: 'When the automation script executes the action `page.locator(".zeb-filter").click()`,
+        the following visual outcome is expected:
+
+
+        1. **Filter Panel Expansion**: The filter panel (currently collapsed or inactive)
+        will expand or become active. This is indicated by the filter icon (highlighted
+        in green) being clicked.
+
+        2. **Additional Filter Options**: New filter options or controls may appear
+        below the "Filter" section, allowing the user to refine the data displayed
+        in the "Alerts Summary" table.
+
+        3. **UI Focus Shift**: The focus of the UI may shift to the filter panel,
+        potentially highlighting it or making it more prominent.
+
+
+        This action is typically used to allow users to apply or modify filters for
+        the data displayed in the table.'
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: NONE
+      description: The filter panel has expanded, additional filter options are visible,
+        and the UI focus appears to have shifted to the filter panel as expected.
+  - step_id: '1_2'
+    raw_code: page.locator("div").filter(has_text=re.compile(r"^Hierarchy$")).nth(2).click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_2_before.png
+      intent: baselines/step_1_2_intent.png
+      after: baselines/step_1_2_after.png
+    human_assertions:
+    - Upon Expanding Hierarchy, There Should be Different Brand Levels visible under
+      Hierarchy. Example - Brand Level 4, Brand Level 3, etc. Ensure they exist.
+    naive_agent_verification:
+      predicted_outcome: 'The automation script is targeting the third instance of
+        a `div` element containing the text "Hierarchy" (as indicated by `nth(2)`,
+        which is zero-based indexing). When the script executes the `.click()` action,
+        the following visual change is expected:
+
+
+        1. **Expansion of the "Hierarchy" Section**: The "Hierarchy" section (the
+        third instance) will expand, revealing additional options or content nested
+        under it. This is a common behavior for collapsible/expandable UI elements.
+
+
+        2. **Change in the "+" Icon**: The "+" icon next to "Hierarchy" may change
+        to a "-" icon, indicating that the section is now expanded and can be collapsed
+        again.
+
+
+        No other parts of the UI should change unless the expanded content triggers
+        additional updates elsewhere.'
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: NONE
+      description: The third instance of the 'Hierarchy' section has expanded successfully,
+        revealing additional nested options (Brand Level 4, Brand Level 3, Brand Level
+        2). The '+' icon has changed to a '-' icon, indicating the section is now
+        expanded. No unexpected changes are observed elsewhere in the UI.
+  - step_id: '1_3'
+    raw_code: page.get_by_text("Brand Level 3").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_3_before.png
+      intent: baselines/step_1_3_intent.png
+      after: baselines/step_1_3_after.png
+    naive_agent_verification:
+      predicted_outcome: "When the automation script executes the action `page.get_by_text(\"\
+        Brand Level 3\").click()`, the following visual changes are expected in the\
+        \ UI:\n\n1. **Selection Highlight**: The \"Brand Level 3\" item in the \"\
+        Hierarchy\" section will be visually highlighted to indicate it has been selected.\
+        \ This could involve a change in background color, text color, or the addition\
+        \ of a checkmark or similar indicator.\n\n2. **Filter Update**: The selection\
+        \ of \"Brand Level 3\" may trigger an update to the filters applied to the\
+        \ data. This could result in:\n   - Changes to the \"Alerts Summary\" table\
+        \ on the right, where the data displayed will be filtered based on the \"\
+        Brand Level 3\" selection.\n   - Updates to any other dependent UI elements\
+        \ that rely on the selected hierarchy level.\n\n3. **Apply Filters Button\
+        \ State**: If the \"Apply Filters\" button is not already active, it may become\
+        \ enabled (if it was previously disabled) to allow the user to confirm and\
+        \ apply the selection.\n\n4. **Aggregate Values Checkbox**: The state of the\
+        \ \"Aggregate Values\" checkbox may remain unchanged unless the selection\
+        \ of \"Brand Level 3\" is designed to automatically toggle it.\n\nThese changes\
+        \ depend on the specific implementation of the application, but the above\
+        \ are typical behaviors for such interactions."
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: FALSE_POSITIVE_RESOLVED
+      description: 'Human overridden: The action here is clicking on "Brand Level
+        3". When the user performs this action, you will see a dropdown expand of
+        Different Brands like "ABO COUNTRY" or "ABO KETO BREAD". The exact Brands
+        are subject to change, but they will be easily identifiable. Apart from this,
+        you will see a checkbox beside each Brand in the dropdown. These boxes may
+        be ticked, this is indicated by filling the box with blue color and a checkmark,
+        or the boxes may be blank, indicating that the Brans is not selected. You
+        will also see a "Select All" option right below "Brand Level 3". This is the
+        main change in the UI. DO NOT expect other visual highlights, change in the
+        background color, etc. This action PURELY opens up the Brand Level 3 for users
+        to select products within Brand Level 3.'
+  - step_id: '1_4'
+    raw_code: page.get_by_text("Brand Level 4").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_4_before.png
+      intent: baselines/step_1_4_intent.png
+      after: baselines/step_1_4_after.png
+    human_assertions:
+    - 'Upon Clicking on Brand Level 4, ensure you see a list of brands expand. Example:
+      ARNOLD-BRWNBRY OROWT or ARTESANO. Exact names may vary, but ensure they exist.
+      Also note the checkboxes for each brand name.'
+    naive_agent_verification:
+      predicted_outcome: 'When the automation script executes the action `page.get_by_text("Brand
+        Level 4").click()`, the following visual changes should occur in the UI:
+
+
+        1. **Expansion of "Brand Level 4"**: The "Brand Level 4" item in the hierarchy
+        will expand, revealing its child elements (if any exist). These child elements
+        will likely appear indented below "Brand Level 4" in the hierarchy.
+
+
+        2. **State Change Indicator**: The arrow or icon next to "Brand Level 4" (if
+        present) may change to indicate that the item is now expanded (e.g., from
+        a right-facing arrow to a downward-facing arrow).
+
+
+        No other sections of the UI should be affected unless additional actions are
+        triggered by this click.'
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: NONE
+      description: The 'Brand Level 4' item expanded successfully, revealing its child
+        elements ('Select All' and 'ARNOLD-BRWNBRY-OROWT'). The state change indicator
+        (arrow or icon) is not visible in the screenshot, but the expansion behavior
+        is evident. No unexpected changes are observed in other sections of the UI.
+  - step_id: '1_5'
+    raw_code: page.get_by_text("Brand Level 4 28 selected").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_5_before.png
+      intent: baselines/step_1_5_intent.png
+      after: baselines/step_1_5_after.png
+    naive_agent_verification:
+      predicted_outcome: 'When the automation script executes `page.get_by_text("Brand
+        Level 4 28 selected").click()`, the following visual changes are expected
+        in the UI:
+
+
+        1. **Dropdown Expansion**: The "Brand Level 4" section will expand or toggle
+        open, revealing additional options or items under this hierarchy. This is
+        likely because the text "28 selected" suggests a multi-select dropdown or
+        list.
+
+
+        2. **Visibility of Options**: The currently selected items (28 in total) or
+        a list of all available options under "Brand Level 4" will become visible.
+        This may include checkboxes or other selection elements.
+
+
+        3. **Highlighting or Focus**: The clicked element ("Brand Level 4 28 selected")
+        may visually indicate that it has been interacted with, such as through a
+        change in background color, border, or other styling.
+
+
+        No other parts of the UI (e.g., the "Alerts Summary" or "Apply Filters" sections)
+        should be affected by this action unless explicitly tied to the dropdown''s
+        behavior.'
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: FALSE_POSITIVE_RESOLVED
+      description: 'Human overridden: This Particular action does not expand "Brand
+        Level 4", instead it closes Brand Level 4. This allows the user to focus on
+        the other Brand Levels without cluttering the screen. The closing of Brand
+        Level 4 is the MAIN ACTION in this exact step. THere should NOT BE any other
+        visible change in the UI.'
+  - step_id: '1_6'
+    raw_code: page.locator("div:nth-child(3) > esp-filter-sub-accordion-v1 > .sub-accordion-element
+      > .d-flex").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_6_before.png
+      intent: baselines/step_1_6_intent.png
+      after: baselines/step_1_6_after.png
+    human_assertions:
+    - Upon Clicking on Brand Level 3, ensure that you see different Sub-Brands like
+      ABO COUNTRY or ABO KETO BREAD. Exact names may vary but ensure they exist.
+    naive_agent_verification:
+      predicted_outcome: "When the automation script executes the action `page.locator(\"\
+        div:nth-child(3) > esp-filter-sub-accordion-v1 > .sub-accordion-element >\
+        \ .d-flex\").click()`, the following visual change should occur on the UI:\n\
+        \n- The \"Brand Level 3\" section in the \"Hierarchy\" panel (highlighted\
+        \ in the screenshot) will expand or collapse, depending on its current state:\n\
+        \  - If it is currently collapsed, clicking will expand it, revealing its\
+        \ child elements or subcategories.\n  - If it is currently expanded, clicking\
+        \ will collapse it, hiding its child elements or subcategories.\n\nThis behavior\
+        \ is typical for accordion-style UI components."
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: FALSE_POSITIVE_RESOLVED
+      description: 'Human overridden: This Particular action clicks on "Brand Level
+        3" to expand it. Observe closely and notice that the "Select All" option is
+        now visible under Brand Level 3. This proves that Brand Level 3 was indeed
+        expanded as expected.'
+  - step_id: '1_7'
+    raw_code: page.locator("div").filter(has_text=re.compile(r"^Attribute$")).nth(2).click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_7_before.png
+      intent: baselines/step_1_7_intent.png
+      after: baselines/step_1_7_after.png
+    human_assertions:
+    - Upon Clicking on Attributes, ensure that you see different Product Levels like
+      Product Level 4, Product Level 3, etc.
+    naive_agent_verification:
+      predicted_outcome: 'When the automation script executes the action `page.locator("div").filter(has_text=re.compile(r"^Attribute$")).nth(2).click()`,
+        the following visual outcome is expected:
+
+
+        1. **Expansion or Interaction with the "Attribute" Section**: Since the script
+        is targeting the third instance (`nth(2)`) of a `div` element containing the
+        text "Attribute", clicking it will likely expand or activate a dropdown, menu,
+        or additional options related to "Attribute" in the UI.
+
+
+        2. **UI Change in the Left Panel**: The left panel, where the "Attribute"
+        section is located, will likely display additional content, such as a list
+        of attributes, filters, or configuration options.
+
+
+        3. **Highlight or Visual Feedback**: The clicked element may show a visual
+        indication of being selected, such as a background color change, border, or
+        other styling effects.
+
+
+        4. **No Immediate Changes to the Right Panel**: Unless the "Attribute" section
+        is tied to filtering or updating the data in the "Alerts Summary" table on
+        the right, there will likely be no immediate changes to the right panel.'
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: NONE
+      description: The 'Attribute' section in the left panel has expanded to display
+        additional content (Product Level 4, Product Level 3, Product Level 2), meeting
+        the expected outcome. There is no visible change in the right panel, as expected.
+        The clicked element does not show any specific highlight or visual feedback,
+        but this was not explicitly required in the expectations.
+  - step_id: '1_8'
+    raw_code: page.locator(".d-flex.p-l-32").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_8_before.png
+      intent: baselines/step_1_8_intent.png
+      after: baselines/step_1_8_after.png
+    human_assertions:
+    - Upon clicking on Product Level 4, ensure that you see a list of Products like
+      BAGELS, BROWNIES, etc. Exact names may vary. But ensure you see similar products
+    naive_agent_verification:
+      predicted_outcome: 'The automation script is targeting the first element with
+        the class `.d-flex.p-l-32` and performing a `click()` action. Based on the
+        UI in the screenshot, the following visual outcome is expected:
+
+
+        1. **Selection of "Product Level 4"**: The red dot (indicating selection)
+        will likely move to the "Product Level 4" option in the "Attribute" section,
+        as it is the first element in the list with the targeted class.
+
+
+        2. **UI Update**: The selection of "Product Level 4" may trigger an update
+        in the "Alerts Summary" table or other parts of the UI to reflect data filtered
+        by "Product Level 4."
+
+
+        3. **No Immediate Navigation**: Since this action appears to be a filter selection,
+        the page will likely remain on the same screen, but the displayed data may
+        change.'
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: FALSE_POSITIVE_RESOLVED
+      description: 'Human overridden: This action is clicking the "Product Level 4".
+        This will cause the Product Level 4 to expand into a dropdown list of different
+        products like "Bagels", "BROWNIES", etc. Exact product names are subject to
+        change, but they are easily identifiable. Now, also notice CAREFULLY the "Select
+        All" option right below "Product Level 4", if this Select All button is checked,
+        then all the Products Below it ("BAGELS", "BROWNIES", etc) should also be
+        checked.'
+  - step_id: '1_9'
+    raw_code: page.get_by_role("button", name="Apply Filters").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_9_before.png
+      intent: baselines/step_1_9_intent.png
+      after: baselines/step_1_9_after.png
+    human_assertions:
+    - Upon Clicking Apply filters, the filter selected above will be applied to the
+      entire application. The values in grids change and the page reloads.
+    naive_agent_verification:
+      predicted_outcome: "When the automation script executes the action `page.get_by_role(\"\
+        button\", name=\"Apply Filters\").click()`, the following visual changes are\
+        \ expected on the UI:\n\n1. **Data Update in the Alerts Summary Table**:\n\
+        \   - The table labeled \"Alerts Summary\" on the right side of the screen\
+        \ will refresh or update to reflect the applied filters. The data in the columns\
+        \ (e.g., \"Customer,\" \"6W-Actuals,\" \"User Bias\") may change based on\
+        \ the selected filters.\n\n2. **Loading Indicator (Optional)**:\n   - If the\
+        \ application has a loading mechanism, a spinner or progress indicator might\
+        \ briefly appear while the data is being updated.\n\n3. **Button State Change\
+        \ (Optional)**:\n   - The \"Apply Filters\" button might show a temporary\
+        \ disabled state or visual feedback (e.g., a color change or spinner) to indicate\
+        \ that the action is in progress.\n\n4. **Filter Context Update (Optional)**:\n\
+        \   - If there is a section summarizing the applied filters, it may update\
+        \ to display the currently active filters.\n\nThese changes depend on the\
+        \ specific implementation of the application, but the primary outcome is the\
+        \ refresh of the data in the \"Alerts Summary\" table."
+      state_change_successful: false
+      confidence: HIGH
+      bug_type: MISSING_DATA
+      description: The 'Alerts Summary' table on the right side of the screen does
+        not appear to have updated or refreshed after clicking 'Apply Filters.' No
+        visible data changes are observed in the table, and it remains empty.
+  - step_id: '1_10'
+    raw_code: page.locator(".filter-icon-wrapper").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_10_before.png
+      intent: baselines/step_1_10_intent.png
+      after: baselines/step_1_10_after.png
+    human_assertions:
+    - Clicking the filter icon while the left hand sidebar is open will collapse the
+      opened sidebar and change the color of the filter from blue back to gray.
+    naive_agent_verification:
+      predicted_outcome: 'When the automation script executes the action `page.locator(".filter-icon-wrapper").click()`,
+        the following visual outcome is expected:
+
+
+        1. **Filter Panel Toggle**: The filter panel (currently visible on the left
+        side of the screen) will likely collapse or hide if it is currently open.
+        If it is closed, it will expand or become visible.
+
+        2. **UI Focus Shift**: The focus of the UI may shift to emphasize the filter
+        panel or the area affected by the filter settings.
+
+        3. **No Immediate Data Change**: Clicking the filter icon typically toggles
+        the visibility of the filter panel but does not apply any changes to the data
+        or UI content until a filter action (e.g., "Apply Filters") is explicitly
+        executed.
+
+
+        This behavior aligns with standard UI patterns for filter toggles.'
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: FALSE_POSITIVE_RESOLVED
+      description: 'Human overridden: This action closes up the Filter Panel Sidebar
+        on the Left Hand Side and makes the Filter Icon in the Top Left turn Grey.
+        If you CANNOT see a Sidebar on the Left and the Funnel Icon in the top Left
+        of the page is Grey, this is a SUCCESS.'
+- section_name: Alert Filters
+  section_goal: ''
+  section_verification:
+    ai_understanding: ''
+    human_assertions: []
+  steps:
+  - step_id: '2_1'
+    raw_code: page.locator(".dropdown-caret").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_2_1_before.png
+      intent: baselines/step_2_1_intent.png
+      after: baselines/step_2_1_after.png
+    naive_agent_verification:
+      predicted_outcome: 'When the automation script executes the action `page.locator(".dropdown-caret").first.click()`,
+        the following visual change should occur:
+
+
+        The dropdown menu associated with the first `.dropdown-caret` element (highlighted
+        in the red box) will expand or open. This will reveal a list of selectable
+        options related to the "Alerts" filter. The dropdown content will likely overlay
+        the UI below it, showing the available options for selection.'
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: NONE
+      description: The dropdown menu associated with the first `.dropdown-caret` element
+        has successfully expanded, revealing a list of selectable options related
+        to the 'Alerts' filter. The dropdown content overlays the UI below it as expected.
+  - step_id: '2_2'
+    raw_code: page.locator("div").filter(has_text=re.compile(r"^Over Bias$")).nth(1).click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_2_2_before.png
+      intent: baselines/step_2_2_intent.png
+      after: baselines/step_2_2_after.png
+    human_assertions:
+    - Open the dropdown menu and click on Over Bias from the options.
+    naive_agent_verification:
+      predicted_outcome: "When the automation script executes the action `page.locator(\"\
+        div\").filter(has_text=re.compile(r\"^Over Bias$\")).nth(1).click()`, the\
+        \ following visual changes should occur in the UI:\n\n1. **Dropdown Selection\
+        \ Update**: \n   - The \"Alerts\" dropdown will close.\n   - The selected\
+        \ value in the \"Alerts\" dropdown will be updated to \"Over Bias\".\n\n2.\
+        \ **Filter Application**:\n   - The table below will refresh to display data\
+        \ filtered by the \"Over Bias\" alert type. \n   - Rows in the table will\
+        \ be updated to reflect only the data corresponding to the \"Over Bias\" filter.\n\
+        \n3. **UI Feedback**:\n   - Any visual indicators (e.g., loading spinners\
+        \ or progress bars) may briefly appear while the table refreshes, depending\
+        \ on the implementation."
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: NONE
+      description: The 'Alerts' dropdown has been updated to 'Over Bias', the table
+        below has refreshed to display data filtered by the 'Over Bias' alert type,
+        and the UI appears to have updated successfully with no visible issues.
+  - step_id: '2_3'
+    raw_code: page.locator(".dropdown-caret").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_2_3_before.png
+      intent: baselines/step_2_3_intent.png
+      after: baselines/step_2_3_after.png
+    naive_agent_verification:
+      predicted_outcome: "When the automation script executes `page.locator(\".dropdown-caret\"\
+        ).first.click()`, the following visual change should occur:\n\n- The dropdown\
+        \ menu associated with the first `.dropdown-caret` element (highlighted in\
+        \ the red box) will expand or open. \n- This will reveal a list of selectable\
+        \ options related to the \"Alerts\" filter, allowing the user to choose a\
+        \ different value (e.g., \"Over Bias\" might be one of the options in the\
+        \ dropdown).\n\nIf the dropdown is already open, clicking the caret might\
+        \ instead collapse or close the dropdown."
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: NONE
+      description: The dropdown menu associated with the first `.dropdown-caret` element
+        expanded successfully, revealing a list of selectable options related to the
+        'Alerts' filter, including 'Over Bias', 'Under Bias', 'MAPE', 'Stability',
+        and 'FVA'. This matches the expected outcome.
+  - step_id: '2_4'
+    raw_code: page.locator("div").filter(has_text=re.compile(r"^Under Bias$")).nth(1).click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_2_4_before.png
+      intent: baselines/step_2_4_intent.png
+      after: baselines/step_2_4_after.png
+    human_assertions:
+    - Open the dropdown and click the Under Bias option
+    naive_agent_verification:
+      predicted_outcome: "When the automation script executes the action `page.locator(\"\
+        div\").filter(has_text=re.compile(r\"^Under Bias$\")).nth(1).click()`, the\
+        \ following visual changes should occur on the UI:\n\n1. **Dropdown Selection\
+        \ Update**: \n   - The \"Alerts\" dropdown will update its selected value\
+        \ from \"Over Bias\" to \"Under Bias\".\n\n2. **Filter Application**:\n  \
+        \ - The data displayed in the table below will refresh to reflect the rows\
+        \ that match the \"Under Bias\" filter criteria.\n\n3. **UI Feedback**:\n\
+        \   - If there is any loading indicator or spinner associated with applying\
+        \ the filter, it may briefly appear while the table updates.\n\n4. **Table\
+        \ Content Change**:\n   - The rows in the table will update to show only the\
+        \ data relevant to the \"Under Bias\" filter.\n\nThese changes will visually\
+        \ confirm that the \"Under Bias\" filter has been successfully applied."
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: NONE
+      description: The 'Alerts' dropdown updated to 'Under Bias', and the table content
+        refreshed to display rows relevant to the 'Under Bias' filter. No issues were
+        observed.
+  - step_id: '2_5'
+    raw_code: page.locator(".dropdown-caret").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_2_5_before.png
+      intent: baselines/step_2_5_intent.png
+      after: baselines/step_2_5_after.png
+    human_assertions:
+    - opening the dropdown menu should show different Filters like Under Bias, Over
+      Bias, Stability, FVA. Ensure you see these exactly. If not, raise an error
+    naive_agent_verification:
+      predicted_outcome: "When the automation script executes `page.locator(\".dropdown-caret\"\
+        ).first.click()`, the following visual change should occur:\n\n- The dropdown\
+        \ menu associated with the \"Alerts\" field will expand, revealing a list\
+        \ of selectable options. These options are likely related to different alert\
+        \ categories or filters that can be applied. \n- The dropdown will overlay\
+        \ the UI below it, and the user will be able to see and select one of the\
+        \ options."
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: NONE
+      description: The dropdown menu associated with the 'Alerts' field expanded successfully,
+        revealing a list of selectable options. The dropdown overlays the UI below
+        it, and the options are visible and selectable as expected.
+- section_name: Alerts Summary Grid.
+  section_goal: ''
+  section_verification:
+    ai_understanding: ''
+    human_assertions: []
+  steps:
+  - step_id: '3_1'
+    raw_code: "page.get_by_role(\"button\", name=\"\uE0BCcolumns\").click()"
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_1_before.png
+      intent: baselines/step_3_1_intent.png
+      after: baselines/step_3_1_after.png
+    naive_agent_verification:
+      predicted_outcome: "When the automation script executes the action `page.get_by_role(\"\
+        button\", name=\"\uE0BCcolumns\").click()`, the following visual outcome is\
+        \ expected:\n\n1. A **modal**, **dropdown**, or **side panel** related to\
+        \ column customization will appear.\n2. This UI element will likely provide\
+        \ options for selecting, deselecting, or reordering the columns displayed\
+        \ in the table below.\n3. The rest of the page will remain unchanged, except\
+        \ for the addition of this new UI element.\n\nThis behavior aligns with the\
+        \ standard functionality of a \"Columns\" button in a table-based UI."
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: NONE
+      description: Clicking the 'Columns' button successfully triggered the appearance
+        of a dropdown UI element for column customization. The dropdown provides options
+        for selecting, deselecting, or reordering columns, and the rest of the page
+        remains unchanged as expected.
+  - step_id: '3_2'
+    raw_code: page.get_by_role("checkbox", name="Toggle All Columns Visibility").uncheck()
+    action: uncheck
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_2_before.png
+      intent: baselines/step_3_2_intent.png
+      after: baselines/step_3_2_after.png
+    human_assertions:
+    - Clicking on the Columns button expands the list of columns available in the
+      grid. Ensure you see a list of columns like 6w-Actuals, User Bias, etc.
+    naive_agent_verification:
+      predicted_outcome: 'When the automation script executes the action `page.get_by_role("checkbox",
+        name="Toggle All Columns Visibility").uncheck()`, the following visual changes
+        should occur in the UI:
+
+
+        1. **Checkbox State Change**: The "Toggle All Columns Visibility" checkbox
+        (highlighted in green) will become unchecked.
+
+        2. **Column Visibility Update**: All the individual column checkboxes in the
+        dropdown list will also become unchecked.
+
+        3. **Table Update**: All columns in the "Alerts Summary" table will be hidden,
+        leaving the table empty or with only the row headers visible.
+
+
+        This action effectively hides all columns in the table.'
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: FALSE_POSITIVE_RESOLVED
+      description: 'Human overridden: This particular action toggles the "Toggle All
+        Column" visibility. If this button is checked, you should expect to see several
+        columns on the grid. However, if this button is unchecked, you should expect
+        to see an empty grid with ONLY the Customer Column. The Customer Column is
+        a CONSTANT and will never be affected by the "Toggle Column Visibility".'
+  - step_id: '3_3'
+    raw_code: page.get_by_role("treeitem", name="6W-Actuals Column").get_by_label("Press
+      SPACE to toggle visibility (hidden)").check()
+    action: check
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_3_before.png
+      intent: baselines/step_3_3_intent.png
+      after: baselines/step_3_3_after.png
+    naive_agent_verification:
+      predicted_outcome: 'When the automation script executes the action `page.get_by_role("treeitem",
+        name="6W-Actuals Column").get_by_label("Press SPACE to toggle visibility (hidden)").check()`,
+        the following visual change should occur in the UI:
+
+
+        1. The checkbox next to the "6W-Actuals" label in the "Columns" dropdown will
+        become checked (a checkmark will appear in the box).
+
+        2. The "6W-Actuals" column will become visible in the "Alerts Summary" table
+        below. This column was previously hidden, and toggling its visibility will
+        make it appear in the table.'
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: NONE
+      description: The checkbox next to '6W-Actuals' in the 'Columns' dropdown is
+        checked, and the '6W-Actuals' column is now visible in the 'Alerts Summary'
+        table as expected.
+  - step_id: '3_4'
+    raw_code: page.get_by_role("treeitem", name="User Bias Column").get_by_label("Press
+      SPACE to toggle visibility (hidden)").check()
+    action: check
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_4_before.png
+      intent: baselines/step_3_4_intent.png
+      after: baselines/step_3_4_after.png
+    naive_agent_verification:
+      predicted_outcome: 'When the automation script executes the action `page.get_by_role("treeitem",
+        name="User Bias Column").get_by_label("Press SPACE to toggle visibility (hidden)").check()`,
+        the following visual change should occur:
+
+
+        1. The checkbox next to "User Bias" in the "Columns" dropdown will become
+        checked.
+
+        2. The "User Bias" column will appear in the "Alerts Summary" table, likely
+        as a new column to the right of the existing columns.
+
+
+        This action toggles the visibility of the "User Bias" column, making it visible
+        in the table.'
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: NONE
+      description: The checkbox next to 'User Bias' in the 'Columns' dropdown is checked,
+        and the 'User Bias' column is visible in the 'Alerts Summary' table as expected.
+  - step_id: '3_5'
+    raw_code: page.get_by_role("treeitem", name="User MAPE Column").get_by_label("Press
+      SPACE to toggle visibility (hidden)").check()
+    action: check
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_5_before.png
+      intent: baselines/step_3_5_intent.png
+      after: baselines/step_3_5_after.png
+    naive_agent_verification:
+      predicted_outcome: 'When the automation script executes the action `page.get_by_role("treeitem",
+        name="User MAPE Column").get_by_label("Press SPACE to toggle visibility (hidden)").check()`,
+        the following visual changes should occur in the UI:
+
+
+        1. **Checkbox State Change**: The checkbox next to "User MAPE" in the column
+        selection panel will be checked (a checkmark will appear inside the box).
+
+
+        2. **Column Visibility**: The "User MAPE" column will become visible in the
+        "Alerts Summary" table. This column will appear to the right of the currently
+        visible columns ("6W-Actuals" and "User Bias").
+
+
+        These changes indicate that the "User MAPE" column has been toggled to visible
+        and is now part of the displayed table.'
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: NONE
+      description: The checkbox for 'User MAPE' is checked, and the 'User MAPE' column
+        is visible in the 'Alerts Summary' table to the right of the 'User Bias' column,
+        as expected.
+  - step_id: '3_6'
+    raw_code: page.get_by_role("treeitem", name="Stability Column").get_by_label("Press
+      SPACE to toggle visibility (hidden)").check()
+    action: check
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_6_before.png
+      intent: baselines/step_3_6_intent.png
+      after: baselines/step_3_6_after.png
+    naive_agent_verification:
+      predicted_outcome: 'When the automation script executes the action `page.get_by_role("treeitem",
+        name="Stability Column").get_by_label("Press SPACE to toggle visibility (hidden)").check()`,
+        the following visual change should occur:
+
+
+        1. **Checkbox Checked**: The checkbox next to "Stability" in the "Columns"
+        dropdown will become checked.
+
+        2. **Column Added to Table**: A new column labeled "Stability" will appear
+        in the "Alerts Summary" table. It will likely be added to the rightmost position
+        of the table or in a predefined order based on the application''s logic.
+
+
+        This action toggles the visibility of the "Stability" column, making it visible
+        in the table.'
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: NONE
+      description: The checkbox next to 'Stability' in the 'Columns' dropdown is checked,
+        and the 'Stability' column is visible in the 'Alerts Summary' table as expected.
+  - step_id: '3_7'
+    raw_code: page.get_by_role("treeitem", name="Forecast Value Add - MAPE").get_by_label("Press
+      SPACE to toggle visibility (hidden)").check()
+    action: check
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_7_before.png
+      intent: baselines/step_3_7_intent.png
+      after: baselines/step_3_7_after.png
+    naive_agent_verification:
+      predicted_outcome: 'When the automation script executes the action `page.get_by_role("treeitem",
+        name="Forecast Value Add - MAPE").get_by_label("Press SPACE to toggle visibility
+        (hidden)").check()`, the following visual change should occur:
+
+
+        1. The checkbox next to the "Forecast Value Add - MAPE" label in the "Columns"
+        dropdown menu will become checked (a checkmark will appear inside the box).
+
+        2. The "Forecast Value Add - MAPE" column will become visible in the "Alerts
+        Summary" table. This column will be added to the table, likely appearing to
+        the right of the currently visible columns.'
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: NONE
+      description: The checkbox next to 'Forecast Value Add - MAPE' in the 'Columns'
+        dropdown is checked, and the 'Forecast Value Add - MAPE' column is visible
+        in the 'Alerts Summary' table as expected.
+  - step_id: '3_8'
+    raw_code: page.get_by_role("treeitem", name="13W-User Forecast Column").get_by_label("Press
+      SPACE to toggle visibility (hidden)").check()
+    action: check
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_8_before.png
+      intent: baselines/step_3_8_intent.png
+      after: baselines/step_3_8_after.png
+    naive_agent_verification:
+      predicted_outcome: 'When the automation script executes the action `page.get_by_role("treeitem",
+        name="13W-User Forecast Column").get_by_label("Press SPACE to toggle visibility
+        (hidden)").check()`, the following visual change should occur:
+
+
+        1. **Checkbox State Change**: The checkbox next to "13W-User Forecast" in
+        the "Columns" dropdown will be checked (selected).
+
+        2. **Column Visibility**: The "13W-User Forecast" column will become visible
+        in the "Alerts Summary" table. This column will appear as a new column in
+        the table, likely to the right of the currently visible columns.'
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: NONE
+      description: The checkbox for '13W-User Forecast' is checked in the 'Columns'
+        dropdown, and the '13W-User Forecast' column is visible in the 'Alerts Summary'
+        table as expected.
+  - step_id: '3_9'
+    raw_code: page.get_by_role("treeitem", name="13W-Actuals Column").get_by_label("Press
+      SPACE to toggle visibility (hidden)").check()
+    action: check
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_9_before.png
+      intent: baselines/step_3_9_intent.png
+      after: baselines/step_3_9_after.png
+    naive_agent_verification:
+      predicted_outcome: 'When the automation script executes the action `page.get_by_role("treeitem",
+        name="13W-Actuals Column").get_by_label("Press SPACE to toggle visibility
+        (hidden)").check()`, the following visual change should occur:
+
+
+        1. The checkbox next to "13W-Actuals" in the column selection dropdown will
+        become checked.
+
+        2. The "13W-Actuals" column will appear in the "Alerts Summary" table, likely
+        positioned in the appropriate order among the other visible columns.
+
+
+        This action toggles the visibility of the "13W-Actuals" column from hidden
+        to visible.'
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: NONE
+      description: The checkbox next to '13W-Actuals' in the column selection dropdown
+        is checked, and the '13W-Actuals' column is visible in the 'Alerts Summary'
+        table as expected.
+  - step_id: '3_10'
+    raw_code: page.get_by_role("treeitem", name="6W-User Forecast Column").get_by_label("Press
+      SPACE to toggle visibility (hidden)").check()
+    action: check
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_10_before.png
+      intent: baselines/step_3_10_intent.png
+      after: baselines/step_3_10_after.png
+    naive_agent_verification:
+      predicted_outcome: 'When the automation script executes the action `page.get_by_role("treeitem",
+        name="6W-User Forecast Column").get_by_label("Press SPACE to toggle visibility
+        (hidden)").check()`, the following visual change should occur:
+
+
+        - The checkbox next to the "6W-User Forecast" column in the "Columns" dropdown
+        menu will be checked.
+
+        - The "6W-User Forecast" column will become visible in the "Alerts Summary"
+        table. A new column labeled "6W-User Forecast" will appear to the right of
+        the currently visible columns in the table.'
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: NONE
+      description: The checkbox next to '6W-User Forecast' in the 'Columns' dropdown
+        menu is checked, and the '6W-User Forecast' column is visible in the 'Alerts
+        Summary' table as expected.
+  - step_id: '3_11'
+    raw_code: "page.get_by_role(\"button\", name=\"\uE0BCcolumns\").click()"
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_11_before.png
+      intent: baselines/step_3_11_intent.png
+      after: baselines/step_3_11_after.png
+    naive_agent_verification:
+      predicted_outcome: "When the automation script executes the action `page.get_by_role(\"\
+        button\", name=\"\uE0BCcolumns\").click()`, the following visual outcome should\
+        \ occur:\n\nThe \"Columns\" dropdown menu, which is already visible in the\
+        \ screenshot, will either:\n\n1. **Close** if it is currently open (as shown\
+        \ in the screenshot), hiding the list of column options.\n   \n   OR\n\n2.\
+        \ **Remain Open** if the button click is part of a toggle action and the dropdown\
+        \ is already open.\n\nSince the dropdown is already visible in the screenshot,\
+        \ the most likely immediate visual outcome is that the dropdown will close."
+      state_change_successful: false
+      confidence: HIGH
+      bug_type: UNRESPONSIVE_ELEMENT
+      description: The 'Columns' dropdown menu is still visible, indicating that the
+        button click did not close the dropdown as expected.
+  - step_id: '3_12'
+    raw_code: "page.get_by_role(\"row\", name=\"Press Space to toggle row selection\
+      \ (unchecked) \uF127 \uE03D FOOD SERVICE\").get_by_label(\"Press Space to toggle\
+      \ row\").check()"
+    action: check
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_12_before.png
+      intent: baselines/step_3_12_intent.png
+      after: baselines/step_3_12_after.png
+    human_assertions:
+    - The grid contains radio buttons. Clicking it will turn it blue
+    naive_agent_verification:
+      predicted_outcome: "When the automation script executes the action `page.get_by_role(\"\
+        row\", name=\"Press Space to toggle row selection (unchecked) \uF127 \uE03D\
+        \ FOOD SERVICE\").get_by_label(\"Press Space to toggle row\").check()`, the\
+        \ following visual change should occur:\n\n1. **Checkbox State Change**: The\
+        \ checkbox in the \"FOOD SERVICE\" row will change from an **unchecked** state\
+        \ to a **checked** state. This means the empty circle will be replaced with\
+        \ a checkmark or filled circle, depending on the UI design.\n\n2. **Row Highlighting\
+        \ (if applicable)**: If the UI has a feature to visually highlight selected\
+        \ rows, the \"FOOD SERVICE\" row may also be highlighted (e.g., with a background\
+        \ color change).\n\n3. **Other UI Updates (if applicable)**: If there are\
+        \ any dependent actions triggered by selecting the row (e.g., enabling buttons,\
+        \ updating a summary count, or showing additional options), those changes\
+        \ will also occur. However, based on the screenshot, no immediate dependent\
+        \ actions are visible."
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: NONE
+      description: The checkbox in the 'FOOD SERVICE' row has successfully changed
+        from an unchecked state to a checked state, as indicated by the filled circle.
+        Additionally, the row is highlighted, meeting the expected visual outcome.
+        No other dependent UI updates are visible.
+  - step_id: '3_13'
+    raw_code: page.locator(".pointer.zeb-adjustments").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_13_before.png
+      intent: baselines/step_3_13_intent.png
+      after: baselines/step_3_13_after.png
+    human_assertions:
+    - Clicking the preferences icon on the top right of the Alerts Summary Grid card
+      will let you save or reset your grid column preferences
+    naive_agent_verification:
+      predicted_outcome: "When the automation script executes the action `page.locator(\"\
+        .pointer.zeb-adjustments\").first.click()`, the following visual outcome is\
+        \ expected:\n\n- The element highlighted in the red box (a button with a filter\
+        \ or adjustment icon) will be clicked.\n- This action will likely trigger\
+        \ a modal, dropdown, or side panel to appear, allowing the user to make adjustments\
+        \ or apply filters. \n- The UI may dim or blur the background to focus on\
+        \ the newly opened modal or panel.\n- If the button is part of a toggle, it\
+        \ might change its appearance (e.g., color or icon) to indicate its active\
+        \ state.\n\nThe exact behavior depends on the implementation of the `.pointer.zeb-adjustments`\
+        \ element, but the general expectation is that it will open a UI component\
+        \ for adjustments or settings."
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: FALSE_POSITIVE_RESOLVED
+      description: 'Human overridden: The action here is the Preference section click.
+        Upon Clicking this, user is supposed to see a small section saying "Save Preferences"
+        and "Reset Preferences"'
+  - step_id: '3_14'
+    raw_code: page.locator(".icon-color-toolbar-active.zeb-download-underline").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_14_before.png
+      intent: baselines/step_3_14_intent.png
+      after: baselines/step_3_14_after.png
+    human_assertions:
+    - Clicking on the export function triggers a download.
+    naive_agent_verification:
+      predicted_outcome: "When the automation script executes the action `page.locator(\"\
+        .icon-color-toolbar-active.zeb-download-underline\").first.click()`, the following\
+        \ visual outcome is expected:\n\n1. **Download Action Triggered**: Clicking\
+        \ the download icon (highlighted in the red box) will likely initiate a file\
+        \ download. This could be:\n   - A CSV, Excel, or PDF file containing the\
+        \ data displayed in the \"Alerts Summary\" table.\n   - A browser download\
+        \ prompt or a direct download to the default download folder.\n\n2. **No Immediate\
+        \ UI Change**: The UI itself may not visibly change unless there is a confirmation\
+        \ message, toast notification, or spinner indicating the download process.\n\
+        \n3. **Dropdown Menu Closure**: If the \"Save Preference\" and \"Reset Preference\"\
+        \ dropdown menu is open, it will likely close after the click."
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: NONE
+      description: The UI does not show any visible changes, which aligns with the
+        expectation that no immediate UI change would occur after the download action.
+        The dropdown menu appears to be closed, as expected. The download action cannot
+        be visually confirmed from the screenshot but is assumed to have been triggered
+        as per the script.
+  - step_id: '3_15'
+    raw_code: page.locator("a").filter(has_text="2").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_15_before.png
+      intent: baselines/step_3_15_intent.png
+      after: baselines/step_3_15_after.png
+    human_assertions:
+    - 'Clicking on the number 2 at the bottom of the grid loads the second page of
+      the grid. '
+    naive_agent_verification:
+      predicted_outcome: "When the automation script executes the action `page.locator(\"\
+        a\").filter(has_text=\"2\").click()`, the following visual changes should\
+        \ occur on the UI:\n\n1. **Pagination Update**:\n   - The current page will\
+        \ change from **Page 1** to **Page 2**.\n   - The \"2\" button in the pagination\
+        \ control will become highlighted (likely with a black background or other\
+        \ visual indicator), and the \"1\" button will lose its highlight.\n\n2. **Table\
+        \ Data Update**:\n   - The data displayed in the table will update to reflect\
+        \ the rows corresponding to Page 2. The content of the table will change to\
+        \ show the next set of data (e.g., rows 11\u201320 if each page displays 10\
+        \ rows).\n\n3. **\"Showing X out of Y\" Text Update**:\n   - The text indicating\
+        \ the current range of rows (e.g., \"Showing 10 out of 33\") will update to\
+        \ reflect the new range of rows being displayed (e.g., \"Showing 11\u2013\
+        20 out of 33\").\n\nThese changes are typical of a paginated table when navigating\
+        \ between pages."
+      state_change_successful: true
+      confidence: HIGH
+      bug_type: NONE
+      description: The UI updated successfully. The pagination control highlights
+        '2', the table data reflects rows corresponding to Page 2, and the 'Showing
+        X out of Y' text updated to 'Showing 10 out of 33'.

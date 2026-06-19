@@ -1,0 +1,2999 @@
+workflow_meta:
+  name: Auto-Generated UI Workflow
+  status: PENDING_DISCOVERY
+global_context:
+  page_description: To be populated by AI Scholar...
+  known_quirks: ''
+sections:
+- section_name: Global Filters
+  section_goal: ''
+  section_verification:
+    ai_understanding: ''
+    human_assertions: []
+  steps:
+  - step_id: '1_1'
+    raw_code: page.locator(".zeb-filter").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_1_1_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_1_1_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_1_1_after.png
+  - step_id: '1_2'
+    raw_code: page.get_by_text("Hierarchy").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_2_before.png
+      intent: baselines/step_1_2_intent.png
+      after: baselines/step_1_2_after.png
+  - step_id: '1_3'
+    raw_code: page.get_by_text("Brand Level 4").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_3_before.png
+      intent: baselines/step_1_3_intent.png
+      after: baselines/step_1_3_after.png
+  - step_id: '1_4'
+    raw_code: page.locator(".pointer.custom-checkbox-checked").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_4_before.png
+      intent: baselines/step_1_4_intent.png
+      after: baselines/step_1_4_after.png
+  - step_id: '1_5'
+    raw_code: page.locator(".filter-values.d-flex.align-items-center.p-l-32.p-r-24
+      > .custom-checkbox-wrapper > .pointer").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_5_before.png
+      intent: baselines/step_1_5_intent.png
+      after: baselines/step_1_5_after.png
+  - step_id: '1_6'
+    raw_code: page.locator(".pointer.custom-checkbox-unchecked").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_6_before.png
+      intent: baselines/step_1_6_intent.png
+      after: baselines/step_1_6_after.png
+  - step_id: '1_7'
+    raw_code: page.locator(".pointer.custom-checkbox-unchecked").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_7_before.png
+      intent: baselines/step_1_7_intent.png
+      after: baselines/step_1_7_after.png
+  - step_id: '1_8'
+    raw_code: page.locator(".pointer.custom-checkbox-unchecked").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_8_before.png
+      intent: baselines/step_1_8_intent.png
+      after: baselines/step_1_8_after.png
+  - step_id: '1_9'
+    raw_code: page.locator(".pointer.custom-checkbox-unchecked").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_9_before.png
+      intent: baselines/step_1_9_intent.png
+      after: baselines/step_1_9_after.png
+  - step_id: '1_10'
+    raw_code: page.get_by_text("Brand Level 4").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_10_before.png
+      intent: baselines/step_1_10_intent.png
+      after: baselines/step_1_10_after.png
+  - step_id: '1_11'
+    raw_code: page.get_by_text("Brand Level 3").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_11_before.png
+      intent: baselines/step_1_11_intent.png
+      after: baselines/step_1_11_after.png
+  - step_id: '1_12'
+    raw_code: page.locator(".filter-values.d-flex.align-items-center.p-l-32.p-r-24
+      > .custom-checkbox-wrapper > .pointer").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_12_before.png
+      intent: baselines/step_1_12_intent.png
+      after: baselines/step_1_12_after.png
+  - step_id: '1_13'
+    raw_code: page.locator(".pointer.partial-selected").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_13_before.png
+      intent: baselines/step_1_13_intent.png
+      after: baselines/step_1_13_after.png
+  - step_id: '1_14'
+    raw_code: page.get_by_text("Brand Level 3").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_14_before.png
+      intent: baselines/step_1_14_intent.png
+      after: baselines/step_1_14_after.png
+  - step_id: '1_15'
+    raw_code: page.get_by_text("Attribute").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_15_before.png
+      intent: baselines/step_1_15_intent.png
+      after: baselines/step_1_15_after.png
+  - step_id: '1_16'
+    raw_code: page.get_by_text("Product Level 4").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_16_before.png
+      intent: baselines/step_1_16_intent.png
+      after: baselines/step_1_16_after.png
+  - step_id: '1_17'
+    raw_code: page.locator(".pointer.custom-checkbox-checked").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_17_before.png
+      intent: baselines/step_1_17_intent.png
+      after: baselines/step_1_17_after.png
+  - step_id: '1_18'
+    raw_code: page.locator(".pointer.custom-checkbox-unchecked").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_18_before.png
+      intent: baselines/step_1_18_intent.png
+      after: baselines/step_1_18_after.png
+  - step_id: '1_19'
+    raw_code: page.get_by_text("Product Level 4").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_19_before.png
+      intent: baselines/step_1_19_intent.png
+      after: baselines/step_1_19_after.png
+  - step_id: '1_20'
+    raw_code: page.locator("esp-simple-side-filter-panel-v1").get_by_text("Location").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_20_before.png
+      intent: baselines/step_1_20_intent.png
+      after: baselines/step_1_20_after.png
+  - step_id: '1_21'
+    raw_code: page.get_by_text("Hierarchy").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_21_before.png
+      intent: baselines/step_1_21_intent.png
+      after: baselines/step_1_21_after.png
+  - step_id: '1_22'
+    raw_code: page.get_by_text("Sales Level 6").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_22_before.png
+      intent: baselines/step_1_22_intent.png
+      after: baselines/step_1_22_after.png
+  - step_id: '1_23'
+    raw_code: page.locator(".pointer.custom-checkbox-checked").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_23_before.png
+      intent: baselines/step_1_23_intent.png
+      after: baselines/step_1_23_after.png
+  - step_id: '1_24'
+    raw_code: page.locator(".filter-values.d-flex.align-items-center.p-l-32.p-r-24
+      > .custom-checkbox-wrapper > .pointer").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_24_before.png
+      intent: baselines/step_1_24_intent.png
+      after: baselines/step_1_24_after.png
+  - step_id: '1_25'
+    raw_code: page.locator(".pointer.custom-checkbox-unchecked").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_25_before.png
+      intent: baselines/step_1_25_intent.png
+      after: baselines/step_1_25_after.png
+  - step_id: '1_26'
+    raw_code: page.locator("div:nth-child(5) > .custom-checkbox-wrapper > .pointer").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_26_before.png
+      intent: baselines/step_1_26_intent.png
+      after: baselines/step_1_26_after.png
+  - step_id: '1_27'
+    raw_code: page.get_by_text("Sales Level 6").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_27_before.png
+      intent: baselines/step_1_27_intent.png
+      after: baselines/step_1_27_after.png
+  - step_id: '1_28'
+    raw_code: page.get_by_text("Sales Level 5").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_28_before.png
+      intent: baselines/step_1_28_intent.png
+      after: baselines/step_1_28_after.png
+  - step_id: '1_29'
+    raw_code: page.locator(".pointer.custom-checkbox-unchecked").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_29_before.png
+      intent: baselines/step_1_29_intent.png
+      after: baselines/step_1_29_after.png
+  - step_id: '1_30'
+    raw_code: page.get_by_text("Sales Level 5").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_30_before.png
+      intent: baselines/step_1_30_intent.png
+      after: baselines/step_1_30_after.png
+  - step_id: '1_31'
+    raw_code: page.get_by_text("Sales Level 4").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_31_before.png
+      intent: baselines/step_1_31_intent.png
+      after: baselines/step_1_31_after.png
+  - step_id: '1_32'
+    raw_code: page.locator(".pointer.custom-checkbox-unchecked").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_32_before.png
+      intent: baselines/step_1_32_intent.png
+      after: baselines/step_1_32_after.png
+  - step_id: '1_33'
+    raw_code: page.get_by_text("Sales Level 4").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_33_before.png
+      intent: baselines/step_1_33_intent.png
+      after: baselines/step_1_33_after.png
+  - step_id: '1_34'
+    raw_code: page.locator("esp-simple-side-filter-panel-v1").get_by_text("Customer").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_34_before.png
+      intent: baselines/step_1_34_intent.png
+      after: baselines/step_1_34_after.png
+  - step_id: '1_35'
+    raw_code: page.get_by_text("Hierarchy").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_35_before.png
+      intent: baselines/step_1_35_intent.png
+      after: baselines/step_1_35_after.png
+  - step_id: '1_36'
+    raw_code: page.get_by_text("Customer Level 4").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_36_before.png
+      intent: baselines/step_1_36_intent.png
+      after: baselines/step_1_36_after.png
+  - step_id: '1_37'
+    raw_code: page.get_by_text("Customer Level 4").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_37_before.png
+      intent: baselines/step_1_37_intent.png
+      after: baselines/step_1_37_after.png
+  - step_id: '1_38'
+    raw_code: page.locator(".pointer.zeb-check").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_38_before.png
+      intent: baselines/step_1_38_intent.png
+      after: baselines/step_1_38_after.png
+  - step_id: '1_39'
+    raw_code: page.get_by_role("button", name="Apply Filters").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_39_before.png
+      intent: baselines/step_1_39_intent.png
+      after: baselines/step_1_39_after.png
+  - step_id: '1_40'
+    raw_code: page.locator(".pointer.custom-checkbox-unchecked").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_40_before.png
+      intent: baselines/step_1_40_intent.png
+      after: baselines/step_1_40_after.png
+  - step_id: '1_41'
+    raw_code: page.get_by_role("button", name="Apply Filters").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_41_before.png
+      intent: baselines/step_1_41_intent.png
+      after: baselines/step_1_41_after.png
+  - step_id: '1_42'
+    raw_code: page.locator(".filter-icon-wrapper").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_42_before.png
+      intent: baselines/step_1_42_intent.png
+      after: baselines/step_1_42_after.png
+- section_name: Alert Types
+  section_goal: ''
+  section_verification:
+    ai_understanding: ''
+    human_assertions: []
+  steps:
+  - step_id: '2_1'
+    raw_code: page.locator(".dropdown-caret").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_2_1_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_2_1_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_2_1_after.png
+  - step_id: '2_2'
+    raw_code: page.locator("div").filter(has_text=re.compile(r"^Under Bias$")).nth(1).click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_2_2_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_2_2_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_2_2_after.png
+  - step_id: '2_3'
+    raw_code: page.locator(".dropdown-caret").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_2_3_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_2_3_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_2_3_after.png
+  - step_id: '2_4'
+    raw_code: page.locator("div").filter(has_text=re.compile(r"^MAPE$")).nth(1).click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_2_4_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_2_4_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_2_4_after.png
+- section_name: Alerts Sumary
+  section_goal: ''
+  section_verification:
+    ai_understanding: ''
+    human_assertions: []
+  steps:
+  - step_id: '3_1'
+    raw_code: "page.get_by_role(\"button\", name=\"\uE0BCcolumns\").click()"
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_1_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_1_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_1_after.png
+  - step_id: '3_2'
+    raw_code: page.get_by_role("checkbox", name="Toggle All Columns Visibility").uncheck()
+    action: uncheck
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_2_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_2_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_2_after.png
+  - step_id: '3_3'
+    raw_code: page.get_by_role("treeitem", name="6W-Actuals Column").get_by_label("Press
+      SPACE to toggle visibility (hidden)").check()
+    action: check
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_3_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_3_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_3_after.png
+    healed_coords:
+      x: 902
+      y: 147
+  - step_id: '3_4'
+    raw_code: page.locator(".ag-header-cell.ag-column-last > .ag-header-cell-comp-wrapper
+      > .ag-cell-label-container > .ag-header-icon > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_4_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_4_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_4_after.png
+  - step_id: '3_5'
+    raw_code: page.get_by_role("spinbutton", name="Filter Value").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_5_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_5_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_5_after.png
+  - step_id: '3_6'
+    raw_code: page.get_by_role("spinbutton", name="Filter Value").fill("129406")
+    action: fill
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_6_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_6_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_6_after.png
+  - step_id: '3_7'
+    raw_code: page.get_by_role("button", name="Apply").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_7_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_7_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_7_after.png
+  - step_id: '3_8'
+    raw_code: page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active
+      > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_8_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_8_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_8_after.png
+  - step_id: '3_9'
+    raw_code: page.get_by_role("button", name="Reset").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_9_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_9_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_9_after.png
+  - step_id: '3_10'
+    raw_code: page.get_by_role("treeitem", name="User Bias Column").get_by_label("Press
+      SPACE to toggle visibility (hidden)").check()
+    action: check
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_10_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_10_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_10_after.png
+    healed_coords:
+      x: 903
+      y: 150
+  - step_id: '3_11'
+    raw_code: page.locator(".ag-header-cell.ag-column-last > .ag-header-cell-comp-wrapper
+      > .ag-cell-label-container > .ag-header-icon > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_11_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_11_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_11_after.png
+  - step_id: '3_12'
+    raw_code: page.get_by_role("spinbutton", name="Filter Value").fill("-6.5")
+    action: fill
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_12_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_12_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_12_after.png
+  - step_id: '3_13'
+    raw_code: page.get_by_role("button", name="Apply").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_13_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_13_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_13_after.png
+  - step_id: '3_14'
+    raw_code: page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active
+      > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_14_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_14_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_14_after.png
+  - step_id: '3_15'
+    raw_code: page.get_by_role("button", name="Reset").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_15_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_15_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_15_after.png
+  - step_id: '3_16'
+    raw_code: page.get_by_role("treeitem", name="User Bias Column").get_by_label("Press
+      SPACE to toggle visibility (visible)").uncheck()
+    action: uncheck
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_16_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_16_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_16_after.png
+  - step_id: '3_17'
+    raw_code: page.get_by_role("treeitem", name="User MAPE Column").get_by_label("Press
+      SPACE to toggle visibility (hidden)").check()
+    action: check
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_17_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_17_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_17_after.png
+    healed_coords:
+      x: 773
+      y: 151
+  - step_id: '3_18'
+    raw_code: page.locator(".ag-header-cell.ag-column-last > .ag-header-cell-comp-wrapper
+      > .ag-cell-label-container > .ag-header-icon > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_18_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_18_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_18_after.png
+  - step_id: '3_19'
+    raw_code: page.get_by_role("spinbutton", name="Filter Value").fill("21")
+    action: fill
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_19_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_19_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_19_after.png
+  - step_id: '3_20'
+    raw_code: page.locator(".ag-icon.ag-icon-small-down").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_20_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_20_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_20_after.png
+  - step_id: '3_21'
+    raw_code: page.get_by_role("option", name="Greater than or equal to").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_21_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_21_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_21_after.png
+  - step_id: '3_22'
+    raw_code: page.get_by_role("button", name="Apply").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_22_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_22_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_22_after.png
+  - step_id: '3_23'
+    raw_code: page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active
+      > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_23_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_23_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_23_after.png
+  - step_id: '3_24'
+    raw_code: page.get_by_role("button", name="Reset").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_24_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_24_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_24_after.png
+  - step_id: '3_25'
+    raw_code: page.get_by_role("treeitem", name="User MAPE Column").get_by_label("Press
+      SPACE to toggle visibility (visible)").uncheck()
+    action: uncheck
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_25_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_25_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_25_after.png
+  - step_id: '3_26'
+    raw_code: page.get_by_role("treeitem", name="Stability Column").get_by_label("Press
+      SPACE to toggle visibility (hidden)").check()
+    action: check
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_26_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_26_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_26_after.png
+    healed_coords:
+      x: 928
+      y: 147
+  - step_id: '3_27'
+    raw_code: page.locator(".ag-header-cell.ag-column-last > .ag-header-cell-comp-wrapper
+      > .ag-cell-label-container > .ag-header-icon > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_27_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_27_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_27_after.png
+  - step_id: '3_28'
+    raw_code: page.get_by_role("spinbutton", name="Filter Value").fill("7.2")
+    action: fill
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_28_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_28_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_28_after.png
+  - step_id: '3_29'
+    raw_code: page.get_by_role("button", name="Apply").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_29_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_29_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_29_after.png
+  - step_id: '3_30'
+    raw_code: page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active
+      > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_30_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_30_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_30_after.png
+  - step_id: '3_31'
+    raw_code: page.get_by_role("button", name="Reset").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_31_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_31_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_31_after.png
+  - step_id: '3_32'
+    raw_code: page.get_by_role("treeitem", name="Stability Column").get_by_label("Press
+      SPACE to toggle visibility (visible)").uncheck()
+    action: uncheck
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_32_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_32_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_32_after.png
+  - step_id: '3_33'
+    raw_code: page.get_by_role("treeitem", name="Forecast Value Add - MAPE").get_by_label("Press
+      SPACE to toggle visibility (hidden)").check()
+    action: check
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_33_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_33_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_33_after.png
+    healed_coords:
+      x: 781
+      y: 153
+  - step_id: '3_34'
+    raw_code: page.locator(".ag-header-cell.ag-column-last > .ag-header-cell-comp-wrapper
+      > .ag-cell-label-container > .ag-header-icon > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_34_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_34_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_34_after.png
+  - step_id: '3_35'
+    raw_code: page.get_by_role("spinbutton", name="Filter Value").fill("10")
+    action: fill
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_35_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_35_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_35_after.png
+  - step_id: '3_36'
+    raw_code: page.locator(".ag-icon.ag-icon-small-down").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_36_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_36_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_36_after.png
+  - step_id: '3_37'
+    raw_code: page.get_by_role("option", name="Less than or equal to").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_37_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_37_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_37_after.png
+  - step_id: '3_38'
+    raw_code: page.get_by_role("button", name="Apply").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_38_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_38_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_38_after.png
+  - step_id: '3_39'
+    raw_code: page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active
+      > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_39_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_39_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_39_after.png
+  - step_id: '3_40'
+    raw_code: page.get_by_role("button", name="Reset").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_40_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_40_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_40_after.png
+  - step_id: '3_41'
+    raw_code: page.get_by_role("treeitem", name="Forecast Value Add - MAPE").get_by_label("Press
+      SPACE to toggle visibility (visible)").uncheck()
+    action: uncheck
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_41_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_41_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_41_after.png
+  - step_id: '3_42'
+    raw_code: page.locator("div:nth-child(7) > .ag-column-select-column").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_42_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_42_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_42_after.png
+  - step_id: '3_43'
+    raw_code: page.locator(".ag-header-cell.ag-column-last > .ag-header-cell-comp-wrapper
+      > .ag-cell-label-container > .ag-header-icon > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_43_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_43_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_43_after.png
+  - step_id: '3_44'
+    raw_code: page.get_by_role("spinbutton", name="Filter Value").fill("380906")
+    action: fill
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_44_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_44_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_44_after.png
+  - step_id: '3_45'
+    raw_code: page.get_by_role("button", name="Apply").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_45_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_45_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_45_after.png
+  - step_id: '3_46'
+    raw_code: page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active
+      > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_46_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_46_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_46_after.png
+  - step_id: '3_47'
+    raw_code: page.get_by_role("button", name="Reset").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_47_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_47_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_47_after.png
+  - step_id: '3_48'
+    raw_code: page.get_by_role("treeitem", name="13W-Actuals Column").get_by_label("Press
+      SPACE to toggle visibility (visible)").uncheck()
+    action: uncheck
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_48_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_48_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_48_after.png
+  - step_id: '3_49'
+    raw_code: page.get_by_role("treeitem", name="13W-User Forecast Column").get_by_label("Press
+      SPACE to toggle visibility (hidden)").check()
+    action: check
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_49_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_49_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_49_after.png
+  - step_id: '3_50'
+    raw_code: page.locator(".ag-header-cell.ag-column-last > .ag-header-cell-comp-wrapper
+      > .ag-cell-label-container > .ag-header-icon > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_50_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_50_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_50_after.png
+  - step_id: '3_51'
+    raw_code: page.get_by_role("spinbutton", name="Filter Value").fill("384298")
+    action: fill
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_51_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_51_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_51_after.png
+  - step_id: '3_52'
+    raw_code: page.get_by_role("button", name="Apply").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_52_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_52_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_52_after.png
+  - step_id: '3_53'
+    raw_code: page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active
+      > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_53_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_53_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_53_after.png
+  - step_id: '3_54'
+    raw_code: page.get_by_role("button", name="Reset").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_3_54_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_3_54_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_3_54_after.png
+  - step_id: '3_55'
+    raw_code: page.locator("div:nth-child(14) > .ag-column-select-column > .ag-column-select-checkbox
+      > .ag-wrapper").check()
+    action: check
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_55_before.png
+      intent: baselines/step_3_55_intent.png
+      after: baselines/step_3_55_after.png
+    healed_coords:
+      x: 747
+      y: 111
+  - step_id: '3_56'
+    raw_code: page.locator("#ag-2417-input").check()
+    action: check
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_56_before.png
+      intent: baselines/step_3_56_intent.png
+      after: baselines/step_3_56_after.png
+    healed_coords:
+      x: 752
+      y: 469
+  - step_id: '3_57'
+    raw_code: page.locator("#ag-2415-input").check()
+    action: check
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_57_before.png
+      intent: baselines/step_3_57_intent.png
+      after: baselines/step_3_57_after.png
+    healed_coords:
+      x: 784
+      y: 550
+  - step_id: '3_58'
+    raw_code: page.locator("#ag-2413-input").check()
+    action: check
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_58_before.png
+      intent: baselines/step_3_58_intent.png
+      after: baselines/step_3_58_after.png
+    healed_coords:
+      x: 808
+      y: 548
+  - step_id: '3_59'
+    raw_code: "page.get_by_role(\"button\", name=\"\uE0BCcolumns\").click()"
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_59_before.png
+      intent: baselines/step_3_59_intent.png
+      after: baselines/step_3_59_after.png
+  - step_id: '3_60'
+    raw_code: page.locator(".ag-header-cell.ag-header-parent-hidden.ag-header-cell-sortable.ag-header-background.ag-focus-managed.ag-header-active
+      > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon
+      > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_60_before.png
+      intent: baselines/step_3_60_intent.png
+      after: baselines/step_3_60_after.png
+  - step_id: '3_61'
+    raw_code: page.get_by_role("spinbutton", name="Filter Value").fill("100")
+    action: fill
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_61_before.png
+      intent: baselines/step_3_61_intent.png
+      after: baselines/step_3_61_after.png
+  - step_id: '3_62'
+    raw_code: page.locator(".ag-icon.ag-icon-small-down").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_62_before.png
+      intent: baselines/step_3_62_intent.png
+      after: baselines/step_3_62_after.png
+  - step_id: '3_63'
+    raw_code: page.get_by_role("option", name="Greater than or equal to").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_63_before.png
+      intent: baselines/step_3_63_intent.png
+      after: baselines/step_3_63_after.png
+  - step_id: '3_64'
+    raw_code: page.get_by_role("button", name="Apply").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_64_before.png
+      intent: baselines/step_3_64_intent.png
+      after: baselines/step_3_64_after.png
+  - step_id: '3_65'
+    raw_code: page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active
+      > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_65_before.png
+      intent: baselines/step_3_65_intent.png
+      after: baselines/step_3_65_after.png
+  - step_id: '3_66'
+    raw_code: page.get_by_role("button", name="Reset").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_66_before.png
+      intent: baselines/step_3_66_intent.png
+      after: baselines/step_3_66_after.png
+  - step_id: '3_67'
+    raw_code: page.locator(".ag-header-cell.ag-header-parent-hidden.ag-header-cell-sortable.ag-header-background.ag-focus-managed.ag-header-active
+      > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon
+      > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_67_before.png
+      intent: baselines/step_3_67_intent.png
+      after: baselines/step_3_67_after.png
+  - step_id: '3_68'
+    raw_code: page.get_by_role("spinbutton", name="Filter Value").fill("200")
+    action: fill
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_68_before.png
+      intent: baselines/step_3_68_intent.png
+      after: baselines/step_3_68_after.png
+  - step_id: '3_69'
+    raw_code: page.get_by_role("button", name="Apply").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_69_before.png
+      intent: baselines/step_3_69_intent.png
+      after: baselines/step_3_69_after.png
+  - step_id: '3_70'
+    raw_code: page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active
+      > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_70_before.png
+      intent: baselines/step_3_70_intent.png
+      after: baselines/step_3_70_after.png
+  - step_id: '3_71'
+    raw_code: page.get_by_role("button", name="Reset").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_71_before.png
+      intent: baselines/step_3_71_intent.png
+      after: baselines/step_3_71_after.png
+  - step_id: '3_72'
+    raw_code: page.locator(".ag-header-cell.ag-column-last > .ag-header-cell-comp-wrapper
+      > .ag-cell-label-container > .ag-header-icon > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_72_before.png
+      intent: baselines/step_3_72_intent.png
+      after: baselines/step_3_72_after.png
+  - step_id: '3_73'
+    raw_code: page.get_by_role("spinbutton", name="Filter Value").fill("383")
+    action: fill
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_73_before.png
+      intent: baselines/step_3_73_intent.png
+      after: baselines/step_3_73_after.png
+  - step_id: '3_74'
+    raw_code: page.get_by_role("button", name="Apply").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_74_before.png
+      intent: baselines/step_3_74_intent.png
+      after: baselines/step_3_74_after.png
+  - step_id: '3_75'
+    raw_code: page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active
+      > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_75_before.png
+      intent: baselines/step_3_75_intent.png
+      after: baselines/step_3_75_after.png
+  - step_id: '3_76'
+    raw_code: page.get_by_role("button", name="Reset").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_76_before.png
+      intent: baselines/step_3_76_intent.png
+      after: baselines/step_3_76_after.png
+  - step_id: '3_77'
+    raw_code: page.locator("a").filter(has_text="2").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_77_before.png
+      intent: baselines/step_3_77_intent.png
+      after: baselines/step_3_77_after.png
+  - step_id: '3_78'
+    raw_code: page.locator("a").filter(has_text="1").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_78_before.png
+      intent: baselines/step_3_78_intent.png
+      after: baselines/step_3_78_after.png
+  - step_id: '3_79'
+    raw_code: page.locator(".d-flex > esp-multiselect-dropdown > .multiselect-dropdown
+      > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_79_before.png
+      intent: baselines/step_3_79_intent.png
+      after: baselines/step_3_79_after.png
+  - step_id: '3_80'
+    raw_code: page.get_by_text("View 20 row(s)").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_80_before.png
+      intent: baselines/step_3_80_intent.png
+      after: baselines/step_3_80_after.png
+  - step_id: '3_81'
+    raw_code: "page.get_by_role(\"button\", name=\"\uE0BCcolumns\").click()"
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_81_before.png
+      intent: baselines/step_3_81_intent.png
+      after: baselines/step_3_81_after.png
+  - step_id: '3_82'
+    raw_code: page.get_by_role("checkbox", name="Toggle All Columns Visibility").check()
+    action: check
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_82_before.png
+      intent: baselines/step_3_82_intent.png
+      after: baselines/step_3_82_after.png
+  - step_id: '3_83'
+    raw_code: "page.get_by_role(\"button\", name=\"\uE0BCcolumns\").click()"
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_83_before.png
+      intent: baselines/step_3_83_intent.png
+      after: baselines/step_3_83_after.png
+  - step_id: '3_84'
+    raw_code: page.locator(".pointer.zeb-adjustments").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_84_before.png
+      intent: baselines/step_3_84_intent.png
+      after: baselines/step_3_84_after.png
+  - step_id: '3_85'
+    raw_code: page.get_by_text("Save Preference").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_85_before.png
+      intent: baselines/step_3_85_intent.png
+      after: baselines/step_3_85_after.png
+  - step_id: '3_86'
+    raw_code: page.locator(".icon-color-toolbar-active.zeb-download-underline").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_86_before.png
+      intent: baselines/step_3_86_intent.png
+      after: baselines/step_3_86_after.png
+  - step_id: '3_87'
+    raw_code: page.locator(".pointer.zeb-adjustments").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_87_before.png
+      intent: baselines/step_3_87_intent.png
+      after: baselines/step_3_87_after.png
+  - step_id: '3_88'
+    raw_code: page.get_by_text("Reset Preference").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_88_before.png
+      intent: baselines/step_3_88_intent.png
+      after: baselines/step_3_88_after.png
+  - step_id: '3_89'
+    raw_code: "page.get_by_role(\"gridcell\", name=\"Press Space to toggle row selection\
+      \ (unchecked) \uF127 \uE03D WALMART STORES HQ\").get_by_label(\"Press Space\
+      \ to toggle row\").check()"
+    action: check
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_89_before.png
+      intent: baselines/step_3_89_intent.png
+      after: baselines/step_3_89_after.png
+  - step_id: '3_90'
+    raw_code: page.locator("span").filter(has_text="WALMART STORES HQ").first.click(button="right")
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_90_before.png
+      intent: baselines/step_3_90_intent.png
+      after: baselines/step_3_90_after.png
+  - step_id: '3_91'
+    raw_code: page.get_by_text("Drill down").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_91_before.png
+      intent: baselines/step_3_91_intent.png
+      after: baselines/step_3_91_after.png
+  - step_id: '3_92'
+    raw_code: page.locator("span").filter(has_text="WALMART").first.click(button="right")
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_92_before.png
+      intent: baselines/step_3_92_intent.png
+      after: baselines/step_3_92_after.png
+  - step_id: '3_93'
+    raw_code: page.get_by_text("Drill up").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_93_before.png
+      intent: baselines/step_3_93_intent.png
+      after: baselines/step_3_93_after.png
+  - step_id: '3_94'
+    raw_code: "page.get_by_role(\"gridcell\", name=\"Press Space to toggle row selection\
+      \ (unchecked) \uF127 \uE03D WALMART STORES HQ\").get_by_label(\"Press Space\
+      \ to toggle row\").check()"
+    action: check
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_94_before.png
+      intent: baselines/step_3_94_intent.png
+      after: baselines/step_3_94_after.png
+    healed_coords:
+      x: 428
+      y: 245
+  - step_id: '3_95'
+    raw_code: "page.get_by_role(\"button\", name=\"\uE0BCcolumns\").nth(1).click()"
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_95_before.png
+      intent: baselines/step_3_95_intent.png
+      after: baselines/step_3_95_after.png
+  - step_id: '3_96'
+    raw_code: "page.get_by_role(\"button\", name=\"\uE0BCcolumns\").nth(1).click()"
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_96_before.png
+      intent: baselines/step_3_96_intent.png
+      after: baselines/step_3_96_after.png
+  - step_id: '3_97'
+    raw_code: page.locator(".ag-header-cell.ag-header-parent-hidden.ag-header-background.ag-focus-managed.ag-header-active
+      > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon
+      > .ag-icon").click()
+    action: click
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_97_before.png
+      intent: baselines/step_3_97_intent.png
+      after: baselines/step_3_97_after.png
+    healed_coords:
+      x: 634
+      y: 355
+  - step_id: '3_98'
+    raw_code: page.get_by_role("spinbutton", name="Filter Value").fill("10000")
+    action: fill
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_98_before.png
+      intent: baselines/step_3_98_intent.png
+      after: baselines/step_3_98_after.png
+    healed_coords:
+      x: 327
+      y: 462
+  - step_id: '3_99'
+    raw_code: page.locator(".ag-icon.ag-icon-small-down").first.click()
+    action: click
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_99_before.png
+      intent: baselines/step_3_99_intent.png
+      after: baselines/step_3_99_after.png
+    healed_coords:
+      x: 1059
+      y: 266
+  - step_id: '3_100'
+    raw_code: page.get_by_role("option", name="Greater than or equal to").click()
+    action: click
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_100_before.png
+      intent: baselines/step_3_100_intent.png
+      after: baselines/step_3_100_after.png
+    healed_coords:
+      x: 712
+      y: 434
+  - step_id: '3_101'
+    raw_code: page.get_by_label("Column Filter").get_by_role("button", name="Apply").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_101_before.png
+      intent: baselines/step_3_101_intent.png
+      after: baselines/step_3_101_after.png
+  - step_id: '3_102'
+    raw_code: page.locator(".ag-header-cell.ag-header-parent-hidden.ag-header-background.ag-focus-managed.ag-header-active
+      > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon
+      > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_102_before.png
+      intent: baselines/step_3_102_intent.png
+      after: baselines/step_3_102_after.png
+  - step_id: '3_103'
+    raw_code: page.get_by_role("spinbutton", name="Filter Value").fill("20")
+    action: fill
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_103_before.png
+      intent: baselines/step_3_103_intent.png
+      after: baselines/step_3_103_after.png
+  - step_id: '3_104'
+    raw_code: page.locator(".ag-icon.ag-icon-small-down").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_104_before.png
+      intent: baselines/step_3_104_intent.png
+      after: baselines/step_3_104_after.png
+  - step_id: '3_105'
+    raw_code: page.get_by_role("option", name="Greater than or equal to").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_105_before.png
+      intent: baselines/step_3_105_intent.png
+      after: baselines/step_3_105_after.png
+  - step_id: '3_106'
+    raw_code: page.get_by_label("Column Filter").get_by_role("button", name="Apply").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_106_before.png
+      intent: baselines/step_3_106_intent.png
+      after: baselines/step_3_106_after.png
+  - step_id: '3_107'
+    raw_code: page.locator(".ag-header-cell.ag-header-parent-hidden.ag-header-background.ag-focus-managed.ag-header-cell-filtered.ag-header-active
+      > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon
+      > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_107_before.png
+      intent: baselines/step_3_107_intent.png
+      after: baselines/step_3_107_after.png
+  - step_id: '3_108'
+    raw_code: page.get_by_label("Column Filter").get_by_role("button", name="Reset").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_108_before.png
+      intent: baselines/step_3_108_intent.png
+      after: baselines/step_3_108_after.png
+  - step_id: '3_109'
+    raw_code: page.locator(".ag-header-cell.ag-header-parent-hidden.ag-header-background.ag-focus-managed.ag-header-active
+      > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon
+      > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_109_before.png
+      intent: baselines/step_3_109_intent.png
+      after: baselines/step_3_109_after.png
+  - step_id: '3_110'
+    raw_code: page.get_by_role("spinbutton", name="Filter Value").fill("20")
+    action: fill
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_110_before.png
+      intent: baselines/step_3_110_intent.png
+      after: baselines/step_3_110_after.png
+  - step_id: '3_111'
+    raw_code: page.locator(".ag-icon.ag-icon-small-down").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_111_before.png
+      intent: baselines/step_3_111_intent.png
+      after: baselines/step_3_111_after.png
+  - step_id: '3_112'
+    raw_code: page.get_by_text("Greater than or equal to").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_112_before.png
+      intent: baselines/step_3_112_intent.png
+      after: baselines/step_3_112_after.png
+  - step_id: '3_113'
+    raw_code: page.get_by_label("Column Filter").get_by_role("button", name="Apply").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_113_before.png
+      intent: baselines/step_3_113_intent.png
+      after: baselines/step_3_113_after.png
+  - step_id: '3_114'
+    raw_code: page.locator(".ag-header-cell.ag-header-parent-hidden.ag-header-background.ag-focus-managed.ag-header-cell-filtered.ag-header-active
+      > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon
+      > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_114_before.png
+      intent: baselines/step_3_114_intent.png
+      after: baselines/step_3_114_after.png
+  - step_id: '3_115'
+    raw_code: page.get_by_label("Column Filter").get_by_role("button", name="Reset").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_115_before.png
+      intent: baselines/step_3_115_intent.png
+      after: baselines/step_3_115_after.png
+  - step_id: '3_116'
+    raw_code: "page.get_by_role(\"button\", name=\"\uE0BCcolumns\").nth(1).click()"
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_116_before.png
+      intent: baselines/step_3_116_intent.png
+      after: baselines/step_3_116_after.png
+  - step_id: '3_117'
+    raw_code: page.get_by_role("treeitem", name="User MAPE Column").get_by_label("Press
+      SPACE to toggle visibility (visible)").uncheck()
+    action: uncheck
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_117_before.png
+      intent: baselines/step_3_117_intent.png
+      after: baselines/step_3_117_after.png
+  - step_id: '3_118'
+    raw_code: page.get_by_role("treeitem", name="User Bias Column").get_by_label("Press
+      SPACE to toggle visibility (visible)").uncheck()
+    action: uncheck
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_118_before.png
+      intent: baselines/step_3_118_intent.png
+      after: baselines/step_3_118_after.png
+  - step_id: '3_119'
+    raw_code: page.get_by_role("treeitem", name="6W-Actuals Column").get_by_label("Press
+      SPACE to toggle visibility (visible)").uncheck()
+    action: uncheck
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_119_before.png
+      intent: baselines/step_3_119_intent.png
+      after: baselines/step_3_119_after.png
+  - step_id: '3_120'
+    raw_code: page.locator(".ag-header-cell.ag-header-parent-hidden.ag-header-background.ag-focus-managed.ag-header-active
+      > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon
+      > .ag-icon").click()
+    action: click
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_120_before.png
+      intent: baselines/step_3_120_intent.png
+      after: baselines/step_3_120_after.png
+    healed_coords:
+      x: 800
+      y: 373
+  - step_id: '3_121'
+    raw_code: page.get_by_role("spinbutton", name="Filter Value").fill("1000")
+    action: fill
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_121_before.png
+      intent: baselines/step_3_121_intent.png
+      after: baselines/step_3_121_after.png
+    healed_coords:
+      x: 898
+      y: 305
+  - step_id: '3_122'
+    raw_code: page.locator(".ag-icon.ag-icon-small-down").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_122_before.png
+      intent: baselines/step_3_122_intent.png
+      after: baselines/step_3_122_after.png
+  - step_id: '3_123'
+    raw_code: page.get_by_text("Greater than or equal to").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_123_before.png
+      intent: baselines/step_3_123_intent.png
+      after: baselines/step_3_123_after.png
+  - step_id: '3_124'
+    raw_code: page.get_by_label("Column Filter").get_by_role("button", name="Apply").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_124_before.png
+      intent: baselines/step_3_124_intent.png
+      after: baselines/step_3_124_after.png
+  - step_id: '3_125'
+    raw_code: page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active
+      > .ag-icon").click()
+    action: click
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_125_before.png
+      intent: baselines/step_3_125_intent.png
+      after: baselines/step_3_125_after.png
+    healed_coords:
+      x: 888
+      y: 303
+  - step_id: '3_126'
+    raw_code: page.get_by_label("Column Filter").get_by_role("button", name="Reset").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_126_before.png
+      intent: baselines/step_3_126_intent.png
+      after: baselines/step_3_126_after.png
+  - step_id: '3_127'
+    raw_code: page.get_by_role("treeitem", name="13W-User Forecast Column").get_by_label("Press
+      SPACE to toggle visibility (hidden)").check()
+    action: check
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_127_before.png
+      intent: baselines/step_3_127_intent.png
+      after: baselines/step_3_127_after.png
+    healed_coords:
+      x: 946
+      y: 377
+  - step_id: '3_128'
+    raw_code: page.locator(".ag-header-cell.ag-column-last.ag-header-parent-hidden.ag-header-background.ag-focus-managed.ag-header-active
+      > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon
+      > .ag-icon").click()
+    action: click
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_128_before.png
+      intent: baselines/step_3_128_intent.png
+      after: baselines/step_3_128_after.png
+    healed_coords:
+      x: 946
+      y: 376
+  - step_id: '3_129'
+    raw_code: page.get_by_role("spinbutton", name="Filter Value").fill("20000")
+    action: fill
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_129_before.png
+      intent: baselines/step_3_129_intent.png
+      after: baselines/step_3_129_after.png
+    healed_coords:
+      x: 927
+      y: 377
+  - step_id: '3_130'
+    raw_code: page.get_by_label("Column Filter").get_by_role("button", name="Apply").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_130_before.png
+      intent: baselines/step_3_130_intent.png
+      after: baselines/step_3_130_after.png
+  - step_id: '3_131'
+    raw_code: page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active
+      > .ag-icon").click()
+    action: click
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_131_before.png
+      intent: baselines/step_3_131_intent.png
+      after: baselines/step_3_131_after.png
+    healed_coords:
+      x: 752
+      y: 307
+  - step_id: '3_132'
+    raw_code: page.get_by_text("Apply Reset Clear").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_132_before.png
+      intent: baselines/step_3_132_intent.png
+      after: baselines/step_3_132_after.png
+  - step_id: '3_133'
+    raw_code: page.get_by_role("treeitem", name="13W-User Forecast Column").get_by_label("Press
+      SPACE to toggle visibility (visible)").uncheck()
+    action: uncheck
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_133_before.png
+      intent: baselines/step_3_133_intent.png
+      after: baselines/step_3_133_after.png
+  - step_id: '3_134'
+    raw_code: page.get_by_role("treeitem", name="13W-Actuals Column").get_by_label("Press
+      SPACE to toggle visibility (hidden)").check()
+    action: check
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_134_before.png
+      intent: baselines/step_3_134_intent.png
+      after: baselines/step_3_134_after.png
+    healed_coords:
+      x: 904
+      y: 303
+  - step_id: '3_135'
+    raw_code: page.locator(".ag-header-cell.ag-column-last.ag-header-parent-hidden.ag-header-background.ag-focus-managed.ag-header-active
+      > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon
+      > .ag-icon").click()
+    action: click
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_135_before.png
+      intent: baselines/step_3_135_intent.png
+      after: baselines/step_3_135_after.png
+    healed_coords:
+      x: 928
+      y: 375
+  - step_id: '3_136'
+    raw_code: page.get_by_role("spinbutton", name="Filter Value").fill("100000")
+    action: fill
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_136_before.png
+      intent: baselines/step_3_136_intent.png
+      after: baselines/step_3_136_after.png
+  - step_id: '3_137'
+    raw_code: page.locator(".ag-icon.ag-icon-small-down").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_137_before.png
+      intent: baselines/step_3_137_intent.png
+      after: baselines/step_3_137_after.png
+  - step_id: '3_138'
+    raw_code: page.get_by_text("Greater than or equal to").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_138_before.png
+      intent: baselines/step_3_138_intent.png
+      after: baselines/step_3_138_after.png
+  - step_id: '3_139'
+    raw_code: page.get_by_label("Column Filter").get_by_role("button", name="Apply").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_139_before.png
+      intent: baselines/step_3_139_intent.png
+      after: baselines/step_3_139_after.png
+  - step_id: '3_140'
+    raw_code: page.get_by_role("treeitem", name="13W-Actuals Column").get_by_label("Press
+      SPACE to toggle visibility (visible)").uncheck()
+    action: uncheck
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_140_before.png
+      intent: baselines/step_3_140_intent.png
+      after: baselines/step_3_140_after.png
+  - step_id: '3_141'
+    raw_code: page.get_by_role("treeitem", name="6W-User Forecast Column").get_by_label("Press
+      SPACE to toggle visibility (hidden)").check()
+    action: check
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_141_before.png
+      intent: baselines/step_3_141_intent.png
+      after: baselines/step_3_141_after.png
+  - step_id: '3_142'
+    raw_code: page.locator(".ag-header-cell.ag-column-last.ag-header-parent-hidden.ag-header-background.ag-focus-managed.ag-header-active
+      > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon
+      > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_142_before.png
+      intent: baselines/step_3_142_intent.png
+      after: baselines/step_3_142_after.png
+  - step_id: '3_143'
+    raw_code: page.get_by_role("spinbutton", name="Filter Value").fill("65000")
+    action: fill
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_143_before.png
+      intent: baselines/step_3_143_intent.png
+      after: baselines/step_3_143_after.png
+  - step_id: '3_144'
+    raw_code: page.get_by_label("Column Filter").get_by_role("button", name="Apply").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_144_before.png
+      intent: baselines/step_3_144_intent.png
+      after: baselines/step_3_144_after.png
+  - step_id: '3_145'
+    raw_code: page.get_by_role("treeitem", name="6W-User Forecast Column").get_by_label("Press
+      SPACE to toggle visibility (visible)").uncheck()
+    action: uncheck
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_145_before.png
+      intent: baselines/step_3_145_intent.png
+      after: baselines/step_3_145_after.png
+  - step_id: '3_146'
+    raw_code: page.get_by_role("treeitem", name="6W-System Forecast Column").get_by_label("Press
+      SPACE to toggle visibility (hidden)").check()
+    action: check
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_146_before.png
+      intent: baselines/step_3_146_intent.png
+      after: baselines/step_3_146_after.png
+  - step_id: '3_147'
+    raw_code: page.locator(".ag-header-cell.ag-column-last.ag-header-parent-hidden.ag-header-background.ag-focus-managed.ag-header-active
+      > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon
+      > .ag-icon").click()
+    action: click
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_147_before.png
+      intent: baselines/step_3_147_intent.png
+      after: baselines/step_3_147_after.png
+    healed_coords:
+      x: 939
+      y: 239
+  - step_id: '3_148'
+    raw_code: page.get_by_role("spinbutton", name="Filter Value").fill("10000")
+    action: fill
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_148_before.png
+      intent: baselines/step_3_148_intent.png
+      after: baselines/step_3_148_after.png
+    healed_coords:
+      x: 928
+      y: 297
+  - step_id: '3_149'
+    raw_code: page.get_by_label("Column Filter").get_by_role("button", name="Apply").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_149_before.png
+      intent: baselines/step_3_149_intent.png
+      after: baselines/step_3_149_after.png
+  - step_id: '3_150'
+    raw_code: page.get_by_role("treeitem", name="6W-System Forecast Column").get_by_label("Press
+      SPACE to toggle visibility (visible)").uncheck()
+    action: uncheck
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_150_before.png
+      intent: baselines/step_3_150_intent.png
+      after: baselines/step_3_150_after.png
+  - step_id: '3_151'
+    raw_code: page.get_by_role("treeitem", name="Forecast Value Add - MAPE").get_by_label("Press
+      SPACE to toggle visibility (visible)").uncheck()
+    action: uncheck
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_151_before.png
+      intent: baselines/step_3_151_intent.png
+      after: baselines/step_3_151_after.png
+  - step_id: '3_152'
+    raw_code: page.get_by_role("treeitem", name="Forecast Value Add - MAPE").get_by_label("Press
+      SPACE to toggle visibility (hidden)").check()
+    action: check
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_152_before.png
+      intent: baselines/step_3_152_intent.png
+      after: baselines/step_3_152_after.png
+  - step_id: '3_153'
+    raw_code: page.get_by_role("treeitem", name="13W-User Forecast Column").get_by_label("Press
+      SPACE to toggle visibility (hidden)").check()
+    action: check
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_153_before.png
+      intent: baselines/step_3_153_intent.png
+      after: baselines/step_3_153_after.png
+  - step_id: '3_154'
+    raw_code: page.get_by_role("treeitem", name="13W-Actuals Column").get_by_label("Press
+      SPACE to toggle visibility (hidden)").check()
+    action: check
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_154_before.png
+      intent: baselines/step_3_154_intent.png
+      after: baselines/step_3_154_after.png
+  - step_id: '3_155'
+    raw_code: page.locator("#ag-6862-input").check()
+    action: check
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_155_before.png
+      intent: baselines/step_3_155_intent.png
+      after: baselines/step_3_155_after.png
+    healed_coords:
+      x: 928
+      y: 297
+  - step_id: '3_156'
+    raw_code: page.locator("#ag-6860-input").check()
+    action: check
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_156_before.png
+      intent: baselines/step_3_156_intent.png
+      after: baselines/step_3_156_after.png
+    healed_coords:
+      x: 928
+      y: 299
+  - step_id: '3_157'
+    raw_code: page.locator("div:nth-child(12) > .ag-column-select-column").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_157_before.png
+      intent: baselines/step_3_157_intent.png
+      after: baselines/step_3_157_after.png
+  - step_id: '3_158'
+    raw_code: 'page.locator("div:nth-child(3) > #preference-iconId > .legend-font
+      > .multiselect-dropdown > .pointer").click()'
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_158_before.png
+      intent: baselines/step_3_158_intent.png
+      after: baselines/step_3_158_after.png
+  - step_id: '3_159'
+    raw_code: page.locator("div").filter(has_text=re.compile(r"^Save Preference$")).first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_159_before.png
+      intent: baselines/step_3_159_intent.png
+      after: baselines/step_3_159_after.png
+  - step_id: '3_160'
+    raw_code: page.locator(".checkbox-primary-color").first.check()
+    action: check
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_160_before.png
+      intent: baselines/step_3_160_intent.png
+      after: baselines/step_3_160_after.png
+  - step_id: '3_161'
+    raw_code: page.locator("span").filter(has_text="BARCEL").first.click(button="right")
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_161_before.png
+      intent: baselines/step_3_161_intent.png
+      after: baselines/step_3_161_after.png
+  - step_id: '3_162'
+    raw_code: page.get_by_text("Drill down").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_162_before.png
+      intent: baselines/step_3_162_intent.png
+      after: baselines/step_3_162_after.png
+  - step_id: '3_163'
+    raw_code: page.locator("span").filter(has_text="BARCEL").first.click(button="right")
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_163_before.png
+      intent: baselines/step_3_163_intent.png
+      after: baselines/step_3_163_after.png
+  - step_id: '3_164'
+    raw_code: page.get_by_text("Drill up").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_164_before.png
+      intent: baselines/step_3_164_intent.png
+      after: baselines/step_3_164_after.png
+  - step_id: '3_165'
+    raw_code: page.get_by_role("button", name="Apply").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_3_165_before.png
+      intent: baselines/step_3_165_intent.png
+      after: baselines/step_3_165_after.png
+- section_name: Weekly Summary Section
+  section_goal: ''
+  section_verification:
+    ai_understanding: ''
+    human_assertions: []
+  steps:
+  - step_id: '4_1'
+    raw_code: page.locator("#time-filterId > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown
+      > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()
+    action: click
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_4_1_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_4_1_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_4_1_after.png
+    healed_coords:
+      x: 447
+      y: 394
+  - step_id: '4_2'
+    raw_code: page.locator("div").filter(has_text=re.compile(r"^Latest 5 Next 4$")).nth(1).click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_4_2_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_4_2_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_4_2_after.png
+  - step_id: '4_3'
+    raw_code: page.locator(".ag-row-odd.ag-row-no-focus.ag-row-not-inline-editing.ag-row.ag-row-level-0.ag-row-group.ag-row-group-contracted
+      > .ag-cell-value > .ag-cell-wrapper > .ag-group-contracted > .zeb-chevron-right").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_4_3_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_4_3_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_4_3_after.png
+  - step_id: '4_4'
+    raw_code: page.locator(".ag-row-even.ag-row-no-focus.ag-row-not-inline-editing.ag-row.ag-row-level-0.ag-row-group.ag-row-group-contracted
+      > .ag-cell-value > .ag-cell-wrapper > .ag-group-contracted > .zeb-chevron-right").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_4_4_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_4_4_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_4_4_after.png
+  - step_id: '4_5'
+    raw_code: page.locator(".ag-row-odd.ag-row-no-focus.ag-row-not-inline-editing.ag-row.ag-row-level-0.ag-row-group.ag-row-group-contracted
+      > .ag-cell-value > .ag-cell-wrapper > .ag-group-contracted > .zeb-chevron-right").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_4_5_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_4_5_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_4_5_after.png
+  - step_id: '4_6'
+    raw_code: page.locator(".ag-row-even.ag-row-no-focus.ag-row-not-inline-editing.ag-row.ag-row-level-0.ag-row-group.ag-row-group-contracted
+      > .ag-cell-value > .ag-cell-wrapper > .ag-group-contracted > .zeb-chevron-right").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_4_6_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_4_6_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_4_6_after.png
+  - step_id: '4_7'
+    raw_code: page.locator(".ag-row-odd.ag-row-no-focus.ag-row-not-inline-editing.ag-row.ag-row-level-0.ag-row-group.ag-row-group-contracted
+      > .ag-cell-value > .ag-cell-wrapper > .ag-group-contracted > .zeb-chevron-right").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_4_7_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_4_7_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_4_7_after.png
+  - step_id: '4_8'
+    raw_code: page.locator(".wr-20.font-weight-normal > esp-multiselect-dropdown >
+      .multiselect-dropdown > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_4_8_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_4_8_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_4_8_after.png
+  - step_id: '4_9'
+    raw_code: page.locator(".d-flex.flex-column.justify-content-center").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_4_9_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_4_9_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_4_9_after.png
+  - step_id: '4_10'
+    raw_code: page.locator(".d-flex.dropdown-option.align-items-center.p-v-5.p-l-32
+      > .d-flex").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_4_10_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_4_10_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_4_10_after.png
+  - step_id: '4_11'
+    raw_code: page.locator(".overflow-auto > div:nth-child(2) > .d-flex").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_4_11_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_4_11_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_4_11_after.png
+  - step_id: '4_12'
+    raw_code: page.locator(".overflow-auto > div:nth-child(3) > .d-flex").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_4_12_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_4_12_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_4_12_after.png
+  - step_id: '4_13'
+    raw_code: page.locator(".overflow-auto > div:nth-child(4) > .d-flex").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_4_13_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_4_13_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_4_13_after.png
+  - step_id: '4_14'
+    raw_code: page.locator(".overflow-auto > div:nth-child(5) > .d-flex").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_4_14_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_4_14_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_4_14_after.png
+  - step_id: '4_15'
+    raw_code: page.locator("div:nth-child(6) > .d-flex").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_4_15_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_4_15_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_4_15_after.png
+  - step_id: '4_16'
+    raw_code: page.locator(".overflow-auto > div:nth-child(7)").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_4_16_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_4_16_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_4_16_after.png
+  - step_id: '4_17'
+    raw_code: page.locator("div:nth-child(8) > .d-flex").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_4_17_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_4_17_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_4_17_after.png
+  - step_id: '4_18'
+    raw_code: page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.zeb-check").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_4_18_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_4_18_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_4_18_after.png
+  - step_id: '4_19'
+    raw_code: page.locator("div:nth-child(9) > .d-flex").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_4_19_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_4_19_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_4_19_after.png
+  - step_id: '4_20'
+    raw_code: page.locator("div:nth-child(10) > .d-flex").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_20_before.png
+      intent: baselines/step_4_20_intent.png
+      after: baselines/step_4_20_after.png
+  - step_id: '4_21'
+    raw_code: page.locator(".d-flex.flex-column.justify-content-center").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_21_before.png
+      intent: baselines/step_4_21_intent.png
+      after: baselines/step_4_21_after.png
+  - step_id: '4_22'
+    raw_code: page.get_by_text("All").nth(3).click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_22_before.png
+      intent: baselines/step_4_22_intent.png
+      after: baselines/step_4_22_after.png
+  - step_id: '4_23'
+    raw_code: page.locator("esp-card-component").filter(has_text="Weekly Summary Customer:").get_by_role("button").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_23_before.png
+      intent: baselines/step_4_23_intent.png
+      after: baselines/step_4_23_after.png
+  - step_id: '4_24'
+    raw_code: page.get_by_role("treeitem", name="-12-21 (52) Column").get_by_label("Press
+      SPACE to toggle visibility (visible)").uncheck()
+    action: uncheck
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_24_before.png
+      intent: baselines/step_4_24_intent.png
+      after: baselines/step_4_24_after.png
+  - step_id: '4_25'
+    raw_code: page.get_by_role("treeitem", name="-12-28 (01) Column").get_by_label("Press
+      SPACE to toggle visibility (visible)").uncheck()
+    action: uncheck
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_25_before.png
+      intent: baselines/step_4_25_intent.png
+      after: baselines/step_4_25_after.png
+  - step_id: '4_26'
+    raw_code: page.get_by_role("treeitem", name="-01-04 (02) Column").get_by_label("Press
+      SPACE to toggle visibility (visible)").uncheck()
+    action: uncheck
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_26_before.png
+      intent: baselines/step_4_26_intent.png
+      after: baselines/step_4_26_after.png
+  - step_id: '4_27'
+    raw_code: page.locator("esp-card-component").filter(has_text="Weekly Summary Customer:").get_by_role("button").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_27_before.png
+      intent: baselines/step_4_27_intent.png
+      after: baselines/step_4_27_after.png
+  - step_id: '4_28'
+    raw_code: page.locator("svg").get_by_text("User Forecast Total").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_28_before.png
+      intent: baselines/step_4_28_intent.png
+      after: baselines/step_4_28_after.png
+  - step_id: '4_29'
+    raw_code: page.locator("svg").get_by_text("User Override Total").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_29_before.png
+      intent: baselines/step_4_29_intent.png
+      after: baselines/step_4_29_after.png
+  - step_id: '4_30'
+    raw_code: page.locator("svg").get_by_text("Aged Net Units").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_30_before.png
+      intent: baselines/step_4_30_intent.png
+      after: baselines/step_4_30_after.png
+  - step_id: '4_31'
+    raw_code: page.locator(".ellipses > esp-multiselect-dropdown > .multiselect-dropdown
+      > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_31_before.png
+      intent: baselines/step_4_31_intent.png
+      after: baselines/step_4_31_after.png
+  - step_id: '4_32'
+    raw_code: page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.deselected").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_32_before.png
+      intent: baselines/step_4_32_intent.png
+      after: baselines/step_4_32_after.png
+  - step_id: '4_33'
+    raw_code: page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.deselected").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_33_before.png
+      intent: baselines/step_4_33_intent.png
+      after: baselines/step_4_33_after.png
+  - step_id: '4_34'
+    raw_code: page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.deselected").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_34_before.png
+      intent: baselines/step_4_34_intent.png
+      after: baselines/step_4_34_after.png
+  - step_id: '4_35'
+    raw_code: page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.deselected").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_35_before.png
+      intent: baselines/step_4_35_intent.png
+      after: baselines/step_4_35_after.png
+  - step_id: '4_36'
+    raw_code: page.locator(".overflow-auto > div:nth-child(7)").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_36_before.png
+      intent: baselines/step_4_36_intent.png
+      after: baselines/step_4_36_after.png
+  - step_id: '4_37'
+    raw_code: page.locator(".overflow-auto > div:nth-child(8)").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_37_before.png
+      intent: baselines/step_4_37_intent.png
+      after: baselines/step_4_37_after.png
+  - step_id: '4_38'
+    raw_code: page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.deselected").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_38_before.png
+      intent: baselines/step_4_38_intent.png
+      after: baselines/step_4_38_after.png
+  - step_id: '4_39'
+    raw_code: page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.deselected").first.click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_39_before.png
+      intent: baselines/step_4_39_intent.png
+      after: baselines/step_4_39_after.png
+  - step_id: '4_40'
+    raw_code: page.locator(".ellipses > esp-multiselect-dropdown > .multiselect-dropdown
+      > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_40_before.png
+      intent: baselines/step_4_40_intent.png
+      after: baselines/step_4_40_after.png
+  - step_id: '4_41'
+    raw_code: page.locator("path:nth-child(78)").click()
+    action: click
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_41_before.png
+      intent: baselines/step_4_41_intent.png
+      after: baselines/step_4_41_after.png
+    healed_coords:
+      x: 710
+      y: 551
+  - step_id: '4_42'
+    raw_code: 'page.locator(".title.d-flex.align-items-center.font-size-16.font-weight-bold.nunito.title-color
+      > .grid-icons-container > esp-grid-icons-component > .display-grid-icons > div
+      > #preference-iconId > .legend-font > .multiselect-dropdown > .pointer").click()'
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_42_before.png
+      intent: baselines/step_4_42_intent.png
+      after: baselines/step_4_42_after.png
+  - step_id: '4_43'
+    raw_code: page.get_by_text("Save Preference").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_43_before.png
+      intent: baselines/step_4_43_intent.png
+      after: baselines/step_4_43_after.png
+  - step_id: '4_44'
+    raw_code: 'page.locator(".title.d-flex.align-items-center.font-size-16.font-weight-bold.nunito.title-color
+      > .grid-icons-container > esp-grid-icons-component > .display-grid-icons > div
+      > #preference-iconId > .legend-font > .multiselect-dropdown > .pointer").click()'
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_44_before.png
+      intent: baselines/step_4_44_intent.png
+      after: baselines/step_4_44_after.png
+  - step_id: '4_45'
+    raw_code: page.get_by_text("Reset Preference").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_45_before.png
+      intent: baselines/step_4_45_intent.png
+      after: baselines/step_4_45_after.png
+  - step_id: '4_46'
+    raw_code: page.locator(".ag-row-odd.ag-row-no-focus.ag-row-not-inline-editing.ag-row.ag-row-level-1.ag-row-position-absolute.ag-row-hover
+      > div:nth-child(4) > span > div").click()
+    action: click
+    execution_mode: HEALED_COORDINATES
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_4_46_before.png
+      intent: baselines/step_4_46_intent.png
+      after: baselines/step_4_46_after.png
+    healed_coords:
+      x: 519
+      y: 164
+- section_name: Events Grid
+  section_goal: ''
+  section_verification:
+    ai_understanding: ''
+    human_assertions: []
+  steps:
+  - step_id: '5_1'
+    raw_code: page.locator("div:nth-child(4) > span > .align-middle").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_5_1_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_5_1_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_5_1_after.png
+  - step_id: '5_2'
+    raw_code: page.locator("div:nth-child(7) > div > esp-grid-container > esp-card-component
+      > .card-container > .card-content").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_5_2_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_5_2_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_5_2_after.png
+  - step_id: '5_3'
+    raw_code: page.locator(".ag-header-cell.ag-header-parent-hidden.ag-header-cell-sortable.ag-header-background.ag-focus-managed.ag-header-active
+      > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon
+      > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_5_3_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_5_3_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_5_3_after.png
+  - step_id: '5_4'
+    raw_code: page.get_by_role("textbox", name="Filter Value").fill("Promotion-WM
+      BARCEL TAKIS 10CT ROLLBACK 122925 TO 033026")
+    action: fill
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_5_4_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_5_4_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_5_4_after.png
+  - step_id: '5_5'
+    raw_code: page.get_by_label("Column Filter").get_by_role("button", name="Apply").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_5_5_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_5_5_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_5_5_after.png
+  - step_id: '5_6'
+    raw_code: page.get_by_role("gridcell", name="Promotion-WM BARCEL TAKIS").nth(1).click(button="right")
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_5_6_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_5_6_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_5_6_after.png
+  - step_id: '5_7'
+    raw_code: page.get_by_role("gridcell", name="Promotion-WM BARCEL TAKIS").nth(1).click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_5_7_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_5_7_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_5_7_after.png
+  - step_id: '5_8'
+    raw_code: page.locator(".ag-header-cell.ag-header-parent-hidden.ag-header-cell-sortable.ag-header-background.ag-focus-managed.ag-header-active
+      > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon
+      > .ag-icon").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_5_8_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_5_8_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_5_8_after.png
+  - step_id: '5_9'
+    raw_code: page.get_by_role("textbox", name="Filter Value").fill("TOR")
+    action: fill
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_5_9_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_5_9_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_5_9_after.png
+  - step_id: '5_10'
+    raw_code: page.get_by_label("Column Filter").get_by_role("button", name="Apply").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_5_10_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_5_10_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_5_10_after.png
+  - step_id: '5_11'
+    raw_code: page.locator("a").nth(2).click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_5_11_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_5_11_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_5_11_after.png
+  - step_id: '5_12'
+    raw_code: page.locator("esp-card-component").filter(has_text="Event Details columns
+      (0)").get_by_role("button").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_5_12_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_5_12_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_5_12_after.png
+  - step_id: '5_13'
+    raw_code: page.get_by_role("checkbox", name="Toggle All Columns Visibility").uncheck()
+    action: uncheck
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_5_13_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_5_13_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_5_13_after.png
+  - step_id: '5_14'
+    raw_code: page.get_by_role("treeitem", name="Event Column").get_by_label("Press
+      SPACE to toggle visibility (hidden)").check()
+    action: check
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_5_14_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_5_14_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_5_14_after.png
+  - step_id: '5_15'
+    raw_code: page.get_by_role("treeitem", name="UPC 12 Column").get_by_label("Press
+      SPACE to toggle visibility (hidden)").check()
+    action: check
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_5_15_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_5_15_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_5_15_after.png
+  - step_id: '5_16'
+    raw_code: page.get_by_role("treeitem", name="Customer Level 2 Column").get_by_label("Press
+      SPACE to toggle visibility (hidden)").check()
+    action: check
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_5_16_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_5_16_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_5_16_after.png
+  - step_id: '5_17'
+    raw_code: page.locator("esp-card-component").filter(has_text="Event Details columns
+      (0)").get_by_role("button").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_5_17_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_5_17_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_5_17_after.png
+  - step_id: '5_18'
+    raw_code: 'page.locator("div:nth-child(7) > div > esp-grid-container > esp-card-component
+      > .card-container > .card-content > esp-row-dimentional-grid > div > #paginationId
+      > esp-pagination-v2 > .d-flex.w-100 > span:nth-child(3) > esp-multiselect-dropdown
+      > .multiselect-dropdown > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()'
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_5_18_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_5_18_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_5_18_after.png
+  - step_id: '5_19'
+    raw_code: page.locator("div").filter(has_text=re.compile(r"^View 20 row\(s\)$")).nth(1).click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: Mechanical_Images/Run_20260614_193754\step_5_19_before.png
+      intent: Mechanical_Images/Run_20260614_193754\step_5_19_intent.png
+      after: Mechanical_Images/Run_20260614_193754\step_5_19_after.png

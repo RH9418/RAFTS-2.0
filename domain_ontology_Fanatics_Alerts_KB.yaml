@@ -1,0 +1,306 @@
+business_logic:
+- FilterPanel is a parent of AlertsDropdown, SeasonTypeDropdown, ResetButton, and
+  ApplyButton.
+- AlertsSummary contains data entries with attributes such as PID, FirstOOSWeek, NoOOSWeeks,
+  EstLostUnits, and EstimatedSales.
+- Hierarchy is a parent category that contains League and Team as child elements.
+- League and Team can be selected within the Hierarchy filter in the application's
+  domain taxonomy.
+- League is a child of Hierarchy.
+- Team is a child of Hierarchy.
+- Hierarchy is a child of FilterPanel.
+- League and Team can have a 'selected' state.
+- Team can have a 'selectedTeams' attribute containing a list of team names.
+- FilterPanel contains elements such as AlertsDropdown, SeasonTypeDropdown, ResetButton,
+  ApplyButton, and Hierarchy.
+- AlertsSummary is a sibling of FilterPanel and contains alert data.
+- Department is a sibling of Team under the FilterPanel.
+- League is a sibling of Team under the Hierarchy.
+- FilterPanel contains elements like AlertsDropdown, SeasonTypeDropdown, ResetButton,
+  ApplyButton, and Hierarchy.
+- Department contains options like Select All and Aggregate Values.
+- Class is a child of FilterPanel.
+- Class contains elements such as 'Select All', 'ADJUSTABLE', 'AUTO ACCESSORIES',
+  and 'Aggregate Values'.
+- Hierarchy contains elements such as 'League' and 'Team'.
+- League and Team are selectable elements within Hierarchy.
+- Team can have multiple selected teams, such as 'ATHLETICS', 'BALTIMORE ORIOLES',
+  and others.
+- Department is a child of FilterPanel.
+- Department contains elements such as 'Select All' and 'Aggregate Values'.
+- FilterPanel contains other elements such as AlertsDropdown, SeasonTypeDropdown,
+  ResetButton, and ApplyButton.
+- Attribute, Product Line, and Color are hierarchical filters under the FilterPanel.
+- League and Team are children of the Hierarchy filter within the FilterPanel.
+- Department and Class are separate filter categories within the FilterPanel.
+- The Apply Filters button is used to apply selected filters in the FilterPanel.
+- Attribute is a child of FilterPanel.
+- Product Line is a child of FilterPanel.
+- Color is a child of FilterPanel.
+- AlertsDropdown is a child of FilterPanel.
+- SeasonTypeDropdown is a child of FilterPanel.
+- ResetButton is a child of FilterPanel.
+- ApplyButton is a child of FilterPanel.
+- Select All is a child of Department.
+- Aggregate Values is a child of Department.
+- Select All is a child of Class.
+- ADJUSTABLE is a child of Class.
+- AUTO ACCESSORIES is a child of Class.
+- Aggregate Values is a child of Class.
+- AlertsSummary is a sibling of FilterPanel.
+- AlertsDropdown is a child of FilterPanel and contains options related to alert types
+  such as 'All Alerts', 'Over Stock', and 'Under Stock'.
+- League is a child of Hierarchy within FilterPanel and has a selected state.
+- Team is a child of Hierarchy within FilterPanel and allows selection of multiple
+  teams.
+- Department is a child of FilterPanel and includes options like 'Select All' and
+  'Aggregate Values'.
+- Class is a child of FilterPanel and includes options like 'Select All', 'ADJUSTABLE',
+  'AUTO ACCESSORIES', and 'Aggregate Values'.
+- Attribute, Product Line, and Color are individual filters within FilterPanel and
+  are in a selected state.
+- AlertsSummary is a sibling of FilterPanel and provides data related to alerts, including
+  details like PID, FirstOOSWeek, NoOOSWeeks, EstLostUnits, and EstimatedSales.
+- AlertsDropdown is a child of FilterPanel and contains options such as 'All Alerts',
+  'Over Stock', and 'Under Stock'.
+- League and Team are children of Hierarchy, which is a child of FilterPanel.
+- Team has a property 'selectedTeams' that lists specific teams such as 'ATHLETICS',
+  'BALTIMORE ORIOLES', and others.
+- Department is a child of FilterPanel and contains elements like 'Select All' and
+  'Aggregate Values'.
+- Class is a child of FilterPanel and contains elements like 'Select All', 'ADJUSTABLE',
+  'AUTO ACCESSORIES', and 'Aggregate Values'.
+- AlertsSummary is a sibling of FilterPanel and contains data about alerts, including
+  properties like 'PID', 'FirstOOSWeek', 'NoOOSWeeks', 'EstLostUnits', and 'EstimatedSales'.
+- League and Team are children of Hierarchy within FilterPanel.
+- Department, Class, Attribute, Product Line, and Color are children of FilterPanel.
+- ApplyButton and ResetButton are children of FilterPanel.
+- League and Team can have selected states and specific selections (e.g., selectedTeams).
+- Class can have individual options like ADJUSTABLE and AUTO ACCESSORIES with selectable
+  states.
+- Department and Class have a 'Select All' option with a checked or unchecked state.
+- AlertsSummary contains data related to product alerts, including fields like PID,
+  FirstOOSWeek, NoOOSWeeks, EstLostUnits, and EstimatedSales.
+- Team has a property 'selectedTeams' which lists selected teams.
+- Class has elements with states such as 'checked', 'unchecked', and 'selected'.
+- Department has elements with states such as 'checked' and 'unchecked'.
+- AlertsDropdown has options including 'All Alerts', 'Over Stock', and 'Under Stock'.
+- AlertsSummary contains data about products, including fields like PID, FirstOOSWeek,
+  NoOOSWeeks, EstLostUnits, and EstimatedSales.
+- AlertsSummary contains data about alerts, including fields like PID, FirstOOSWeek,
+  NoOOSWeeks, EstLostUnits, and EstimatedSales.
+- AlertsSummary has a columns property that tracks the visibility state of each column.
+- The 'Toggle All Columns Visibility' checkbox controls the visibility of all columns
+  in AlertsSummary.
+- AlertsSummary contains columns such as FirstOOSWeek and NoOOSWeeks, which can be
+  toggled for visibility.
+- Department is a sibling of Class, Attribute, Product Line, and Color within the
+  FilterPanel.
+- Class contains selectable elements such as ADJUSTABLE, AUTO ACCESSORIES, and Aggregate
+  Values.
+- AlertsSummary contains data columns such as PID, FirstOOSWeek, NoOOSWeeks, EstLostUnits,
+  and EstimatedSales.
+- Filters can be applied to AlertsSummary columns, such as filtering NoOOSWeeks with
+  a value and operator.
+- The FilterPanel includes dropdowns like AlertsDropdown and SeasonTypeDropdown.
+- The ApplyButton in the FilterPanel is used to apply selected filters.
+- Hierarchy contains selectable elements such as League and Team.
+- Team can have multiple selected teams, such as ATHLETICS, BALTIMORE ORIOLES, and
+  others.
+- Department contains options such as Select All and Aggregate Values.
+- Class contains options such as Select All, ADJUSTABLE, AUTO ACCESSORIES, and Aggregate
+  Values.
+- AlertsSummary allows column visibility toggling, such as hiding PID and EstLostUnits.
+- AlertsSummary supports filters on columns, such as NoOOSWeeks.
+- AlertsSummary contains columns with visibility and filters, such as 'EstLostUnits'
+  with a filter value of '4' and operator 'Greater than or equal to'.
+- Department is a sibling of Class, Attribute, Product Line, and Color under FilterPanel.
+- ResetButton and ApplyButton are children of FilterPanel.
+- AlertsSummary allows column visibility toggling and filtering for specific columns
+  like NoOOSWeeks and EstLostUnits.
+- AlertsSummary contains columns with visibility and filter configurations.
+- Estimated Lost Sales ($) is a filterable column in AlertsSummary.
+- Filters in AlertsSummary can have operators such as 'Greater than or equal to'.
+- AlertsSummary has configurable column visibility and filters for fields like NoOOSWeeks,
+  EstLostUnits, and Estimated Lost Sales ($).
+- The 'Reset' button is associated with the 'Column Filter' functionality.
+- AlertsSummary contains data columns such as 'PID', 'FirstOOSWeek', 'NoOOSWeeks',
+  'EstLostUnits', 'EstimatedSales', and 'Estimated Lost Sales ($)'.
+- AlertsSummary supports column visibility toggling for its data columns.
+- AlertsSummary supports filters for columns such as 'NoOOSWeeks', 'EstLostUnits',
+  and 'Estimated Lost Sales ($)'.
+- SeasonTypeDropdown can display multiple values such as 'Regular Season' and 'Pre
+  Season'.
+- Department is a sibling of Hierarchy in the FilterPanel.
+- Class is a sibling of Department in the FilterPanel.
+- Attribute, Product Line, and Color are children of FilterPanel.
+- AlertsSummary contains data about product alerts, including fields like PID, FirstOOSWeek,
+  NoOOSWeeks, EstLostUnits, and EstimatedSales.
+- The 'Save Preference' action likely saves the current state of preferences in the
+  application.
+- The AlertsSummary contains data columns such as PID, FirstOOSWeek, NoOOSWeeks, EstLostUnits,
+  EstimatedSales, and Estimated Lost Sales ($).
+- The AlertsSummary has filters applicable to columns like NoOOSWeeks, EstLostUnits,
+  and Estimated Lost Sales ($).
+- The AlertsSummary preferences indicate that settings can be saved.
+- Department is a sibling of Hierarchy within FilterPanel.
+- Class is a sibling of Department within FilterPanel.
+- AlertsSummary supports pagination with properties like currentPage and rowsPerPage.
+- AlertsSummary includes column visibility and filter configurations.
+- AlertsSummary has a saved preferences state.
+- Class contains elements such as Select All, ADJUSTABLE, AUTO ACCESSORIES, and Aggregate
+  Values.
+- Department contains elements such as Select All and Aggregate Values.
+- Team contains a list of selected teams, including ATHLETICS, BALTIMORE ORIOLES,
+  and others.
+- Department is a sibling of Hierarchy within the FilterPanel.
+- Class is a sibling of Department within the FilterPanel.
+- AlertsSummary supports pagination with rowsPerPage and currentPage attributes.
+- Team is a child of Hierarchy and contains a list of selected teams.
+- Department contains elements such as 'Select All' and 'Aggregate Values' with selectable
+  states.
+- Class contains elements such as 'Select All', 'ADJUSTABLE', 'AUTO ACCESSORIES',
+  and 'Aggregate Values' with selectable states.
+- AlertsSummary contains data about products, including attributes like PID, FirstOOSWeek,
+  NoOOSWeeks, EstLostUnits, and EstimatedSales.
+- AlertsSummary includes a radio button state for each product entry.
+- AlertsSummary has configurable column visibility and filters for attributes like
+  NoOOSWeeks, EstLostUnits, and Estimated Lost Sales ($).
+- AlertsSummary supports pagination with configurable rows per page and current page
+  tracking.
+- FilterPanel includes dropdowns such as AlertsDropdown and SeasonTypeDropdown with
+  selectable options.
+- FilterPanel includes action buttons like ResetButton and ApplyButton.
+- The FilterPanel contains multiple dropdowns and selection elements for filtering
+  data.
+- AlertsSummary contains data rows with attributes like PID, FirstOOSWeek, NoOOSWeeks,
+  EstLostUnits, and EstimatedSales.
+- AlertsSummary supports column visibility toggles and filters for attributes like
+  NoOOSWeeks, EstLostUnits, and Estimated Lost Sales ($).
+- AlertsSummary has pagination with a current page and rows per page setting.
+- The 'Show All Locations' action expands the FilterPanel.
+- AlertsSummary contains columns with visibility settings.
+- AlertsSummary contains filters for columns such as NoOOSWeeks, EstLostUnits, and
+  Estimated Lost Sales ($).
+- AlertsSummary includes pagination settings with currentPage and rowsPerPage.
+- AlertsSummary includes data entries with attributes like PID, FirstOOSWeek, NoOOSWeeks,
+  EstLostUnits, and EstimatedSales.
+- Department is a sibling of Class, Attribute, Product Line, and Color.
+- AlertsDropdown is part of the FilterPanel.
+- SeasonTypeDropdown is part of the FilterPanel.
+- The FilterPanel contains elements for hierarchical filtering such as League and
+  Team.
+- The AlertsSummary section includes data columns with visibility and filter configurations.
+- The AlertsSummary section supports column filters, such as filtering 'Estimated
+  Lost Sales ($)' with a value of '100' and an operator 'Greater than or equal to'.
+- The AlertsSummary section includes pagination with a current page and rows per page
+  setting.
+- AlertsSummary contains data columns such as 'PID', 'FirstOOSWeek', 'NoOOSWeeks',
+  'EstLostUnits', and 'EstimatedSales'.
+- AlertsSummary columns have visibility settings that can be toggled.
+- AlertsSummary columns have filters that can be applied with specific values and
+  operators.
+- Department is a child of Global Filters.
+- Class is a child of Global Filters.
+- AlertsSummary contains column visibility settings and filters.
+- AlertsSummary includes pagination settings.
+- Attribute, Product Line, and Color are siblings within the FilterPanel.
+- ResetButton and ApplyButton are siblings within the FilterPanel.
+- The AlertsSummary section contains data about products, including attributes like
+  PID, FirstOOSWeek, and EstimatedSales.
+- The AlertsSummary section supports column visibility toggling and filtering.
+- The AlertsSummary section includes pagination with configurable rows per page.
+- Preferences in the AlertsSummary section can be saved.
+- Location is a selectable filter represented by a checkbox.
+- Apply is an actionable button that can be clicked to apply filters.
+- League and Team are part of the Hierarchy filter, with Team allowing multiple selections.
+- Department and Class filters include options like 'Select All' and 'Aggregate Values',
+  with individual items such as 'ADJUSTABLE' and 'AUTO ACCESSORIES' under Class.
+- AlertsSummary displays data related to products, including fields like PID, FirstOOSWeek,
+  and EstimatedSales, and allows selection via radio buttons.
+- AlertsSummary includes column visibility settings and filter options for fields
+  like NoOOSWeeks and EstLostUnits.
+- AlertsSummary supports pagination with configurable rows per page.
+- Locations in AlertsSummary, such as 'Baltimore Orioles In-Venue Retail', are represented
+  by checkboxes.
+- MonthlyTrend contains selectable options such as 'Actual Sales & ROY Fcst ($)',
+  'Sales Fcst Adjusted ($)', 'GD Sales Fcst Adjusted ($)', and 'Non GD Sales Fcst
+  Adjusted ($)'.
+- AlertsSummary includes data columns such as 'PID', 'FirstOOSWeek', 'NoOOSWeeks',
+  'EstLostUnits', 'EstimatedSales', 'Estimated Lost Sales ($)', and 'Unrecoverable
+  Lost Units'.
+- Locations in AlertsSummary include 'Baltimore Orioles In-Venue Retail' with a checkbox
+  state.
+- Hierarchy allows selection of multiple teams under the Team element.
+- TY Actual Sales ($), System Sales Fcst ($), GD Sales Fcst ($), and Non GD Sales
+  Fcst ($) are selectable elements under MonthlyTrend.
+- Class contains selectable elements such as 'ADJUSTABLE', 'AUTO ACCESSORIES', and
+  'Aggregate Values'.
+- The AlertsSummary includes data columns such as PID, FirstOOSWeek, NoOOSWeeks, EstLostUnits,
+  and EstimatedSales.
+- Department is a sibling of Hierarchy.
+- Class is a sibling of Department.
+- Attribute, Product Line, and Color are siblings and are selected.
+- '% Change vs LLY, LLY Sales ($), LY Sales ($), and % Change vs LY are part of MonthlyTrend
+  and are selected.'
+- AlertsDropdown is a child of FilterPanel and has options including 'All Alerts',
+  'Over Stock', and 'Under Stock'.
+- SeasonTypeDropdown is a child of FilterPanel and is visible with the value 'Regular
+  Season, Pre Season'.
+- ResetButton and ApplyButton are visible elements of FilterPanel.
+- Department contains elements such as 'Select All' (checked) and 'Aggregate Values'
+  (unchecked).
+- Class contains elements such as 'Select All' (checked), 'ADJUSTABLE' (unchecked),
+  'AUTO ACCESSORIES' (selected), and 'Aggregate Values' (unchecked).
+- AlertsSummary contains data columns such as PID, FirstOOSWeek, NoOOSWeeks, EstLostUnits,
+  EstimatedSales, and others, with visibility and filter options.
+- AlertsSummary includes pagination with a current page of 1 and 20 rows per page.
+- Locations in AlertsSummary include 'Baltimore Orioles In-Venue Retail' with a checked
+  checkbox.
+- SeasonTypeDropdown is a child of FilterPanel and has a value of 'Regular Season,
+  Pre Season'.
+- Hierarchy is a child of FilterPanel and contains selectable elements like League
+  and Team.
+- Team contains selected teams such as 'ATHLETICS', 'BALTIMORE ORIOLES', 'CHICAGO
+  WHITE SOX', 'MIAMI MARLINS', 'MLB MULTI-TEAM', 'PITTSBURGH PIRATES', and 'SAN FRANCISCO
+  GIANTS'.
+- AlertsSummary contains filters for columns such as 'NoOOSWeeks', 'EstLostUnits',
+  and 'Estimated Lost Sales ($)'.
+- MonthlyTrend contains selectable metrics such as 'Actual Sales & ROY Fcst ($)',
+  'TY Actual Sales ($)', 'System Sales Fcst ($)', 'GD Sales Fcst ($)', 'Non GD Sales
+  Fcst ($)', '% Change vs LLY', 'LLY Sales ($)', 'LY Sales ($)', and '% Change vs
+  LY'.
+- The AlertsSummary section supports column visibility and filtering options.
+- The MonthlyTrend section tracks various sales metrics such as Actual Sales & ROY
+  Fcst ($), TY Actual Sales ($), and % Change vs LY.
+- Attribute is a child of Global Filters.
+- Product Line is a child of Global Filters.
+- Color is a child of Global Filters.
+- AlertsSummary includes column visibility settings and filters for fields like NoOOSWeeks,
+  EstLostUnits, and Estimated Lost Sales ($).
+- MonthlyTrend contains metrics such as Actual Sales & ROY Fcst ($), TY Actual Sales
+  ($), System Sales Fcst ($), GD Sales Fcst ($), Non GD Sales Fcst ($), % Change vs
+  LLY, LLY Sales ($), LY Sales ($), and % Change vs LY.
+- SeasonTypeDropdown is a child of FilterPanel and displays values like 'Regular Season,
+  Pre Season'.
+- FilterPanel contains actionable elements such as ResetButton and ApplyButton.
+- AlertsSummary contains data related to product alerts, including fields like PID,
+  FirstOOSWeek, and EstimatedSales.
+- AlertsSummary supports column visibility preferences and filters for fields like
+  NoOOSWeeks and EstLostUnits.
+- MonthlyTrend contains selectable metrics such as 'TY Actual Sales ($)', 'System
+  Sales Fcst ($)', and '% Change vs LY'.
+- AlertsSummary contains data rows with attributes like PID, FirstOOSWeek, and radioButton
+  state.
+- AlertsSummary columns have visibility and filter configurations.
+- MonthlyTrend contains selectable metrics such as Actual Sales & ROY Fcst ($), Sales
+  Fcst Adjusted ($), and others.
+- AlertsSummary contains data about alerts, including PID, FirstOOSWeek, and other
+  metrics.
+- AlertsSummary includes a radio button state for each alert entry.
+- AlertsSummary has columns with visibility and filters for specific metrics.
+- AlertsSummary supports pagination with a current page and rows per page.
+- MonthlyTrend contains various sales forecast and actual sales metrics, all of which
+  are selected.
+entities: {}
+hierarchies: {}

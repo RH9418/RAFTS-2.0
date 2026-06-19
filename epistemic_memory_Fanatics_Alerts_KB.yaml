@@ -1,0 +1,4320 @@
+cached_chunks:
+  page.locator(".zeb-filter").first.click():
+    ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: visible
+              value: All Alerts
+            SeasonTypeDropdown:
+              state: visible
+              value: All Season Types
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|BREAKAWAY LANYARD|N/A
+            FirstOOSWeek: N/A
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|STATE KEYCHAIN|N/A
+            FirstOOSWeek: N/A
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+    traceability_matrix:
+      '1_1': END
+    verification_plan:
+    - step_id_checkpoint: END
+      what_to_verify: Verify the filter panel is expanded and all elements (dropdowns,
+        buttons) are visible.
+  ? page.locator("div").filter(has_text=re.compile(r"^Hierarchy$")).nth(2).click()|page.get_by_text("League").click()|page.get_by_text("League").click()|page.get_by_text("Team",
+    exact=True).click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: visible
+              value: All Alerts
+            SeasonTypeDropdown:
+              state: visible
+              value: All Season Types
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|BREAKAWAY LANYARD|N/A
+            FirstOOSWeek: N/A
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|STATE KEYCHAIN|N/A
+            FirstOOSWeek: N/A
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+    traceability_matrix:
+      '2_1': '2_4'
+      '2_2': '2_4'
+      '2_3': '2_4'
+      '2_4': END
+    verification_plan:
+    - step_id_checkpoint: '2_4'
+      what_to_verify: Verify that 'League' and 'Team' are selected under the expanded
+        'Hierarchy' section.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'Hierarchy' section remains expanded and selections
+        are visible.
+  ? page.locator(".filter-values.d-flex.align-items-center.p-l-32.p-r-24 > .custom-checkbox-wrapper
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: visible
+              value: All Alerts
+            SeasonTypeDropdown:
+              state: visible
+              value: All Season Types
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|BREAKAWAY LANYARD|N/A
+            FirstOOSWeek: N/A
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|STATE KEYCHAIN|N/A
+            FirstOOSWeek: N/A
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+    traceability_matrix:
+      '2_5': '2_11'
+      '2_6': '2_11'
+      '2_7': '2_11'
+      '2_8': '2_11'
+      '2_9': '2_11'
+      '2_10': '2_11'
+      '2_11': END
+    verification_plan:
+    - step_id_checkpoint: '2_11'
+      what_to_verify: Verify checkboxes for ATHLETICS, BALTIMORE ORIOLES, CHICAGO
+        WHITE SOX, MIAMI MARLINS, MLB MULTI-TEAM, PITTSBURGH PIRATES, and SAN FRANCISCO
+        GIANTS are CHECKED.
+    - step_id_checkpoint: END
+      what_to_verify: Verify FilterPanel remains expanded and selections persist.
+  ? page.get_by_text("Team", exact=True).click()|page.get_by_text("Department").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
+    > .pointer").first.click()|page.get_by_text("Department").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: visible
+              value: All Alerts
+            SeasonTypeDropdown:
+              state: visible
+              value: All Season Types
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|BREAKAWAY LANYARD|N/A
+            FirstOOSWeek: N/A
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|STATE KEYCHAIN|N/A
+            FirstOOSWeek: N/A
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+    traceability_matrix:
+      '2_12': '2_13'
+      '2_13': '2_14'
+      '2_14': '2_15'
+      '2_15': END
+    verification_plan:
+    - step_id_checkpoint: '2_13'
+      what_to_verify: Verify 'Department' section is expanded after clicking 'Team'.
+    - step_id_checkpoint: '2_14'
+      what_to_verify: Verify 'Select All' checkbox is checked in 'Department'.
+    - step_id_checkpoint: END
+      what_to_verify: Verify 'Department' section is collapsed after clicking 'Department'
+        again.
+  ? page.get_by_text("Class").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
+    > .pointer").first.click()|page.get_by_text("Class").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: visible
+              value: All Alerts
+            SeasonTypeDropdown:
+              state: visible
+              value: All Season Types
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: unchecked
+                Aggregate Values:
+                  state: unchecked
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|BREAKAWAY LANYARD|N/A
+            FirstOOSWeek: N/A
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|STATE KEYCHAIN|N/A
+            FirstOOSWeek: N/A
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+    traceability_matrix:
+      '2_16': '2_18'
+      '2_17': '2_18'
+      '2_18': END
+    verification_plan:
+    - step_id_checkpoint: '2_18'
+      what_to_verify: Verify Class Select All checkbox is CHECKED after Step 2_17
+        and remains checked after Step 2_18.
+    - step_id_checkpoint: END
+      what_to_verify: Verify FilterPanel remains expanded and Class section is visible.
+  ? page.get_by_text("Attribute").click()|page.get_by_text("Product Line").click()|page.get_by_text("Color",
+    exact=True).click()|page.get_by_role("button", name="Apply Filters").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: visible
+              value: All Alerts
+            SeasonTypeDropdown:
+              state: visible
+              value: All Season Types
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: unchecked
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|BREAKAWAY LANYARD|N/A
+            FirstOOSWeek: N/A
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|STATE KEYCHAIN|N/A
+            FirstOOSWeek: N/A
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+    traceability_matrix:
+      '2_19': '2_22'
+      '2_20': '2_22'
+      '2_21': '2_22'
+      '2_22': END
+    verification_plan:
+    - step_id_checkpoint: '2_22'
+      what_to_verify: Verify Attribute, Product Line, and Color are SELECTED.
+    - step_id_checkpoint: END
+      what_to_verify: Verify Apply Filters button was clicked and filters were applied.
+  ? page.locator(".pill-nav-btn.pointer").click()|page.locator(".zeb-filter").first.click()|page.locator(".dropdown-caret.p-l-16").first.click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: visible
+              value: All Alerts
+            SeasonTypeDropdown:
+              state: visible
+              value: All Season Types
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+    traceability_matrix:
+      '2_23': '2_24'
+      '2_24': '2_25'
+      '2_25': END
+    verification_plan:
+    - step_id_checkpoint: '2_24'
+      what_to_verify: Verify that the Class filter dropdown is updated to AUTO ACCESSORIES.
+    - step_id_checkpoint: '2_25'
+      what_to_verify: Verify that the Alerts filter dropdown is expanded and displays
+        updated data.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary table reflects the updated filter
+        selections.
+  ? page.locator(".dropdown-caret.p-l-16").first.click()|page.locator("div").filter(has_text=re.compile(r"^All
+    Alerts$")).nth(1).click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: All Season Types
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+    traceability_matrix:
+      '3_1': '3_2'
+      '3_2': END
+    verification_plan:
+    - step_id_checkpoint: '3_2'
+      what_to_verify: Verify AlertsDropdown is expanded and displays options 'All
+        Alerts', 'Over Stock', and 'Under Stock'.
+    - step_id_checkpoint: END
+      what_to_verify: Verify AlertsDropdown remains expanded with 'All Alerts' selected.
+  ? page.locator(".dropdown-caret.p-l-16").first.click()|page.locator("div").filter(has_text=re.compile(r"^Over
+    Stock$")).nth(1).click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: Over Stock
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: All Season Types
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+    traceability_matrix:
+      '3_3': '3_4'
+      '3_4': END
+    verification_plan:
+    - step_id_checkpoint: '3_4'
+      what_to_verify: Verify AlertsDropdown value is updated to 'Over Stock'.
+    - step_id_checkpoint: END
+      what_to_verify: Verify no additional UI changes occurred after Step 3_4.
+  ? page.locator("#seasontype-filterId > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown
+    > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.locator(".overflow-auto
+    > div:nth-child(2) > .d-flex").click()|page.locator(".d-flex.dropdown-option.align-items-center.p-v-5.p-l-32
+    > .d-flex").first.click()|page.get_by_role("button", name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: Over Stock
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+    traceability_matrix:
+      '3_5': '3_9'
+      '3_6': '3_9'
+      '3_7': '3_9'
+      '3_8': '3_9'
+      '3_9': END
+    verification_plan:
+    - step_id_checkpoint: '3_9'
+      what_to_verify: Verify that the 'Season Type' dropdown is set to 'Pre Season'
+        and the 'Apply' button is clicked.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the filters are applied and the 'AlertsSummary'
+        data is updated accordingly.
+  ? page.locator("#seasontype-filterId > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown
+    > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: Over Stock
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+    traceability_matrix:
+      '3_10': '3_12'
+      '3_11': '3_12'
+      '3_12': END
+    verification_plan:
+    - step_id_checkpoint: '3_12'
+      what_to_verify: Verify that the Season Type dropdown reflects 'Regular Season,
+        Pre Season' as selected.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Apply button was clicked and the filters were
+        applied successfully.
+  ? page.locator(".dropdown-caret.p-l-16").first.click()|page.get_by_text("All Alerts").click()|page.get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+    traceability_matrix:
+      '3_13': '3_14'
+      '3_14': '3_15'
+      '3_15': END
+    verification_plan:
+    - step_id_checkpoint: '3_14'
+      what_to_verify: Verify AlertsDropdown value is updated to 'All Alerts'.
+    - step_id_checkpoint: END
+      what_to_verify: Verify ApplyButton click updates the AlertsSummary data.
+  ? "page.get_by_role(\"button\", name=\"\uE0BFcolumns\").click()|page.get_by_role(\"\
+    checkbox\", name=\"Toggle All Columns Visibility\").uncheck()|page.get_by_role(\"\
+    button\", name=\"\uE0BFcolumns\").click()"
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          columns:
+            visibility:
+              PID: false
+              FirstOOSWeek: false
+              NoOOSWeeks: false
+              EstLostUnits: false
+              EstimatedSales: false
+    traceability_matrix:
+      '3_16': '3_18'
+      '3_17': '3_18'
+      '3_18': END
+    verification_plan:
+    - step_id_checkpoint: '3_18'
+      what_to_verify: Verify that all columns in AlertsSummary are toggled off (visibility
+        set to false).
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the columns menu is closed.
+  ? "page.get_by_role(\"button\", name=\"\uE0BFcolumns\").click()|page.get_by_role(\"\
+    treeitem\", name=\"First OOS Week Column\").get_by_label(\"Press SPACE to toggle\"\
+    ).check()|page.get_by_role(\"treeitem\", name=\"No OOS Weeks Column\").get_by_label(\"\
+    Press SPACE to toggle\").check()"
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          columns:
+            visibility:
+              PID: false
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: false
+              EstimatedSales: false
+    traceability_matrix:
+      '3_19': '3_21'
+      '3_20': '3_21'
+      '3_21': END
+    verification_plan:
+    - step_id_checkpoint: '3_21'
+      what_to_verify: Verify First OOS Week and No OOS Weeks columns are CHECKED and
+        visible.
+    - step_id_checkpoint: END
+      what_to_verify: Verify AlertsSummary reflects updated column visibility.
+  ? page.get_by_title("Filter").nth(2).click()|page.get_by_role("spinbutton", name="Filter
+    Value").fill("5")|page.locator(".ag-icon.ag-icon-small-down").first.click()|page.get_by_role("option",
+    name="Greater than or equal to").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          columns:
+            visibility:
+              PID: false
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: false
+              EstimatedSales: false
+            filters:
+              NoOOSWeeks:
+                value: '5'
+                operator: Greater than or equal to
+    traceability_matrix:
+      '3_22': '3_26'
+      '3_23': '3_26'
+      '3_24': '3_26'
+      '3_25': '3_26'
+      '3_26': END
+    verification_plan:
+    - step_id_checkpoint: '3_26'
+      what_to_verify: Verify that the filter 'NoOOSWeeks' is applied with value '5'
+        and operator 'Greater than or equal to'.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the AlertsSummary table reflects the applied filter
+        and updates the displayed data accordingly.
+  page.get_by_title("Filter").nth(2).click()|page.get_by_label("Column Filter").get_by_role("button", name="Reset").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          columns:
+            visibility:
+              PID: false
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: false
+              EstimatedSales: false
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+    traceability_matrix:
+      '3_27': '3_28'
+      '3_28': END
+    verification_plan:
+    - step_id_checkpoint: '3_28'
+      what_to_verify: Verify that the filter for 'NoOOSWeeks' is reset (value and
+        operator are null).
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the UI state remains consistent after the reset
+        operation.
+  ? page.get_by_role("treeitem", name="Est Lost Units Column").get_by_label("Press
+    SPACE to toggle").check()|page.get_by_title("Filter").nth(3).click()|page.get_by_role("spinbutton",
+    name="Filter Value").click()|page.get_by_role("spinbutton", name="Filter Value").fill("4")|page.locator(".ag-icon.ag-icon-small-down").first.click()|page.get_by_role("option",
+    name="Greater than or equal to").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          columns:
+            visibility:
+              PID: false
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: false
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: '4'
+                operator: Greater than or equal to
+    traceability_matrix:
+      '3_29': '3_30'
+      '3_30': '3_31'
+      '3_31': '3_32'
+      '3_32': '3_33'
+      '3_33': '3_34'
+      '3_34': '3_35'
+      '3_35': END
+    verification_plan:
+    - step_id_checkpoint: '3_30'
+      what_to_verify: Verify 'Est Lost Units' column checkbox is CHECKED.
+    - step_id_checkpoint: '3_31'
+      what_to_verify: Verify the filter input field for 'Est Lost Units' is CLICKED.
+    - step_id_checkpoint: '3_32'
+      what_to_verify: Verify the filter value '4' is FILLED in the input field.
+    - step_id_checkpoint: '3_34'
+      what_to_verify: Verify the filter operator 'Greater than or equal to' is SELECTED.
+    - step_id_checkpoint: END
+      what_to_verify: Verify the filter is APPLIED to the 'Est Lost Units' column.
+  page.get_by_title("Filter").nth(3).click()|page.get_by_label("Column Filter").get_by_role("button", name="Reset").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          columns:
+            visibility:
+              PID: false
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: false
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+    traceability_matrix:
+      '3_36': '3_37'
+      '3_37': END
+    verification_plan:
+    - step_id_checkpoint: '3_37'
+      what_to_verify: Verify that the filter for 'Est Lost Units' has been reset to
+        null.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the column filter panel is closed and the UI reflects
+        the reset state.
+  ? page.get_by_role("treeitem", name="Estimated Lost Sales ($)").get_by_label("Press
+    SPACE to toggle").check()|page.get_by_title("Filter").nth(4).click()|page.get_by_role("spinbutton",
+    name="Filter Value").fill("50")|page.locator(".ag-icon.ag-icon-small-down").first.click()|page.get_by_role("option",
+    name="Greater than or equal to").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          columns:
+            visibility:
+              PID: false
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: false
+              Estimated Lost Sales ($): true
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+              Estimated Lost Sales ($):
+                value: '50'
+                operator: Greater than or equal to
+    traceability_matrix:
+      '3_38': '3_39'
+      '3_39': '3_40'
+      '3_40': '3_41'
+      '3_41': '3_42'
+      '3_42': '3_43'
+      '3_43': END
+    verification_plan:
+    - step_id_checkpoint: '3_39'
+      what_to_verify: Verify 'Estimated Lost Sales ($)' column visibility is toggled
+        ON.
+    - step_id_checkpoint: '3_40'
+      what_to_verify: Verify 'Filter Value' spinbutton is filled with '50'.
+    - step_id_checkpoint: '3_42'
+      what_to_verify: Verify 'Greater than or equal to' operator is selected for 'Estimated
+        Lost Sales ($)'.
+    - step_id_checkpoint: END
+      what_to_verify: Verify filter is applied to 'Estimated Lost Sales ($)' column
+        with value '50' and operator 'Greater than or equal to'.
+  page.get_by_title("Filter").nth(4).click()|page.get_by_label("Column Filter").get_by_role("button", name="Reset").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          columns:
+            visibility:
+              PID: false
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: false
+              Estimated Lost Sales ($): true
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+              Estimated Lost Sales ($):
+                value: null
+                operator: null
+    traceability_matrix:
+      '3_44': '3_45'
+      '3_45': END
+    verification_plan:
+    - step_id_checkpoint: '3_45'
+      what_to_verify: Verify that the filter for 'Estimated Lost Sales ($)' is reset
+        to null.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the column filter panel is closed and the UI reflects
+        the reset state.
+  ? "page.get_by_role(\"checkbox\", name=\"Toggle All Columns Visibility\").check()|page.get_by_role(\"\
+    button\", name=\"\uE0BFcolumns\").click()"
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          columns:
+            visibility:
+              PID: true
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: true
+              Estimated Lost Sales ($): true
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+              Estimated Lost Sales ($):
+                value: null
+                operator: null
+    traceability_matrix:
+      '3_46': '3_47'
+      '3_47': END
+    verification_plan:
+    - step_id_checkpoint: '3_47'
+      what_to_verify: Verify all columns in AlertsSummary are visible after Toggle
+        All Columns Visibility checkbox is checked.
+    - step_id_checkpoint: END
+      what_to_verify: Verify the Columns sidebar is closed after the button click.
+  ? page.locator(".pointer.zeb-adjustments").click()|page.locator("div").filter(has_text=re.compile(r"^Save
+    Preference$")).nth(1).click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          columns:
+            visibility:
+              PID: true
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: true
+              Estimated Lost Sales ($): true
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+              Estimated Lost Sales ($):
+                value: null
+                operator: null
+          preferences:
+            saved: true
+    traceability_matrix:
+      '3_48': '3_49'
+      '3_49': END
+    verification_plan:
+    - step_id_checkpoint: '3_49'
+      what_to_verify: Verify that the Save Preference action was triggered after clicking
+        the preference icon.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the preference was successfully saved and reflected
+        in the AlertsSummary preferences state.
+  page.locator(".icon-color-toolbar-active.zeb-download-underline").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          columns:
+            visibility:
+              PID: true
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: true
+              Estimated Lost Sales ($): true
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+              Estimated Lost Sales ($):
+                value: null
+                operator: null
+          preferences:
+            saved: true
+    traceability_matrix:
+      '3_50': END
+    verification_plan:
+    - step_id_checkpoint: END
+      what_to_verify: Verify that clicking the download icon triggers the expected
+        download action and that the 'Grid Preference saved successfully' message
+        is displayed.
+  page.locator("a").filter(has_text="2").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          columns:
+            visibility:
+              PID: true
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: true
+              Estimated Lost Sales ($): true
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+              Estimated Lost Sales ($):
+                value: null
+                operator: null
+          preferences:
+            saved: true
+          pagination:
+            currentPage: 2
+            rowsPerPage: 10
+    traceability_matrix:
+      '3_51': END
+    verification_plan:
+    - step_id_checkpoint: END
+      what_to_verify: Verify that AlertsSummary pagination has updated to page 2 and
+        displays rows 11-20.
+  ? page.locator(".d-flex > esp-multiselect-dropdown > .multiselect-dropdown > div
+    > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator("div").filter(has_text=re.compile(r"^View
+    20 row\(s\)$")).nth(1).click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+          columns:
+            visibility:
+              PID: true
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: true
+              Estimated Lost Sales ($): true
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+              Estimated Lost Sales ($):
+                value: null
+                operator: null
+          preferences:
+            saved: true
+          pagination:
+            currentPage: 2
+            rowsPerPage: 20
+    traceability_matrix:
+      '3_52': '3_53'
+      '3_53': END
+    verification_plan:
+    - step_id_checkpoint: '3_53'
+      what_to_verify: Verify dropdown for rows per page is expanded and 'View 20 row(s)'
+        is selected.
+    - step_id_checkpoint: END
+      what_to_verify: Verify AlertsSummary pagination updates to display 20 rows per
+        page.
+  ? "page.get_by_role(\"gridcell\", name=\"\uE03D Baltimore Orioles|LICENSE FRAME\
+    \ COLOR CHROME|N/A|ORANGE\").get_by_role(\"radio\").check()"
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: checked
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: unchecked
+          columns:
+            visibility:
+              PID: true
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: true
+              Estimated Lost Sales ($): true
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+              Estimated Lost Sales ($):
+                value: null
+                operator: null
+          preferences:
+            saved: true
+          pagination:
+            currentPage: 2
+            rowsPerPage: 20
+    traceability_matrix:
+      '3_54': END
+    verification_plan:
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the radio button for 'Baltimore Orioles|LICENSE
+        FRAME COLOR CHROME|N/A' is checked.
+  page.get_by_text("Show All Locations").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: checked
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: unchecked
+          columns:
+            visibility:
+              PID: true
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: true
+              Estimated Lost Sales ($): true
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+              Estimated Lost Sales ($):
+                value: null
+                operator: null
+          preferences:
+            saved: true
+          pagination:
+            currentPage: 1
+            rowsPerPage: 20
+    traceability_matrix:
+      '4_1': END
+    verification_plan:
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the pagination in AlertsSummary has been reset to
+        page 1.
+  ? "page.get_by_role(\"button\", name=\"\uE0BFcolumns\").nth(1).click()|page.get_by_role(\"\
+    checkbox\", name=\"Toggle All Columns Visibility\").uncheck()|page.get_by_role(\"\
+    treeitem\", name=\"First OOS Week Column\").get_by_label(\"Press SPACE to toggle\"\
+    ).check()|page.get_by_role(\"treeitem\", name=\"No OOS Weeks Column\").get_by_label(\"\
+    Press SPACE to toggle\").check()|page.get_by_role(\"treeitem\", name=\"Est Lost\
+    \ Units Column\").get_by_label(\"Press SPACE to toggle\").check()|page.get_by_role(\"\
+    treeitem\", name=\"Estimated Lost Sales ($)\").get_by_label(\"Press SPACE to toggle\"\
+    ).check()|page.get_by_role(\"treeitem\", name=\"Unrecoverable Lost Units\").get_by_label(\"\
+    Press SPACE to toggle\").check()"
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: checked
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: unchecked
+          columns:
+            visibility:
+              PID: false
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: false
+              Estimated Lost Sales ($): true
+              Unrecoverable Lost Units: true
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+              Estimated Lost Sales ($):
+                value: null
+                operator: null
+          preferences:
+            saved: true
+          pagination:
+            currentPage: 1
+            rowsPerPage: 20
+    traceability_matrix:
+      '4_2': '4_3'
+      '4_3': '4_4'
+      '4_4': '4_5'
+      '4_5': '4_6'
+      '4_6': '4_7'
+      '4_7': '4_8'
+      '4_8': END
+    verification_plan:
+    - step_id_checkpoint: '4_3'
+      what_to_verify: Verify that the 'Toggle All Columns Visibility' checkbox is
+        unchecked.
+    - step_id_checkpoint: '4_4'
+      what_to_verify: Verify that the 'First OOS Week' column is visible.
+    - step_id_checkpoint: '4_5'
+      what_to_verify: Verify that the 'No OOS Weeks' column is visible.
+    - step_id_checkpoint: '4_6'
+      what_to_verify: Verify that the 'Est Lost Units' column is visible.
+    - step_id_checkpoint: '4_7'
+      what_to_verify: Verify that the 'Estimated Lost Sales ($)' column is visible.
+    - step_id_checkpoint: '4_8'
+      what_to_verify: Verify that the 'Unrecoverable Lost Units' column is visible.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that all selected columns are visible and the 'Toggle
+        All Columns Visibility' checkbox remains unchecked.
+  ? page.locator(".ag-header-cell.ag-column-last > .ag-header-cell-comp-wrapper >
+    .ag-cell-label-container > .ag-header-icon > .filter-icon").click()|page.get_by_role("spinbutton",
+    name="Filter Value").fill("100")|page.get_by_label("Column Filter").get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: checked
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: unchecked
+          columns:
+            visibility:
+              PID: false
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: false
+              Estimated Lost Sales ($): true
+              Unrecoverable Lost Units: true
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+              Estimated Lost Sales ($):
+                value: '100'
+                operator: Greater than or equal to
+          preferences:
+            saved: true
+          pagination:
+            currentPage: 1
+            rowsPerPage: 20
+    traceability_matrix:
+      '4_9': '4_11'
+      '4_10': '4_11'
+      '4_11': END
+    verification_plan:
+    - step_id_checkpoint: '4_11'
+      what_to_verify: Verify filter icon clicked (Step 4_9), filter value set to '100'
+        (Step 4_10), and filter applied (Step 4_11).
+    - step_id_checkpoint: END
+      what_to_verify: Verify AlertsSummary reflects the applied filter for 'Estimated
+        Lost Sales ($)' column.
+  ? page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active >
+    .filter-icon").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Reset").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: checked
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: unchecked
+          columns:
+            visibility:
+              PID: false
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: false
+              Estimated Lost Sales ($): true
+              Unrecoverable Lost Units: true
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+              Estimated Lost Sales ($):
+                value: null
+                operator: null
+          preferences:
+            saved: true
+          pagination:
+            currentPage: 1
+            rowsPerPage: 20
+    traceability_matrix:
+      '4_12': '4_13'
+      '4_13': END
+    verification_plan:
+    - step_id_checkpoint: '4_13'
+      what_to_verify: Verify that the filter for 'Estimated Lost Sales ($)' is reset
+        to null.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the column filter panel is closed.
+  ? "page.get_by_role(\"checkbox\", name=\"Toggle All Columns Visibility\").check()|page.get_by_role(\"\
+    button\", name=\"\uE0BFcolumns\").nth(1).click()"
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: checked
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: unchecked
+          columns:
+            visibility:
+              PID: true
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: true
+              Estimated Lost Sales ($): true
+              Unrecoverable Lost Units: true
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+              Estimated Lost Sales ($):
+                value: null
+                operator: null
+          preferences:
+            saved: true
+          pagination:
+            currentPage: 1
+            rowsPerPage: 20
+    traceability_matrix:
+      '4_14': '4_15'
+      '4_15': END
+    verification_plan:
+    - step_id_checkpoint: '4_15'
+      what_to_verify: Verify all columns in AlertsSummary are visible after Toggle
+        All Columns Visibility checkbox is checked.
+    - step_id_checkpoint: END
+      what_to_verify: Verify the Columns button was clicked and the sidebar is closed.
+  ? 'page.locator("div:nth-child(3) > div > .componentParentWrapper > esp-grid-container
+    > esp-card-component > .card-container > .title > .grid-icons-container > esp-grid-icons-component
+    > .display-grid-icons > div:nth-child(2) > #preference-iconId > .legend-font >
+    .multiselect-dropdown > .pointer").click()|page.get_by_text("Save Preference").click()'
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: checked
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: unchecked
+          columns:
+            visibility:
+              PID: true
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: true
+              Estimated Lost Sales ($): true
+              Unrecoverable Lost Units: true
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+              Estimated Lost Sales ($):
+                value: null
+                operator: null
+          preferences:
+            saved: true
+          pagination:
+            currentPage: 1
+            rowsPerPage: 20
+    traceability_matrix:
+      '4_16': '4_17'
+      '4_17': END
+    verification_plan:
+    - step_id_checkpoint: '4_17'
+      what_to_verify: Verify that the 'Save Preference' action updates the preferences
+        state to 'saved'.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the preferences icon interaction (Step 4_16) and
+        'Save Preference' click (Step 4_17) result in the expected UI state changes.
+  ? page.get_by_role("row", name="Location").get_by_role("checkbox").check()|page.get_by_role("button",
+    name="Apply").nth(1).click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: checked
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: unchecked
+          columns:
+            visibility:
+              PID: true
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: true
+              Estimated Lost Sales ($): true
+              Unrecoverable Lost Units: true
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+              Estimated Lost Sales ($):
+                value: null
+                operator: null
+          preferences:
+            saved: true
+          pagination:
+            currentPage: 1
+            rowsPerPage: 20
+          locations:
+            Baltimore Orioles In-Venue Retail:
+              checkbox:
+                state: checked
+    traceability_matrix:
+      '4_18': '4_19'
+      '4_19': END
+    verification_plan:
+    - step_id_checkpoint: '4_19'
+      what_to_verify: Verify checkbox for 'Baltimore Orioles In-Venue Retail' is CHECKED.
+    - step_id_checkpoint: END
+      what_to_verify: Verify Apply button click updates the grid preferences and saves
+        successfully.
+  ? page.locator("svg").get_by_text("Actual Sales & ROY Fcst ($)").click()|page.locator("svg").get_by_text("Sales
+    Fcst Adjusted ($)", exact=True).click()|page.get_by_text("GD Sales Fcst Adjusted
+    ($)", exact=True).click()|page.get_by_text("Non GD Sales Fcst Adjusted ($)").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: checked
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: unchecked
+          columns:
+            visibility:
+              PID: true
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: true
+              Estimated Lost Sales ($): true
+              Unrecoverable Lost Units: true
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+              Estimated Lost Sales ($):
+                value: null
+                operator: null
+          preferences:
+            saved: true
+          pagination:
+            currentPage: 1
+            rowsPerPage: 20
+          locations:
+            Baltimore Orioles In-Venue Retail:
+              checkbox:
+                state: checked
+          MonthlyTrend:
+            Actual Sales & ROY Fcst ($):
+              state: selected
+            Sales Fcst Adjusted ($):
+              state: selected
+            GD Sales Fcst Adjusted ($):
+              state: selected
+            Non GD Sales Fcst Adjusted ($):
+              state: selected
+    traceability_matrix:
+      '5_1': '5_4'
+      '5_2': '5_4'
+      '5_3': '5_4'
+      '5_4': END
+    verification_plan:
+    - step_id_checkpoint: '5_4'
+      what_to_verify: Verify that 'Actual Sales & ROY Fcst ($)', 'Sales Fcst Adjusted
+        ($)', 'GD Sales Fcst Adjusted ($)', and 'Non GD Sales Fcst Adjusted ($)' are
+        selected in the Monthly Trend section.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Monthly Trend section reflects the selected
+        states for the clicked elements.
+  ? page.locator("svg").get_by_text("TY Actual Sales ($)").click()|page.locator("svg").get_by_text("System
+    Sales Fcst ($)").click()|page.get_by_text("GD Sales Fcst ($)", exact=True).click()|page.get_by_text("Non
+    GD Sales Fcst ($)").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: checked
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: unchecked
+          columns:
+            visibility:
+              PID: true
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: true
+              Estimated Lost Sales ($): true
+              Unrecoverable Lost Units: true
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+              Estimated Lost Sales ($):
+                value: null
+                operator: null
+          preferences:
+            saved: true
+          pagination:
+            currentPage: 1
+            rowsPerPage: 20
+          locations:
+            Baltimore Orioles In-Venue Retail:
+              checkbox:
+                state: checked
+          MonthlyTrend:
+            Actual Sales & ROY Fcst ($):
+              state: selected
+            TY Actual Sales ($):
+              state: selected
+            System Sales Fcst ($):
+              state: selected
+            GD Sales Fcst ($):
+              state: selected
+            Non GD Sales Fcst ($):
+              state: selected
+    traceability_matrix:
+      '5_5': '5_8'
+      '5_6': '5_8'
+      '5_7': '5_8'
+      '5_8': END
+    verification_plan:
+    - step_id_checkpoint: '5_8'
+      what_to_verify: Verify that 'TY Actual Sales ($)', 'System Sales Fcst ($)',
+        'GD Sales Fcst ($)', and 'Non GD Sales Fcst ($)' are selected in the MonthlyTrend
+        section.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the MonthlyTrend section reflects the updated selections.
+  ? page.locator("svg").get_by_text("% Change vs LLY").click()|page.locator("svg").get_by_text("LLY
+    Sales ($)").click()|page.locator("svg").get_by_text("LY Sales ($)", exact=True).click()|page.locator("svg").get_by_text("%
+    Change vs LY").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: checked
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: unchecked
+          columns:
+            visibility:
+              PID: true
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: true
+              Estimated Lost Sales ($): true
+              Unrecoverable Lost Units: true
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+              Estimated Lost Sales ($):
+                value: null
+                operator: null
+          preferences:
+            saved: true
+          pagination:
+            currentPage: 1
+            rowsPerPage: 20
+          locations:
+            Baltimore Orioles In-Venue Retail:
+              checkbox:
+                state: checked
+          MonthlyTrend:
+            Actual Sales & ROY Fcst ($):
+              state: selected
+            TY Actual Sales ($):
+              state: selected
+            System Sales Fcst ($):
+              state: selected
+            GD Sales Fcst ($):
+              state: selected
+            Non GD Sales Fcst ($):
+              state: selected
+            '% Change vs LLY':
+              state: selected
+            LLY Sales ($):
+              state: selected
+            LY Sales ($):
+              state: selected
+            '% Change vs LY':
+              state: selected
+    traceability_matrix:
+      '5_9': '5_12'
+      '5_10': '5_12'
+      '5_11': '5_12'
+      '5_12': END
+    verification_plan:
+    - step_id_checkpoint: '5_12'
+      what_to_verify: Verify that '% Change vs LLY', 'LLY Sales ($)', 'LY Sales ($)',
+        and '% Change vs LY' are selected in the MonthlyTrend section.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the MonthlyTrend section reflects the updated selections
+        and no other elements are impacted.
+  ? page.locator(".ellipses > esp-multiselect-dropdown > .multiselect-dropdown > div
+    > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.locator(".overflow-auto
+    > div:nth-child(2) > .d-flex").click()|page.locator(".overflow-auto > div:nth-child(2)
+    > .d-flex").click()|page.locator(".overflow-auto > div:nth-child(3) > .d-flex").click()|page.locator(".overflow-auto
+    > div:nth-child(3) > .d-flex").click()|page.locator("div:nth-child(6) > .d-flex").first.click()|page.locator("div:nth-child(6)
+    > .d-flex").first.click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: checked
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: unchecked
+          columns:
+            visibility:
+              PID: true
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: true
+              Estimated Lost Sales ($): true
+              Unrecoverable Lost Units: true
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+              Estimated Lost Sales ($):
+                value: null
+                operator: null
+          preferences:
+            saved: true
+          pagination:
+            currentPage: 1
+            rowsPerPage: 20
+          locations:
+            Baltimore Orioles In-Venue Retail:
+              checkbox:
+                state: checked
+          MonthlyTrend:
+            Actual Sales & ROY Fcst ($):
+              state: selected
+            TY Actual Sales ($):
+              state: selected
+            System Sales Fcst ($):
+              state: selected
+            GD Sales Fcst ($):
+              state: selected
+            Non GD Sales Fcst ($):
+              state: selected
+            '% Change vs LLY':
+              state: selected
+            LLY Sales ($):
+              state: selected
+            LY Sales ($):
+              state: selected
+            '% Change vs LY':
+              state: selected
+    traceability_matrix:
+      '5_13': '5_21'
+      '5_14': '5_21'
+      '5_15': '5_21'
+      '5_16': '5_21'
+      '5_17': '5_21'
+      '5_18': '5_21'
+      '5_19': '5_21'
+      '5_20': '5_21'
+      '5_21': END
+    verification_plan:
+    - step_id_checkpoint: '5_21'
+      what_to_verify: Verify that the MonthlyTrend dropdown reflects the correct toggled
+        states for 'Actual Sales & ROY Fcst ($)', 'Sales Fcst Adjusted ($)', 'GD Sales
+        Fcst Adjusted ($)', 'Non GD Sales Fcst Adjusted ($)', and 'System Sales Fcst
+        ($)'.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the dropdown is closed and the MonthlyTrend graph
+        updates accordingly.
+  ? 'page.locator(".ellipses > esp-multiselect-dropdown > .multiselect-dropdown >
+    div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator("span:nth-child(7)
+    > esp-grid-icons-component > .display-grid-icons > div > #preference-iconId >
+    .legend-font > .multiselect-dropdown > .pointer").first.click()|page.get_by_text("Save
+    Preference").click()'
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: checked
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: unchecked
+          columns:
+            visibility:
+              PID: true
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: true
+              Estimated Lost Sales ($): true
+              Unrecoverable Lost Units: true
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+              Estimated Lost Sales ($):
+                value: null
+                operator: null
+          preferences:
+            saved: true
+          pagination:
+            currentPage: 1
+            rowsPerPage: 20
+          locations:
+            Baltimore Orioles In-Venue Retail:
+              checkbox:
+                state: checked
+          MonthlyTrend:
+            Actual Sales & ROY Fcst ($):
+              state: selected
+            TY Actual Sales ($):
+              state: selected
+            System Sales Fcst ($):
+              state: selected
+            GD Sales Fcst ($):
+              state: selected
+            Non GD Sales Fcst ($):
+              state: selected
+            '% Change vs LLY':
+              state: selected
+            LLY Sales ($):
+              state: selected
+            LY Sales ($):
+              state: selected
+            '% Change vs LY':
+              state: selected
+    traceability_matrix:
+      '5_22': '5_23'
+      '5_23': '5_24'
+      '5_24': END
+    verification_plan:
+    - step_id_checkpoint: '5_23'
+      what_to_verify: Verify dropdown interaction for MonthlyTrend metrics in Step
+        5_22.
+    - step_id_checkpoint: '5_24'
+      what_to_verify: Verify preference icon click interaction in Step 5_23.
+    - step_id_checkpoint: END
+      what_to_verify: Verify 'Save Preference' action in Step 5_24.
+  ? page.locator("i").nth(3).click()|page.locator(".ag-row-odd.ag-row-no-focus > .ag-cell-value
+    > .ag-cell-wrapper > .ag-group-contracted > .zeb-chevron-right").first.click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: checked
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: unchecked
+          columns:
+            visibility:
+              PID: true
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: true
+              Estimated Lost Sales ($): true
+              Unrecoverable Lost Units: true
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+              Estimated Lost Sales ($):
+                value: null
+                operator: null
+          preferences:
+            saved: true
+          pagination:
+            currentPage: 1
+            rowsPerPage: 20
+          locations:
+            Baltimore Orioles In-Venue Retail:
+              checkbox:
+                state: checked
+          MonthlyTrend:
+            Actual Sales & ROY Fcst ($):
+              state: selected
+            TY Actual Sales ($):
+              state: selected
+            System Sales Fcst ($):
+              state: selected
+            GD Sales Fcst ($):
+              state: selected
+            Non GD Sales Fcst ($):
+              state: selected
+            '% Change vs LLY':
+              state: selected
+            LLY Sales ($):
+              state: selected
+            LY Sales ($):
+              state: selected
+            '% Change vs LY':
+              state: selected
+    traceability_matrix:
+      '6_1': '6_2'
+      '6_2': END
+    verification_plan:
+    - step_id_checkpoint: '6_2'
+      what_to_verify: Verify that the 'Sales Fcst Adjusted ($)' row is expanded after
+        Step 6_1.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'System Sales Fcst ($)' row is expanded after
+        Step 6_2.
+  ? page.locator(".wr-20.font-weight-normal > esp-multiselect-dropdown > .multiselect-dropdown
+    > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.locator(".d-flex.dropdown-option.align-items-center.p-v-5.p-l-32
+    > .d-flex").first.click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: checked
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: unchecked
+          columns:
+            visibility:
+              PID: true
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: true
+              Estimated Lost Sales ($): true
+              Unrecoverable Lost Units: true
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+              Estimated Lost Sales ($):
+                value: null
+                operator: null
+          preferences:
+            saved: true
+          pagination:
+            currentPage: 1
+            rowsPerPage: 20
+          locations:
+            Baltimore Orioles In-Venue Retail:
+              checkbox:
+                state: checked
+          MonthlyTrend:
+            Actual Sales & ROY Fcst ($):
+              state: deselected
+            TY Actual Sales ($):
+              state: selected
+            System Sales Fcst ($):
+              state: selected
+            GD Sales Fcst ($):
+              state: selected
+            Non GD Sales Fcst ($):
+              state: selected
+            '% Change vs LLY':
+              state: selected
+            LLY Sales ($):
+              state: selected
+            LY Sales ($):
+              state: selected
+            '% Change vs LY':
+              state: selected
+    traceability_matrix:
+      '6_3': '6_5'
+      '6_4': '6_5'
+      '6_5': END
+    verification_plan:
+    - step_id_checkpoint: '6_5'
+      what_to_verify: Verify 'Actual Sales & ROY Fcst ($)' is DESELECTED and dropdown
+        is updated.
+    - step_id_checkpoint: END
+      what_to_verify: Verify the dropdown is closed and the selection is applied.
+  ? page.locator(".overflow-auto > div:nth-child(2) > .d-flex").click()|page.locator(".overflow-auto
+    > div:nth-child(3) > .d-flex").click()|page.locator(".overflow-auto > div:nth-child(3)
+    > .d-flex").click()|page.locator(".overflow-auto > div:nth-child(4) > .d-flex").click()|page.locator("div:nth-child(5)
+    > .d-flex").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: checked
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: unchecked
+          columns:
+            visibility:
+              PID: true
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: true
+              Estimated Lost Sales ($): true
+              Unrecoverable Lost Units: true
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+              Estimated Lost Sales ($):
+                value: null
+                operator: null
+          preferences:
+            saved: true
+          pagination:
+            currentPage: 1
+            rowsPerPage: 20
+          locations:
+            Baltimore Orioles In-Venue Retail:
+              checkbox:
+                state: checked
+          MonthlyTrend:
+            Actual Sales & ROY Fcst ($):
+              state: selected
+            Sales Fcst Adjusted ($):
+              state: selected
+            GD Sales Fcst Adjusted ($):
+              state: selected
+            Non GD Sales Fcst Adjusted ($):
+              state: selected
+            TY Actual Sales ($):
+              state: selected
+            System Sales Fcst ($):
+              state: selected
+            GD Sales Fcst ($):
+              state: selected
+            Non GD Sales Fcst ($):
+              state: selected
+            '% Change vs LLY':
+              state: selected
+            LLY Sales ($):
+              state: selected
+            LY Sales ($):
+              state: selected
+            '% Change vs LY':
+              state: selected
+    traceability_matrix:
+      '6_6': '6_10'
+      '6_7': '6_10'
+      '6_8': '6_10'
+      '6_9': '6_10'
+      '6_10': END
+    verification_plan:
+    - step_id_checkpoint: '6_10'
+      what_to_verify: Verify that Actual Sales & ROY Fcst ($), Sales Fcst Adjusted
+        ($), GD Sales Fcst Adjusted ($), and Non GD Sales Fcst Adjusted ($) are selected.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that MonthlyTrend reflects the updated selections and
+        remains visible.
+  ? page.locator(".wr-20.font-weight-normal > esp-multiselect-dropdown > .multiselect-dropdown
+    > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator(".wr-20.font-weight-normal
+    > esp-multiselect-dropdown > .multiselect-dropdown > div > .w-100 > .d-flex.align-items-center
+    > .dropdown-caret").click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.locator(".wr-20.font-weight-normal
+    > esp-multiselect-dropdown > .multiselect-dropdown > div > .w-100").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        FilterPanel:
+          state: expanded
+          elements:
+            AlertsDropdown:
+              state: expanded
+              value: All Alerts
+              options:
+              - All Alerts
+              - Over Stock
+              - Under Stock
+            SeasonTypeDropdown:
+              state: visible
+              value: Regular Season, Pre Season
+            ResetButton:
+              state: visible
+            ApplyButton:
+              state: visible
+            Hierarchy:
+              state: expanded
+              elements:
+                League:
+                  state: selected
+                Team:
+                  state: selected
+                  selectedTeams:
+                  - ATHLETICS
+                  - BALTIMORE ORIOLES
+                  - CHICAGO WHITE SOX
+                  - MIAMI MARLINS
+                  - MLB MULTI-TEAM
+                  - PITTSBURGH PIRATES
+                  - SAN FRANCISCO GIANTS
+            Department:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                Aggregate Values:
+                  state: unchecked
+            Class:
+              state: expanded
+              elements:
+                Select All:
+                  state: checked
+                ADJUSTABLE:
+                  state: unchecked
+                AUTO ACCESSORIES:
+                  state: selected
+                Aggregate Values:
+                  state: unchecked
+            Attribute:
+              state: selected
+            Product Line:
+              state: selected
+            Color:
+              state: selected
+        AlertsSummary:
+          state: visible
+          data:
+          - PID: Baltimore Orioles|LICENSE FRAME COLOR CHROME|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: checked
+          - PID: Baltimore Orioles|LICENSE FRAME LASER CUT|N/A
+            FirstOOSWeek: '2026-09-20'
+            NoOOSWeeks: N/A
+            EstLostUnits: N/A
+            EstimatedSales: N/A
+            radioButton:
+              state: unchecked
+          columns:
+            visibility:
+              PID: true
+              FirstOOSWeek: true
+              NoOOSWeeks: true
+              EstLostUnits: true
+              EstimatedSales: true
+              Estimated Lost Sales ($): true
+              Unrecoverable Lost Units: true
+            filters:
+              NoOOSWeeks:
+                value: null
+                operator: null
+              EstLostUnits:
+                value: null
+                operator: null
+              Estimated Lost Sales ($):
+                value: null
+                operator: null
+          preferences:
+            saved: true
+          pagination:
+            currentPage: 1
+            rowsPerPage: 20
+          locations:
+            Baltimore Orioles In-Venue Retail:
+              checkbox:
+                state: checked
+          MonthlyTrend:
+            Actual Sales & ROY Fcst ($):
+              state: selected
+            Sales Fcst Adjusted ($):
+              state: selected
+            GD Sales Fcst Adjusted ($):
+              state: selected
+            Non GD Sales Fcst Adjusted ($):
+              state: selected
+            TY Actual Sales ($):
+              state: selected
+            System Sales Fcst ($):
+              state: selected
+            GD Sales Fcst ($):
+              state: selected
+            Non GD Sales Fcst ($):
+              state: selected
+            '% Change vs LLY':
+              state: selected
+            LLY Sales ($):
+              state: selected
+            LY Sales ($):
+              state: selected
+            '% Change vs LY':
+              state: selected
+    traceability_matrix:
+      '6_11': '6_12'
+      '6_12': '6_13'
+      '6_13': '6_14'
+      '6_14': END
+    verification_plan:
+    - step_id_checkpoint: '6_12'
+      what_to_verify: Verify dropdown caret toggles visibility of the column selection
+        menu.
+    - step_id_checkpoint: '6_13'
+      what_to_verify: Verify the first checkbox in the column selection menu is clicked.
+    - step_id_checkpoint: '6_14'
+      what_to_verify: Verify the dropdown menu closes after clicking outside.
+    - step_id_checkpoint: END
+      what_to_verify: Verify the column selection menu is no longer visible.
+global_rules: []
+learned_rules: {}

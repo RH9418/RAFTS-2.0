@@ -1,0 +1,41 @@
+workflow_name: Logical Test Case Definitions
+test_cases:
+- test_name: Check Alerts Summary Grid
+  snapshots:
+  - target_action: page.locator("span").filter(has_text="WALMART STORES HQ").first.click(button="right")
+    bounding_boxes:
+    - x: 223
+      y: 235
+      width: 214
+      height: 22
+    scroll_x: 0
+    scroll_y: 292
+    image_path: Screenshots/Check_Alerts_Summary_120036_1.png
+    human_note: Check that a Row has been Selected.
+    apis_triggered: []
+  - target_action: page.locator("span").filter(has_text="WALMART STORES HQ").first.click(button="right")
+    bounding_boxes:
+    - x: 127
+      y: 217
+      width: 283
+      height: 42
+    - x: 95
+      y: 250
+      width: 366
+      height: 197
+    scroll_x: 0
+    scroll_y: 908.7999877929688
+    image_path: Screenshots/Check_Alerts_Summary_120116_2.png
+    human_note: Ensure Products Have been selected.
+    apis_triggered: []
+  - target_action: page.locator("span").filter(has_text="WALMART STORES HQ").first.click(button="right")
+    bounding_boxes:
+    - x: 108
+      y: 165
+      width: 237
+      height: 112
+    scroll_x: 0
+    scroll_y: 1407.199951171875
+    image_path: Screenshots/Check_Alerts_Summary_120135_3.png
+    human_note: Verify Time Filter is Applied.
+    apis_triggered: []

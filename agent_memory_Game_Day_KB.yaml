@@ -1,0 +1,3511 @@
+cached_chunks:
+  page.locator(".zeb-filter").first.click()|page.get_by_text("Hierarchy").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: true
+            hierarchy_option:
+              selected: true
+    verification_plan:
+    - step_id_checkpoint: '1_2'
+      what_to_verify: Verify 'Hierarchy' option is selected
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+  page.get_by_text("League").click()|page.get_by_role("radio", name="MLS").check()|page.get_by_text("League").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: true
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+    verification_plan:
+    - step_id_checkpoint: '1_3'
+      what_to_verify: Verify 'League' section is expanded.
+    - step_id_checkpoint: '1_4'
+      what_to_verify: Verify 'MLS' radio button is checked.
+    - step_id_checkpoint: END
+      what_to_verify: Verify sidebar remains open.
+  ? page.locator("#SideFilterproducthierarchyId").get_by_text("Team").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
+    > .pointer").first.click()|page.locator("#SideFilterproducthierarchyId").get_by_text("Team",
+    exact=True).click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: true
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: true
+                checkbox:
+                  checked: true
+    verification_plan:
+    - step_id_checkpoint: '1_7'
+      what_to_verify: Verify Checkbox is CHECKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+  ? page.get_by_text("Department").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
+    > .pointer").first.click()|page.get_by_text("Department").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
+    > .pointer").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: true
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: true
+                checkbox:
+                  checked: true
+              department:
+                expanded: true
+                checkbox:
+                  checked: true
+    verification_plan:
+    - step_id_checkpoint: '1_11'
+      what_to_verify: Verify Department section toggles back to collapsed state.
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN and Department checkbox is checked.
+  page.get_by_role("button", name="Apply Filters").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: false
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+    verification_plan:
+    - step_id_checkpoint: '1_13'
+      what_to_verify: Verify Sidebar is CLOSED after Apply Filters is clicked
+    - step_id_checkpoint: END
+      what_to_verify: Verify Filters are applied correctly
+  page.locator(".zeb-filter").first.click():
+    ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: true
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: false
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+    verification_plan:
+    - step_id_checkpoint: '1_14'
+      what_to_verify: Verify Filter Section is EXPANDED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+  ? page.locator(".dropdown-caret.p-l-16").first.click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.locator(".d-flex.dropdown-option.align-items-center.p-v-5.p-l-32
+    > .d-flex").first.click()|page.locator(".overflow-auto > div:nth-child(2) > .d-flex").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: true
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+      confidence_score: 0.0
+      confusing_step_id: '1_2'
+      verification_plan:
+      - step_id_checkpoint: '1_3'
+        what_to_verify: Verify Checkbox is CHECKED
+      - step_id_checkpoint: END
+        what_to_verify: Verify Sidebar is still OPEN
+    verification_plan: []
+  ? page.locator("#location-filterId > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown
+    > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.locator(".d-flex.dropdown-option.align-items-center.p-v-5.p-l-32
+    > .d-flex").first.click()|page.locator(".overflow-auto > div:nth-child(2) > .d-flex").click()|page.locator(".overflow-auto
+    > div:nth-child(3) > .d-flex").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: true
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: true
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+    verification_plan:
+    - step_id_checkpoint: '2_5'
+      what_to_verify: Verify Location Filter Dropdown is OPEN
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+  ? page.locator("#location-filterId > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown
+    > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator("#seasontype-filterId
+    > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown > div > .w-100 > .d-flex.align-items-center
+    > .dropdown-caret").click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.locator(".d-flex.dropdown-option.align-items-center.p-v-5.p-l-32
+    > .d-flex").first.click()|page.locator(".overflow-auto > div:nth-child(2) > .d-flex").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: true
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: true
+            options:
+              option_1:
+                selected: false
+              option_2:
+                selected: false
+              option_3:
+                selected: true
+    verification_plan:
+    - step_id_checkpoint: '2_11'
+      what_to_verify: Verify Season Type dropdown is EXPANDED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Location dropdown is CLOSED and Season Type dropdown
+        is still OPEN
+  ? page.locator("#seasontype-filterId > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown
+    > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: true
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+    verification_plan:
+    - step_id_checkpoint: '2_15'
+      what_to_verify: Verify Season Type dropdown is EXPANDED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Season Type dropdown is CLOSED and selections are APPLIED
+  ? page.locator(".pointer.chevron.zeb-chevron-right.m-r-12.collapsed").click()|page.locator(".ag-body-horizontal-scroll-container").first.click()|page.locator("esp-card-component").filter(has_text="Forecast
+    Total columns (0)").get_by_role("button").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+    verification_plan:
+    - step_id_checkpoint: '3_1'
+      what_to_verify: Verify Sidebar is COLLAPSED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Forecast Total Columns button was clicked
+  ? page.get_by_role("checkbox", name="Toggle All Columns Visibility").uncheck()|page.get_by_role("treeitem",
+    name="Stat Unit Sales Fcst Column").get_by_label("Press SPACE to toggle").check()|page.get_by_role("treeitem",
+    name="Stat Sales Fcst ($) Column").get_by_label("Press SPACE to toggle").check()|page.get_by_role("treeitem",
+    name="Sales Fcst Adjusted ($) Column").get_by_label("Press SPACE to toggle").check()|page.get_by_role("treeitem",
+    name="Actual Sales & ROY Fcst ($)").get_by_label("Press SPACE to toggle").check()|page.get_by_role("treeitem",
+    name="Actual Sales ($) Column").get_by_label("Press SPACE to toggle").check()|page.get_by_role("treeitem",
+    name="LY Sales ($) Column").get_by_label("Press SPACE to toggle").check()|page.get_by_role("treeitem",
+    name="Sales ($) Change vs LY Column").get_by_label("Press SPACE to toggle").check()|page.get_by_role("treeitem",
+    name="LLY Sales ($) Column").get_by_label("Press SPACE to toggle").check()|page.get_by_role("treeitem",
+    name="Sales ($) Change vs LLY Column").get_by_label("Press SPACE to toggle").check()|page.get_by_role("treeitem",
+    name="Actual Sales & ROY Fcst Column").get_by_label("Press SPACE to toggle").check()|page.get_by_role("treeitem",
+    name="Actual Sales Column").get_by_label("Press SPACE to toggle").check()|page.get_by_role("treeitem",
+    name="LY Sales Column").get_by_label("Press SPACE to toggle").check()|page.get_by_role("treeitem",
+    name="Sales Change vs LY Column").get_by_label("Press SPACE to toggle").check()|page.get_by_role("treeitem",
+    name="LLY Sales Column").get_by_label("Press SPACE to toggle").check()|page.get_by_role("checkbox",
+    name="Press SPACE to toggle visibility (hidden)").check()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+    verification_plan:
+    - step_id_checkpoint: '3_4'
+      what_to_verify: Verify 'Toggle All Columns Visibility' checkbox is UNCHECKED
+    - step_id_checkpoint: '3_19'
+      what_to_verify: Verify all individual column checkboxes are CHECKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Forecast Total section remains EXPANDED
+  page.locator("esp-card-component").filter(has_text="Forecast Total columns (0)").get_by_role("button").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: false
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+    verification_plan:
+    - step_id_checkpoint: '3_20'
+      what_to_verify: Verify that the 'Columns' button in the 'Forecast Total' section
+        is no longer clicked.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'Forecast Total' section remains expanded.
+  page.locator(".pointer.zeb-adjustments").first.click()|page.get_by_text("Save Preference").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+    verification_plan:
+    - step_id_checkpoint: '3_21'
+      what_to_verify: Verify Columns Button is CLICKED
+    - step_id_checkpoint: '3_22'
+      what_to_verify: Verify Save Preference is CLICKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still CLOSED
+  page.locator(".icon-color-toolbar-active.zeb-download-underline").first.click():
+    ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+        toolbar:
+          download_icon:
+            clicked: true
+    verification_plan:
+    - step_id_checkpoint: '3_23'
+      what_to_verify: Verify the download icon was clicked and the download action
+        was triggered.
+    - step_id_checkpoint: END
+      what_to_verify: Verify the toolbar state remains consistent and no unexpected
+        changes occurred.
+  ? 'page.locator("esp-card-component").filter(has_text="Daily Forecast by Event").get_by_role("button").click()|page.get_by_role("checkbox",
+    name="Toggle All Columns Visibility").uncheck()|page.get_by_role("treeitem", name="Game
+    # Column").get_by_label("Press SPACE to toggle").check()'
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+              'Game # Column': true
+        toolbar:
+          download_icon:
+            clicked: true
+    verification_plan:
+    - step_id_checkpoint: '4_2'
+      what_to_verify: Verify 'Toggle All Columns Visibility' is UNCHECKED
+    - step_id_checkpoint: '4_3'
+      what_to_verify: 'Verify ''Game # Column'' is CHECKED'
+    - step_id_checkpoint: END
+      what_to_verify: Verify 'Daily Forecast by Event' section remains OPEN
+  ? page.locator(".ag-header-cell.ag-column-last > .ag-header-cell-comp-wrapper >
+    .ag-cell-label-container > .ag-header-icon > .filter-icon").click()|page.get_by_role("spinbutton",
+    name="Filter Value").fill("1")|page.get_by_label("Column Filter").get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+              'Game # Column': true
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: '1'
+          applied: true
+    verification_plan:
+    - step_id_checkpoint: '4_6'
+      what_to_verify: Verify Column Filter is applied with value '1'.
+    - step_id_checkpoint: END
+      what_to_verify: Verify Column Filter section is closed after applying the filter.
+  ? 'page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active >
+    .filter-icon").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Reset").click()|page.get_by_role("treeitem", name="Series # Column").get_by_label("Press
+    SPACE to toggle").check()|page.get_by_role("treeitem", name="Season Type Column").get_by_label("Press
+    SPACE to toggle").check()'
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: '1'
+          applied: false
+    verification_plan:
+    - step_id_checkpoint: '4_8'
+      what_to_verify: Verify Column Filter is RESET
+    - step_id_checkpoint: '4_9'
+      what_to_verify: 'Verify Series # Column is CHECKED'
+    - step_id_checkpoint: '4_10'
+      what_to_verify: Verify Season Type Column is CHECKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar and Column Filter remain OPEN
+  ? page.locator(".ag-header-cell.ag-column-last > .ag-header-cell-comp-wrapper >
+    .ag-cell-label-container > .ag-header-icon > .filter-icon").click()|page.get_by_role("textbox",
+    name="Filter Value").fill("On Season")|page.get_by_label("Column Filter").get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: On Season
+          applied: true
+    verification_plan:
+    - step_id_checkpoint: '4_12'
+      what_to_verify: Verify Filter Value is set to 'On Season'
+    - step_id_checkpoint: '4_13'
+      what_to_verify: Verify Column Filter is applied
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still CLOSED
+  ? page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active >
+    .filter-icon").click()|page.locator("#ag-3446-input").fill("Regular")|page.get_by_label("Column
+    Filter").get_by_role("button", name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: Regular
+          applied: true
+    verification_plan:
+    - step_id_checkpoint: '4_15'
+      what_to_verify: Verify 'Regular' is filled in the column filter input.
+    - step_id_checkpoint: END
+      what_to_verify: Verify Column Filter is applied and sidebar remains open.
+  ? page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active >
+    .filter-icon").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Reset").click()|page.get_by_role("treeitem", name="Result Column").get_by_label("Press
+    SPACE to toggle").check()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: true
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: Regular
+          applied: false
+    verification_plan:
+    - step_id_checkpoint: '4_18'
+      what_to_verify: Verify Column Filter Reset is applied
+    - step_id_checkpoint: '4_19'
+      what_to_verify: Verify 'Result Column' is toggled to visible
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar and Column Filter remain open
+  ? page.locator(".ag-header-cell.ag-column-last > .ag-header-cell-comp-wrapper >
+    .ag-cell-label-container > .ag-header-icon > .filter-icon").click()|page.get_by_role("textbox",
+    name="Filter Value").fill("Win")|page.get_by_label("Column Filter").get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: true
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: Win
+          applied: true
+    verification_plan:
+    - step_id_checkpoint: '4_21'
+      what_to_verify: Verify Filter Value is updated to 'Win'
+    - step_id_checkpoint: '4_22'
+      what_to_verify: Verify Column Filter is applied
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar remains closed
+  ? page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active >
+    .filter-icon").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Reset").click()|page.get_by_role("treeitem", name="Result Column").get_by_label("Press
+    SPACE to toggle").uncheck()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): false
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: null
+          applied: false
+    verification_plan:
+    - step_id_checkpoint: '4_24'
+      what_to_verify: Verify Column Filter Reset
+    - step_id_checkpoint: '4_25'
+      what_to_verify: Verify Result Column Visibility is UNCHECKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar and Column Filter remain OPEN
+  ? page.get_by_role("treeitem", name="Date Column", exact=True).get_by_label("Press
+    SPACE to toggle").check()|page.get_by_role("treeitem", name="Date Column", exact=True).get_by_label("Press
+    SPACE to toggle").uncheck()|page.get_by_role("treeitem", name="Game/Non-Game Day
+    Column").get_by_label("Press SPACE to toggle visibility (hidden)").check()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+              Date Column: false
+              Game/Non-Game Day Column: true
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: null
+          applied: false
+    verification_plan:
+    - step_id_checkpoint: '4_26'
+      what_to_verify: Verify 'Date Column' is CHECKED
+    - step_id_checkpoint: '4_27'
+      what_to_verify: Verify 'Date Column' is UNCHECKED
+    - step_id_checkpoint: '4_28'
+      what_to_verify: Verify 'Game/Non-Game Day Column' is CHECKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+  ? page.locator(".ag-header-cell.ag-column-last > .ag-header-cell-comp-wrapper >
+    .ag-cell-label-container > .ag-header-icon > .filter-icon").click()|page.get_by_role("textbox",
+    name="Filter Value").fill("Game Day")|page.get_by_label("Column Filter").get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+              Date Column: false
+              Game/Non-Game Day Column: true
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: Game Day
+          applied: true
+    verification_plan:
+    - step_id_checkpoint: '4_30'
+      what_to_verify: Verify 'Game Day' is filled in the filter textbox.
+    - step_id_checkpoint: '4_31'
+      what_to_verify: Verify Column Filter is applied successfully.
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN.
+  ? page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active >
+    .filter-icon").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Reset").click()|page.get_by_role("treeitem", name="Game/Non-Game Day Column").get_by_label("Press
+    SPACE to toggle visibility (visible)").uncheck()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+              Date Column: false
+              Game/Non-Game Day Column: false
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: Game Day
+          applied: false
+    verification_plan:
+    - step_id_checkpoint: '4_33'
+      what_to_verify: Verify Column Filter Reset is applied
+    - step_id_checkpoint: END
+      what_to_verify: Verify Game/Non-Game Day Column visibility is toggled OFF
+  ? page.get_by_role("treeitem", name="Month Column", exact=True).get_by_label("Press
+    SPACE to toggle visibility (hidden)").check()|page.locator(".ag-header-cell.ag-column-last
+    > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon >
+    .filter-icon").click()|page.get_by_role("textbox", name="Filter Value").fill("March")
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+              Date Column: false
+              Game/Non-Game Day Column: false
+              Month Column: true
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: March
+          applied: false
+    verification_plan:
+    - step_id_checkpoint: '4_35'
+      what_to_verify: Verify 'Month Column' visibility is toggled ON
+    - step_id_checkpoint: '4_36'
+      what_to_verify: Verify filter icon is clicked
+    - step_id_checkpoint: END
+      what_to_verify: Verify 'Filter Value' is updated to 'March' and sidebar remains
+        OPEN
+  ? page.get_by_label("Column Filter").get_by_role("button", name="Apply").click()|page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active
+    > .filter-icon").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Reset").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+              Date Column: false
+              Game/Non-Game Day Column: false
+              Month Column: true
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: March
+          applied: true
+    verification_plan:
+    - step_id_checkpoint: '4_38'
+      what_to_verify: Verify Column Filter is APPLIED
+    - step_id_checkpoint: '4_39'
+      what_to_verify: Verify Filter Icon is ACTIVE
+    - step_id_checkpoint: '4_40'
+      what_to_verify: Verify Column Filter is RESET
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still CLOSED
+  ? page.get_by_role("treeitem", name="Month Column", exact=True).get_by_label("Press
+    SPACE to toggle visibility (visible)").uncheck()|page.get_by_role("treeitem",
+    name="DoW Column", exact=True).get_by_label("Press SPACE to toggle visibility
+    (hidden)").check()|page.locator(".ag-header-cell.ag-column-last > .ag-header-cell-comp-wrapper
+    > .ag-cell-label-container > .ag-header-icon > .filter-icon").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+              Date Column: false
+              Game/Non-Game Day Column: false
+              Month Column: false
+              DoW Column: true
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: March
+          applied: true
+    verification_plan:
+    - step_id_checkpoint: '4_41'
+      what_to_verify: Verify 'Month Column' is UNCHECKED
+    - step_id_checkpoint: '4_42'
+      what_to_verify: Verify 'DoW Column' is CHECKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Column Filter is still OPEN
+  ? page.get_by_role("textbox", name="Filter Value").fill("Monday")|page.get_by_label("Column
+    Filter").get_by_role("button", name="Apply").click()|page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active
+    > .filter-icon").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+              Date Column: false
+              Game/Non-Game Day Column: false
+              Month Column: false
+              DoW Column: true
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: Monday
+          applied: true
+    verification_plan:
+    - step_id_checkpoint: '4_45'
+      what_to_verify: Verify Column Filter is applied with 'Monday' as the filter
+        value.
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar remains closed and Column Filter remains applied.
+  ? page.get_by_label("Column Filter").get_by_role("button", name="Reset").click()|page.get_by_role("treeitem",
+    name="DoW Column", exact=True).get_by_label("Press SPACE to toggle visibility
+    (visible)").uncheck()|page.get_by_role("treeitem", name="Opp Column", exact=True).get_by_label("Press
+    SPACE to toggle visibility (hidden)").check()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+              Date Column: false
+              Game/Non-Game Day Column: false
+              Month Column: false
+              DoW Column: false
+              Opp Column: true
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: null
+          applied: false
+    verification_plan:
+    - step_id_checkpoint: '4_47'
+      what_to_verify: Verify Column Filter Reset
+    - step_id_checkpoint: '4_48'
+      what_to_verify: Verify DoW Column is HIDDEN
+    - step_id_checkpoint: '4_49'
+      what_to_verify: Verify Opp Column is VISIBLE
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar and Column Filter remain OPEN
+  ? page.get_by_role("treeitem", name="Opp Column", exact=True).get_by_label("Press
+    SPACE to toggle visibility (visible)").uncheck()|page.locator("#ag-3569-input").check()|page.locator("#ag-3569-input").uncheck()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+              Date Column: false
+              Game/Non-Game Day Column: false
+              Month Column: false
+              DoW Column: false
+              Opp Column: false
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: null
+          applied: false
+    verification_plan:
+    - step_id_checkpoint: '4_50'
+      what_to_verify: Verify Opp Column visibility is toggled OFF
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar and Column Filter remain OPEN
+  ? page.locator("#ag-3571-input").check()|page.locator(".ag-header-cell.ag-column-last
+    > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon >
+    .filter-icon").click()|page.locator(".ag-icon.ag-icon-small-down").click()|page.get_by_role("option",
+    name="Greater than or equal to").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+              Date Column: true
+              Game/Non-Game Day Column: false
+              Month Column: false
+              DoW Column: false
+              Opp Column: false
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: Greater than or equal to
+          applied: false
+    verification_plan:
+    - step_id_checkpoint: '4_53'
+      what_to_verify: Verify Checkbox is CHECKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Column Filter is still OPEN
+  ? page.get_by_role("spinbutton", name="Filter Value").click()|page.get_by_role("spinbutton",
+    name="Filter Value").fill("25")|page.get_by_label("Column Filter").get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+              Date Column: true
+              Game/Non-Game Day Column: false
+              Month Column: false
+              DoW Column: false
+              Opp Column: false
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: '25'
+          applied: true
+    verification_plan:
+    - step_id_checkpoint: '4_59'
+      what_to_verify: Verify Column Filter is applied with value '25'.
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar and Column Filter remain open.
+  ? page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active >
+    .filter-icon").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Reset").click()|page.get_by_role("treeitem", name="Stat Unit Sales Fcst
+    Column").get_by_label("Press SPACE to toggle visibility (visible)").uncheck()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: false
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+              Date Column: true
+              Game/Non-Game Day Column: false
+              Month Column: false
+              DoW Column: false
+              Opp Column: false
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: '25'
+          applied: false
+    verification_plan:
+    - step_id_checkpoint: '4_61'
+      what_to_verify: Verify Column Filter Reset is applied
+    - step_id_checkpoint: END
+      what_to_verify: Verify Stat Unit Sales Fcst Column visibility is toggled OFF
+  ? page.locator("#ag-3573-input").check()|page.locator(".ag-header-cell.ag-column-last
+    > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon >
+    .filter-icon").click()|page.get_by_role("spinbutton", name="Filter Value").fill("100")
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+              Date Column: true
+              Game/Non-Game Day Column: false
+              Month Column: false
+              DoW Column: false
+              Opp Column: false
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: '100'
+          applied: false
+    verification_plan:
+    - step_id_checkpoint: '4_63'
+      what_to_verify: Verify 'Stat Unit Sales Fcst Column' is CHECKED
+    - step_id_checkpoint: '4_65'
+      what_to_verify: Verify Filter Value is updated to '100'
+    - step_id_checkpoint: END
+      what_to_verify: Verify Column Filter is still OPEN
+  ? page.locator(".ag-icon.ag-icon-small-down").first.click()|page.get_by_role("option",
+    name="Less than or equal to").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+              Date Column: true
+              Game/Non-Game Day Column: false
+              Month Column: false
+              DoW Column: false
+              Opp Column: false
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: '100'
+          applied: true
+          filter_condition: Less than or equal to
+    verification_plan:
+    - step_id_checkpoint: '4_67'
+      what_to_verify: Verify 'Less than or equal to' option is selected.
+    - step_id_checkpoint: '4_68'
+      what_to_verify: Verify Column Filter is applied with value '100' and condition
+        'Less than or equal to'.
+    - step_id_checkpoint: END
+      what_to_verify: Verify Column Filter section is still expanded.
+  ? page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active >
+    .filter-icon").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Reset").click()|page.get_by_role("checkbox", name="Press SPACE to toggle
+    visibility (visible)").uncheck()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): false
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+              Date Column: true
+              Game/Non-Game Day Column: false
+              Month Column: false
+              DoW Column: false
+              Opp Column: false
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: null
+          applied: false
+          filter_condition: null
+    verification_plan:
+    - step_id_checkpoint: '4_70'
+      what_to_verify: Verify Column Filter is RESET (filter value cleared and not
+        applied).
+    - step_id_checkpoint: '4_71'
+      what_to_verify: Verify 'Press SPACE to toggle visibility' checkbox is UNCHECKED.
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar and Forecast Total Section remain OPEN.
+  ? page.locator("#ag-3575-input").check()|page.locator(".ag-header-cell.ag-column-last
+    > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon >
+    .filter-icon").click()|page.get_by_role("spinbutton", name="Filter Value").fill("1")
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): false
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+              Date Column: true
+              Game/Non-Game Day Column: false
+              Month Column: false
+              DoW Column: false
+              Opp Column: false
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: '1'
+          applied: false
+          filter_condition: null
+    verification_plan:
+    - step_id_checkpoint: '4_72'
+      what_to_verify: 'Verify checkbox #ag-3575-input is CHECKED'
+    - step_id_checkpoint: '4_73'
+      what_to_verify: Verify filter icon is CLICKED
+    - step_id_checkpoint: '4_74'
+      what_to_verify: Verify filter value is FILLED with '1'
+    - step_id_checkpoint: END
+      what_to_verify: Verify column filter section remains EXPANDED
+  ? page.locator(".ag-icon.ag-icon-small-down").first.click()|page.get_by_role("option",
+    name="Greater than or equal to").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): false
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+              Date Column: true
+              Game/Non-Game Day Column: false
+              Month Column: false
+              DoW Column: false
+              Opp Column: false
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: '1'
+          applied: true
+          filter_condition: Greater than or equal to
+    verification_plan:
+    - step_id_checkpoint: '4_76'
+      what_to_verify: Verify filter condition is set to 'Greater than or equal to'
+    - step_id_checkpoint: '4_77'
+      what_to_verify: Verify Column Filter is applied
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still CLOSED
+  ? page.get_by_role("treeitem", name="Initial Per Cap Stat Fcst").get_by_label("Press
+    SPACE to toggle").check()|page.locator(".ag-header-cell.ag-column-last > .ag-header-cell-comp-wrapper
+    > .ag-cell-label-container > .ag-header-icon > .filter-icon").click()|page.get_by_role("spinbutton",
+    name="Filter Value").fill("10")
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+              Date Column: true
+              Game/Non-Game Day Column: false
+              Month Column: false
+              DoW Column: false
+              Opp Column: false
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: '10'
+          applied: false
+          filter_condition: null
+    verification_plan:
+    - step_id_checkpoint: '4_81'
+      what_to_verify: Verify 'Press SPACE to toggle visibility (hidden)' is CHECKED
+    - step_id_checkpoint: '4_83'
+      what_to_verify: Verify 'Filter Value' is FILLED with '10'
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar and Column Filter are still OPEN
+  ? page.get_by_role("treeitem", name="GD Sales Fcst Override ($) Column", exact=True).get_by_label("Press
+    SPACE to toggle").check()|page.get_by_role("checkbox", name="Press SPACE to toggle
+    visibility (visible)").uncheck()|page.locator("#ag-7836-input").check()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): true
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+              Date Column: true
+              Game/Non-Game Day Column: false
+              Month Column: false
+              DoW Column: false
+              Opp Column: false
+              GD Sales Fcst Override ($) Column: true
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: null
+          applied: false
+          filter_condition: null
+    verification_plan:
+    - step_id_checkpoint: '4_91'
+      what_to_verify: Verify checkbox 'Press SPACE to toggle visibility (hidden)'
+        is CHECKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify GD Sales Fcst Override ($) Column is visible
+  ? page.get_by_role("checkbox", name="Press SPACE to toggle visibility (visible)").uncheck()|page.locator("#ag-7838-input").check()|page.locator(".ag-header-cell.ag-column-last
+    > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon >
+    .filter-icon").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): false
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+              Date Column: true
+              Game/Non-Game Day Column: false
+              Month Column: false
+              DoW Column: false
+              Opp Column: false
+              GD Sales Fcst Override ($) Column: true
+              Per Cap Fcst Adjusted ($): true
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: null
+          applied: false
+          filter_condition: null
+    verification_plan:
+    - step_id_checkpoint: '4_93'
+      what_to_verify: Verify 'Press SPACE to toggle visibility' checkbox is UNCHECKED
+    - step_id_checkpoint: '4_94'
+      what_to_verify: Verify 'Per Cap Fcst Adjusted ($)' checkbox is CHECKED
+    - step_id_checkpoint: '4_95'
+      what_to_verify: Verify filter icon is CLICKED and filter modal is OPEN
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar and Column Filter remain OPEN
+  ? page.get_by_role("spinbutton", name="Filter Value").fill("20")|page.locator(".ag-icon.ag-icon-small-down").first.click()|page.get_by_role("option",
+    name="Greater than or equal to").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): false
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+              Date Column: true
+              Game/Non-Game Day Column: false
+              Month Column: false
+              DoW Column: false
+              Opp Column: false
+              GD Sales Fcst Override ($) Column: true
+              Per Cap Fcst Adjusted ($): true
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: '20'
+          applied: false
+          filter_condition: Greater than or equal to
+    verification_plan:
+    - step_id_checkpoint: '4_97'
+      what_to_verify: Verify dropdown for filter condition is expanded
+    - step_id_checkpoint: END
+      what_to_verify: Verify column filter is updated with value '20' and condition
+        'Greater than or equal to'
+  ? page.get_by_role("treeitem", name="Season Type Column").get_by_label("Press SPACE
+    to toggle").uncheck()|page.get_by_role("checkbox", name="Toggle All Columns Visibility").check()|page.get_by_text("Daily
+    Forecast by Event columns (0) TopBottom").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: true
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): false
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: true
+              Date Column: true
+              Game/Non-Game Day Column: true
+              Month Column: true
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: March
+          applied: true
+    verification_plan:
+    - step_id_checkpoint: '4_102'
+      what_to_verify: Verify 'Press SPACE to toggle visibility (hidden)' is UNCHECKED
+    - step_id_checkpoint: '4_103'
+      what_to_verify: Verify 'Toggle All Columns Visibility' is CHECKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify all columns are visible
+  ? page.locator("esp-card-component").filter(has_text="Daily Forecast by Event").get_by_role("button").click()|page.locator(".ag-header-cell.ag-header-parent-hidden.ag-header-cell-sortable.ag-header-background.ag-focus-managed.ag-header-active
+    > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon >
+    .filter-icon").click()|page.get_by_role("spinbutton", name="Filter Value").fill("2000")
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: true
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): false
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: true
+              Date Column: true
+              Game/Non-Game Day Column: true
+              Month Column: true
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: '2000'
+          applied: false
+    verification_plan:
+    - step_id_checkpoint: '4_106'
+      what_to_verify: Verify filter icon was clicked and filter options are visible.
+    - step_id_checkpoint: '4_107'
+      what_to_verify: Verify 'Filter Value' spinbutton is updated to '2000'.
+    - step_id_checkpoint: END
+      what_to_verify: Verify column filter is still expanded and filter value is updated.
+  ? 'page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active >
+    .filter-icon").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Reset").click()|page.locator("div:nth-child(4) > #preference-iconId > .legend-font
+    > .multiselect-dropdown > .pointer").click()'
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): false
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+              Date Column: true
+              Game/Non-Game Day Column: false
+              Month Column: false
+              DoW Column: false
+              Opp Column: false
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: null
+          applied: false
+          filter_condition: null
+    verification_plan:
+    - step_id_checkpoint: '4_111'
+      what_to_verify: Verify Column Filter is OPEN
+    - step_id_checkpoint: '4_112'
+      what_to_verify: Verify Column Filter is RESET
+    - step_id_checkpoint: END
+      what_to_verify: Verify Preference Dropdown is OPEN
+  ? 'page.get_by_text("Save Preference").click()|page.locator("div:nth-child(3) >
+    #export-iconId > .icon-color-toolbar-active").click()|page.locator(".d-flex >
+    esp-multiselect-dropdown > .multiselect-dropdown > div > .w-100 > .d-flex.align-items-center
+    > .dropdown-caret").click()'
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): false
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+              Date Column: true
+              Game/Non-Game Day Column: false
+              Month Column: false
+              DoW Column: false
+              Opp Column: false
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: null
+          applied: false
+          filter_condition: null
+        preferences:
+          save_preference_clicked: true
+        export_icon:
+          clicked: true
+        multiselect_dropdown:
+          expanded: true
+    verification_plan:
+    - step_id_checkpoint: '4_114'
+      what_to_verify: Verify Save Preference was clicked
+    - step_id_checkpoint: '4_115'
+      what_to_verify: Verify Export Icon was clicked
+    - step_id_checkpoint: '4_116'
+      what_to_verify: Verify Multiselect Dropdown is expanded
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar remains closed
+  ? page.locator("div").filter(has_text=re.compile(r"^View 10 row\(s\)$")).nth(1).click()|page.locator("a").filter(has_text=re.compile(r"^2$")).click()|page.get_by_role("gridcell",
+    name="D.C. UNITED").first.click(button="right")|page.get_by_label("Context Menu").get_by_text("Dept
+    Penetration Pivots").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_option:
+              selected: true
+              league:
+                expanded: true
+                selected_radio: MLS
+              team:
+                expanded: false
+                checkbox:
+                  checked: true
+              department:
+                expanded: false
+                checkbox:
+                  checked: true
+        dropdown:
+          location_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+          season_type_filter:
+            expanded: false
+            options:
+              option_1:
+                selected: true
+              option_2:
+                selected: true
+              option_3:
+                selected: true
+        forecast_total_section:
+          expanded: true
+          columns_button_clicked: true
+          columns_visibility:
+            toggle_all_columns_visibility: false
+            columns:
+              Stat Unit Sales Fcst Column: true
+              Stat Sales Fcst ($) Column: true
+              Sales Fcst Adjusted ($) Column: true
+              Actual Sales & ROY Fcst ($): true
+              Actual Sales ($) Column: true
+              LY Sales ($) Column: true
+              Sales ($) Change vs LY Column: true
+              LLY Sales ($) Column: true
+              Sales ($) Change vs LLY Column: true
+              Actual Sales & ROY Fcst Column: true
+              Actual Sales Column: true
+              LY Sales Column: true
+              Sales Change vs LY Column: true
+              LLY Sales Column: true
+              Press SPACE to toggle visibility (hidden): false
+              'Game # Column': true
+              'Series # Column': true
+              Season Type Column: true
+              Result Column: false
+              Date Column: true
+              Game/Non-Game Day Column: false
+              Month Column: false
+              DoW Column: false
+              Opp Column: false
+        toolbar:
+          download_icon:
+            clicked: true
+        column_filter:
+          expanded: true
+          filter_value: null
+          applied: false
+          filter_condition: null
+        preferences:
+          save_preference_clicked: true
+        export_icon:
+          clicked: true
+        multiselect_dropdown:
+          expanded: true
+        pagination:
+          rows_per_page: 10
+          current_page: 2
+        context_menu:
+          opened: true
+          selected_option: Dept Penetration Pivots
+    verification_plan:
+    - step_id_checkpoint: '4_117'
+      what_to_verify: Verify rows per page updated to 10.
+    - step_id_checkpoint: '4_118'
+      what_to_verify: Verify current page updated to 2.
+    - step_id_checkpoint: '4_120'
+      what_to_verify: Verify context menu opened and 'Dept Penetration Pivots' selected.
+    - step_id_checkpoint: END
+      what_to_verify: Verify sidebar and dropdown states remain unchanged.
+  ? page.locator(".zeb-filter").first.click()|page.get_by_text("Hierarchy").click()|page.get_by_text("League").click()|page.get_by_role("radio",
+    name="MLS").check()|page.get_by_text("League").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filters:
+            Hierarchy:
+              League:
+                radio_buttons:
+                  MLS:
+                    checked: true
+    verification_plan:
+    - step_id_checkpoint: '1_3'
+      what_to_verify: Verify Checkbox is CHECKED
+    - step_id_checkpoint: END
+      what_to_verify: Verify Sidebar is still OPEN
+  ? page.locator("#SideFilterproducthierarchyId").get_by_text("Team").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
+    > .pointer").first.click()|page.locator("#SideFilterproducthierarchyId").get_by_text("Team",
+    exact=True).click()|page.get_by_text("Department").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
+    > .pointer").first.click()|page.get_by_text("Department").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
+    > .pointer").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filters:
+            Hierarchy:
+              League:
+                radio_buttons:
+                  MLS:
+                    checked: true
+              Team:
+                checkboxes:
+                  first_checkbox:
+                    checked: true
+              Department:
+                checkboxes:
+                  first_checkbox:
+                    checked: true
+                  second_checkbox:
+                    checked: true
+    verification_plan:
+    - step_id_checkpoint: '1_8'
+      what_to_verify: Verify 'Team' checkbox is CHECKED after clicking.
+    - step_id_checkpoint: '1_11'
+      what_to_verify: Verify 'Department' first checkbox is CHECKED after clicking.
+    - step_id_checkpoint: END
+      what_to_verify: Verify 'Department' second checkbox is CHECKED and sidebar remains
+        OPEN.
+global_rules: []
+learned_rules: {}
+global_domain_context: This dashboard appears to be part of a demand forecasting application
+  tailored for sports-related events, specifically Major League Baseball (MLB). It
+  allows users to analyze and forecast demand based on game-specific parameters such
+  as "Game Day," "Location," and "Season Type." The interface includes filters for
+  refining data views, a "Forecast Total" section for aggregated insights, and a "Daily
+  Forecast by Event" grid that provides detailed event-level data, including team
+  names, game numbers, series, and results. The tool is likely used by businesses
+  to predict and plan for resource allocation, inventory, or staffing needs tied to
+  MLB events.
