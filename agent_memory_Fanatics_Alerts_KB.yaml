@@ -1,0 +1,1862 @@
+cached_chunks:
+  page.locator(".zeb-filter").first.click():
+    ui_graph:
+      Updated_VDOM_Here: {}
+    verification_plan:
+    - step_id_checkpoint: '1_1'
+      what_to_verify: Verify that the filter dropdown is expanded, displaying all
+        available options for 'Alerts' and 'Season Type'. Ensure the dropdown options
+        align with the MLB inventory and forecasting context.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that selecting a filter option dynamically updates the
+        Alerts Summary grid to display data relevant to the chosen filter criteria.
+        Confirm that the grid reflects accurate Out of Stock (OOS) metrics, such as
+        the first OOS week, number of OOS weeks, estimated lost units, and estimated
+        lost sales.
+  ? page.locator("div").filter(has_text=re.compile(r"^Hierarchy$")).nth(2).click()|page.get_by_text("League").click()|page.get_by_text("League").click()|page.get_by_text("Team",
+    exact=True).click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Team
+          Attribute: null
+        Alerts Summary:
+          Displayed Data: Filtered by Team
+    verification_plan:
+    - step_id_checkpoint: '2_1'
+      what_to_verify: Verify that the 'Hierarchy' section is expanded and the available
+        options (e.g., League, Team) are visible.
+    - step_id_checkpoint: '2_2'
+      what_to_verify: Verify that the 'League' option is selected, and the UI updates
+        to show sub-options under the League hierarchy.
+    - step_id_checkpoint: '2_3'
+      what_to_verify: Verify that the 'League' option is deselected, ensuring no unintended
+        filters are applied at this level.
+    - step_id_checkpoint: '2_4'
+      what_to_verify: Verify that the 'Team' option is selected, and the Alerts Summary
+        grid updates to display only inventory data relevant to the selected team.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid and any associated charts
+        (e.g., Monthly Trend) reflect the filtered data for the selected team, ensuring
+        accurate representation of out-of-stock alerts and forecasting.
+  ? page.locator(".filter-values.d-flex.align-items-center.p-l-32.p-r-24 > .custom-checkbox-wrapper
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Team
+          Attribute: Multiple Teams Selected
+        Alerts Summary:
+          Displayed Data: Filtered by Selected Teams
+    verification_plan:
+    - step_id_checkpoint: '2_5'
+      what_to_verify: Verify that the first checkbox under the 'Team' hierarchy filter
+        is selected, and the filter UI reflects this selection.
+    - step_id_checkpoint: '2_6'
+      what_to_verify: Verify that the second checkbox under the 'Team' hierarchy filter
+        is selected, and the filter UI updates to include this team.
+    - step_id_checkpoint: '2_7'
+      what_to_verify: Verify that the third checkbox under the 'Team' hierarchy filter
+        is selected, and the filter UI updates to include this team.
+    - step_id_checkpoint: '2_8'
+      what_to_verify: Verify that the fourth checkbox under the 'Team' hierarchy filter
+        is selected, and the filter UI updates to include this team.
+    - step_id_checkpoint: '2_9'
+      what_to_verify: Verify that the fifth checkbox under the 'Team' hierarchy filter
+        is selected, and the filter UI updates to include this team.
+    - step_id_checkpoint: '2_10'
+      what_to_verify: Verify that the sixth checkbox under the 'Team' hierarchy filter
+        is selected, and the filter UI updates to include this team.
+    - step_id_checkpoint: '2_11'
+      what_to_verify: Verify that the seventh checkbox under the 'Team' hierarchy
+        filter is selected, and the filter UI updates to include this team.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid re-renders to display inventory
+        data only for the selected teams, and ensure the displayed data aligns with
+        the applied filter criteria.
+  ? page.get_by_text("Team", exact=True).click()|page.get_by_text("Department").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
+    > .pointer").first.click()|page.get_by_text("Department").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Team
+          Attribute: Multiple Teams Selected
+        Alerts Summary:
+          Displayed Data: Filtered by Selected Teams
+    verification_plan:
+    - step_id_checkpoint: '2_12'
+      what_to_verify: Verify that clicking on 'Team' in the hierarchy filter opens
+        the team selection dropdown and allows users to select or deselect MLB teams.
+    - step_id_checkpoint: '2_13'
+      what_to_verify: Verify that clicking on 'Department' switches the filter context
+        to department-level attributes without affecting the previously selected teams.
+    - step_id_checkpoint: '2_14'
+      what_to_verify: Verify that selecting or deselecting the checkbox updates the
+        filter state to include or exclude the corresponding department or team.
+    - step_id_checkpoint: '2_15'
+      what_to_verify: Verify that returning to the 'Department' filter context retains
+        the previously applied selections and does not reset the filter state.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid re-renders to display inventory
+        data filtered by the selected MLB teams and that the displayed data aligns
+        with the applied filter criteria.
+  ? page.get_by_text("Class").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
+    > .pointer").first.click()|page.get_by_text("Class").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute: Selected Classes
+        Alerts Summary:
+          Displayed Data: Filtered by Selected Classes
+    verification_plan:
+    - step_id_checkpoint: '2_16'
+      what_to_verify: Verify that the 'Class' filter dropdown is expanded, displaying
+        all available product classifications for selection.
+    - step_id_checkpoint: '2_17'
+      what_to_verify: Verify that the first checkbox in the 'Class' filter dropdown
+        is selected, and the selection is reflected in the filter summary.
+    - step_id_checkpoint: '2_18'
+      what_to_verify: Verify that the 'Class' filter dropdown is collapsed after the
+        selection, and the Alerts Summary grid updates to display only inventory data
+        relevant to the selected product classifications.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid and any associated charts
+        (e.g., Monthly Trend) are re-rendered to reflect the filtered data, ensuring
+        that the displayed metrics (e.g., First OOS Week, Estimated Lost Units) align
+        with the selected 'Class' filter.
+  ? page.get_by_text("Attribute").click()|page.get_by_text("Product Line").click()|page.get_by_text("Color",
+    exact=True).click()|page.get_by_role("button", name="Apply Filters").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line and Color
+    verification_plan:
+    - step_id_checkpoint: '2_19'
+      what_to_verify: Verify that the 'Attribute' dropdown is expanded, displaying
+        options such as 'Product Line' and 'Color'.
+    - step_id_checkpoint: '2_20'
+      what_to_verify: Verify that 'Product Line' is selected as an attribute, and
+        the selection is reflected in the filter criteria.
+    - step_id_checkpoint: '2_21'
+      what_to_verify: Verify that 'Color' is selected as an additional attribute,
+        and the filter criteria now include both 'Product Line' and 'Color'.
+    - step_id_checkpoint: '2_22'
+      what_to_verify: Verify that the 'Apply Filters' button triggers the re-rendering
+        of the Alerts Summary grid, displaying data filtered by the selected 'Product
+        Line' and 'Color' attributes.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid now displays inventory data
+        specific to the selected 'Product Line' and 'Color', and ensure that the data
+        aligns with the applied filters.
+  ? page.locator(".pill-nav-btn.pointer").click()|page.locator(".zeb-filter").first.click()|page.locator(".dropdown-caret.p-l-16").first.click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line and Color
+    verification_plan:
+    - step_id_checkpoint: '2_23'
+      what_to_verify: Verify that the 'pill-nav-btn' navigation button is clicked,
+        and the UI transitions to the appropriate filter selection interface.
+    - step_id_checkpoint: '2_24'
+      what_to_verify: Verify that the first filter option in the 'zeb-filter' list
+        is selected, and the filter hierarchy updates to 'Class' with attributes 'Product
+        Line' and 'Color'.
+    - step_id_checkpoint: '2_25'
+      what_to_verify: Verify that the dropdown for attribute selection is expanded,
+        allowing the user to choose specific values for 'Product Line' and 'Color'.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid updates to display data
+        filtered by the selected 'Product Line' and 'Color' attributes, and ensure
+        the displayed data aligns with the applied filters.
+  ? page.locator(".dropdown-caret.p-l-16").first.click()|page.locator("div").filter(has_text=re.compile(r"^All
+    Alerts$")).nth(1).click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line and Color
+    verification_plan:
+    - step_id_checkpoint: '3_1'
+      what_to_verify: Verify that the dropdown menu for the 'Alerts' filter is expanded,
+        displaying the available options ('All Alerts', 'Over Stock', 'Under Stock').
+    - step_id_checkpoint: '3_2'
+      what_to_verify: Verify that the 'All Alerts' option is selected, and the Alerts
+        Summary grid updates to display all inventory alerts, including overstock
+        and understock scenarios, filtered by the selected Product Line and Color.
+    - step_id_checkpoint: END
+      what_to_verify: Ensure that the Alerts Summary grid reflects the updated data,
+        showing all relevant alerts, and confirm that the displayed data aligns with
+        the applied filters for Product Line and Color.
+  ? page.locator(".dropdown-caret.p-l-16").first.click()|page.locator("div").filter(has_text=re.compile(r"^Over
+    Stock$")).nth(1).click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: Over Stock
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, and Over Stock
+    verification_plan:
+    - step_id_checkpoint: '3_3'
+      what_to_verify: Verify that the dropdown menu for the 'Alerts' filter is expanded,
+        allowing the user to select a specific alert type.
+    - step_id_checkpoint: '3_4'
+      what_to_verify: Verify that the 'Over Stock' option is selected in the Alerts
+        filter, and the filter is applied to the dataset.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid has re-rendered to display
+        only overstocked products, with the data filtered by the selected Product
+        Line and Color attributes. Confirm that the displayed data aligns with the
+        'Over Stock' filter criteria.
+  ? page.locator("#seasontype-filterId > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown
+    > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.locator(".overflow-auto
+    > div:nth-child(2) > .d-flex").click()|page.locator(".d-flex.dropdown-option.align-items-center.p-v-5.p-l-32
+    > .d-flex").first.click()|page.get_by_role("button", name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: Over Stock
+          Season Type: Specific Season Type
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, Over Stock, and Specific
+            Season Type
+    verification_plan:
+    - step_id_checkpoint: '3_5'
+      what_to_verify: Verify that the dropdown for 'Season Type' is expanded, displaying
+        all available season types for selection.
+    - step_id_checkpoint: '3_6'
+      what_to_verify: Verify that the first season type option is highlighted or selected
+        in the dropdown.
+    - step_id_checkpoint: '3_7'
+      what_to_verify: Verify that the second season type option is selected, updating
+        the filter criteria.
+    - step_id_checkpoint: '3_8'
+      what_to_verify: Verify that the selected season type is displayed in the filter
+        section, confirming the user's choice.
+    - step_id_checkpoint: '3_9'
+      what_to_verify: Verify that the 'Apply' button triggers a re-render of the Alerts
+        Summary grid, displaying data filtered by Product Line, Color, Over Stock,
+        and the selected Season Type.
+  ? page.locator("#seasontype-filterId > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown
+    > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: Over Stock
+          Season Type: Specific Season Type
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, Over Stock, and Specific
+            Season Type
+    verification_plan:
+    - step_id_checkpoint: '3_10'
+      what_to_verify: Verify that the dropdown for 'Season Type' is expanded, displaying
+        all available season options for selection.
+    - step_id_checkpoint: '3_11'
+      what_to_verify: Verify that the selected season type is highlighted and matches
+        the user's choice in the dropdown.
+    - step_id_checkpoint: '3_12'
+      what_to_verify: Verify that the 'Apply' button triggers the re-rendering of
+        the Alerts Summary grid, updating it to display data filtered by the selected
+        'Season Type' along with the existing 'Over Stock' and other applied filters.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid now reflects the updated
+        dataset, showing only overstock alerts for the selected season type, and ensure
+        that the displayed data aligns with the applied filters.
+  ? page.locator(".dropdown-caret.p-l-16").first.click()|page.get_by_text("All Alerts").click()|page.get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, and Specific
+            Season Type
+    verification_plan:
+    - step_id_checkpoint: '3_13'
+      what_to_verify: Verify that the dropdown for the 'Alerts' filter is expanded,
+        allowing the user to select a new alert type.
+    - step_id_checkpoint: '3_14'
+      what_to_verify: Verify that the 'All Alerts' option is selected, updating the
+        filter criteria to include all alert types.
+    - step_id_checkpoint: '3_15'
+      what_to_verify: Verify that the 'Apply' button triggers the re-rendering of
+        the Alerts Summary grid to display data for all alert types, while maintaining
+        the existing filters for Product Line, Color, and Specific Season Type.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid now displays inventory data
+        for all alert types, and ensure that the displayed data aligns with the selected
+        filters. Confirm that the grid reflects accurate metrics such as First OOS
+        Week, No OOS Weeks, Estimated Lost Units, and Estimated Lost Sales.
+  ? "page.get_by_role(\"button\", name=\"\uE0BFcolumns\").click()|page.get_by_role(\"\
+    checkbox\", name=\"Toggle All Columns Visibility\").uncheck()|page.get_by_role(\"\
+    button\", name=\"\uE0BFcolumns\").click()"
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, and Specific
+            Season Type
+          Columns Visibility: All columns hidden
+    verification_plan:
+    - step_id_checkpoint: '3_16'
+      what_to_verify: Verify that clicking the 'Columns' button opens the column visibility
+        menu, allowing the user to toggle column visibility.
+    - step_id_checkpoint: '3_17'
+      what_to_verify: Verify that unchecking the 'Toggle All Columns Visibility' checkbox
+        hides all columns in the 'Alerts Summary' grid, leaving the grid empty.
+    - step_id_checkpoint: '3_18'
+      what_to_verify: Verify that clicking the 'Columns' button again closes the column
+        visibility menu and that the grid remains updated with all columns hidden.
+    - step_id_checkpoint: END
+      what_to_verify: Ensure that the 'Alerts Summary' grid reflects the updated column
+        visibility settings, and confirm that the user can re-enable columns if needed.
+  ? "page.get_by_role(\"button\", name=\"\uE0BFcolumns\").click()|page.get_by_role(\"\
+    treeitem\", name=\"First OOS Week Column\").get_by_label(\"Press SPACE to toggle\"\
+    ).check()|page.get_by_role(\"treeitem\", name=\"No OOS Weeks Column\").get_by_label(\"\
+    Press SPACE to toggle\").check()"
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, and Specific
+            Season Type
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+    verification_plan:
+    - step_id_checkpoint: '3_19'
+      what_to_verify: Verify that the 'Columns' button opens the column selection
+        menu, allowing the user to customize the visibility of columns in the Alerts
+        Summary grid.
+    - step_id_checkpoint: '3_20'
+      what_to_verify: Verify that selecting the 'First OOS Week' column updates the
+        Alerts Summary grid to display this column, showing the first week each product
+        went out of stock.
+    - step_id_checkpoint: '3_21'
+      what_to_verify: Verify that selecting the 'No OOS Weeks' column updates the
+        Alerts Summary grid to display this column, showing the total number of weeks
+        each product was out of stock.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid now displays the 'First
+        OOS Week' and 'No OOS Weeks' columns with accurate data for the filtered products,
+        and that the data aligns with the selected filters (Product Line, Color, All
+        Alerts, and Specific Season Type).
+  ? page.get_by_title("Filter").nth(2).click()|page.get_by_role("spinbutton", name="Filter
+    Value").fill("5")|page.locator(".ag-icon.ag-icon-small-down").first.click()|page.get_by_role("option",
+    name="Greater than or equal to").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Column: No OOS Weeks
+            Condition: Greater than or equal to
+            Value: '5'
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, Specific Season
+            Type, and No OOS Weeks >= 5
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+    verification_plan:
+    - step_id_checkpoint: '3_22'
+      what_to_verify: Verify that the 'Filter' section is expanded and ready for user
+        input.
+    - step_id_checkpoint: '3_23'
+      what_to_verify: Verify that the value '5' is correctly entered into the filter
+        input field for the 'No OOS Weeks' column.
+    - step_id_checkpoint: '3_24'
+      what_to_verify: Verify that the dropdown for filter conditions is opened, displaying
+        options such as 'Greater than or equal to'.
+    - step_id_checkpoint: '3_25'
+      what_to_verify: Verify that the 'Greater than or equal to' condition is selected
+        for the 'No OOS Weeks' column filter.
+    - step_id_checkpoint: '3_26'
+      what_to_verify: Verify that the 'Apply' button is clicked and the filter is
+        applied to the 'No OOS Weeks' column.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid updates to display only
+        rows where the 'No OOS Weeks' value is greater than or equal to 5, and confirm
+        that the displayed data aligns with the applied filter criteria.
+  page.get_by_title("Filter").nth(2).click()|page.get_by_label("Column Filter").get_by_role("button", name="Reset").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Column: null
+            Condition: null
+            Value: null
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, and Specific
+            Season Type
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+    verification_plan:
+    - step_id_checkpoint: '3_27'
+      what_to_verify: Verify that the 'Filter' section is expanded and the 'Column
+        Filter' options are visible to the user.
+    - step_id_checkpoint: '3_28'
+      what_to_verify: Verify that the 'Column Filter' condition for 'No OOS Weeks
+        >= 5' is cleared, and the Alerts Summary grid updates to display all data
+        without this filter applied.
+    - step_id_checkpoint: END
+      what_to_verify: Ensure that the Alerts Summary grid now reflects all relevant
+        data based on the remaining filters (Product Line, Color, All Alerts, and
+        Specific Season Type) and that the 'No OOS Weeks' column no longer has a filter
+        applied.
+  ? page.get_by_role("treeitem", name="Est Lost Units Column").get_by_label("Press
+    SPACE to toggle").check()|page.get_by_title("Filter").nth(3).click()|page.get_by_role("spinbutton",
+    name="Filter Value").click()|page.get_by_role("spinbutton", name="Filter Value").fill("4")|page.locator(".ag-icon.ag-icon-small-down").first.click()|page.get_by_role("option",
+    name="Greater than or equal to").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Column: Est Lost Units
+            Condition: Greater than or equal to
+            Value: '4'
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, Specific Season
+            Type, and Est Lost Units >= 4
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+    verification_plan:
+    - step_id_checkpoint: '3_29'
+      what_to_verify: Verify that the 'Est Lost Units' column is selected and visible
+        in the Alerts Summary grid.
+    - step_id_checkpoint: '3_30'
+      what_to_verify: Verify that the filter panel is opened, allowing the user to
+        apply a filter to the 'Est Lost Units' column.
+    - step_id_checkpoint: '3_31'
+      what_to_verify: Verify that the filter value input field is activated and ready
+        for user input.
+    - step_id_checkpoint: '3_32'
+      what_to_verify: Verify that the filter value '4' is correctly entered into the
+        input field.
+    - step_id_checkpoint: '3_34'
+      what_to_verify: Verify that the condition 'Greater than or equal to' is selected
+        for the 'Est Lost Units' column filter.
+    - step_id_checkpoint: '3_35'
+      what_to_verify: Verify that the column filter is applied, and the Alerts Summary
+        grid updates to display only rows where 'Est Lost Units' is greater than or
+        equal to 4.
+  page.get_by_title("Filter").nth(3).click()|page.get_by_label("Column Filter").get_by_role("button", name="Reset").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Column: Est Lost Units
+            Condition: null
+            Value: null
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, and Specific
+            Season Type
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+    verification_plan:
+    - step_id_checkpoint: '3_36'
+      what_to_verify: Verify that the 'Filter' section is expanded and the 'Column
+        Filter' for 'Est Lost Units' is visible, showing the current condition 'Greater
+        than or equal to 4'.
+    - step_id_checkpoint: '3_37'
+      what_to_verify: Verify that clicking the 'Reset' button removes the condition
+        for 'Est Lost Units' in the 'Column Filter' and updates the Alerts Summary
+        grid to display all data without the filter applied.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid now includes all rows regardless
+        of the 'Est Lost Units' value, and the displayed data reflects the updated
+        filter state.
+  ? page.get_by_role("treeitem", name="Estimated Lost Sales ($)").get_by_label("Press
+    SPACE to toggle").check()|page.get_by_title("Filter").nth(4).click()|page.get_by_role("spinbutton",
+    name="Filter Value").fill("50")|page.locator(".ag-icon.ag-icon-small-down").first.click()|page.get_by_role("option",
+    name="Greater than or equal to").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Column: Est Lost Units
+            Condition: Greater than or equal to
+            Value: '50'
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, Specific Season
+            Type, and Est Lost Units >= 50
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+    verification_plan:
+    - step_id_checkpoint: '3_38'
+      what_to_verify: Verify that the 'Estimated Lost Sales ($)' column is now visible
+        in the Alerts Summary grid.
+    - step_id_checkpoint: '3_39'
+      what_to_verify: Verify that the filter panel for the 'Est Lost Units' column
+        is opened.
+    - step_id_checkpoint: '3_40'
+      what_to_verify: Verify that the filter value '50' is correctly entered into
+        the filter input field.
+    - step_id_checkpoint: '3_42'
+      what_to_verify: Verify that the condition 'Greater than or equal to' is selected
+        for the 'Est Lost Units' column filter.
+    - step_id_checkpoint: '3_43'
+      what_to_verify: Verify that the column filter is applied and the Alerts Summary
+        grid updates to display only rows where 'Est Lost Units' is greater than or
+        equal to 50.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid now includes the 'Estimated
+        Lost Sales ($)' column and displays data filtered by the specified conditions.
+  page.get_by_title("Filter").nth(4).click()|page.get_by_label("Column Filter").get_by_role("button", name="Reset").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter: {}
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, and Specific
+            Season Type
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+    verification_plan:
+    - step_id_checkpoint: '3_44'
+      what_to_verify: Verify that the 'Filter' section is expanded and the 'Column
+        Filter' options are visible to the user.
+    - step_id_checkpoint: '3_45'
+      what_to_verify: Verify that the 'Column Filter' condition for 'Est Lost Units
+        >= 50' is cleared, and the Alerts Summary grid re-renders to display all data
+        without this filter applied.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid now includes all products,
+        regardless of their 'Est Lost Units' value, and that the displayed data matches
+        the updated filter criteria.
+  ? "page.get_by_role(\"checkbox\", name=\"Toggle All Columns Visibility\").check()|page.get_by_role(\"\
+    button\", name=\"\uE0BFcolumns\").click()"
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter: {}
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, and Specific
+            Season Type
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+          - Unrecoverable Lost Units
+          - Unrecoverable Lost Sales ($)
+          - Inv Sell Through
+    verification_plan:
+    - step_id_checkpoint: '3_46'
+      what_to_verify: Verify that the 'Toggle All Columns Visibility' checkbox is
+        checked and that all columns in the Alerts Summary grid are now visible, including
+        'Unrecoverable Lost Units,' 'Unrecoverable Lost Sales ($),' and 'Inv Sell
+        Through.'
+    - step_id_checkpoint: '3_47'
+      what_to_verify: Verify that the 'Columns' button reflects the updated state,
+        indicating all columns are visible, and ensure the Alerts Summary grid re-renders
+        to display the additional columns.
+    - step_id_checkpoint: END
+      what_to_verify: Confirm that the Alerts Summary grid displays all columns with
+        accurate data for the selected filters (Product Line, Color, All Alerts, and
+        Specific Season Type).
+  ? page.locator(".pointer.zeb-adjustments").click()|page.locator("div").filter(has_text=re.compile(r"^Save
+    Preference$")).nth(1).click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Selected Columns:
+            - First OOS Week
+            - No OOS Weeks
+            - Est Lost Units
+            - Estimated Lost Sales ($)
+            - Unrecoverable Lost Units
+            - Unrecoverable Lost Sales ($)
+            - Inv Sell Through
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, and Specific
+            Season Type
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+          - Unrecoverable Lost Units
+          - Unrecoverable Lost Sales ($)
+          - Inv Sell Through
+    verification_plan:
+    - step_id_checkpoint: '3_48'
+      what_to_verify: Verify that the column selection menu is opened, allowing the
+        user to adjust the visibility of specific columns in the Alerts Summary grid.
+    - step_id_checkpoint: '3_49'
+      what_to_verify: Verify that the 'Save Preference' button is clicked and that
+        the selected column visibility preferences are saved successfully.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid reflects the updated column
+        visibility preferences and that the selected columns are displayed as per
+        the saved settings.
+  page.locator(".icon-color-toolbar-active.zeb-download-underline").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Selected Columns:
+            - First OOS Week
+            - No OOS Weeks
+            - Est Lost Units
+            - Estimated Lost Sales ($)
+            - Unrecoverable Lost Units
+            - Unrecoverable Lost Sales ($)
+            - Inv Sell Through
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, and Specific
+            Season Type
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+          - Unrecoverable Lost Units
+          - Unrecoverable Lost Sales ($)
+          - Inv Sell Through
+    verification_plan:
+    - step_id_checkpoint: '3_50'
+      what_to_verify: Verify that clicking the download icon triggers the export of
+        the Alerts Summary grid data, filtered by Product Line, Color, All Alerts,
+        and Specific Season Type.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the downloaded file contains the correct data columns
+        (First OOS Week, No OOS Weeks, Est Lost Units, Estimated Lost Sales ($), Unrecoverable
+        Lost Units, Unrecoverable Lost Sales ($), Inv Sell Through) and matches the
+        filtered dataset displayed in the Alerts Summary grid.
+  page.locator("a").filter(has_text="2").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Selected Columns:
+            - First OOS Week
+            - No OOS Weeks
+            - Est Lost Units
+            - Estimated Lost Sales ($)
+            - Unrecoverable Lost Units
+            - Unrecoverable Lost Sales ($)
+            - Inv Sell Through
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, and Specific
+            Season Type
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+          - Unrecoverable Lost Units
+          - Unrecoverable Lost Sales ($)
+          - Inv Sell Through
+    verification_plan:
+    - step_id_checkpoint: '3_51'
+      what_to_verify: Verify that clicking the filter option updates the 'Alerts Summary'
+        grid to display data filtered by the selected 'Product Line' and 'Color' attributes.
+        Ensure that the displayed data aligns with the applied filters.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the selected columns ('First OOS Week,' 'No OOS
+        Weeks,' 'Est Lost Units,' etc.) remain visible in the 'Alerts Summary' grid
+        and that the data reflects the filtered attributes and season type.
+  ? page.locator(".d-flex > esp-multiselect-dropdown > .multiselect-dropdown > div
+    > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator("div").filter(has_text=re.compile(r"^View
+    20 row\(s\)$")).nth(1).click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Selected Columns:
+            - First OOS Week
+            - No OOS Weeks
+            - Est Lost Units
+            - Estimated Lost Sales ($)
+            - Unrecoverable Lost Units
+            - Unrecoverable Lost Sales ($)
+            - Inv Sell Through
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, and Specific
+            Season Type
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+          - Unrecoverable Lost Units
+          - Unrecoverable Lost Sales ($)
+          - Inv Sell Through
+          Rows Per Page: 20
+    verification_plan:
+    - step_id_checkpoint: '3_52'
+      what_to_verify: Verify that the dropdown for 'Rows per page' is successfully
+        opened, displaying the available options (e.g., 10 rows, 20 rows, etc.).
+    - step_id_checkpoint: '3_53'
+      what_to_verify: Verify that the '20 rows per page' option is selected and highlighted
+        in the dropdown.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'Alerts Summary' grid updates to display 20
+        rows of data per page, and the pagination controls adjust accordingly to reflect
+        the new row count.
+  ? "page.get_by_role(\"gridcell\", name=\"\uE03D Baltimore Orioles|LICENSE FRAME\
+    \ COLOR CHROME|N/A|ORANGE\").get_by_role(\"radio\").check()"
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Selected Columns:
+            - First OOS Week
+            - No OOS Weeks
+            - Est Lost Units
+            - Estimated Lost Sales ($)
+            - Unrecoverable Lost Units
+            - Unrecoverable Lost Sales ($)
+            - Inv Sell Through
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, and Specific
+            Season Type
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+          - Unrecoverable Lost Units
+          - Unrecoverable Lost Sales ($)
+          - Inv Sell Through
+          Rows Per Page: 20
+          Selected Product: Baltimore Orioles | LICENSE FRAME COLOR CHROME | N/A |
+            ORANGE
+    verification_plan:
+    - step_id_checkpoint: '3_54'
+      what_to_verify: Verify that the radio button for the product 'Baltimore Orioles
+        | LICENSE FRAME COLOR CHROME | N/A | ORANGE' is selected, and the UI reflects
+        this selection by highlighting the row or updating the product details section.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid updates to display detailed
+        metrics (e.g., First OOS Week, Estimated Lost Sales) specific to the selected
+        product, and ensure that any dependent charts or data visualizations are updated
+        accordingly.
+  page.get_by_text("Show All Locations").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Selected Columns:
+            - First OOS Week
+            - No OOS Weeks
+            - Est Lost Units
+            - Estimated Lost Sales ($)
+            - Unrecoverable Lost Units
+            - Unrecoverable Lost Sales ($)
+            - Inv Sell Through
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, and Specific
+            Season Type, across all locations
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+          - Unrecoverable Lost Units
+          - Unrecoverable Lost Sales ($)
+          - Inv Sell Through
+          Rows Per Page: 20
+          Selected Product: null
+    verification_plan:
+    - step_id_checkpoint: '4_1'
+      what_to_verify: Verify that clicking 'Show All Locations' removes any location-specific
+        filters and updates the Alerts Summary grid to display data for all locations.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid re-renders to include inventory
+        data for all locations, and ensure that the displayed data aligns with the
+        selected filters (Product Line, Color, All Alerts, and Specific Season Type).
+  ? "page.get_by_role(\"button\", name=\"\uE0BFcolumns\").nth(1).click()|page.get_by_role(\"\
+    checkbox\", name=\"Toggle All Columns Visibility\").uncheck()|page.get_by_role(\"\
+    treeitem\", name=\"First OOS Week Column\").get_by_label(\"Press SPACE to toggle\"\
+    ).check()|page.get_by_role(\"treeitem\", name=\"No OOS Weeks Column\").get_by_label(\"\
+    Press SPACE to toggle\").check()|page.get_by_role(\"treeitem\", name=\"Est Lost\
+    \ Units Column\").get_by_label(\"Press SPACE to toggle\").check()|page.get_by_role(\"\
+    treeitem\", name=\"Estimated Lost Sales ($)\").get_by_label(\"Press SPACE to toggle\"\
+    ).check()|page.get_by_role(\"treeitem\", name=\"Unrecoverable Lost Units\").get_by_label(\"\
+    Press SPACE to toggle\").check()"
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Selected Columns:
+            - First OOS Week
+            - No OOS Weeks
+            - Est Lost Units
+            - Estimated Lost Sales ($)
+            - Unrecoverable Lost Units
+            - Unrecoverable Lost Sales ($)
+            - Inv Sell Through
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, and Specific
+            Season Type, across all locations
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+          - Unrecoverable Lost Units
+          - Unrecoverable Lost Sales ($)
+          - Inv Sell Through
+          Rows Per Page: 20
+          Selected Product: null
+    verification_plan:
+    - step_id_checkpoint: '4_2'
+      what_to_verify: Verify that the 'Columns' button opens the column selection
+        menu, allowing the user to customize the visible columns in the Alerts Summary
+        grid.
+    - step_id_checkpoint: '4_3'
+      what_to_verify: Verify that unchecking 'Toggle All Columns Visibility' hides
+        all columns in the Alerts Summary grid, leaving it empty.
+    - step_id_checkpoint: '4_4'
+      what_to_verify: Verify that enabling the 'First OOS Week' column updates the
+        Alerts Summary grid to display this column with accurate data for each product.
+    - step_id_checkpoint: '4_5'
+      what_to_verify: Verify that enabling the 'No OOS Weeks' column updates the Alerts
+        Summary grid to display this column with accurate data for each product.
+    - step_id_checkpoint: '4_6'
+      what_to_verify: Verify that enabling the 'Est Lost Units' column updates the
+        Alerts Summary grid to display this column with accurate data for each product.
+    - step_id_checkpoint: '4_7'
+      what_to_verify: Verify that enabling the 'Estimated Lost Sales ($)' column updates
+        the Alerts Summary grid to display this column with accurate data for each
+        product.
+    - step_id_checkpoint: '4_8'
+      what_to_verify: Verify that enabling the 'Unrecoverable Lost Units' column updates
+        the Alerts Summary grid to display this column with accurate data for each
+        product.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid reflects the selected columns
+        accurately, with data aligned to the applied filters (Product Line, Color,
+        All Alerts, and Specific Season Type).
+  ? page.locator(".ag-header-cell.ag-column-last > .ag-header-cell-comp-wrapper >
+    .ag-cell-label-container > .ag-header-icon > .filter-icon").click()|page.get_by_role("spinbutton",
+    name="Filter Value").fill("100")|page.get_by_label("Column Filter").get_by_role("button",
+    name="Apply").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Selected Columns:
+            - First OOS Week
+            - No OOS Weeks
+            - Est Lost Units
+            - Estimated Lost Sales ($)
+            - Unrecoverable Lost Units
+            - Unrecoverable Lost Sales ($)
+            - Inv Sell Through
+            Applied Filter:
+              Column: Est Lost Units
+              Threshold: '>= 100'
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, Specific Season
+            Type, and Est Lost Units >= 100, across all locations
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+          - Unrecoverable Lost Units
+          - Unrecoverable Lost Sales ($)
+          - Inv Sell Through
+          Rows Per Page: 20
+          Selected Product: null
+    verification_plan:
+    - step_id_checkpoint: '4_9'
+      what_to_verify: Verify that the filter icon for the 'Est Lost Units' column
+        is clicked, and the filter input field is displayed for user interaction.
+    - step_id_checkpoint: '4_10'
+      what_to_verify: Verify that the value '100' is correctly entered into the filter
+        input field for the 'Est Lost Units' column.
+    - step_id_checkpoint: '4_11'
+      what_to_verify: Verify that the 'Apply' button is clicked, and the Alerts Summary
+        grid updates to display only rows where 'Est Lost Units' is greater than or
+        equal to 100. Confirm that the displayed data aligns with the applied filter
+        criteria.
+  ? page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active >
+    .filter-icon").click()|page.get_by_label("Column Filter").get_by_role("button",
+    name="Reset").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Selected Columns:
+            - First OOS Week
+            - No OOS Weeks
+            - Est Lost Units
+            - Estimated Lost Sales ($)
+            - Unrecoverable Lost Units
+            - Unrecoverable Lost Sales ($)
+            - Inv Sell Through
+            Applied Filter: null
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, and Specific
+            Season Type, across all locations
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+          - Unrecoverable Lost Units
+          - Unrecoverable Lost Sales ($)
+          - Inv Sell Through
+          Rows Per Page: 20
+          Selected Product: null
+    verification_plan:
+    - step_id_checkpoint: '4_12'
+      what_to_verify: Verify that the column filter icon indicates an active filter
+        before the reset action is performed.
+    - step_id_checkpoint: '4_13'
+      what_to_verify: Verify that the 'Reset' button clears the applied threshold
+        filter on 'Est Lost Units' and updates the Alerts Summary grid to display
+        all relevant data without the filter.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid reflects unfiltered data,
+        showing all rows that match the remaining filters (Product Line, Color, All
+        Alerts, and Specific Season Type).
+  ? "page.get_by_role(\"checkbox\", name=\"Toggle All Columns Visibility\").check()|page.get_by_role(\"\
+    button\", name=\"\uE0BFcolumns\").nth(1).click()"
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Selected Columns:
+            - First OOS Week
+            - No OOS Weeks
+            - Est Lost Units
+            - Estimated Lost Sales ($)
+            - Unrecoverable Lost Units
+            - Unrecoverable Lost Sales ($)
+            - Inv Sell Through
+            Applied Filter: null
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, and Specific
+            Season Type, across all locations
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+          - Unrecoverable Lost Units
+          - Unrecoverable Lost Sales ($)
+          - Inv Sell Through
+          Rows Per Page: 20
+          Selected Product: null
+    verification_plan:
+    - step_id_checkpoint: '4_14'
+      what_to_verify: Verify that the 'Toggle All Columns Visibility' checkbox is
+        checked, and all columns in the Alerts Summary grid are now visible.
+    - step_id_checkpoint: '4_15'
+      what_to_verify: Verify that the 'Columns' button reflects the updated state,
+        showing all columns as selected, and ensure the Alerts Summary grid displays
+        all selected columns without truncation or layout issues.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid data remains consistent
+        with the applied filters (Product Line, Color, All Alerts, Specific Season
+        Type) and that no data is missing or misaligned due to the column visibility
+        change.
+  ? 'page.locator("div:nth-child(3) > div > .componentParentWrapper > esp-grid-container
+    > esp-card-component > .card-container > .title > .grid-icons-container > esp-grid-icons-component
+    > .display-grid-icons > div:nth-child(2) > #preference-iconId > .legend-font >
+    .multiselect-dropdown > .pointer").click()|page.get_by_text("Save Preference").click()'
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Selected Columns:
+            - First OOS Week
+            - No OOS Weeks
+            - Est Lost Units
+            - Estimated Lost Sales ($)
+            - Unrecoverable Lost Units
+            - Unrecoverable Lost Sales ($)
+            - Inv Sell Through
+            Applied Filter: User-selected columns saved as preferences
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, and Specific
+            Season Type, across all locations
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+          - Unrecoverable Lost Units
+          - Unrecoverable Lost Sales ($)
+          - Inv Sell Through
+          Rows Per Page: 20
+          Selected Product: null
+    verification_plan:
+    - step_id_checkpoint: '4_16'
+      what_to_verify: Verify that the column selection dropdown is opened, and the
+        user is able to select or deselect columns for display in the Alerts Summary
+        grid.
+    - step_id_checkpoint: '4_17'
+      what_to_verify: Verify that the selected column preferences are saved successfully
+        and persist across sessions or page reloads.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid reflects the updated column
+        preferences, displaying only the selected columns and hiding the unselected
+        ones.
+  ? page.get_by_role("row", name="Location").get_by_role("checkbox").check()|page.get_by_role("button",
+    name="Apply").nth(1).click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Selected Columns:
+            - First OOS Week
+            - No OOS Weeks
+            - Est Lost Units
+            - Estimated Lost Sales ($)
+            - Unrecoverable Lost Units
+            - Unrecoverable Lost Sales ($)
+            - Inv Sell Through
+            Applied Filter: User-selected columns saved as preferences
+          Location Filter: Baltimore Orioles In-Venue Retail
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, Specific Season
+            Type, and Baltimore Orioles In-Venue Retail
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+          - Unrecoverable Lost Units
+          - Unrecoverable Lost Sales ($)
+          - Inv Sell Through
+          Rows Per Page: 20
+          Selected Product: null
+    verification_plan:
+    - step_id_checkpoint: '4_18'
+      what_to_verify: Verify that the checkbox for 'Baltimore Orioles In-Venue Retail'
+        is selected, indicating the location filter is applied.
+    - step_id_checkpoint: '4_19'
+      what_to_verify: Verify that clicking 'Apply' updates the Alerts Summary grid
+        to display data specific to the selected location, 'Baltimore Orioles In-Venue
+        Retail'. Ensure that the displayed data aligns with the applied filters, including
+        Product Line, Color, Alerts, and Season Type.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the grid preferences, including selected columns
+        and rows per page, remain consistent after applying the location filter. Confirm
+        that the success message ('Grid Preference saved successfully') is displayed
+        and accurate.
+  ? page.locator("svg").get_by_text("Actual Sales & ROY Fcst ($)").click()|page.locator("svg").get_by_text("Sales
+    Fcst Adjusted ($)", exact=True).click()|page.get_by_text("GD Sales Fcst Adjusted
+    ($)", exact=True).click()|page.get_by_text("Non GD Sales Fcst Adjusted ($)").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Selected Columns:
+            - First OOS Week
+            - No OOS Weeks
+            - Est Lost Units
+            - Estimated Lost Sales ($)
+            - Unrecoverable Lost Units
+            - Unrecoverable Lost Sales ($)
+            - Inv Sell Through
+            Applied Filter: User-selected columns saved as preferences
+          Location Filter: Baltimore Orioles In-Venue Retail
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, Specific Season
+            Type, and Baltimore Orioles In-Venue Retail
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+          - Unrecoverable Lost Units
+          - Unrecoverable Lost Sales ($)
+          - Inv Sell Through
+          Rows Per Page: 20
+          Selected Product: null
+        Forecasting Chart:
+          Selected Forecast Type: Non GD Sales Fcst Adjusted ($)
+          Displayed Data: Sales trends for Baltimore Orioles In-Venue Retail filtered
+            by Product Line, Color, and Specific Season Type
+    verification_plan:
+    - step_id_checkpoint: '5_1'
+      what_to_verify: Verify that the chart updates to display 'Actual Sales & ROY
+        Fcst ($)' data for the selected filters (Baltimore Orioles In-Venue Retail,
+        Product Line, Color, and Specific Season Type).
+    - step_id_checkpoint: '5_2'
+      what_to_verify: Verify that the chart updates to display 'Sales Fcst Adjusted
+        ($)' data for the selected filters and that the previous forecast type is
+        deselected.
+    - step_id_checkpoint: '5_3'
+      what_to_verify: Verify that the chart updates to display 'GD Sales Fcst Adjusted
+        ($)' data for the selected filters and that the previous forecast type is
+        deselected.
+    - step_id_checkpoint: '5_4'
+      what_to_verify: Verify that the chart updates to display 'Non GD Sales Fcst
+        Adjusted ($)' data for the selected filters and that the previous forecast
+        type is deselected.
+    - step_id_checkpoint: END
+      what_to_verify: Ensure that the Alerts Summary grid remains consistent with
+        the applied filters and that the forecasting chart reflects the selected forecast
+        type accurately.
+  ? page.locator("svg").get_by_text("TY Actual Sales ($)").click()|page.locator("svg").get_by_text("System
+    Sales Fcst ($)").click()|page.get_by_text("GD Sales Fcst ($)", exact=True).click()|page.get_by_text("Non
+    GD Sales Fcst ($)").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Selected Columns:
+            - First OOS Week
+            - No OOS Weeks
+            - Est Lost Units
+            - Estimated Lost Sales ($)
+            - Unrecoverable Lost Units
+            - Unrecoverable Lost Sales ($)
+            - Inv Sell Through
+            Applied Filter: User-selected columns saved as preferences
+          Location Filter: Baltimore Orioles In-Venue Retail
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, Specific Season
+            Type, and Baltimore Orioles In-Venue Retail
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+          - Unrecoverable Lost Units
+          - Unrecoverable Lost Sales ($)
+          - Inv Sell Through
+          Rows Per Page: 20
+          Selected Product: null
+        Forecasting Chart:
+          Selected Forecast Type: Non GD Sales Fcst ($)
+          Displayed Data: Sales trends for Baltimore Orioles In-Venue Retail filtered
+            by Product Line, Color, and Specific Season Type
+    verification_plan:
+    - step_id_checkpoint: '5_5'
+      what_to_verify: Verify that the Monthly Trend chart updates to display 'TY Actual
+        Sales ($)' data for the Baltimore Orioles In-Venue Retail location, filtered
+        by Product Line, Color, and Specific Season Type.
+    - step_id_checkpoint: '5_6'
+      what_to_verify: Verify that the Monthly Trend chart updates to display 'System
+        Sales Fcst ($)' data for the Baltimore Orioles In-Venue Retail location, filtered
+        by Product Line, Color, and Specific Season Type.
+    - step_id_checkpoint: '5_7'
+      what_to_verify: Verify that the Monthly Trend chart updates to display 'GD Sales
+        Fcst ($)' data for the Baltimore Orioles In-Venue Retail location, filtered
+        by Product Line, Color, and Specific Season Type.
+    - step_id_checkpoint: '5_8'
+      what_to_verify: Verify that the Monthly Trend chart updates to display 'Non
+        GD Sales Fcst ($)' data for the Baltimore Orioles In-Venue Retail location,
+        filtered by Product Line, Color, and Specific Season Type.
+    - step_id_checkpoint: END
+      what_to_verify: Ensure that the selected forecast type ('Non GD Sales Fcst ($)')
+        remains highlighted in the Monthly Trend chart and that the displayed data
+        aligns with the applied filters.
+  ? page.locator("svg").get_by_text("% Change vs LLY").click()|page.locator("svg").get_by_text("LLY
+    Sales ($)").click()|page.locator("svg").get_by_text("LY Sales ($)", exact=True).click()|page.locator("svg").get_by_text("%
+    Change vs LY").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Selected Columns:
+            - First OOS Week
+            - No OOS Weeks
+            - Est Lost Units
+            - Estimated Lost Sales ($)
+            - Unrecoverable Lost Units
+            - Unrecoverable Lost Sales ($)
+            - Inv Sell Through
+            Applied Filter: User-selected columns saved as preferences
+          Location Filter: Baltimore Orioles In-Venue Retail
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, Specific Season
+            Type, and Baltimore Orioles In-Venue Retail
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+          - Unrecoverable Lost Units
+          - Unrecoverable Lost Sales ($)
+          - Inv Sell Through
+          Rows Per Page: 20
+          Selected Product: null
+        Forecasting Chart:
+          Selected Forecast Type: Non GD Sales Fcst ($)
+          Displayed Data: Sales trends for Baltimore Orioles In-Venue Retail filtered
+            by Product Line, Color, and Specific Season Type
+        Monthly Trend Chart:
+          Selected Metrics:
+          - '% Change vs LLY'
+          - LLY Sales ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          Displayed Data: Historical sales performance and trends for Baltimore Orioles
+            In-Venue Retail
+    verification_plan:
+    - step_id_checkpoint: '5_9'
+      what_to_verify: Verify that the '% Change vs LLY' metric is selected and displayed
+        on the Monthly Trend chart, and the chart updates to reflect this metric.
+    - step_id_checkpoint: '5_10'
+      what_to_verify: Verify that the 'LLY Sales ($)' metric is selected and displayed
+        on the Monthly Trend chart, and the chart updates to reflect this metric.
+    - step_id_checkpoint: '5_11'
+      what_to_verify: Verify that the 'LY Sales ($)' metric is selected and displayed
+        on the Monthly Trend chart, and the chart updates to reflect this metric.
+    - step_id_checkpoint: '5_12'
+      what_to_verify: Verify that the '% Change vs LY' metric is selected and displayed
+        on the Monthly Trend chart, and the chart updates to reflect this metric.
+    - step_id_checkpoint: END
+      what_to_verify: Ensure that the Monthly Trend chart accurately reflects the
+        toggled metrics and that the displayed data aligns with the selected filters
+        (Baltimore Orioles In-Venue Retail, Product Line, Color, and Specific Season
+        Type).
+  ? page.locator(".ellipses > esp-multiselect-dropdown > .multiselect-dropdown > div
+    > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.locator(".overflow-auto
+    > div:nth-child(2) > .d-flex").click()|page.locator(".overflow-auto > div:nth-child(2)
+    > .d-flex").click()|page.locator(".overflow-auto > div:nth-child(3) > .d-flex").click()|page.locator(".overflow-auto
+    > div:nth-child(3) > .d-flex").click()|page.locator("div:nth-child(6) > .d-flex").first.click()|page.locator("div:nth-child(6)
+    > .d-flex").first.click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Selected Columns:
+            - First OOS Week
+            - No OOS Weeks
+            - Est Lost Units
+            - Estimated Lost Sales ($)
+            - Unrecoverable Lost Units
+            - Unrecoverable Lost Sales ($)
+            - Inv Sell Through
+            Applied Filter: User-selected columns saved as preferences
+          Location Filter: Baltimore Orioles In-Venue Retail
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, Specific Season
+            Type, and Baltimore Orioles In-Venue Retail
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+          - Unrecoverable Lost Units
+          - Unrecoverable Lost Sales ($)
+          - Inv Sell Through
+          Rows Per Page: 20
+          Selected Product: null
+        Forecasting Chart:
+          Selected Forecast Type: Non GD Sales Fcst ($)
+          Displayed Data: Sales trends for Baltimore Orioles In-Venue Retail filtered
+            by Product Line, Color, and Specific Season Type
+        Monthly Trend Chart:
+          Selected Metrics:
+          - '% Change vs LLY'
+          - LLY Sales ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          Displayed Data: Historical sales performance and trends for Baltimore Orioles
+            In-Venue Retail
+    verification_plan:
+    - step_id_checkpoint: '5_13'
+      what_to_verify: Verify that the dropdown for selecting attributes (e.g., Product
+        Line, Color) is opened and displays the available options for filtering.
+    - step_id_checkpoint: '5_14'
+      what_to_verify: Verify that the first attribute (e.g., Product Line) is selected
+        and applied to the dataset.
+    - step_id_checkpoint: '5_16'
+      what_to_verify: Verify that the second attribute (e.g., Color) is selected and
+        applied to the dataset.
+    - step_id_checkpoint: '5_20'
+      what_to_verify: Verify that the Location filter (Baltimore Orioles In-Venue
+        Retail) is selected and applied to the dataset.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid and Monthly Trend chart
+        are updated to reflect the applied filters, displaying data specific to the
+        selected Product Line, Color, and Location.
+  ? 'page.locator(".ellipses > esp-multiselect-dropdown > .multiselect-dropdown >
+    div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator("span:nth-child(7)
+    > esp-grid-icons-component > .display-grid-icons > div > #preference-iconId >
+    .legend-font > .multiselect-dropdown > .pointer").first.click()|page.get_by_text("Save
+    Preference").click()'
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Selected Columns:
+            - First OOS Week
+            - No OOS Weeks
+            - Est Lost Units
+            - Estimated Lost Sales ($)
+            - Unrecoverable Lost Units
+            - Unrecoverable Lost Sales ($)
+            - Inv Sell Through
+            Applied Filter: User-selected columns saved as preferences
+          Location Filter: Baltimore Orioles In-Venue Retail
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, Specific Season
+            Type, and Baltimore Orioles In-Venue Retail
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+          - Unrecoverable Lost Units
+          - Unrecoverable Lost Sales ($)
+          - Inv Sell Through
+          Rows Per Page: 20
+          Selected Product: null
+        Forecasting Chart:
+          Selected Forecast Type: Non GD Sales Fcst ($)
+          Displayed Data: Sales trends for Baltimore Orioles In-Venue Retail filtered
+            by Product Line, Color, and Specific Season Type
+        Monthly Trend Chart:
+          Selected Metrics:
+          - '% Change vs LLY'
+          - LLY Sales ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          Displayed Data: Historical sales performance and trends for Baltimore Orioles
+            In-Venue Retail
+    verification_plan:
+    - step_id_checkpoint: '5_22'
+      what_to_verify: Verify that the column selection dropdown is opened, displaying
+        all available column options for the Alerts Summary grid.
+    - step_id_checkpoint: '5_23'
+      what_to_verify: Verify that the user-selected columns are highlighted in the
+        dropdown and that the selection is applied to the Alerts Summary grid.
+    - step_id_checkpoint: '5_24'
+      what_to_verify: Verify that the 'Save Preference' action stores the selected
+        columns as the default view for the Alerts Summary grid and updates the UI
+        to reflect the saved preferences.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid displays only the user-selected
+        columns and that the Monthly Trend chart remains unaffected by this customization.
+  ? page.locator("i").nth(3).click()|page.locator(".ag-row-odd.ag-row-no-focus > .ag-cell-value
+    > .ag-cell-wrapper > .ag-group-contracted > .zeb-chevron-right").first.click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Selected Columns:
+            - First OOS Week
+            - No OOS Weeks
+            - Est Lost Units
+            - Estimated Lost Sales ($)
+            - Unrecoverable Lost Units
+            - Unrecoverable Lost Sales ($)
+            - Inv Sell Through
+            Applied Filter: User-selected columns saved as preferences
+          Location Filter: Baltimore Orioles In-Venue Retail
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, Specific Season
+            Type, and Baltimore Orioles In-Venue Retail
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+          - Unrecoverable Lost Units
+          - Unrecoverable Lost Sales ($)
+          - Inv Sell Through
+          Rows Per Page: 20
+          Selected Product: Expanded SKU or Product Line
+        Forecasting Chart:
+          Selected Forecast Type: Non GD Sales Fcst ($)
+          Displayed Data: Sales trends for Baltimore Orioles In-Venue Retail filtered
+            by Product Line, Color, and Specific Season Type
+        Monthly Trend Chart:
+          Selected Metrics:
+          - '% Change vs LLY'
+          - LLY Sales ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          Displayed Data: Historical sales performance and trends for Baltimore Orioles
+            In-Venue Retail
+    verification_plan:
+    - step_id_checkpoint: '6_1'
+      what_to_verify: Verify that the product hierarchy expansion icon (chevron) is
+        clickable and expands the relevant product line or SKU in the Alerts Summary
+        grid.
+    - step_id_checkpoint: '6_2'
+      what_to_verify: Verify that the Alerts Summary grid dynamically updates to display
+        detailed data for the expanded product line or SKU, including metrics such
+        as First OOS Week, Estimated Lost Units, and Estimated Lost Sales ($).
+    - step_id_checkpoint: END
+      what_to_verify: Ensure that the Monthly Trend chart and Forecasting Chart remain
+        consistent with the applied filters and reflect data relevant to the expanded
+        product line or SKU.
+  ? page.locator(".wr-20.font-weight-normal > esp-multiselect-dropdown > .multiselect-dropdown
+    > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.locator(".d-flex.dropdown-option.align-items-center.p-v-5.p-l-32
+    > .d-flex").first.click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Selected Columns:
+            - First OOS Week
+            - No OOS Weeks
+            - Est Lost Units
+            - Estimated Lost Sales ($)
+            - Unrecoverable Lost Units
+            - Unrecoverable Lost Sales ($)
+            - Inv Sell Through
+            Applied Filter: User-selected columns saved as preferences
+          Location Filter: Baltimore Orioles In-Venue Retail
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, Specific Season
+            Type, and Baltimore Orioles In-Venue Retail
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+          - Unrecoverable Lost Units
+          - Unrecoverable Lost Sales ($)
+          - Inv Sell Through
+          Rows Per Page: 20
+          Selected Product: Expanded SKU or Product Line
+        Forecasting Chart:
+          Selected Forecast Type: Non GD Sales Fcst ($)
+          Displayed Data: Sales trends for Baltimore Orioles In-Venue Retail filtered
+            by Product Line, Color, and Specific Season Type
+        Monthly Trend Chart:
+          Selected Metrics:
+          - '% Change vs LLY'
+          - LLY Sales ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          Displayed Data: Historical sales performance and trends for Baltimore Orioles
+            In-Venue Retail
+    verification_plan:
+    - step_id_checkpoint: '6_3'
+      what_to_verify: Verify that the dropdown for the hierarchy filter is expanded,
+        allowing the user to select specific attributes such as Product Line and Color.
+    - step_id_checkpoint: '6_4'
+      what_to_verify: Verify that the first attribute in the dropdown (e.g., Product
+        Line) is selected and applied to the filter criteria.
+    - step_id_checkpoint: '6_5'
+      what_to_verify: Verify that the second attribute in the dropdown (e.g., Color)
+        is selected and applied to the filter criteria.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid and Monthly Trend Chart
+        are updated to reflect the filtered data for the Baltimore Orioles In-Venue
+        Retail location, focusing on the selected Product Line and Color attributes.
+  ? page.locator(".overflow-auto > div:nth-child(2) > .d-flex").click()|page.locator(".overflow-auto
+    > div:nth-child(3) > .d-flex").click()|page.locator(".overflow-auto > div:nth-child(3)
+    > .d-flex").click()|page.locator(".overflow-auto > div:nth-child(4) > .d-flex").click()|page.locator("div:nth-child(5)
+    > .d-flex").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Selected Columns:
+            - First OOS Week
+            - No OOS Weeks
+            - Est Lost Units
+            - Estimated Lost Sales ($)
+            - Unrecoverable Lost Units
+            - Unrecoverable Lost Sales ($)
+            - Inv Sell Through
+            Applied Filter: User-selected columns saved as preferences
+          Location Filter: Baltimore Orioles In-Venue Retail
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, Specific Season
+            Type, and Baltimore Orioles In-Venue Retail
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+          - Unrecoverable Lost Units
+          - Unrecoverable Lost Sales ($)
+          - Inv Sell Through
+          Rows Per Page: 20
+          Selected Product: Expanded SKU or Product Line
+        Forecasting Chart:
+          Selected Forecast Type: Non GD Sales Fcst ($)
+          Displayed Data: Sales trends for Baltimore Orioles In-Venue Retail filtered
+            by Product Line, Color, and Specific Season Type
+        Monthly Trend Chart:
+          Selected Metrics:
+          - '% Change vs LLY'
+          - LLY Sales ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          Displayed Data: Historical sales performance and trends for Baltimore Orioles
+            In-Venue Retail
+    verification_plan:
+    - step_id_checkpoint: '6_6'
+      what_to_verify: Verify that the column selection menu is opened and the user
+        is able to interact with the available column options.
+    - step_id_checkpoint: '6_7'
+      what_to_verify: Verify that the user has selected a column (e.g., 'First OOS
+        Week') and that it is added to the Alerts Summary grid.
+    - step_id_checkpoint: '6_8'
+      what_to_verify: Verify that the user has deselected a column (if applicable)
+        and that it is removed from the Alerts Summary grid.
+    - step_id_checkpoint: '6_9'
+      what_to_verify: Verify that the user has selected another column (e.g., 'Est
+        Lost Units') and that it is added to the Alerts Summary grid.
+    - step_id_checkpoint: '6_10'
+      what_to_verify: Verify that the final column selection is applied, and the Alerts
+        Summary grid reflects the updated column visibility and data.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the updated column preferences are saved and persist
+        across user sessions, ensuring consistent data visibility.
+  ? page.locator(".wr-20.font-weight-normal > esp-multiselect-dropdown > .multiselect-dropdown
+    > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator(".wr-20.font-weight-normal
+    > esp-multiselect-dropdown > .multiselect-dropdown > div > .w-100 > .d-flex.align-items-center
+    > .dropdown-caret").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Selected Columns:
+            - First OOS Week
+            - No OOS Weeks
+            - Est Lost Units
+            - Estimated Lost Sales ($)
+            - Unrecoverable Lost Units
+            - Unrecoverable Lost Sales ($)
+            - Inv Sell Through
+            Applied Filter: User-selected columns saved as preferences
+          Location Filter: Baltimore Orioles In-Venue Retail
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, Specific Season
+            Type, and Baltimore Orioles In-Venue Retail
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+          - Unrecoverable Lost Units
+          - Unrecoverable Lost Sales ($)
+          - Inv Sell Through
+          Rows Per Page: 20
+          Selected Product: Expanded SKU or Product Line
+        Forecasting Chart:
+          Selected Forecast Type: Non GD Sales Fcst ($)
+          Displayed Data: Sales trends for Baltimore Orioles In-Venue Retail filtered
+            by Product Line, Color, and Specific Season Type
+        Monthly Trend Chart:
+          Selected Metrics:
+          - '% Change vs LLY'
+          - LLY Sales ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          Displayed Data: Historical sales performance and trends for Baltimore Orioles
+            In-Venue Retail
+    verification_plan:
+    - step_id_checkpoint: '6_11'
+      what_to_verify: Verify that the column filter dropdown is opened and displays
+        all available metrics for selection, including 'Actual Sales & ROY Fcst ($)',
+        'Sales Fcst Adjusted ($)', and others.
+    - step_id_checkpoint: '6_12'
+      what_to_verify: Verify that the column filter dropdown closes after the user
+        interaction and that the selected columns are applied to the Alerts Summary
+        grid, updating the displayed metrics accordingly.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Alerts Summary grid reflects the updated column
+        selections and that the displayed data aligns with the applied filters, including
+        the location and season type.
+  ? page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.locator(".wr-20.font-weight-normal
+    > esp-multiselect-dropdown > .multiselect-dropdown > div > .w-100").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Hierarchy: Class
+          Attribute:
+          - Product Line
+          - Color
+          Alerts: All Alerts
+          Season Type: Specific Season Type
+          Column Filter:
+            Selected Columns:
+            - First OOS Week
+            - No OOS Weeks
+            - Est Lost Units
+            - Estimated Lost Sales ($)
+            - Unrecoverable Lost Units
+            - Unrecoverable Lost Sales ($)
+            - Inv Sell Through
+            Applied Filter: User-selected columns saved as preferences
+          Location Filter: Baltimore Orioles In-Venue Retail
+        Alerts Summary:
+          Displayed Data: Filtered by Product Line, Color, All Alerts, Specific Season
+            Type, and Baltimore Orioles In-Venue Retail
+          Columns Visibility:
+          - First OOS Week
+          - No OOS Weeks
+          - Est Lost Units
+          - Estimated Lost Sales ($)
+          - Unrecoverable Lost Units
+          - Unrecoverable Lost Sales ($)
+          - Inv Sell Through
+          Rows Per Page: 20
+          Selected Product: Expanded SKU or Product Line
+        Forecasting Chart:
+          Selected Forecast Type: Non GD Sales Fcst ($)
+          Displayed Data: Sales trends for Baltimore Orioles In-Venue Retail filtered
+            by Product Line, Color, and Specific Season Type
+        Monthly Trend Chart:
+          Selected Metrics:
+          - '% Change vs LLY'
+          - LLY Sales ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          Displayed Data: Historical sales performance and trends for Baltimore Orioles
+            In-Venue Retail
+    verification_plan:
+    - step_id_checkpoint: '6_13'
+      what_to_verify: Verify that clicking the dropdown for 'Product Line' or 'Color'
+        opens the respective filter options and allows the user to make a selection.
+    - step_id_checkpoint: '6_14'
+      what_to_verify: Verify that selecting a specific 'Product Line' or 'Color' updates
+        the Alerts Summary grid to display data filtered by the selected attribute
+        and updates the Forecasting Chart and Monthly Trend Chart accordingly.
+    - step_id_checkpoint: END
+      what_to_verify: Ensure that the Alerts Summary grid and associated charts reflect
+        the updated filter criteria, showing only data relevant to the selected 'Product
+        Line' or 'Color' for the Baltimore Orioles In-Venue Retail location.
+global_domain_context: This dashboard appears to be part of a demand forecasting and
+  inventory management tool, specifically tailored for products related to Major League
+  Baseball (MLB). The "Alerts" tab focuses on identifying potential issues, such as
+  out-of-stock (OOS) scenarios, by providing filters for alerts and season types.
+  The "Alerts Summary" grid displays detailed information about specific products,
+  including their first OOS week, the number of OOS weeks, estimated lost units, and
+  estimated lost sales. The tool is designed to help businesses monitor and address
+  inventory challenges, optimize product availability, and minimize revenue loss.
+global_rules: []
+learned_rules: {}

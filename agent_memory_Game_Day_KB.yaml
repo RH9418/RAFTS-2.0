@@ -1,196 +1,178 @@
+learned_rules: {}
 cached_chunks:
-  page.locator(".zeb-filter").first.click()|page.get_by_text("Hierarchy").click():
-    ui_graph:
+  ? page.locator(".zeb-filter").first.click()|page.get_by_text("Hierarchy").click()|page.get_by_text("League").click()|page.get_by_role("radio",
+    name="MLS").check()
+  : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: true
-            hierarchy_option:
-              selected: true
-    verification_plan:
-    - step_id_checkpoint: '1_2'
-      what_to_verify: Verify 'Hierarchy' option is selected
-    - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar is still OPEN
-  page.get_by_text("League").click()|page.get_by_role("radio", name="MLS").check()|page.get_by_text("League").click():
-    ui_graph:
-      Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: true
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
+        Filter Section:
+          Hierarchy Filter: League
+          Selected League: MLS
+        Daily Forecast by Event Grid: Filtered to display only MLS-related events
+        Forecast Total Summary: Updated to reflect MLS-specific totals
     verification_plan:
     - step_id_checkpoint: '1_3'
-      what_to_verify: Verify 'League' section is expanded.
+      what_to_verify: Verify that the 'League' hierarchy filter is selected and highlighted
+        in the UI, indicating that the filter is actively applied.
     - step_id_checkpoint: '1_4'
-      what_to_verify: Verify 'MLS' radio button is checked.
+      what_to_verify: Verify that the 'MLS' radio button is checked, confirming the
+        user's intent to filter the dataset by the MLS league.
     - step_id_checkpoint: END
-      what_to_verify: Verify sidebar remains open.
-  ? page.locator("#SideFilterproducthierarchyId").get_by_text("Team").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
+      what_to_verify: Verify that the 'Daily Forecast by Event' grid updates to display
+        only events related to the MLS league, and ensure the 'Forecast Total' summary
+        reflects the updated MLS-specific data.
+  ? page.get_by_text("League").click()|page.locator("#SideFilterproducthierarchyId").get_by_text("Team").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
     > .pointer").first.click()|page.locator("#SideFilterproducthierarchyId").get_by_text("Team",
     exact=True).click()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: true
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: true
-                checkbox:
-                  checked: true
+        Filter Section:
+          Hierarchy Filter: Team
+          Selected Team: Specific team selected by the user
+        Daily Forecast by Event Grid: Filtered to display only events related to the
+          selected team within the MLS league
+        Forecast Total Summary: Updated to reflect totals specific to the selected
+          team within the MLS league
     verification_plan:
+    - step_id_checkpoint: '1_5'
+      what_to_verify: Verify that the 'League' hierarchy filter is selected and the
+        dataset is filtered to display only MLS-related events in the 'Daily Forecast
+        by Event' grid and 'Forecast Total Summary'.
+    - step_id_checkpoint: '1_6'
+      what_to_verify: Verify that the 'Team' hierarchy filter is selected, and the
+        filter options update to display team-level data within the MLS league.
     - step_id_checkpoint: '1_7'
-      what_to_verify: Verify Checkbox is CHECKED
-    - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar is still OPEN
+      what_to_verify: Verify that the specific team is selected within the 'Team'
+        hierarchy filter and is visually highlighted in the UI.
+    - step_id_checkpoint: '1_8'
+      what_to_verify: Verify that the 'Daily Forecast by Event' grid and 'Forecast
+        Total Summary' are updated to display data specific to the selected team within
+        the MLS league.
   ? page.get_by_text("Department").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
     > .pointer").first.click()|page.get_by_text("Department").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
     > .pointer").click()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: true
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: true
-                checkbox:
-                  checked: true
-              department:
-                expanded: true
-                checkbox:
-                  checked: true
+        Filter Section:
+          Hierarchy Filter: Department
+          Selected Department: Specific department selected by the user
+        Daily Forecast by Event Grid: Filtered to display only events related to the
+          selected department within the MLB league
+        Forecast Total Summary: Updated to reflect totals specific to the selected
+          department within the MLB league
     verification_plan:
+    - step_id_checkpoint: '1_9'
+      what_to_verify: Verify that the 'Department' filter dropdown is expanded, displaying
+        all available department options for selection.
+    - step_id_checkpoint: '1_10'
+      what_to_verify: Verify that the first department checkbox is selected, and the
+        filter is updated to include this department in the dataset.
     - step_id_checkpoint: '1_11'
-      what_to_verify: Verify Department section toggles back to collapsed state.
+      what_to_verify: Verify that the 'Department' filter dropdown is collapsed after
+        the selection is made.
+    - step_id_checkpoint: '1_12'
+      what_to_verify: Verify that the selected department is applied to the dataset,
+        updating the 'Daily Forecast by Event' grid and 'Forecast Total Summary' to
+        reflect data specific to the selected department.
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar is still OPEN and Department checkbox is checked.
+      what_to_verify: Ensure that the 'Daily Forecast by Event' grid and 'Forecast
+        Total Summary' are accurately filtered and updated to display only the data
+        relevant to the selected department within the MLB league.
   page.get_by_role("button", name="Apply Filters").click():
     ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: false
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
+        Filter Section:
+          Hierarchy Filter: Department
+          Selected Department: Specific department selected by the user
+        Daily Forecast by Event Grid: Filtered to display only events related to the
+          selected department within the MLB league
+        Forecast Total Summary: Updated to reflect totals specific to the selected
+          department within the MLB league
     verification_plan:
     - step_id_checkpoint: '1_13'
-      what_to_verify: Verify Sidebar is CLOSED after Apply Filters is clicked
+      what_to_verify: Verify that the 'Apply Filters' button triggers the application
+        of the selected department filter, updating the dataset to include only MLB
+        events relevant to the chosen department.
     - step_id_checkpoint: END
-      what_to_verify: Verify Filters are applied correctly
+      what_to_verify: Verify that the 'Daily Forecast by Event' grid re-renders to
+        display only events associated with the selected department and that the 'Forecast
+        Total Summary' updates to reflect the filtered totals accurately.
   page.locator(".zeb-filter").first.click():
     ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: true
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: false
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
+        Filter Section:
+          Hierarchy Filter: Department
+          Selected Department: Specific department selected by the user
+        Daily Forecast by Event Grid: Filtered to display only events related to the
+          selected department within the MLB league
+        Forecast Total Summary: Updated to reflect totals specific to the selected
+          department within the MLB league
     verification_plan:
     - step_id_checkpoint: '1_14'
-      what_to_verify: Verify Filter Section is EXPANDED
+      what_to_verify: Verify that the 'Department' filter is applied correctly and
+        the selected department is highlighted in the filter section.
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar is still OPEN
+      what_to_verify: Verify that the 'Daily Forecast by Event' grid is updated to
+        display only events related to the selected department within the MLB league.
+        Confirm that the 'Forecast Total Summary' reflects the updated totals for
+        the selected department.
   ? page.locator(".dropdown-caret.p-l-16").first.click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.locator(".d-flex.dropdown-option.align-items-center.p-v-5.p-l-32
     > .d-flex").first.click()|page.locator(".overflow-auto > div:nth-child(2) > .d-flex").click()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: true
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-      confidence_score: 0.0
-      confusing_step_id: '1_2'
-      verification_plan:
-      - step_id_checkpoint: '1_3'
-        what_to_verify: Verify Checkbox is CHECKED
-      - step_id_checkpoint: END
-        what_to_verify: Verify Sidebar is still OPEN
-    verification_plan: []
+        Filter Section:
+          Hierarchy Filter: Department
+          Selected Department: Specific department selected by the user
+        Daily Forecast by Event Grid: Filtered to display only events related to the
+          selected department within the MLB league
+        Forecast Total Summary: Updated to reflect totals specific to the selected
+          department within the MLB league
+    verification_plan:
+    - step_id_checkpoint: '2_1'
+      what_to_verify: Verify that the dropdown menu for the hierarchy filter is opened,
+        allowing the user to select a department.
+    - step_id_checkpoint: '2_2'
+      what_to_verify: Verify that the department selection menu is displayed, showing
+        all available departments for filtering.
+    - step_id_checkpoint: '2_3'
+      what_to_verify: Verify that the user-selected department is highlighted and
+        applied as the active filter.
+    - step_id_checkpoint: '2_4'
+      what_to_verify: Verify that the 'Daily Forecast by Event' grid updates to display
+        only events related to the selected department and that the 'Forecast Total
+        Summary' reflects the updated totals for the selected department.
   ? page.locator("#location-filterId > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown
     > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.locator(".d-flex.dropdown-option.align-items-center.p-v-5.p-l-32
     > .d-flex").first.click()|page.locator(".overflow-auto > div:nth-child(2) > .d-flex").click()|page.locator(".overflow-auto
     > div:nth-child(3) > .d-flex").click()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: true
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: true
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
+        Filter Section:
+          Hierarchy Filter: Location
+          Selected Location: Specific location(s) selected by the user
+        Daily Forecast by Event Grid: Filtered to display only events occurring at
+          the selected location(s) within the MLB league
+        Forecast Total Summary: Updated to reflect totals specific to the selected
+          location(s) within the MLB league
     verification_plan:
     - step_id_checkpoint: '2_5'
-      what_to_verify: Verify Location Filter Dropdown is OPEN
+      what_to_verify: Verify that the location filter dropdown is opened, displaying
+        all available MLB game locations for selection.
+    - step_id_checkpoint: '2_6'
+      what_to_verify: Verify that the first location option is selected, and the filter
+        UI reflects this selection.
+    - step_id_checkpoint: '2_7'
+      what_to_verify: Verify that the second location option is selected, and the
+        filter UI updates to include this additional location.
+    - step_id_checkpoint: '2_8'
+      what_to_verify: Verify that the third location option is selected, and the filter
+        UI updates to include this additional location.
+    - step_id_checkpoint: '2_9'
+      what_to_verify: Verify that the fourth location option is selected, and the
+        filter UI updates to include this additional location.
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar is still OPEN
+      what_to_verify: Verify that the 'Daily Forecast by Event' grid and 'Forecast
+        Total Summary' are updated to reflect data specific to the selected locations,
+        ensuring that only events occurring at these locations are displayed.
   ? page.locator("#location-filterId > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown
     > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator("#seasontype-filterId
     > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown > div > .w-100 > .d-flex.align-items-center
@@ -198,139 +180,80 @@ cached_chunks:
     > .d-flex").first.click()|page.locator(".overflow-auto > div:nth-child(2) > .d-flex").click()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: true
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: true
-            options:
-              option_1:
-                selected: false
-              option_2:
-                selected: false
-              option_3:
-                selected: true
+        Filter Section:
+          Hierarchy Filter: Location
+          Selected Location: Specific location(s) selected by the user
+        Daily Forecast by Event Grid: Filtered to display only events occurring at
+          the selected location(s) within the MLB league
+        Forecast Total Summary: Updated to reflect totals specific to the selected
+          location(s) within the MLB league
     verification_plan:
+    - step_id_checkpoint: '2_10'
+      what_to_verify: Verify that the dropdown for the 'Location' filter is expanded,
+        allowing the user to select specific MLB venues.
     - step_id_checkpoint: '2_11'
-      what_to_verify: Verify Season Type dropdown is EXPANDED
-    - step_id_checkpoint: END
-      what_to_verify: Verify Location dropdown is CLOSED and Season Type dropdown
-        is still OPEN
+      what_to_verify: Verify that the dropdown for the 'Season Type' filter is expanded,
+        enabling the user to refine the dataset by season type (e.g., Regular Season,
+        Postseason).
+    - step_id_checkpoint: '2_12'
+      what_to_verify: Verify that the first option in the 'Season Type' dropdown is
+        selected, updating the filter criteria for the dataset.
+    - step_id_checkpoint: '2_13'
+      what_to_verify: Verify that the first location in the 'Location' dropdown is
+        selected, ensuring the dataset is filtered to include events at that specific
+        venue.
+    - step_id_checkpoint: '2_14'
+      what_to_verify: Verify that the 'Daily Forecast by Event' grid and 'Forecast
+        Total Summary' are updated to reflect the selected location(s) and season
+        type, showing only relevant MLB event data.
   ? page.locator("#seasontype-filterId > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown
     > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.get_by_role("button",
     name="Apply").click()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: true
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Specific season type(s) selected by the user
+        Daily Forecast by Event Grid: Filtered to display only events matching the
+          selected season type(s) within the MLB league
+        Forecast Total Summary: Updated to reflect totals specific to the selected
+          season type(s) within the MLB league
     verification_plan:
     - step_id_checkpoint: '2_15'
-      what_to_verify: Verify Season Type dropdown is EXPANDED
-    - step_id_checkpoint: END
-      what_to_verify: Verify Season Type dropdown is CLOSED and selections are APPLIED
+      what_to_verify: Verify that the 'Season Type' dropdown is expanded, displaying
+        all available season type options (e.g., Regular Season, Off Season).
+    - step_id_checkpoint: '2_16'
+      what_to_verify: Verify that the selected season type(s) are applied to the dataset,
+        updating the 'Daily Forecast by Event' grid to display only events matching
+        the selected season type(s). Ensure the 'Forecast Total Summary' reflects
+        the updated totals for the filtered season type(s).
   ? page.locator(".pointer.chevron.zeb-chevron-right.m-r-12.collapsed").click()|page.locator(".ag-body-horizontal-scroll-container").first.click()|page.locator("esp-card-component").filter(has_text="Forecast
     Total columns (0)").get_by_role("button").click()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Specific season type(s) selected by the user
+        Daily Forecast by Event Grid: Filtered to display only events matching the
+          selected season type(s) within the MLB league
+        Forecast Total Summary: Updated to reflect totals specific to the selected
+          season type(s) within the MLB league
     verification_plan:
     - step_id_checkpoint: '3_1'
-      what_to_verify: Verify Sidebar is COLLAPSED
+      what_to_verify: Verify that the 'Season Type' hierarchy filter expands to display
+        available season types for selection.
+    - step_id_checkpoint: '3_2'
+      what_to_verify: Verify that the user can interact with the horizontal scroll
+        container to view additional filter options if necessary.
+    - step_id_checkpoint: '3_3'
+      what_to_verify: Verify that clicking the button within the 'Forecast Total'
+        section updates the summary to reflect totals specific to the selected season
+        type(s). Ensure that the 'Daily Forecast by Event' grid re-renders to display
+        only events matching the selected season type(s).
     - step_id_checkpoint: END
-      what_to_verify: Verify Forecast Total Columns button was clicked
+      what_to_verify: Confirm that the 'Forecast Total' summary and 'Daily Forecast
+        by Event' grid are updated correctly and consistently with the selected season
+        type(s). Validate that no unrelated data is displayed.
   ? page.get_by_role("checkbox", name="Toggle All Columns Visibility").uncheck()|page.get_by_role("treeitem",
     name="Stat Unit Sales Fcst Column").get_by_label("Press SPACE to toggle").check()|page.get_by_role("treeitem",
     name="Stat Sales Fcst ($) Column").get_by_label("Press SPACE to toggle").check()|page.get_by_role("treeitem",
@@ -349,416 +272,152 @@ cached_chunks:
     name="Press SPACE to toggle visibility (hidden)").check()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Specific season type(s) selected by the user
+        Daily Forecast by Event Grid: Filtered to display only events matching the
+          selected season type(s) within the MLB league, with the selected columns
+          visible
+        Forecast Total Summary: Updated to reflect totals specific to the selected
+          season type(s) within the MLB league
     verification_plan:
     - step_id_checkpoint: '3_4'
-      what_to_verify: Verify 'Toggle All Columns Visibility' checkbox is UNCHECKED
-    - step_id_checkpoint: '3_19'
-      what_to_verify: Verify all individual column checkboxes are CHECKED
+      what_to_verify: Verify that all columns in the 'Daily Forecast by Event' grid
+        are initially hidden after unchecking the 'Toggle All Columns Visibility'
+        checkbox.
+    - step_id_checkpoint: 3_5 to 3_19
+      what_to_verify: Verify that each selected column (e.g., 'Stat Unit Sales Fcst',
+        'Stat Sales Fcst ($)', 'Sales Fcst Adjusted ($)', etc.) becomes visible in
+        the 'Daily Forecast by Event' grid as the corresponding toggle is checked.
     - step_id_checkpoint: END
-      what_to_verify: Verify Forecast Total section remains EXPANDED
-  page.locator("esp-card-component").filter(has_text="Forecast Total columns (0)").get_by_role("button").click():
-    ui_graph:
+      what_to_verify: Ensure that the 'Daily Forecast by Event' grid displays only
+        the selected columns, and confirm that the data in these columns aligns with
+        the selected season type(s) and MLB events.
+  ? page.locator("esp-card-component").filter(has_text="Forecast Total columns (0)").get_by_role("button").click()|page.locator(".pointer.zeb-adjustments").first.click()
+  : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: false
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Specific season type(s) selected by the user
+        Daily Forecast by Event Grid: Filtered to display only events matching the
+          selected season type(s) within the MLB league, with the selected columns
+          visible
+        Forecast Total Summary: Updated to reflect totals specific to the selected
+          season type(s) within the MLB league
     verification_plan:
     - step_id_checkpoint: '3_20'
-      what_to_verify: Verify that the 'Columns' button in the 'Forecast Total' section
-        is no longer clicked.
+      what_to_verify: Verify that clicking the button in the 'Forecast Total' section
+        opens the column adjustment menu and allows the user to select or deselect
+        specific metrics (e.g., 'Sales Change vs LLY').
+    - step_id_checkpoint: '3_21'
+      what_to_verify: Verify that the 'Daily Forecast by Event' grid and 'Forecast
+        Total Summary' re-render to reflect the updated column selections, ensuring
+        that only the selected metrics are displayed and totals are recalculated accordingly.
     - step_id_checkpoint: END
-      what_to_verify: Verify that the 'Forecast Total' section remains expanded.
-  page.locator(".pointer.zeb-adjustments").first.click()|page.get_by_text("Save Preference").click():
+      what_to_verify: Ensure that the updated data aligns with the selected season
+        type(s) and that the adjustments to visible columns provide accurate and actionable
+        insights for MLB demand forecasting.
+  page.get_by_text("Save Preference").click():
     ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Specific season type(s) selected by the user
+        Daily Forecast by Event Grid: Filtered to display only events matching the
+          selected season type(s) within the MLB league, with the selected columns
+          visible
+        Forecast Total Summary: Updated to reflect totals specific to the selected
+          season type(s) within the MLB league
+        Preferences:
+          Saved Preferences: Current filter and column settings saved for future sessions
     verification_plan:
-    - step_id_checkpoint: '3_21'
-      what_to_verify: Verify Columns Button is CLICKED
     - step_id_checkpoint: '3_22'
-      what_to_verify: Verify Save Preference is CLICKED
+      what_to_verify: Verify that clicking 'Save Preference' stores the current filter
+        (Season Type) and column settings for future use. Confirm that a success message
+        or indicator appears to confirm the action.
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar is still CLOSED
+      what_to_verify: Verify that upon reloading the page or returning to the dashboard,
+        the saved preferences (filters and column settings) are automatically applied,
+        ensuring consistent data presentation.
   page.locator(".icon-color-toolbar-active.zeb-download-underline").first.click():
     ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
-        toolbar:
-          download_icon:
-            clicked: true
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Specific season type(s) selected by the user
+        Daily Forecast by Event Grid: Filtered to display only events matching the
+          selected season type(s) within the MLB league, with the selected columns
+          visible
+        Forecast Total Summary: Updated to reflect totals specific to the selected
+          season type(s) within the MLB league
+        Preferences:
+          Saved Preferences: Current filter and column settings saved for future sessions
     verification_plan:
     - step_id_checkpoint: '3_23'
-      what_to_verify: Verify the download icon was clicked and the download action
-        was triggered.
+      what_to_verify: Verify that clicking the download icon triggers the export of
+        the 'Daily Forecast by Event' grid data, filtered by the selected season type(s),
+        in the correct file format (e.g., CSV or Excel).
     - step_id_checkpoint: END
-      what_to_verify: Verify the toolbar state remains consistent and no unexpected
-        changes occurred.
+      what_to_verify: Verify that the downloaded file contains the same data as displayed
+        in the 'Daily Forecast by Event' grid, including the applied filters and visible
+        columns, ensuring data integrity for offline use.
   ? 'page.locator("esp-card-component").filter(has_text="Daily Forecast by Event").get_by_role("button").click()|page.get_by_role("checkbox",
     name="Toggle All Columns Visibility").uncheck()|page.get_by_role("treeitem", name="Game
     # Column").get_by_label("Press SPACE to toggle").check()'
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
-              'Game # Column': true
-        toolbar:
-          download_icon:
-            clicked: true
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Specific season type(s) selected by the user
+        Daily Forecast by Event Grid: 'Filtered to display only events matching the
+          selected season type(s) within the MLB league, with the ''Game #'' column
+          now visible and other columns hidden as per user customization'
+        Forecast Total Summary: Updated to reflect totals specific to the selected
+          season type(s) within the MLB league
+        Preferences:
+          Saved Preferences: Current filter and column settings saved for future sessions
     verification_plan:
+    - step_id_checkpoint: '4_1'
+      what_to_verify: Verify that the 'Daily Forecast by Event' grid is expanded and
+        ready for column customization.
     - step_id_checkpoint: '4_2'
-      what_to_verify: Verify 'Toggle All Columns Visibility' is UNCHECKED
+      what_to_verify: Verify that all columns in the 'Daily Forecast by Event' grid
+        are hidden after unchecking the 'Toggle All Columns Visibility' checkbox.
     - step_id_checkpoint: '4_3'
-      what_to_verify: 'Verify ''Game # Column'' is CHECKED'
+      what_to_verify: 'Verify that the ''Game #'' column is now visible in the ''Daily
+        Forecast by Event'' grid, and the grid reflects the updated column configuration.'
     - step_id_checkpoint: END
-      what_to_verify: Verify 'Daily Forecast by Event' section remains OPEN
+      what_to_verify: Verify that the updated column visibility settings are saved
+        in the user's preferences for future sessions, and the grid data remains filtered
+        by the selected season type(s).
   ? page.locator(".ag-header-cell.ag-column-last > .ag-header-cell-comp-wrapper >
     .ag-cell-label-container > .ag-header-icon > .filter-icon").click()|page.get_by_role("spinbutton",
     name="Filter Value").fill("1")|page.get_by_label("Column Filter").get_by_role("button",
     name="Apply").click()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
-              'Game # Column': true
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: '1'
-          applied: true
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Specific season type(s) selected by the user
+        Daily Forecast by Event Grid: 'Filtered to display only events matching the
+          selected season type(s) within the MLB league, with the ''Game #'' column
+          now filtered to show only rows where the value matches ''1''.'
+        Forecast Total Summary: 'Updated to reflect totals specific to the filtered
+          ''Game #'' value and selected season type(s) within the MLB league'
+        Preferences:
+          Saved Preferences: Current filter and column settings saved for future sessions
     verification_plan:
+    - step_id_checkpoint: '4_4'
+      what_to_verify: 'Verify that the filter icon for the ''Game #'' column is clicked,
+        and the filter input field is displayed for user interaction.'
+    - step_id_checkpoint: '4_5'
+      what_to_verify: 'Verify that the value ''1'' is correctly entered into the filter
+        input field for the ''Game #'' column.'
     - step_id_checkpoint: '4_6'
-      what_to_verify: Verify Column Filter is applied with value '1'.
-    - step_id_checkpoint: END
-      what_to_verify: Verify Column Filter section is closed after applying the filter.
+      what_to_verify: 'Verify that the ''Apply'' button is clicked, and the ''Daily
+        Forecast by Event'' grid updates to display only rows where the ''Game #''
+        column value equals ''1''. Ensure that the ''Forecast Total Summary'' reflects
+        the updated totals based on the filtered data.'
   ? 'page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active >
     .filter-icon").click()|page.get_by_label("Column Filter").get_by_role("button",
     name="Reset").click()|page.get_by_role("treeitem", name="Series # Column").get_by_label("Press
@@ -766,890 +425,324 @@ cached_chunks:
     SPACE to toggle").check()'
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: '1'
-          applied: false
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Specific season type(s) selected by the user
+        Daily Forecast by Event Grid: 'Updated to include ''Series #'' and ''Season
+          Type'' columns, displaying events filtered by the selected season type(s)
+          and game number.'
+        Forecast Total Summary: Updated to reflect totals specific to the filtered
+          columns and selected season type(s) within the MLB league.
+        Preferences:
+          Saved Preferences: Current filter and column settings saved for future sessions
     verification_plan:
+    - step_id_checkpoint: '4_7'
+      what_to_verify: 'Verify that the filter icon for the ''Game #'' column is active,
+        indicating that the column is filtered to show only rows where the value matches
+        ''1''.'
     - step_id_checkpoint: '4_8'
-      what_to_verify: Verify Column Filter is RESET
+      what_to_verify: Verify that all column filters are reset, ensuring no additional
+        filters are applied to the grid.
     - step_id_checkpoint: '4_9'
-      what_to_verify: 'Verify Series # Column is CHECKED'
+      what_to_verify: 'Verify that the ''Series #'' column is now visible in the ''Daily
+        Forecast by Event'' grid and populated with relevant data for the selected
+        season type(s).'
     - step_id_checkpoint: '4_10'
-      what_to_verify: Verify Season Type Column is CHECKED
+      what_to_verify: Verify that the 'Season Type' column is now visible in the 'Daily
+        Forecast by Event' grid and populated with data matching the selected season
+        type(s).
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar and Column Filter remain OPEN
+      what_to_verify: 'Verify that the ''Daily Forecast by Event'' grid reflects the
+        updated columns (''Series #'' and ''Season Type'') and that the data aligns
+        with the selected filters, ensuring accurate demand forecasting for MLB events.'
   ? page.locator(".ag-header-cell.ag-column-last > .ag-header-cell-comp-wrapper >
     .ag-cell-label-container > .ag-header-icon > .filter-icon").click()|page.get_by_role("textbox",
     name="Filter Value").fill("On Season")|page.get_by_label("Column Filter").get_by_role("button",
     name="Apply").click()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: On Season
-          applied: true
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: On Season
+        Daily Forecast by Event Grid: 'Updated to display only events with ''Season
+          Type'' set to ''On Season'', including columns for ''Series #'' and ''Game
+          #'' for detailed analysis.'
+        Forecast Total Summary: Updated to reflect totals specific to the filtered
+          'On Season' data within the MLB league.
+        Preferences:
+          Saved Preferences: Current filter and column settings saved for future sessions
     verification_plan:
+    - step_id_checkpoint: '4_11'
+      what_to_verify: Verify that the filter icon for the 'Season Type' column is
+        clicked, and the filter dropdown is displayed, allowing the user to input
+        a filter value.
     - step_id_checkpoint: '4_12'
-      what_to_verify: Verify Filter Value is set to 'On Season'
+      what_to_verify: Verify that the user can input 'On Season' as the filter value
+        in the textbox, and the value is correctly registered in the filter settings.
     - step_id_checkpoint: '4_13'
-      what_to_verify: Verify Column Filter is applied
+      what_to_verify: Verify that clicking 'Apply' updates the 'Daily Forecast by
+        Event' grid to display only rows where 'Season Type' is 'On Season'. Confirm
+        that the 'Forecast Total Summary' reflects the updated totals for the filtered
+        data.
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar is still CLOSED
+      what_to_verify: Verify that the updated filter and column settings are saved
+        under 'Preferences' for future sessions, ensuring consistency in user experience.
   ? page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active >
     .filter-icon").click()|page.locator("#ag-3446-input").fill("Regular")|page.get_by_label("Column
     Filter").get_by_role("button", name="Apply").click()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: Regular
-          applied: true
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to display only events with ''Season
+          Type'' set to ''Regular'', including columns for ''Series #'' and ''Game
+          #'' for detailed analysis.'
+        Forecast Total Summary: Updated to reflect totals specific to the filtered
+          'Regular' season data within the MLB league.
+        Preferences:
+          Saved Preferences: Current filter and column settings saved for future sessions
     verification_plan:
+    - step_id_checkpoint: '4_14'
+      what_to_verify: Verify that the 'Season Type' column filter is activated and
+        the filter icon reflects an active state.
     - step_id_checkpoint: '4_15'
-      what_to_verify: Verify 'Regular' is filled in the column filter input.
+      what_to_verify: Verify that the 'Season Type' filter input accepts the value
+        'Regular' and updates the filter criteria accordingly.
+    - step_id_checkpoint: '4_16'
+      what_to_verify: Verify that the 'Apply' button applies the 'Regular' filter,
+        updating the 'Daily Forecast by Event' grid to display only events with 'Season
+        Type' set to 'Regular'. Confirm that the 'Forecast Total Summary' recalculates
+        to reflect the filtered data.
     - step_id_checkpoint: END
-      what_to_verify: Verify Column Filter is applied and sidebar remains open.
+      what_to_verify: Verify that the updated filter and column settings are saved
+        under 'Preferences' for future sessions.
   ? page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active >
     .filter-icon").click()|page.get_by_label("Column Filter").get_by_role("button",
     name="Reset").click()|page.get_by_role("treeitem", name="Result Column").get_by_label("Press
     SPACE to toggle").check()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: true
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: Regular
-          applied: false
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to display only events with ''Season
+          Type'' set to ''Regular'', now including the ''Result'' column alongside
+          ''Series #'' and ''Game #'' for detailed analysis.'
+        Forecast Total Summary: Updated to reflect totals specific to the filtered
+          'Regular' season data within the MLB league.
+        Preferences:
+          Saved Preferences: Current filter and column settings saved for future sessions
     verification_plan:
+    - step_id_checkpoint: '4_17'
+      what_to_verify: Verify that the column filter menu is opened and the current
+        column settings are displayed, allowing the user to make adjustments.
     - step_id_checkpoint: '4_18'
-      what_to_verify: Verify Column Filter Reset is applied
+      what_to_verify: Verify that the column filter settings are reset to their default
+        state, removing any previously applied customizations.
     - step_id_checkpoint: '4_19'
-      what_to_verify: Verify 'Result Column' is toggled to visible
+      what_to_verify: Verify that the 'Result' column is successfully enabled in the
+        'Daily Forecast by Event' grid and that the grid re-renders to include this
+        column, displaying data relevant to the 'Regular' season type.
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar and Column Filter remain open
+      what_to_verify: Verify that the 'Forecast Total Summary' and 'Daily Forecast
+        by Event' grid reflect accurate data, including the newly added 'Result' column,
+        and that the changes are saved in the user's preferences for future sessions.
   ? page.locator(".ag-header-cell.ag-column-last > .ag-header-cell-comp-wrapper >
     .ag-cell-label-container > .ag-header-icon > .filter-icon").click()|page.get_by_role("textbox",
     name="Filter Value").fill("Win")|page.get_by_label("Column Filter").get_by_role("button",
     name="Apply").click()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: true
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: Win
-          applied: true
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to display only events with ''Season
+          Type'' set to ''Regular'' and ''Result'' set to ''Win'', now including the
+          ''Result'' column alongside ''Series #'' and ''Game #'' for detailed analysis.'
+        Forecast Total Summary: Updated to reflect totals specific to the filtered
+          'Regular' season data with 'Win' results within the MLB league.
+        Preferences:
+          Saved Preferences: Current filter and column settings saved for future sessions
     verification_plan:
+    - step_id_checkpoint: '4_20'
+      what_to_verify: Verify that the filter icon for the 'Result' column is activated,
+        indicating that a filter is being applied to this column.
     - step_id_checkpoint: '4_21'
-      what_to_verify: Verify Filter Value is updated to 'Win'
+      what_to_verify: Verify that the filter value 'Win' is correctly entered into
+        the filter textbox, ensuring the dataset will be refined to include only events
+        with this result.
     - step_id_checkpoint: '4_22'
-      what_to_verify: Verify Column Filter is applied
+      what_to_verify: Verify that the 'Apply' button successfully applies the filter,
+        updating the 'Daily Forecast by Event' grid to display only events with 'Season
+        Type' set to 'Regular' and 'Result' set to 'Win'.
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar remains closed
+      what_to_verify: Verify that the 'Forecast Total Summary' updates to reflect
+        totals specific to the filtered dataset, ensuring alignment with the 'Daily
+        Forecast by Event' grid.
   ? page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active >
     .filter-icon").click()|page.get_by_label("Column Filter").get_by_role("button",
     name="Reset").click()|page.get_by_role("treeitem", name="Result Column").get_by_label("Press
     SPACE to toggle").uncheck()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): false
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: null
-          applied: false
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to exclude the ''Result'' column, now
+          displaying only ''Series #'' and ''Game #'' for detailed analysis of ''Regular''
+          season events.'
+        Forecast Total Summary: Remains unchanged, reflecting totals specific to the
+          filtered 'Regular' season data.
     verification_plan:
+    - step_id_checkpoint: '4_23'
+      what_to_verify: Verify that the column filter menu is opened and the active
+        filter icon is highlighted, indicating that a filter is currently applied.
     - step_id_checkpoint: '4_24'
-      what_to_verify: Verify Column Filter Reset
+      what_to_verify: Verify that the column filter settings are reset, and all previously
+        applied column visibility settings are cleared.
     - step_id_checkpoint: '4_25'
-      what_to_verify: Verify Result Column Visibility is UNCHECKED
+      what_to_verify: 'Verify that the ''Result'' column is successfully unchecked
+        and removed from the ''Daily Forecast by Event'' grid, and the grid re-renders
+        to display only the remaining columns (''Game #'' and ''Series #'').'
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar and Column Filter remain OPEN
+      what_to_verify: Ensure that the 'Daily Forecast by Event' grid reflects the
+        updated column visibility settings and that the 'Forecast Total Summary' remains
+        consistent with the filtered 'Regular' season data.
   ? page.get_by_role("treeitem", name="Date Column", exact=True).get_by_label("Press
     SPACE to toggle").check()|page.get_by_role("treeitem", name="Date Column", exact=True).get_by_label("Press
     SPACE to toggle").uncheck()|page.get_by_role("treeitem", name="Game/Non-Game Day
     Column").get_by_label("Press SPACE to toggle visibility (hidden)").check()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-              Date Column: false
-              Game/Non-Game Day Column: true
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: null
-          applied: false
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to exclude the ''Result'' and ''Date''
+          columns, now displaying ''Series #'', ''Game #'', ''Season Type'', and ''Game/Non-Game
+          Day'' for detailed analysis of ''Regular'' season events.'
+        Forecast Total Summary: Remains unchanged, reflecting totals specific to the
+          filtered 'Regular' season data.
     verification_plan:
     - step_id_checkpoint: '4_26'
-      what_to_verify: Verify 'Date Column' is CHECKED
+      what_to_verify: Verify that the 'Date' column is no longer visible in the 'Daily
+        Forecast by Event' grid, ensuring the dataset reflects the updated column
+        visibility settings.
     - step_id_checkpoint: '4_27'
-      what_to_verify: Verify 'Date Column' is UNCHECKED
+      what_to_verify: Confirm that the 'Date' column remains hidden after toggling
+        off its visibility, and no unintended changes occur in the grid.
     - step_id_checkpoint: '4_28'
-      what_to_verify: Verify 'Game/Non-Game Day Column' is CHECKED
+      what_to_verify: Verify that the 'Game/Non-Game Day' column is now visible in
+        the 'Daily Forecast by Event' grid, and the data dynamically updates to include
+        this column for the 'Regular' season events.
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar is still OPEN
+      what_to_verify: 'Ensure the ''Daily Forecast by Event'' grid accurately reflects
+        the selected columns (''Series #'', ''Game #'', ''Season Type'', and ''Game/Non-Game
+        Day'') and that the data aligns with the ''Regular'' season filter.'
   ? page.locator(".ag-header-cell.ag-column-last > .ag-header-cell-comp-wrapper >
     .ag-cell-label-container > .ag-header-icon > .filter-icon").click()|page.get_by_role("textbox",
     name="Filter Value").fill("Game Day")|page.get_by_label("Column Filter").get_by_role("button",
     name="Apply").click()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-              Date Column: false
-              Game/Non-Game Day Column: true
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: Game Day
-          applied: true
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to display only rows where ''Game/Non-Game
+          Day'' equals ''Game Day'', while retaining columns ''Series #'', ''Game
+          #'', ''Season Type'', and ''Game/Non-Game Day''.'
+        Forecast Total Summary: Updated to reflect totals specific to 'Game Day' data
+          within the filtered 'Regular' season.
     verification_plan:
+    - step_id_checkpoint: '4_29'
+      what_to_verify: Verify that the filter icon for the 'Game/Non-Game Day' column
+        is activated, indicating that a filter is being applied to this column.
     - step_id_checkpoint: '4_30'
-      what_to_verify: Verify 'Game Day' is filled in the filter textbox.
+      what_to_verify: Verify that the filter value 'Game Day' is correctly entered
+        into the filter textbox, ensuring the filter criteria is accurately set.
     - step_id_checkpoint: '4_31'
-      what_to_verify: Verify Column Filter is applied successfully.
-    - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar is still OPEN.
+      what_to_verify: Verify that the 'Daily Forecast by Event' grid updates to display
+        only rows where 'Game/Non-Game Day' equals 'Game Day', and confirm that the
+        'Forecast Total Summary' reflects totals specific to this filtered data.
   ? page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active >
     .filter-icon").click()|page.get_by_label("Column Filter").get_by_role("button",
     name="Reset").click()|page.get_by_role("treeitem", name="Game/Non-Game Day Column").get_by_label("Press
     SPACE to toggle visibility (visible)").uncheck()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-              Date Column: false
-              Game/Non-Game Day Column: false
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: Game Day
-          applied: false
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to display only rows where ''Game/Non-Game
+          Day'' equals ''Game Day'', while retaining columns ''Series #'', ''Game
+          #'', and ''Season Type''. The ''Game/Non-Game Day'' column is now hidden.'
+        Forecast Total Summary: Updated to reflect totals specific to 'Game Day' data
+          within the filtered 'Regular' season.
     verification_plan:
+    - step_id_checkpoint: '4_32'
+      what_to_verify: Verify that the filter icon for the 'Game/Non-Game Day' column
+        is active, indicating that a filter is applied to this column.
     - step_id_checkpoint: '4_33'
-      what_to_verify: Verify Column Filter Reset is applied
+      what_to_verify: Verify that the column filter settings are reset, ensuring no
+        additional filters are applied to the 'Game/Non-Game Day' column.
+    - step_id_checkpoint: '4_34'
+      what_to_verify: Verify that the 'Game/Non-Game Day' column is successfully hidden
+        from the 'Daily Forecast by Event' grid, and the grid layout adjusts accordingly
+        without affecting the data integrity.
     - step_id_checkpoint: END
-      what_to_verify: Verify Game/Non-Game Day Column visibility is toggled OFF
+      what_to_verify: Verify that the 'Forecast Total Summary' and 'Daily Forecast
+        by Event' grid reflect accurate data for 'Game Day' events in the 'Regular'
+        season, with the 'Game/Non-Game Day' column hidden.
   ? page.get_by_role("treeitem", name="Month Column", exact=True).get_by_label("Press
     SPACE to toggle visibility (hidden)").check()|page.locator(".ag-header-cell.ag-column-last
     > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon >
     .filter-icon").click()|page.get_by_role("textbox", name="Filter Value").fill("March")
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-              Date Column: false
-              Game/Non-Game Day Column: false
-              Month Column: true
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: March
-          applied: false
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to display only rows where ''Month''
+          equals ''March'', with the ''Month'' column now visible. Other columns (''Series
+          #'', ''Game #'', ''Season Type'') remain unchanged.'
+        Forecast Total Summary: Updated to reflect totals specific to 'March' data
+          within the filtered 'Regular' season.
     verification_plan:
     - step_id_checkpoint: '4_35'
-      what_to_verify: Verify 'Month Column' visibility is toggled ON
+      what_to_verify: Verify that the 'Month' column is now visible in the 'Daily
+        Forecast by Event' grid, ensuring it is included in the dataset for analysis.
     - step_id_checkpoint: '4_36'
-      what_to_verify: Verify filter icon is clicked
-    - step_id_checkpoint: END
-      what_to_verify: Verify 'Filter Value' is updated to 'March' and sidebar remains
-        OPEN
+      what_to_verify: Verify that the filter icon for the 'Month' column is activated,
+        indicating that a filter is being applied to this column.
+    - step_id_checkpoint: '4_37'
+      what_to_verify: Verify that the 'Daily Forecast by Event' grid is updated to
+        display only rows where the 'Month' column equals 'March', and that the 'Forecast
+        Total Summary' reflects the updated data for March.
   ? page.get_by_label("Column Filter").get_by_role("button", name="Apply").click()|page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active
     > .filter-icon").click()|page.get_by_label("Column Filter").get_by_role("button",
     name="Reset").click()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-              Date Column: false
-              Game/Non-Game Day Column: false
-              Month Column: true
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: March
-          applied: true
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to display only rows where ''Month''
+          equals ''March'', with the ''Month'' column now visible. Other columns (''Series
+          #'', ''Game #'', ''Season Type'') remain unchanged.'
+        Forecast Total Summary: Updated to reflect totals specific to 'March' data
+          within the filtered 'Regular' season.
     verification_plan:
     - step_id_checkpoint: '4_38'
-      what_to_verify: Verify Column Filter is APPLIED
+      what_to_verify: Verify that the 'Daily Forecast by Event' grid updates to display
+        only rows where the 'Month' column equals 'March'. Ensure that the 'Month'
+        column is visible and the data aligns with the selected filter.
     - step_id_checkpoint: '4_39'
-      what_to_verify: Verify Filter Icon is ACTIVE
+      what_to_verify: Verify that the filter icon in the 'Month' column header indicates
+        an active filter, confirming that the filter has been applied successfully.
     - step_id_checkpoint: '4_40'
-      what_to_verify: Verify Column Filter is RESET
-    - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar is still CLOSED
+      what_to_verify: Verify that the 'Reset' button clears the applied filter, reverting
+        the 'Daily Forecast by Event' grid to its original state, displaying all months
+        and removing the filter icon from the 'Month' column header.
   ? page.get_by_role("treeitem", name="Month Column", exact=True).get_by_label("Press
     SPACE to toggle visibility (visible)").uncheck()|page.get_by_role("treeitem",
     name="DoW Column", exact=True).get_by_label("Press SPACE to toggle visibility
@@ -1657,1855 +750,709 @@ cached_chunks:
     > .ag-cell-label-container > .ag-header-icon > .filter-icon").click()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-              Date Column: false
-              Game/Non-Game Day Column: false
-              Month Column: false
-              DoW Column: true
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: March
-          applied: true
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to display rows without the ''Month''
+          column and with the ''DoW'' column now visible. Other columns (''Series
+          #'', ''Game #'', ''Season Type'') remain unchanged.'
+        Forecast Total Summary: Remains unchanged, reflecting totals specific to 'March'
+          data within the filtered 'Regular' season.
     verification_plan:
     - step_id_checkpoint: '4_41'
-      what_to_verify: Verify 'Month Column' is UNCHECKED
+      what_to_verify: Verify that the 'Month' column is no longer visible in the 'Daily
+        Forecast by Event' grid and that the grid layout adjusts accordingly.
     - step_id_checkpoint: '4_42'
-      what_to_verify: Verify 'DoW Column' is CHECKED
+      what_to_verify: Verify that the 'DoW' column is now visible in the 'Daily Forecast
+        by Event' grid and populated with accurate data for each event.
+    - step_id_checkpoint: '4_43'
+      what_to_verify: Verify that the filter icon interaction triggers the expected
+        filter modal or dropdown, allowing further refinement of the displayed data.
     - step_id_checkpoint: END
-      what_to_verify: Verify Column Filter is still OPEN
+      what_to_verify: Ensure that the grid updates dynamically to reflect the column
+        visibility changes and that the data displayed aligns with the selected filters
+        and visible columns.
   ? page.get_by_role("textbox", name="Filter Value").fill("Monday")|page.get_by_label("Column
     Filter").get_by_role("button", name="Apply").click()|page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active
     > .filter-icon").click()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-              Date Column: false
-              Game/Non-Game Day Column: false
-              Month Column: false
-              DoW Column: true
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: Monday
-          applied: true
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to display rows where the ''DoW'' column
+          contains ''Monday''. Other columns (''Series #'', ''Game #'', ''Season Type'')
+          remain unchanged.'
+        Forecast Total Summary: Remains unchanged, reflecting totals specific to 'March'
+          data within the filtered 'Regular' season.
     verification_plan:
+    - step_id_checkpoint: '4_44'
+      what_to_verify: Verify that the 'Filter Value' textbox is populated with 'Monday'
+        and that the filter criteria is correctly set to match rows where 'DoW' contains
+        'Monday'.
     - step_id_checkpoint: '4_45'
-      what_to_verify: Verify Column Filter is applied with 'Monday' as the filter
-        value.
+      what_to_verify: Verify that clicking 'Apply' updates the 'Daily Forecast by
+        Event' grid to display only rows where the 'DoW' column contains 'Monday'.
+    - step_id_checkpoint: '4_46'
+      what_to_verify: Verify that the filter icon in the 'DoW' column header is updated
+        to indicate an active filter, and confirm that the grid reflects the filtered
+        dataset accurately.
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar remains closed and Column Filter remains applied.
+      what_to_verify: Verify that the 'Forecast Total Summary' remains unchanged,
+        as it reflects totals specific to 'March' data within the filtered 'Regular'
+        season, and is not directly impacted by the 'DoW' filter.
   ? page.get_by_label("Column Filter").get_by_role("button", name="Reset").click()|page.get_by_role("treeitem",
     name="DoW Column", exact=True).get_by_label("Press SPACE to toggle visibility
     (visible)").uncheck()|page.get_by_role("treeitem", name="Opp Column", exact=True).get_by_label("Press
     SPACE to toggle visibility (hidden)").check()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-              Date Column: false
-              Game/Non-Game Day Column: false
-              Month Column: false
-              DoW Column: false
-              Opp Column: true
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: null
-          applied: false
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to hide the ''DoW'' column and display
+          the ''Opp'' column. Other columns (''Team'', ''Game #'', ''Series #'', ''Season
+          Type'') remain visible.'
+        Forecast Total Summary: Remains unchanged, reflecting totals specific to 'March'
+          data within the filtered 'Regular' season.
     verification_plan:
     - step_id_checkpoint: '4_47'
-      what_to_verify: Verify Column Filter Reset
+      what_to_verify: Verify that clicking the 'Reset' button in the column filter
+        clears all column visibility customizations, restoring the default column
+        visibility settings.
     - step_id_checkpoint: '4_48'
-      what_to_verify: Verify DoW Column is HIDDEN
+      what_to_verify: Verify that unchecking the 'DoW' column in the column visibility
+        tree hides the 'DoW' column from the 'Daily Forecast by Event' grid.
     - step_id_checkpoint: '4_49'
-      what_to_verify: Verify Opp Column is VISIBLE
+      what_to_verify: Verify that checking the 'Opp' column in the column visibility
+        tree displays the 'Opp' column in the 'Daily Forecast by Event' grid.
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar and Column Filter remain OPEN
+      what_to_verify: Verify that the 'Daily Forecast by Event' grid reflects the
+        updated column visibility settings, with the 'DoW' column hidden and the 'Opp'
+        column displayed, and confirm that the data in the grid aligns with the selected
+        filters and hierarchy.
   ? page.get_by_role("treeitem", name="Opp Column", exact=True).get_by_label("Press
     SPACE to toggle visibility (visible)").uncheck()|page.locator("#ag-3569-input").check()|page.locator("#ag-3569-input").uncheck()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-              Date Column: false
-              Game/Non-Game Day Column: false
-              Month Column: false
-              DoW Column: false
-              Opp Column: false
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: null
-          applied: false
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to hide the ''DoW'' column and display
+          the ''Opp'' column. Other columns (''Team'', ''Game #'', ''Series #'', ''Season
+          Type'') remain visible.'
+        Forecast Total Summary: Remains unchanged, reflecting totals specific to 'March'
+          data within the filtered 'Regular' season.
     verification_plan:
     - step_id_checkpoint: '4_50'
-      what_to_verify: Verify Opp Column visibility is toggled OFF
+      what_to_verify: Verify that the 'Opp' column is toggled to visible in the 'Daily
+        Forecast by Event' grid, ensuring that opponent-related data is displayed
+        for analysis.
+    - step_id_checkpoint: '4_51'
+      what_to_verify: Verify that the 'DoW' column is toggled to hidden in the 'Daily
+        Forecast by Event' grid, ensuring that day-of-week data is excluded from the
+        current view.
+    - step_id_checkpoint: '4_52'
+      what_to_verify: Verify that the grid updates dynamically to reflect the column
+        visibility changes, and confirm that the data displayed aligns with the selected
+        'Regular' season filter.
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar and Column Filter remain OPEN
+      what_to_verify: Ensure that the 'Forecast Total Summary' remains consistent,
+        reflecting totals specific to 'March' data within the filtered 'Regular' season,
+        and confirm no unintended changes occurred in the summary.
   ? page.locator("#ag-3571-input").check()|page.locator(".ag-header-cell.ag-column-last
     > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon >
     .filter-icon").click()|page.locator(".ag-icon.ag-icon-small-down").click()|page.get_by_role("option",
     name="Greater than or equal to").click()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-              Date Column: true
-              Game/Non-Game Day Column: false
-              Month Column: false
-              DoW Column: false
-              Opp Column: false
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: Greater than or equal to
-          applied: false
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to hide the ''DoW'' column and display
+          the ''Opp'' column. Other columns (''Team'', ''Game #'', ''Series #'', ''Season
+          Type'') remain visible.'
+        Forecast Total Summary: Remains unchanged, reflecting totals specific to 'March'
+          data within the filtered 'Regular' season.
     verification_plan:
     - step_id_checkpoint: '4_53'
-      what_to_verify: Verify Checkbox is CHECKED
+      what_to_verify: Verify that the 'Season Type' filter is applied to the dataset,
+        ensuring only rows with 'Regular' season data are displayed in the 'Daily
+        Forecast by Event' grid.
+    - step_id_checkpoint: '4_54'
+      what_to_verify: 'Verify that the filter icon for the ''Game #'' column is activated,
+        indicating that a filter condition is being applied.'
+    - step_id_checkpoint: '4_55'
+      what_to_verify: 'Verify that the dropdown menu for filter conditions is displayed,
+        allowing the user to select a condition for the ''Game #'' column.'
+    - step_id_checkpoint: '4_56'
+      what_to_verify: 'Verify that the ''Greater than or equal to'' condition is applied
+        to the ''Game #'' column, and the grid updates to display only rows meeting
+        this condition.'
     - step_id_checkpoint: END
-      what_to_verify: Verify Column Filter is still OPEN
+      what_to_verify: 'Verify that the ''Daily Forecast by Event'' grid reflects the
+        combined filters (''Season Type'' = ''Regular'' and ''Game #'' >= specified
+        value), and the ''Forecast Total Summary'' remains consistent with the filtered
+        data.'
   ? page.get_by_role("spinbutton", name="Filter Value").click()|page.get_by_role("spinbutton",
     name="Filter Value").fill("25")|page.get_by_label("Column Filter").get_by_role("button",
     name="Apply").click()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-              Date Column: true
-              Game/Non-Game Day Column: false
-              Month Column: false
-              DoW Column: false
-              Opp Column: false
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: '25'
-          applied: true
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to hide the ''DoW'' column and display
+          the ''Opp'' column. Other columns (''Team'', ''Game #'', ''Series #'', ''Season
+          Type'') remain visible.'
+        Forecast Total Summary: Remains unchanged, reflecting totals specific to 'March'
+          data within the filtered 'Regular' season.
     verification_plan:
+    - step_id_checkpoint: '4_57'
+      what_to_verify: Verify that the numeric filter input is activated and ready
+        to accept a value.
+    - step_id_checkpoint: '4_58'
+      what_to_verify: Verify that the numeric filter value '25' is successfully entered
+        and reflected in the filter criteria.
     - step_id_checkpoint: '4_59'
-      what_to_verify: Verify Column Filter is applied with value '25'.
+      what_to_verify: Verify that the 'Apply' button triggers the dataset to update,
+        filtering the 'Daily Forecast by Event' grid to include only rows where the
+        numeric filter criteria are met.
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar and Column Filter remain open.
+      what_to_verify: Verify that the 'DoW' column is hidden, the 'Opp' column is
+        displayed, and the grid reflects the filtered dataset. Confirm that the 'Forecast
+        Total Summary' remains consistent with the filtered 'Regular' season data.
   ? page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active >
     .filter-icon").click()|page.get_by_label("Column Filter").get_by_role("button",
     name="Reset").click()|page.get_by_role("treeitem", name="Stat Unit Sales Fcst
     Column").get_by_label("Press SPACE to toggle visibility (visible)").uncheck()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: false
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-              Date Column: true
-              Game/Non-Game Day Column: false
-              Month Column: false
-              DoW Column: false
-              Opp Column: false
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: '25'
-          applied: false
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to hide the ''Stat Unit Sales Fcst''
+          column. Other columns (''Team'', ''Game #'', ''Series #'', ''Season Type'',
+          ''Opp'') remain visible.'
+        Forecast Total Summary: Remains unchanged, reflecting totals specific to 'March'
+          data within the filtered 'Regular' season.
     verification_plan:
+    - step_id_checkpoint: '4_60'
+      what_to_verify: Verify that the column filter button is activated, indicating
+        that column visibility settings are being modified.
     - step_id_checkpoint: '4_61'
-      what_to_verify: Verify Column Filter Reset is applied
+      what_to_verify: Verify that all previously applied column filters are reset,
+        ensuring no residual filters affect the displayed data.
+    - step_id_checkpoint: '4_62'
+      what_to_verify: 'Verify that the ''Stat Unit Sales Fcst'' column is successfully
+        hidden from the ''Daily Forecast by Event'' grid, and confirm that the remaining
+        columns (''Team'', ''Game #'', ''Series #'', ''Season Type'', ''Opp'') are
+        still visible.'
     - step_id_checkpoint: END
-      what_to_verify: Verify Stat Unit Sales Fcst Column visibility is toggled OFF
+      what_to_verify: Ensure that the 'Forecast Total Summary' remains consistent
+        with the filtered 'Regular' season data for March, and verify that the grid
+        reflects the updated column visibility settings.
   ? page.locator("#ag-3573-input").check()|page.locator(".ag-header-cell.ag-column-last
     > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon >
     .filter-icon").click()|page.get_by_role("spinbutton", name="Filter Value").fill("100")
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-              Date Column: true
-              Game/Non-Game Day Column: false
-              Month Column: false
-              DoW Column: false
-              Opp Column: false
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: '100'
-          applied: false
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to hide the ''Stat Unit Sales Fcst''
+          column. Other columns (''Team'', ''Game #'', ''Series #'', ''Season Type'',
+          ''Opp'') remain visible.'
+        Forecast Total Summary: Remains unchanged, reflecting totals specific to 'March'
+          data within the filtered 'Regular' season.
     verification_plan:
     - step_id_checkpoint: '4_63'
-      what_to_verify: Verify 'Stat Unit Sales Fcst Column' is CHECKED
+      what_to_verify: Verify that the 'Stat Unit Sales Fcst' column is successfully
+        hidden in the 'Daily Forecast by Event' grid, ensuring the grid reflects only
+        the selected columns.
+    - step_id_checkpoint: '4_64'
+      what_to_verify: Verify that the filter icon is activated, indicating that a
+        filter is being applied to the dataset.
     - step_id_checkpoint: '4_65'
-      what_to_verify: Verify Filter Value is updated to '100'
+      what_to_verify: Verify that the filter value of 100 is applied correctly, updating
+        the 'Daily Forecast by Event' grid to display only rows where the relevant
+        metric meets the filter criteria.
     - step_id_checkpoint: END
-      what_to_verify: Verify Column Filter is still OPEN
+      what_to_verify: Verify that the 'Forecast Total Summary' remains consistent
+        with the filtered 'Regular' season data for March, ensuring no unintended
+        changes occurred.
   ? page.locator(".ag-icon.ag-icon-small-down").first.click()|page.get_by_role("option",
     name="Less than or equal to").click()|page.get_by_label("Column Filter").get_by_role("button",
     name="Apply").click()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-              Date Column: true
-              Game/Non-Game Day Column: false
-              Month Column: false
-              DoW Column: false
-              Opp Column: false
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: '100'
-          applied: true
-          filter_condition: Less than or equal to
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to display only rows where ''Stat Unit
+          Sales Fcst'' is less than or equal to the specified value. Other columns
+          (''Team'', ''Game #'', ''Series #'', ''Season Type'', ''Opp'') remain visible.'
+        Forecast Total Summary: Remains unchanged, reflecting totals specific to 'March'
+          data within the filtered 'Regular' season.
     verification_plan:
+    - step_id_checkpoint: '4_66'
+      what_to_verify: Verify that the dropdown for the 'Stat Unit Sales Fcst' column
+        filter is opened, allowing the user to select a filter condition.
     - step_id_checkpoint: '4_67'
-      what_to_verify: Verify 'Less than or equal to' option is selected.
+      what_to_verify: Verify that the 'Less than or equal to' option is selected for
+        the 'Stat Unit Sales Fcst' column filter.
     - step_id_checkpoint: '4_68'
-      what_to_verify: Verify Column Filter is applied with value '100' and condition
-        'Less than or equal to'.
+      what_to_verify: Verify that the 'Apply' button is clicked, and the 'Daily Forecast
+        by Event' grid updates to display only rows where 'Stat Unit Sales Fcst' is
+        less than or equal to the specified value.
     - step_id_checkpoint: END
-      what_to_verify: Verify Column Filter section is still expanded.
+      what_to_verify: Verify that the filtered dataset in the 'Daily Forecast by Event'
+        grid aligns with the applied condition, and no rows with 'Stat Unit Sales
+        Fcst' greater than the specified value are displayed.
   ? page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active >
     .filter-icon").click()|page.get_by_label("Column Filter").get_by_role("button",
     name="Reset").click()|page.get_by_role("checkbox", name="Press SPACE to toggle
     visibility (visible)").uncheck()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): false
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-              Date Column: true
-              Game/Non-Game Day Column: false
-              Month Column: false
-              DoW Column: false
-              Opp Column: false
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: null
-          applied: false
-          filter_condition: null
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to display all rows without filtering
+          by ''Stat Unit Sales Fcst''. The ''Stat Unit Sales Fcst'' column is hidden,
+          and other columns (''Team'', ''Game #'', ''Series #'', ''Season Type'',
+          ''Opp'') remain visible.'
+        Forecast Total Summary: Remains unchanged, reflecting totals specific to 'March'
+          data within the filtered 'Regular' season.
     verification_plan:
+    - step_id_checkpoint: '4_69'
+      what_to_verify: Verify that the column filter icon for 'Stat Unit Sales Fcst'
+        is active, indicating that a filter was previously applied.
     - step_id_checkpoint: '4_70'
-      what_to_verify: Verify Column Filter is RESET (filter value cleared and not
-        applied).
+      what_to_verify: Verify that the 'Reset' button clears any applied filters, and
+        the 'Daily Forecast by Event' grid updates to display all rows without filtering
+        by 'Stat Unit Sales Fcst'.
     - step_id_checkpoint: '4_71'
-      what_to_verify: Verify 'Press SPACE to toggle visibility' checkbox is UNCHECKED.
+      what_to_verify: Verify that unchecking the checkbox for 'Stat Unit Sales Fcst'
+        hides the column from the 'Daily Forecast by Event' grid while retaining the
+        visibility of other columns.
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar and Forecast Total Section remain OPEN.
+      what_to_verify: Ensure that the 'Forecast Total Summary' remains unchanged,
+        reflecting totals specific to 'March' data within the filtered 'Regular' season,
+        and confirm that the grid updates align with the user's column visibility
+        preferences.
   ? page.locator("#ag-3575-input").check()|page.locator(".ag-header-cell.ag-column-last
     > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon >
     .filter-icon").click()|page.get_by_role("spinbutton", name="Filter Value").fill("1")
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): false
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-              Date Column: true
-              Game/Non-Game Day Column: false
-              Month Column: false
-              DoW Column: false
-              Opp Column: false
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: '1'
-          applied: false
-          filter_condition: null
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to display only rows where ''Stat Unit
+          Sales Fcst'' equals ''1''. The ''Stat Unit Sales Fcst'' column remains visible,
+          and other columns (''Team'', ''Game #'', ''Series #'', ''Season Type'',
+          ''Opp'') are unchanged.'
+        Forecast Total Summary: Remains unchanged, reflecting totals specific to 'March'
+          data within the filtered 'Regular' season.
     verification_plan:
     - step_id_checkpoint: '4_72'
-      what_to_verify: 'Verify checkbox #ag-3575-input is CHECKED'
+      what_to_verify: Verify that the 'Stat Unit Sales Fcst' column is visible in
+        the 'Daily Forecast by Event' grid and that the checkbox for this column is
+        selected in the column selector.
     - step_id_checkpoint: '4_73'
-      what_to_verify: Verify filter icon is CLICKED
+      what_to_verify: Verify that the filter icon for the 'Stat Unit Sales Fcst' column
+        is activated, indicating that a filter is being applied.
     - step_id_checkpoint: '4_74'
-      what_to_verify: Verify filter value is FILLED with '1'
+      what_to_verify: Verify that the 'Daily Forecast by Event' grid updates to display
+        only rows where 'Stat Unit Sales Fcst' equals '1', and confirm that the filter
+        value is correctly applied in the UI.
     - step_id_checkpoint: END
-      what_to_verify: Verify column filter section remains EXPANDED
+      what_to_verify: Verify that the 'Forecast Total Summary' remains unchanged,
+        reflecting totals specific to 'March' data within the filtered 'Regular' season,
+        and ensure that no unintended changes occurred in other sections of the dashboard.
   ? page.locator(".ag-icon.ag-icon-small-down").first.click()|page.get_by_role("option",
     name="Greater than or equal to").click()|page.get_by_label("Column Filter").get_by_role("button",
     name="Apply").click()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): false
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-              Date Column: true
-              Game/Non-Game Day Column: false
-              Month Column: false
-              DoW Column: false
-              Opp Column: false
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: '1'
-          applied: true
-          filter_condition: Greater than or equal to
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to display only rows where ''Stat Unit
+          Sales Fcst'' equals ''1''. The ''Stat Unit Sales Fcst'' column remains visible,
+          and other columns (''Team'', ''Game #'', ''Series #'', ''Season Type'',
+          ''Opp'') are unchanged.'
+        Forecast Total Summary: Remains unchanged, reflecting totals specific to 'March'
+          data within the filtered 'Regular' season.
     verification_plan:
+    - step_id_checkpoint: '4_75'
+      what_to_verify: Verify that the dropdown for the 'Stat Sales Fcst ($)' column
+        filter is expanded and displays filter options such as 'Equals', 'Greater
+        than or equal to', etc.
     - step_id_checkpoint: '4_76'
-      what_to_verify: Verify filter condition is set to 'Greater than or equal to'
+      what_to_verify: Verify that the 'Greater than or equal to' filter option is
+        selected, and the filter input box is updated to accept a value.
     - step_id_checkpoint: '4_77'
-      what_to_verify: Verify Column Filter is applied
+      what_to_verify: Verify that the 'Apply' button applies the filter, updating
+        the 'Daily Forecast by Event' grid to display only rows where 'Stat Sales
+        Fcst ($)' equals 1. Confirm that other columns remain unchanged and that the
+        filtered data aligns with the 'Regular' season type.
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar is still CLOSED
+      what_to_verify: Verify that the 'Forecast Total Summary' remains consistent
+        with the filtered data, reflecting totals specific to 'March' within the 'Regular'
+        season.
   ? page.get_by_role("treeitem", name="Initial Per Cap Stat Fcst").get_by_label("Press
     SPACE to toggle").check()|page.locator(".ag-header-cell.ag-column-last > .ag-header-cell-comp-wrapper
     > .ag-cell-label-container > .ag-header-icon > .filter-icon").click()|page.get_by_role("spinbutton",
     name="Filter Value").fill("10")
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-              Date Column: true
-              Game/Non-Game Day Column: false
-              Month Column: false
-              DoW Column: false
-              Opp Column: false
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: '10'
-          applied: false
-          filter_condition: null
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to display only rows where ''Stat Unit
+          Sales Fcst'' is greater than 10. The ''Stat Unit Sales Fcst'' column is
+          now visible, and other columns (''Team'', ''Game #'', ''Series #'', ''Season
+          Type'', ''Opp'') remain visible.'
+        Forecast Total Summary: Updated to reflect totals specific to events where
+          'Stat Unit Sales Fcst' exceeds 10 within the filtered 'Regular' season.
     verification_plan:
     - step_id_checkpoint: '4_81'
-      what_to_verify: Verify 'Press SPACE to toggle visibility (hidden)' is CHECKED
+      what_to_verify: Verify that the 'Stat Unit Sales Fcst' column is now visible
+        in the 'Daily Forecast by Event' grid and that the column header is highlighted
+        to indicate it is being filtered.
+    - step_id_checkpoint: '4_82'
+      what_to_verify: Verify that the filter icon for the 'Stat Unit Sales Fcst' column
+        is activated, indicating that a filter is applied.
     - step_id_checkpoint: '4_83'
-      what_to_verify: Verify 'Filter Value' is FILLED with '10'
-    - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar and Column Filter are still OPEN
+      what_to_verify: Verify that the 'Daily Forecast by Event' grid updates to display
+        only rows where 'Stat Unit Sales Fcst' is greater than 10, and confirm that
+        the 'Forecast Total Summary' reflects the updated totals for these filtered
+        rows.
   ? page.get_by_role("treeitem", name="GD Sales Fcst Override ($) Column", exact=True).get_by_label("Press
     SPACE to toggle").check()|page.get_by_role("checkbox", name="Press SPACE to toggle
     visibility (visible)").uncheck()|page.locator("#ag-7836-input").check()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): true
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-              Date Column: true
-              Game/Non-Game Day Column: false
-              Month Column: false
-              DoW Column: false
-              Opp Column: false
-              GD Sales Fcst Override ($) Column: true
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: null
-          applied: false
-          filter_condition: null
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to display all rows without filtering
+          by ''Stat Unit Sales Fcst''. The ''Stat Unit Sales Fcst'' column is hidden,
+          and other columns (''Team'', ''Game #'', ''Series #'', ''Season Type'',
+          ''Opp'') remain visible.'
+        Forecast Total Summary: Remains unchanged, reflecting totals specific to 'March'
+          data within the filtered 'Regular' season.
     verification_plan:
+    - step_id_checkpoint: '4_90'
+      what_to_verify: Verify that the 'GD Sales Fcst Override ($)' column is selected
+        for visibility in the 'Daily Forecast by Event' grid.
     - step_id_checkpoint: '4_91'
-      what_to_verify: Verify checkbox 'Press SPACE to toggle visibility (hidden)'
-        is CHECKED
+      what_to_verify: Verify that the 'Stat Unit Sales Fcst' column is deselected
+        and hidden from the 'Daily Forecast by Event' grid.
+    - step_id_checkpoint: '4_92'
+      what_to_verify: Ensure that the 'GD Sales Fcst Override ($)' column is now visible
+        in the 'Daily Forecast by Event' grid, and the data displayed aligns with
+        the selected 'Regular' season filter.
     - step_id_checkpoint: END
-      what_to_verify: Verify GD Sales Fcst Override ($) Column is visible
+      what_to_verify: Confirm that the 'Forecast Total Summary' remains consistent
+        with the 'Regular' season filter and reflects accurate totals for March data.
   ? page.get_by_role("checkbox", name="Press SPACE to toggle visibility (visible)").uncheck()|page.locator("#ag-7838-input").check()|page.locator(".ag-header-cell.ag-column-last
     > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon >
     .filter-icon").click()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): false
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-              Date Column: true
-              Game/Non-Game Day Column: false
-              Month Column: false
-              DoW Column: false
-              Opp Column: false
-              GD Sales Fcst Override ($) Column: true
-              Per Cap Fcst Adjusted ($): true
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: null
-          applied: false
-          filter_condition: null
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to display all rows without filtering
+          by ''Stat Unit Sales Fcst''. The ''Stat Unit Sales Fcst'' column is hidden,
+          and other columns (''Team'', ''Game #'', ''Series #'', ''Season Type'',
+          ''Opp'') remain visible.'
+        Forecast Total Summary: Remains unchanged, reflecting totals specific to 'March'
+          data within the filtered 'Regular' season.
     verification_plan:
     - step_id_checkpoint: '4_93'
-      what_to_verify: Verify 'Press SPACE to toggle visibility' checkbox is UNCHECKED
+      what_to_verify: Verify that the 'Stat Unit Sales Fcst' column is successfully
+        hidden in the 'Daily Forecast by Event' grid, ensuring the grid layout is
+        updated to exclude this column.
     - step_id_checkpoint: '4_94'
-      what_to_verify: Verify 'Per Cap Fcst Adjusted ($)' checkbox is CHECKED
+      what_to_verify: Verify that the checkbox for 'Per Cap Fcst Adjusted ($)' is
+        checked, ensuring this column is visible in the grid for analysis.
     - step_id_checkpoint: '4_95'
-      what_to_verify: Verify filter icon is CLICKED and filter modal is OPEN
+      what_to_verify: Verify that the filter icon interaction triggers the expected
+        filter menu, allowing the user to refine the grid data further if needed.
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar and Column Filter remain OPEN
+      what_to_verify: Verify that the 'Daily Forecast by Event' grid reflects the
+        updated column visibility and that the 'Forecast Total Summary' remains consistent
+        with the filtered 'Regular' season data.
   ? page.get_by_role("spinbutton", name="Filter Value").fill("20")|page.locator(".ag-icon.ag-icon-small-down").first.click()|page.get_by_role("option",
     name="Greater than or equal to").click()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): false
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-              Date Column: true
-              Game/Non-Game Day Column: false
-              Month Column: false
-              DoW Column: false
-              Opp Column: false
-              GD Sales Fcst Override ($) Column: true
-              Per Cap Fcst Adjusted ($): true
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: '20'
-          applied: false
-          filter_condition: Greater than or equal to
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to display rows where ''Actual Sales
+          & ROY Fcst ($)'' is greater than or equal to 20. Other columns (''Team'',
+          ''Game #'', ''Series #'', ''Season Type'', ''Opp'') remain visible.'
+        Forecast Total Summary: Updated to reflect totals specific to the filtered
+          rows where 'Actual Sales & ROY Fcst ($)' is greater than or equal to 20
+          within the 'Regular' season.
     verification_plan:
+    - step_id_checkpoint: '4_96'
+      what_to_verify: Verify that the value '20' has been correctly entered into the
+        filter input for 'Actual Sales & ROY Fcst ($)'.
     - step_id_checkpoint: '4_97'
-      what_to_verify: Verify dropdown for filter condition is expanded
+      what_to_verify: Verify that the dropdown for filter conditions is opened and
+        the available options are displayed.
+    - step_id_checkpoint: '4_98'
+      what_to_verify: Verify that the 'Greater than or equal to' condition is selected
+        and applied to the 'Actual Sales & ROY Fcst ($)' column.
     - step_id_checkpoint: END
-      what_to_verify: Verify column filter is updated with value '20' and condition
-        'Greater than or equal to'
+      what_to_verify: Verify that the 'Daily Forecast by Event' grid updates to display
+        only rows where 'Actual Sales & ROY Fcst ($)' is greater than or equal to
+        20, and the 'Forecast Total Summary' reflects the updated totals for the filtered
+        data.
   ? page.get_by_role("treeitem", name="Season Type Column").get_by_label("Press SPACE
     to toggle").uncheck()|page.get_by_role("checkbox", name="Toggle All Columns Visibility").check()|page.get_by_text("Daily
     Forecast by Event columns (0) TopBottom").click()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: true
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): false
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: true
-              Date Column: true
-              Game/Non-Game Day Column: true
-              Month Column: true
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: March
-          applied: true
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to display only rows where ''Month''
+          equals ''March'', with the ''Month'' column now visible. Other columns (''Series
+          #'', ''Game #'', ''Season Type'') remain unchanged.'
+        Forecast Total Summary: Updated to reflect totals specific to 'March' data
+          within the filtered 'Regular' season.
     verification_plan:
     - step_id_checkpoint: '4_102'
-      what_to_verify: Verify 'Press SPACE to toggle visibility (hidden)' is UNCHECKED
+      what_to_verify: Verify that the 'Season Type' column is no longer visible in
+        the 'Daily Forecast by Event' grid, ensuring the toggle action successfully
+        removed it from the display.
     - step_id_checkpoint: '4_103'
-      what_to_verify: Verify 'Toggle All Columns Visibility' is CHECKED
-    - step_id_checkpoint: END
-      what_to_verify: Verify all columns are visible
+      what_to_verify: Verify that all columns in the 'Daily Forecast by Event' grid
+        are now visible after enabling the 'Toggle All Columns Visibility' checkbox.
+    - step_id_checkpoint: '4_104'
+      what_to_verify: Verify that the 'Daily Forecast by Event' grid reflects the
+        updated column visibility settings and that the data displayed aligns with
+        the selected filters (e.g., 'Regular' season and 'March' month).
   ? page.locator("esp-card-component").filter(has_text="Daily Forecast by Event").get_by_role("button").click()|page.locator(".ag-header-cell.ag-header-parent-hidden.ag-header-cell-sortable.ag-header-background.ag-focus-managed.ag-header-active
     > .ag-header-cell-comp-wrapper > .ag-cell-label-container > .ag-header-icon >
     .filter-icon").click()|page.get_by_role("spinbutton", name="Filter Value").fill("2000")
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: true
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): false
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: true
-              Date Column: true
-              Game/Non-Game Day Column: true
-              Month Column: true
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: '2000'
-          applied: false
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to display only rows where ''Month''
+          equals ''March'' and the filtered metric exceeds or matches the value of
+          2000. The ''Month'' column remains visible, along with other columns (''Series
+          #'', ''Game #'', ''Season Type'').'
+        Forecast Total Summary: Updated to reflect totals specific to 'March' data
+          within the filtered 'Regular' season and the applied numeric filter (>=
+          2000).
     verification_plan:
+    - step_id_checkpoint: '4_105'
+      what_to_verify: Verify that the 'Daily Forecast by Event' grid is expanded or
+        focused for interaction, ensuring the user can apply further filters.
     - step_id_checkpoint: '4_106'
-      what_to_verify: Verify filter icon was clicked and filter options are visible.
+      what_to_verify: Verify that the filter icon for the relevant column is activated,
+        indicating readiness to apply a numeric filter.
     - step_id_checkpoint: '4_107'
-      what_to_verify: Verify 'Filter Value' spinbutton is updated to '2000'.
+      what_to_verify: Verify that the numeric filter value (2000) is correctly applied,
+        and the 'Daily Forecast by Event' grid updates to display only rows where
+        the filtered metric meets or exceeds this value.
     - step_id_checkpoint: END
-      what_to_verify: Verify column filter is still expanded and filter value is updated.
+      what_to_verify: Verify that the 'Forecast Total Summary' updates to reflect
+        the totals for the filtered dataset, ensuring alignment with the applied numeric
+        filter and season type.
   ? 'page.locator(".ag-header-icon.ag-header-cell-filter-button.ag-filter-active >
     .filter-icon").click()|page.get_by_label("Column Filter").get_by_role("button",
     name="Reset").click()|page.locator("div:nth-child(4) > #preference-iconId > .legend-font
     > .multiselect-dropdown > .pointer").click()'
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): false
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-              Date Column: true
-              Game/Non-Game Day Column: false
-              Month Column: false
-              DoW Column: false
-              Opp Column: false
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: null
-          applied: false
-          filter_condition: null
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to display only rows where ''Stat Unit
+          Sales Fcst'' equals ''1''. The ''Stat Unit Sales Fcst'' column remains visible,
+          and other columns (''Team'', ''Game #'', ''Series #'', ''Season Type'',
+          ''Opp'') are unchanged.'
+        Forecast Total Summary: Remains unchanged, reflecting totals specific to 'March'
+          data within the filtered 'Regular' season.
     verification_plan:
     - step_id_checkpoint: '4_111'
-      what_to_verify: Verify Column Filter is OPEN
+      what_to_verify: Verify that the column filter icon is active, indicating that
+        a filter is applied to the 'Daily Forecast by Event' grid.
     - step_id_checkpoint: '4_112'
-      what_to_verify: Verify Column Filter is RESET
-    - step_id_checkpoint: END
-      what_to_verify: Verify Preference Dropdown is OPEN
+      what_to_verify: Verify that the 'Reset' button clears all column filters, and
+        the 'Daily Forecast by Event' grid reverts to displaying unfiltered data.
+    - step_id_checkpoint: '4_113'
+      what_to_verify: Verify that the new filter applied through the dropdown updates
+        the 'Daily Forecast by Event' grid to display only rows where 'Stat Unit Sales
+        Fcst' equals '1', and confirm that the 'Forecast Total Summary' remains consistent
+        with the filtered data.
   ? 'page.get_by_text("Save Preference").click()|page.locator("div:nth-child(3) >
     #export-iconId > .icon-color-toolbar-active").click()|page.locator(".d-flex >
     esp-multiselect-dropdown > .multiselect-dropdown > div > .w-100 > .d-flex.align-items-center
     > .dropdown-caret").click()'
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): false
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-              Date Column: true
-              Game/Non-Game Day Column: false
-              Month Column: false
-              DoW Column: false
-              Opp Column: false
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: null
-          applied: false
-          filter_condition: null
-        preferences:
-          save_preference_clicked: true
-        export_icon:
-          clicked: true
-        multiselect_dropdown:
-          expanded: true
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to display only rows where ''Stat Unit
+          Sales Fcst'' equals ''1''. The ''Stat Unit Sales Fcst'' column remains visible,
+          and other columns (''Team'', ''Game #'', ''Series #'', ''Season Type'',
+          ''Opp'') are unchanged.'
+        Forecast Total Summary: Remains unchanged, reflecting totals specific to 'March'
+          data within the filtered 'Regular' season.
     verification_plan:
     - step_id_checkpoint: '4_114'
-      what_to_verify: Verify Save Preference was clicked
+      what_to_verify: 'Verify that clicking ''Save Preference'' stores the current
+        filter settings (e.g., ''Season Type: Regular'') and column visibility preferences
+        for future sessions. Confirm that a success message or visual confirmation
+        is displayed to the user.'
     - step_id_checkpoint: '4_115'
-      what_to_verify: Verify Export Icon was clicked
+      what_to_verify: Verify that clicking the export icon triggers the export functionality,
+        ensuring the filtered 'Daily Forecast by Event' grid data is prepared for
+        download in the correct format (e.g., CSV or Excel).
     - step_id_checkpoint: '4_116'
-      what_to_verify: Verify Multiselect Dropdown is expanded
+      what_to_verify: Verify that interacting with the dropdown menu allows the user
+        to select additional filters or options, and confirm that the dropdown menu
+        is populated with the correct filterable attributes (e.g., 'Season Type',
+        'Team').
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar remains closed
+      what_to_verify: Ensure that the saved preferences persist across sessions and
+        that the exported file accurately reflects the filtered data and column settings.
   ? page.locator("div").filter(has_text=re.compile(r"^View 10 row\(s\)$")).nth(1).click()|page.locator("a").filter(has_text=re.compile(r"^2$")).click()|page.get_by_role("gridcell",
     name="D.C. UNITED").first.click(button="right")|page.get_by_label("Context Menu").get_by_text("Dept
     Penetration Pivots").click()
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filter_section:
-            expanded: false
-            hierarchy_option:
-              selected: true
-              league:
-                expanded: true
-                selected_radio: MLS
-              team:
-                expanded: false
-                checkbox:
-                  checked: true
-              department:
-                expanded: false
-                checkbox:
-                  checked: true
-        dropdown:
-          location_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-          season_type_filter:
-            expanded: false
-            options:
-              option_1:
-                selected: true
-              option_2:
-                selected: true
-              option_3:
-                selected: true
-        forecast_total_section:
-          expanded: true
-          columns_button_clicked: true
-          columns_visibility:
-            toggle_all_columns_visibility: false
-            columns:
-              Stat Unit Sales Fcst Column: true
-              Stat Sales Fcst ($) Column: true
-              Sales Fcst Adjusted ($) Column: true
-              Actual Sales & ROY Fcst ($): true
-              Actual Sales ($) Column: true
-              LY Sales ($) Column: true
-              Sales ($) Change vs LY Column: true
-              LLY Sales ($) Column: true
-              Sales ($) Change vs LLY Column: true
-              Actual Sales & ROY Fcst Column: true
-              Actual Sales Column: true
-              LY Sales Column: true
-              Sales Change vs LY Column: true
-              LLY Sales Column: true
-              Press SPACE to toggle visibility (hidden): false
-              'Game # Column': true
-              'Series # Column': true
-              Season Type Column: true
-              Result Column: false
-              Date Column: true
-              Game/Non-Game Day Column: false
-              Month Column: false
-              DoW Column: false
-              Opp Column: false
-        toolbar:
-          download_icon:
-            clicked: true
-        column_filter:
-          expanded: true
-          filter_value: null
-          applied: false
-          filter_condition: null
-        preferences:
-          save_preference_clicked: true
-        export_icon:
-          clicked: true
-        multiselect_dropdown:
-          expanded: true
-        pagination:
-          rows_per_page: 10
-          current_page: 2
-        context_menu:
-          opened: true
-          selected_option: Dept Penetration Pivots
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to display only rows where ''Stat Unit
+          Sales Fcst'' equals ''1''. The ''Stat Unit Sales Fcst'' column remains visible,
+          and other columns (''Team'', ''Game #'', ''Series #'', ''Season Type'',
+          ''Opp'') are unchanged.'
+        Forecast Total Summary: Remains unchanged, reflecting totals specific to 'March'
+          data within the filtered 'Regular' season.
     verification_plan:
     - step_id_checkpoint: '4_117'
-      what_to_verify: Verify rows per page updated to 10.
+      what_to_verify: Verify that the grid updates to display only 10 rows per page
+        after the 'View 10 row(s)' option is selected. Ensure the pagination controls
+        reflect the new row count.
     - step_id_checkpoint: '4_118'
-      what_to_verify: Verify current page updated to 2.
+      what_to_verify: Verify that the grid navigates to page 2 and displays the correct
+        data subset for the selected page, maintaining the applied filters.
+    - step_id_checkpoint: '4_119'
+      what_to_verify: Verify that the right-click action on 'D.C. UNITED' opens the
+        context menu and highlights the selected team for further analysis.
     - step_id_checkpoint: '4_120'
-      what_to_verify: Verify context menu opened and 'Dept Penetration Pivots' selected.
+      what_to_verify: Verify that selecting 'Dept Penetration Pivots' from the context
+        menu triggers the appropriate action, such as opening a new view or updating
+        the grid to display department-level penetration metrics for 'D.C. UNITED'.
+  page.locator("esp-card-component").filter(has_text="Forecast Total columns (0)").get_by_role("button").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Specific season type(s) selected by the user
+        Daily Forecast by Event Grid: Filtered to display only events matching the
+          selected season type(s) within the MLB league, with the selected columns
+          visible
+        Forecast Total Summary: Updated to reflect totals specific to the selected
+          season type(s) within the MLB league
+    verification_plan:
+    - step_id_checkpoint: '3_20'
+      what_to_verify: Verify that the 'Forecast Total' section updates to reflect
+        the selected columns, ensuring that only the chosen metrics (e.g., 'Sales
+        Change vs LLY', 'LLY Sales') are displayed.
     - step_id_checkpoint: END
-      what_to_verify: Verify sidebar and dropdown states remain unchanged.
-  ? page.locator(".zeb-filter").first.click()|page.get_by_text("Hierarchy").click()|page.get_by_text("League").click()|page.get_by_role("radio",
-    name="MLS").check()|page.get_by_text("League").click()
+      what_to_verify: Verify that the 'Daily Forecast by Event' grid remains consistent
+        with the selected season type filter and that the column visibility aligns
+        with the adjustments made in the 'Forecast Total' section.
+  page.locator(".pointer.zeb-adjustments").first.click()|page.get_by_text("Save Preference").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Specific season type(s) selected by the user
+        Daily Forecast by Event Grid: Filtered to display only events matching the
+          selected season type(s) within the MLB league, with the selected columns
+          visible
+        Forecast Total Summary: Updated to reflect totals specific to the selected
+          season type(s) within the MLB league
+    verification_plan:
+    - step_id_checkpoint: '3_21'
+      what_to_verify: Verify that clicking the 'pointer.zeb-adjustments' element opens
+        the filter adjustment menu, allowing the user to modify and save filter preferences.
+    - step_id_checkpoint: '3_22'
+      what_to_verify: Verify that clicking 'Save Preference' saves the selected 'Season
+        Type' filter as the default for future sessions, and confirm that the UI reflects
+        the saved preference with a confirmation message or visual indicator.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'Daily Forecast by Event' grid and 'Forecast
+        Total Summary' are updated to reflect the selected 'Season Type' filter, and
+        ensure that the saved preference persists across sessions.
+  ? page.locator("div").filter(has_text=re.compile(r"^View 10 row\(s\)$")).nth(1).click()|page.locator("a").filter(has_text=re.compile(r"^2$")).click()|page.get_by_role("gridcell",
+    name="D.C. UNITED").first.click(button="right")
   : ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filters:
-            Hierarchy:
-              League:
-                radio_buttons:
-                  MLS:
-                    checked: true
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to display only rows where ''Stat Unit
+          Sales Fcst'' equals ''1''. The ''Stat Unit Sales Fcst'' column remains visible,
+          and other columns (''Team'', ''Game #'', ''Series #'', ''Season Type'',
+          ''Opp'') are unchanged.'
+        Forecast Total Summary: Remains unchanged, reflecting totals specific to 'March'
+          data within the filtered 'Regular' season.
     verification_plan:
-    - step_id_checkpoint: '1_3'
-      what_to_verify: Verify Checkbox is CHECKED
-    - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar is still OPEN
-  ? page.locator("#SideFilterproducthierarchyId").get_by_text("Team").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
-    > .pointer").first.click()|page.locator("#SideFilterproducthierarchyId").get_by_text("Team",
-    exact=True).click()|page.get_by_text("Department").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
-    > .pointer").first.click()|page.get_by_text("Department").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
-    > .pointer").click()
-  : ui_graph:
+    - step_id_checkpoint: '4_117'
+      what_to_verify: Verify that the grid updates to display only 10 rows per page,
+        ensuring pagination reflects the reduced row count.
+    - step_id_checkpoint: '4_118'
+      what_to_verify: Verify that the second page of the grid is displayed, showing
+        the next set of 10 rows based on the current filter criteria.
+    - step_id_checkpoint: '4_119'
+      what_to_verify: Verify that the right-click action on the 'D.C. UNITED' grid
+        cell triggers the expected context menu or action, allowing further interaction
+        or analysis specific to this team.
+  page.get_by_label("Context Menu").get_by_text("Dept Penetration Pivots").click():
+    ui_graph:
       Updated_VDOM_Here:
-        sidebar:
-          filters:
-            Hierarchy:
-              League:
-                radio_buttons:
-                  MLS:
-                    checked: true
-              Team:
-                checkboxes:
-                  first_checkbox:
-                    checked: true
-              Department:
-                checkboxes:
-                  first_checkbox:
-                    checked: true
-                  second_checkbox:
-                    checked: true
+        Filter Section:
+          Hierarchy Filter: Season Type
+          Selected Season Type: Regular
+        Daily Forecast by Event Grid: 'Updated to display only rows where ''Stat Unit
+          Sales Fcst'' equals ''1''. The ''Stat Unit Sales Fcst'' column remains visible,
+          and other columns (''Team'', ''Game #'', ''Series #'', ''Season Type'',
+          ''Opp'') are unchanged.'
+        Forecast Total Summary: Remains unchanged, reflecting totals specific to 'March'
+          data within the filtered 'Regular' season.
     verification_plan:
-    - step_id_checkpoint: '1_8'
-      what_to_verify: Verify 'Team' checkbox is CHECKED after clicking.
-    - step_id_checkpoint: '1_11'
-      what_to_verify: Verify 'Department' first checkbox is CHECKED after clicking.
+    - step_id_checkpoint: '4_120'
+      what_to_verify: Verify that selecting 'Dept Penetration Pivots' updates the
+        UI to display department-level metrics, such as penetration rates or contribution
+        percentages, in a new grid or chart.
     - step_id_checkpoint: END
-      what_to_verify: Verify 'Department' second checkbox is CHECKED and sidebar remains
-        OPEN.
+      what_to_verify: Ensure that the 'Daily Forecast by Event' grid remains unaffected
+        by this action, and verify that the 'Forecast Total Summary' continues to
+        reflect totals filtered by the 'Regular' season type.
 global_rules: []
-learned_rules: {}
-global_domain_context: This dashboard appears to be part of a demand forecasting application
-  tailored for sports-related events, specifically Major League Baseball (MLB). It
-  allows users to analyze and forecast demand based on game-specific parameters such
-  as "Game Day," "Location," and "Season Type." The interface includes filters for
-  refining data views, a "Forecast Total" section for aggregated insights, and a "Daily
-  Forecast by Event" grid that provides detailed event-level data, including team
-  names, game numbers, series, and results. The tool is likely used by businesses
-  to predict and plan for resource allocation, inventory, or staffing needs tied to
-  MLB events.
+global_domain_context: This dashboard appears to be a demand forecasting tool tailored
+  for events, specifically related to Major League Baseball (MLB). It allows users
+  to filter data by game day, location, and season type to analyze and predict demand
+  patterns. Key components include a filter section for refining data, a "Forecast
+  Total" summary, and a detailed "Daily Forecast by Event" grid displaying metrics
+  like team, game number, series, season type, and results. The tool is likely used
+  for operational planning, resource allocation, or inventory management tied to MLB
+  events.

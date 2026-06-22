@@ -1,0 +1,64 @@
+workflow_meta:
+  name: Auto-Generated UI Workflow
+  status: PENDING_DISCOVERY
+global_context:
+  page_description: To be populated by AI Scholar...
+  known_quirks: ''
+sections:
+- section_name: Global Filters
+  section_goal: ''
+  section_verification:
+    ai_understanding: ''
+    human_assertions: []
+  steps:
+  - step_id: '1_1'
+    raw_code: page.locator("#filter-toggle-iconId").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_1_before.png
+      intent: baselines/step_1_1_intent.png
+      after: baselines/step_1_1_after.png
+  - step_id: '1_2'
+    raw_code: page.locator("div").filter(has_text=re.compile(r"^Hierarchy$")).nth(2).click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_2_before.png
+      intent: baselines/step_1_2_intent.png
+      after: baselines/step_1_2_after.png
+  - step_id: '1_3'
+    raw_code: page.locator("div:nth-child(4) > esp-filter-sub-accordion-v1 > .sub-accordion-element
+      > .d-flex").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_3_before.png
+      intent: baselines/step_1_3_intent.png
+      after: baselines/step_1_3_after.png
+  - step_id: '1_4'
+    raw_code: page.locator("div").filter(has_text=re.compile(r"^HEADWEAR$")).click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_4_before.png
+      intent: baselines/step_1_4_intent.png
+      after: baselines/step_1_4_after.png
+  - step_id: '1_5'
+    raw_code: page.get_by_role("button", name="Apply Filters").click()
+    action: click
+    execution_mode: FAST_PASS
+    milestone_classification: UNCLASSIFIED
+    ai_understanding: ''
+    baseline_images:
+      before: baselines/step_1_5_before.png
+      intent: baselines/step_1_5_intent.png
+      after: baselines/step_1_5_after.png

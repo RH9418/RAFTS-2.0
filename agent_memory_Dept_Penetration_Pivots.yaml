@@ -2954,6 +2954,126 @@ cached_chunks:
     - step_id_checkpoint: END
       what_to_verify: Verify the sidebar remains open and filters are applied correctly
         after the page reload.
+  ? page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.deselected").first.click()|page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.deselected").first.click()|page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.deselected").first.click()|page.locator(".d-flex.flex-column.justify-content-center.font-size-10.align-items-center.checkbox-v2.m-r-10.deselected").click()|page.locator(".ellipses
+    > esp-multiselect-dropdown > .multiselect-dropdown > div > .w-100 > .d-flex.align-items-center
+    > .dropdown-caret").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+    verification_plan:
+    - step_id_checkpoint: '3_39'
+      what_to_verify: Verify that the '% Change vs LLY' metric is toggled on the Monthly
+        Trend chart. Ensure the corresponding line appears on the graph with the correct
+        color coding as per the legend.
+    - step_id_checkpoint: '3_40'
+      what_to_verify: Verify that toggling the next metric updates the chart by adding
+        or removing the corresponding line. Confirm that the legend updates accordingly.
+    - step_id_checkpoint: '3_41'
+      what_to_verify: Ensure that the third metric toggle action reflects on the chart
+        by adding or removing the respective line. Validate the accuracy of the line's
+        position and shape.
+    - step_id_checkpoint: '3_42'
+      what_to_verify: Confirm that the fourth metric toggle action updates the chart.
+        Check that the number of lines on the graph matches the selected metrics and
+        that the legend is consistent.
+    - step_id_checkpoint: '3_43'
+      what_to_verify: Verify that clicking the dropdown caret opens the filter options.
+        Ensure that the dropdown menu displays the correct filter options for further
+        customization.
+  page.locator(".pointer.zeb-adjustments").first.click()|page.get_by_text("Save Preference").click():
+    ui_graph:
+      Updated_VDOM_Here:
+        sidebar:
+          filter_section:
+            expanded: false
+            hierarchy_filter:
+              selected: true
+              team_filter:
+                selected: true
+                checkbox_state:
+                  ATHLETICS: checked
+                  BALTIMORE ORIOLES: checked
+                  CHICAGO WHITE SOX: unchecked
+                  Aggregate Values: checked
+                  department_filter:
+                    selected: true
+        notification_circle:
+          clicked: true
+        dropdown:
+          caret_clicked: true
+          option_selected: true
+          seasontype_filter:
+            caret_clicked: true
+          product_line_filter:
+            caret_clicked: true
+          time_filter:
+            caret_clicked: true
+        chart:
+          selected_metrics:
+          - Actual Sales & ROY Fcst ($)
+          - Sales Fcst Adjusted ($)
+          - GD Sales Fcst Adjusted ($)
+          - Non GD Sales Fcst Adjusted ($)
+          - GD Sales Fcst Override ($)
+          - Non GD Sales Fcst Override ($)
+          - TY Actual Sales ($)
+          - System Sales Fcst ($)
+          - GD Sales Fcst ($)
+          - Non GD Sales Fcst ($)
+          - LY Sales ($)
+          - '% Change vs LY'
+          - LLY Sales ($)
+          - '% Change vs LLY'
+    verification_plan:
+    - step_id_checkpoint: '3_44'
+      what_to_verify: Verify that clicking on the adjustment option ('zeb-adjustments')
+        updates the UI to reflect the selected adjustments. Check if the relevant
+        filters or metrics are highlighted or modified in the dataset.
+    - step_id_checkpoint: '3_45'
+      what_to_verify: Verify that clicking 'Save Preference' persists the selected
+        adjustments. Ensure that the Monthly Trend chart and other visualizations
+        update to reflect the saved preferences, and confirm that the preferences
+        are retained upon refreshing the page or navigating away and back.
 global_rules: []
 learned_rules:
   page.get_by_role("button", name="Apply Filters").click(): The 'Apply Filters' action
@@ -2993,3 +3113,11 @@ learned_rules:
     > .ag-cell-wrapper > .ag-group-contracted > .ag-icon").first.click()
   : 'this action expands the MENS row, there is no further UI state change expected
     from this action. Verify that the MENS row has expanded. '
+global_domain_context: This dashboard appears to be part of a demand forecasting and
+  sales analysis tool, likely used in retail or consumer goods industries. It tracks
+  and visualizes sales performance metrics, including actual sales, adjusted sales
+  forecasts, and overrides for both general distribution (GD) and non-GD sales. The
+  "Monthly Trend" chart provides a time-based comparison of these metrics, along with
+  percentage changes versus the previous year (LLY). The tool allows users to filter
+  data by product categories and customize the displayed metrics, supporting data-driven
+  decision-making for inventory planning, sales strategy, and demand forecasting.

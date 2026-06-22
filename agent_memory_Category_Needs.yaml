@@ -1,55 +1,39 @@
-learned_rules:
-  ? page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
-    > .pointer").first.click()
-  : 'This particular action shows that the ''Select All'' button was clicked, since
-    all the products were already selected before, this action deselects every product.
-    As a result, the filter cannot be applied, since there are no products selected
-    currently. Therefore, the ''apply'' button becomes disabled until the user selects
-    one or more products again. '
-  page.locator(".d-flex.flex-column.justify-content-center").first.click(): This action
-    displays the 'Select All' button being clicked. This can be verified by the blue
-    checkboxes highlighting all the rows that have been selected. The dropdown DOES
-    NOT close on its own. Even though 'Select All' has been checked, the grid will
-    not YET display all rows until the user closes up the row drop down first.
+learned_rules: {}
 cached_chunks:
   page.locator(".zeb-filter").first.click()|page.get_by_text("Hierarchy").click():
     ui_graph:
-      Updated_VDOM_Here:
-        Filter_Sidebar:
-          state: OPEN
-          children:
-            Hierarchy_Option:
-              state: VISIBLE
-              selected: false
+      Updated_VDOM_Here: {}
     verification_plan:
+    - step_id_checkpoint: '1_1'
+      what_to_verify: Verify that the filter dropdown is expanded, displaying available
+        filter options, including 'Hierarchy'. Ensure the UI reflects the user's intent
+        to refine the dataset.
     - step_id_checkpoint: '1_2'
-      what_to_verify: Verify 'Hierarchy' option is VISIBLE and selectable
+      what_to_verify: Verify that the 'Hierarchy' filter option is selected and highlighted.
+        Confirm that the dataset in the 'Monthly Summary' grid and any related visualizations
+        are updated to reflect the applied hierarchy filter.
     - step_id_checkpoint: END
-      what_to_verify: Verify Filter Sidebar remains OPEN
+      what_to_verify: Ensure that the 'Monthly Summary' grid and any other dependent
+        components (e.g., charts or tables) are re-rendered to display data filtered
+        by the selected hierarchy. Validate that the data aligns with the applied
+        filter criteria.
   page.get_by_text("League").click()|page.get_by_role("radio", name="MLS").check()|page.get_by_text("League").click():
     ui_graph:
-      Updated_VDOM_Here:
-        Filter_Sidebar:
-          state: OPEN
-          children:
-            Hierarchy_Option:
-              state: VISIBLE
-              selected: false
-              children:
-                League:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    MLS:
-                      state: VISIBLE
-                      selected: true
+      Updated_VDOM_Here: {}
     verification_plan:
     - step_id_checkpoint: '1_3'
-      what_to_verify: Verify 'League' is expanded.
+      what_to_verify: Verify that clicking 'League' expands the hierarchy filter dropdown,
+        displaying available league options.
     - step_id_checkpoint: '1_4'
-      what_to_verify: Verify 'MLS' radio button is checked.
+      what_to_verify: Verify that selecting the 'MLS' radio button applies the filter
+        to the dataset, and the selection is visually confirmed in the UI.
+    - step_id_checkpoint: '1_5'
+      what_to_verify: Verify that clicking 'League' again collapses the hierarchy
+        filter dropdown, and the 'MLS' selection remains applied.
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar is still OPEN.
+      what_to_verify: Verify that the Monthly Summary grid updates to display inventory
+        and sales data specific to the MLS league, and ensure that any associated
+        charts or metrics reflect the filtered dataset.
   ? page.get_by_text("Team", exact=True).click()|page.locator(".filter-values.d-flex.align-items-center.p-l-32.p-r-24
     > .custom-checkbox-wrapper > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
     > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
@@ -58,474 +42,167 @@ cached_chunks:
     > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
     > .pointer").first.click()|page.get_by_text("Team 6 selected").click()
   : ui_graph:
-      Updated_VDOM_Here:
-        Filter_Sidebar:
-          state: OPEN
-          children:
-            Hierarchy_Option:
-              state: VISIBLE
-              selected: false
-              children:
-                League:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    MLS:
-                      state: VISIBLE
-                      selected: true
-                Team:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Team 1:
-                      state: VISIBLE
-                      selected: false
-                    Team 2:
-                      state: VISIBLE
-                      selected: false
-                    Team 3:
-                      state: VISIBLE
-                      selected: false
-                    Team 4:
-                      state: VISIBLE
-                      selected: false
-                    Team 5:
-                      state: VISIBLE
-                      selected: false
-                    Team 6:
-                      state: VISIBLE
-                      selected: true
+      Updated_VDOM_Here: {}
     verification_plan:
     - step_id_checkpoint: '1_6'
-      what_to_verify: Verify 'Team' hierarchy is expanded and visible.
+      what_to_verify: Verify that clicking on 'Team' expands the hierarchy filter
+        options, displaying a list of available teams for selection.
+    - step_id_checkpoint: '1_7'
+      what_to_verify: Verify that the first checkbox under the 'Team' hierarchy is
+        selected, indicating the inclusion of the corresponding team in the filter
+        criteria.
+    - step_id_checkpoint: 1_8 to 1_12
+      what_to_verify: Verify that additional checkboxes are selected sequentially,
+        ensuring that multiple teams are included in the filter criteria.
     - step_id_checkpoint: '1_13'
-      what_to_verify: Verify 'Team 6' is selected.
+      what_to_verify: Verify that the filter summary updates to reflect 'Team 6 selected,'
+        confirming the applied filter criteria.
     - step_id_checkpoint: END
-      what_to_verify: Verify Filter Sidebar is still OPEN.
+      what_to_verify: Verify that the Monthly Summary grid and any related visualizations
+        update to display data specific to the selected teams, including metrics like
+        'BOM OH' and 'Actual Sales.' Ensure that the data aligns with the applied
+        filter criteria.
   ? page.get_by_text("Department").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
     > .pointer").first.click()|page.get_by_text("Department").click()
   : ui_graph:
-      Updated_VDOM_Here:
-        Filter_Sidebar:
-          state: OPEN
-          children:
-            Hierarchy_Option:
-              state: VISIBLE
-              selected: false
-              children:
-                League:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    MLS:
-                      state: VISIBLE
-                      selected: true
-                Team:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Team 1:
-                      state: VISIBLE
-                      selected: false
-                    Team 2:
-                      state: VISIBLE
-                      selected: false
-                    Team 3:
-                      state: VISIBLE
-                      selected: false
-                    Team 4:
-                      state: VISIBLE
-                      selected: false
-                    Team 5:
-                      state: VISIBLE
-                      selected: false
-                    Team 6:
-                      state: VISIBLE
-                      selected: true
-                Department:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Checkbox_1:
-                      state: VISIBLE
-                      selected: true
+      Updated_VDOM_Here: {}
     verification_plan:
+    - step_id_checkpoint: '1_14'
+      what_to_verify: Verify that clicking on 'Department' expands the filter options,
+        displaying a list of departments available for selection.
     - step_id_checkpoint: '1_15'
-      what_to_verify: Verify Checkbox_1 is CHECKED
+      what_to_verify: Verify that selecting a department checkbox updates the filter
+        state to include the selected department and highlights it in the UI.
+    - step_id_checkpoint: '1_16'
+      what_to_verify: Verify that collapsing the 'Department' filter retains the selected
+        department(s) and that the filter state is accurately reflected in the 'Apply
+        Filters' button.
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar is still OPEN
+      what_to_verify: Verify that applying the filter updates the 'Monthly Summary'
+        grid and other relevant data visualizations to reflect metrics specific to
+        the selected department(s). Ensure that the data aligns with the selected
+        department(s) and that no unrelated data is displayed.
   ? page.get_by_text("Attribute").click()|page.get_by_text("Product Line").click()|page.locator(".pointer.custom-checkbox-checked").first.click()|page.locator(".filter-values.d-flex.align-items-center.p-l-32.p-r-24
     > .custom-checkbox-wrapper > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
     > .pointer").first.click()
   : ui_graph:
-      Updated_VDOM_Here:
-        Filter_Sidebar:
-          state: OPEN
-          children:
-            Hierarchy_Option:
-              state: VISIBLE
-              selected: false
-              children:
-                League:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    MLS:
-                      state: VISIBLE
-                      selected: true
-                Team:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Team 1:
-                      state: VISIBLE
-                      selected: false
-                    Team 2:
-                      state: VISIBLE
-                      selected: false
-                    Team 3:
-                      state: VISIBLE
-                      selected: false
-                    Team 4:
-                      state: VISIBLE
-                      selected: false
-                    Team 5:
-                      state: VISIBLE
-                      selected: false
-                    Team 6:
-                      state: VISIBLE
-                      selected: true
-                Department:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Checkbox_1:
-                      state: VISIBLE
-                      selected: true
-                Attribute:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Product Line:
-                      state: VISIBLE
-                      expanded: true
-                      children:
-                        Checkbox_1:
-                          state: VISIBLE
-                          selected: false
-                        Checkbox_2:
-                          state: VISIBLE
-                          selected: false
-                        Checkbox_3:
-                          state: VISIBLE
-                          selected: false
+      Updated_VDOM_Here: {}
     verification_plan:
+    - step_id_checkpoint: '1_17'
+      what_to_verify: Verify that clicking on 'Attribute' opens the attribute selection
+        dropdown, allowing the user to choose filtering criteria.
+    - step_id_checkpoint: '1_18'
+      what_to_verify: Verify that selecting 'Product Line' updates the filter panel
+        to display relevant filtering options for product lines.
     - step_id_checkpoint: '1_19'
-      what_to_verify: Verify Checkbox_1 under Product Line is UNCHECKED
+      what_to_verify: Verify that clicking the first checkbox in the product line
+        filter applies the corresponding product line filter value to the dataset.
+    - step_id_checkpoint: '1_20'
+      what_to_verify: Verify that clicking the checkbox in the filter values section
+        applies the selected filter values to the dataset, ensuring the 'Monthly Summary'
+        grid and other visualizations update accordingly.
     - step_id_checkpoint: '1_21'
-      what_to_verify: Verify 'Select All' deselects all checkboxes and disables the
-        Apply button
+      what_to_verify: Verify that clicking the final checkbox confirms the application
+        of all selected filters, and the 'Monthly Summary' grid reflects the filtered
+        data, showing metrics specific to the selected product line.
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar is still OPEN
+      what_to_verify: Verify that the 'Monthly Summary' grid and any related visualizations
+        (e.g., charts or tables) have re-rendered to display data filtered by the
+        selected product line, ensuring accurate representation of metrics such as
+        'BOM OH' and 'Actual Sales.'
   ? page.get_by_text("Player").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
     > .pointer").first.click()|page.locator(".aggrigate-panel > .custom-checkbox-wrapper
-    > .pointer").click()|page.get_by_role("button", name="Apply Filters").click()
+    > .pointer").click()
   : ui_graph:
-      Updated_VDOM_Here:
-        Filter_Sidebar:
-          state: OPEN
-          children:
-            Hierarchy_Option:
-              state: VISIBLE
-              selected: false
-              children:
-                League:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    MLS:
-                      state: VISIBLE
-                      selected: true
-                Team:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Team 1:
-                      state: VISIBLE
-                      selected: false
-                    Team 2:
-                      state: VISIBLE
-                      selected: false
-                    Team 3:
-                      state: VISIBLE
-                      selected: false
-                    Team 4:
-                      state: VISIBLE
-                      selected: false
-                    Team 5:
-                      state: VISIBLE
-                      selected: false
-                    Team 6:
-                      state: VISIBLE
-                      selected: true
-                Department:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Checkbox_1:
-                      state: VISIBLE
-                      selected: true
-                Attribute:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Product Line:
-                      state: VISIBLE
-                      expanded: true
-                      children:
-                        Checkbox_1:
-                          state: VISIBLE
-                          selected: true
-                        Checkbox_2:
-                          state: VISIBLE
-                          selected: false
-                        Checkbox_3:
-                          state: VISIBLE
-                          selected: false
-                    Aggregate Values:
-                      state: VISIBLE
-                      selected: true
+      Updated_VDOM_Here: {}
     verification_plan:
+    - step_id_checkpoint: '1_22'
+      what_to_verify: Verify that the 'Player' filter is activated and displayed in
+        the filter panel, allowing the user to refine the dataset by player-specific
+        attributes.
     - step_id_checkpoint: '1_23'
-      what_to_verify: Verify Checkbox_1 under Product Line is CHECKED
+      what_to_verify: Verify that the first checkbox under the 'Player' filter is
+        selected, ensuring that the corresponding player-specific data is included
+        in the dataset.
     - step_id_checkpoint: '1_24'
-      what_to_verify: Verify Aggregate Values checkbox is CHECKED
+      what_to_verify: Verify that the 'Aggregate Values' option is enabled, ensuring
+        that the Monthly Summary grid and other metrics reflect aggregated player-level
+        data.
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar is still OPEN
+      what_to_verify: Verify that the Monthly Summary grid and any related visualizations
+        (e.g., charts) are updated to reflect the selected 'Player' filter and aggregated
+        values, showing accurate demand trends and inventory metrics.
+  page.get_by_role("button", name="Apply Filters").click():
+    ui_graph:
+      Updated_VDOM_Here: {}
+    verification_plan:
+    - step_id_checkpoint: '1_25'
+      what_to_verify: Verify that the 'Apply Filters' button triggers the application
+        of the selected filters (Game Day, Location, and Season Type) to the dataset.
+    - step_id_checkpoint: '1_25'
+      what_to_verify: Ensure the Monthly Summary grid updates to display data corresponding
+        to the applied filters, including metrics like BOM OH and Actual Sales for
+        the filtered criteria.
+    - step_id_checkpoint: '1_25'
+      what_to_verify: Confirm that any visualizations or charts (if present) dynamically
+        adjust to reflect the filtered dataset, ensuring alignment with the selected
+        parameters.
+    - step_id_checkpoint: END
+      what_to_verify: Validate that the filters remain active and visible in the UI,
+        providing clear feedback to the user about the applied criteria.
   page.locator(".zeb-filter").first.click():
     ui_graph:
-      Updated_VDOM_Here:
-        Filter_Sidebar:
-          state: CLOSED
-          children:
-            Hierarchy_Option:
-              state: HIDDEN
-              selected: false
-              children:
-                League:
-                  state: HIDDEN
-                  expanded: true
-                  children:
-                    MLS:
-                      state: HIDDEN
-                      selected: true
-                Team:
-                  state: HIDDEN
-                  expanded: true
-                  children:
-                    Team 1:
-                      state: HIDDEN
-                      selected: false
-                    Team 2:
-                      state: HIDDEN
-                      selected: false
-                    Team 3:
-                      state: HIDDEN
-                      selected: false
-                    Team 4:
-                      state: HIDDEN
-                      selected: false
-                    Team 5:
-                      state: HIDDEN
-                      selected: false
-                    Team 6:
-                      state: HIDDEN
-                      selected: true
-                Department:
-                  state: HIDDEN
-                  expanded: true
-                  children:
-                    Checkbox_1:
-                      state: HIDDEN
-                      selected: true
-                Attribute:
-                  state: HIDDEN
-                  expanded: true
-                  children:
-                    Product Line:
-                      state: HIDDEN
-                      expanded: true
-                      children:
-                        Checkbox_1:
-                          state: HIDDEN
-                          selected: true
-                        Checkbox_2:
-                          state: HIDDEN
-                          selected: false
-                        Checkbox_3:
-                          state: HIDDEN
-                          selected: false
-                    Aggregate Values:
-                      state: HIDDEN
-                      selected: true
+      Updated_VDOM_Here: {}
     verification_plan:
     - step_id_checkpoint: '1_26'
-      what_to_verify: Verify Filter Sidebar is CLOSED
+      what_to_verify: Verify that clicking the first filter in the '.zeb-filter' locator
+        highlights the selected filter and updates the filter panel to reflect the
+        chosen attribute (e.g., Player, Game Day, Location, or Season Type).
     - step_id_checkpoint: END
-      what_to_verify: Verify Filter Sidebar remains CLOSED
+      what_to_verify: Verify that the Monthly Summary grid and any associated visualizations
+        (e.g., charts or tables) are updated to reflect the refined dataset based
+        on the applied filter. Ensure that the displayed metrics, such as 'BOM OH'
+        and 'Actual Sales,' correspond to the filtered criteria.
   ? page.locator(".dropdown-caret.p-l-16").first.click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.locator(".overflow-auto
     > div:nth-child(2) > .d-flex").click()
   : ui_graph:
-      Updated_VDOM_Here:
-        Filter_Sidebar:
-          state: OPEN
-          children:
-            Hierarchy_Option:
-              state: VISIBLE
-              selected: false
-              children:
-                League:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    MLS:
-                      state: VISIBLE
-                      selected: true
-                Team:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Team 1:
-                      state: VISIBLE
-                      selected: false
-                    Team 2:
-                      state: VISIBLE
-                      selected: false
-                    Team 3:
-                      state: VISIBLE
-                      selected: false
-                    Team 4:
-                      state: VISIBLE
-                      selected: false
-                    Team 5:
-                      state: VISIBLE
-                      selected: false
-                    Team 6:
-                      state: VISIBLE
-                      selected: true
-                Department:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Checkbox_1:
-                      state: VISIBLE
-                      selected: true
-                Attribute:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Product Line:
-                      state: VISIBLE
-                      expanded: true
-                      children:
-                        Checkbox_1:
-                          state: VISIBLE
-                          selected: true
-                        Checkbox_2:
-                          state: VISIBLE
-                          selected: false
-                        Checkbox_3:
-                          state: VISIBLE
-                          selected: false
-                    Aggregate Values:
-                      state: VISIBLE
-                      selected: true
+      Updated_VDOM_Here: {}
     verification_plan:
+    - step_id_checkpoint: '2_1'
+      what_to_verify: Verify that the dropdown menu expands upon clicking the caret
+        icon, displaying available filter options for selection.
     - step_id_checkpoint: '2_2'
-      what_to_verify: Verify Checkbox is CHECKED
+      what_to_verify: Verify that the user-selected filter option is highlighted and
+        visually confirmed in the dropdown menu.
+    - step_id_checkpoint: '2_3'
+      what_to_verify: Verify that the dataset in the 'Monthly Summary' grid updates
+        dynamically to reflect the applied filter, showing data relevant to the selected
+        criteria (e.g., specific Game Day, Location, or Season Type).
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar is still OPEN
+      what_to_verify: Ensure that the 'Monthly Summary' grid and any associated visualizations
+        (e.g., charts) are updated correctly, and confirm that the applied filter
+        is displayed in the 'View Filter Summary' section for traceability.
   ? page.locator("#location-filterId > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown
     > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator("#seasontype-filterId
     > .wr-20 > esp-multiselect-dropdown > .multiselect-dropdown > div > .w-100 > .d-flex.align-items-center
     > .dropdown-caret").click()|page.get_by_role("button", name="Apply").click()
   : ui_graph:
-      Updated_VDOM_Here:
-        Filter_Sidebar:
-          state: OPEN
-          children:
-            Hierarchy_Option:
-              state: VISIBLE
-              selected: false
-              children:
-                League:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    MLS:
-                      state: VISIBLE
-                      selected: true
-                Team:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Team 1:
-                      state: VISIBLE
-                      selected: false
-                    Team 2:
-                      state: VISIBLE
-                      selected: false
-                    Team 3:
-                      state: VISIBLE
-                      selected: false
-                    Team 4:
-                      state: VISIBLE
-                      selected: false
-                    Team 5:
-                      state: VISIBLE
-                      selected: false
-                    Team 6:
-                      state: VISIBLE
-                      selected: true
-                Department:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Checkbox_1:
-                      state: VISIBLE
-                      selected: true
-                Attribute:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Product Line:
-                      state: VISIBLE
-                      expanded: true
-                      children:
-                        Checkbox_1:
-                          state: VISIBLE
-                          selected: true
-                        Checkbox_2:
-                          state: VISIBLE
-                          selected: false
-                        Checkbox_3:
-                          state: VISIBLE
-                          selected: false
-                    Aggregate Values:
-                      state: VISIBLE
-                      selected: true
-        Dropdowns:
-          Location:
-            state: OPEN
-            selected: null
-          Season Type:
-            state: OPEN
-            selected: null
+      Updated_VDOM_Here: {}
     verification_plan:
+    - step_id_checkpoint: '2_4'
+      what_to_verify: Verify that the 'Location' filter dropdown is expanded, displaying
+        all available location options for selection.
     - step_id_checkpoint: '2_5'
-      what_to_verify: Verify both Location and Season Type dropdowns are OPEN
+      what_to_verify: Verify that the 'Season Type' filter dropdown is expanded, displaying
+        all available season type options for selection.
+    - step_id_checkpoint: '2_6'
+      what_to_verify: Verify that clicking the 'Apply' button triggers the re-rendering
+        of the 'Category Needs' grid. Confirm that the grid now reflects data filtered
+        by the selected 'Location' and 'Season Type' values.
     - step_id_checkpoint: END
-      what_to_verify: Verify Filter Sidebar is still OPEN and Apply button was clicked
+      what_to_verify: Ensure that the 'Monthly Summary' grid updates to display metrics
+        such as 'BOM OH' and 'Actual Sales' based on the applied filters. Confirm
+        that the data aligns with the selected 'Location' and 'Season Type' criteria.
   ? page.locator(".wr-20.font-weight-normal > esp-multiselect-dropdown > .multiselect-dropdown
     > div > .w-100 > .d-flex.align-items-center > .dropdown-caret").click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.locator(".d-flex.dropdown-option.align-items-center.p-v-5.p-l-32
     > .d-flex").first.click()|page.locator(".overflow-auto > div:nth-child(2) > .d-flex").click()|page.locator(".overflow-auto
@@ -533,82 +210,44 @@ cached_chunks:
     > .d-flex").click()|page.locator("div:nth-child(5) > .d-flex").click()|page.locator("div:nth-child(6)
     > .d-flex").click()
   : ui_graph:
-      Updated_VDOM_Here:
-        Filter_Sidebar:
-          state: OPEN
-          children:
-            Hierarchy_Option:
-              state: VISIBLE
-              selected: false
-              children:
-                League:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    MLS:
-                      state: VISIBLE
-                      selected: true
-                Team:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Team 1:
-                      state: VISIBLE
-                      selected: true
-                    Team 2:
-                      state: VISIBLE
-                      selected: true
-                    Team 3:
-                      state: VISIBLE
-                      selected: true
-                    Team 4:
-                      state: VISIBLE
-                      selected: true
-                    Team 5:
-                      state: VISIBLE
-                      selected: true
-                    Team 6:
-                      state: VISIBLE
-                      selected: true
-                Department:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Checkbox_1:
-                      state: VISIBLE
-                      selected: true
-                Attribute:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Product Line:
-                      state: VISIBLE
-                      expanded: true
-                      children:
-                        Checkbox_1:
-                          state: VISIBLE
-                          selected: true
-                        Checkbox_2:
-                          state: VISIBLE
-                          selected: false
-                        Checkbox_3:
-                          state: VISIBLE
-                          selected: false
-                    Aggregate Values:
-                      state: VISIBLE
-                      selected: true
-        Dropdowns:
-          Location:
-            state: OPEN
-            selected: null
-          Season Type:
-            state: OPEN
-            selected: null
+      Updated_VDOM_Here: {}
     verification_plan:
+    - step_id_checkpoint: '3_1'
+      what_to_verify: Verify that the dropdown menu for the filter is opened, allowing
+        the user to select specific filter options.
     - step_id_checkpoint: '3_2'
-      what_to_verify: Verify 'Select All' is checked and all rows are highlighted.
+      what_to_verify: Verify that the first filter option is selected, and the UI
+        reflects this selection by updating the filter label or highlighting the chosen
+        option.
+    - step_id_checkpoint: '3_3'
+      what_to_verify: Verify that the second filter option is selected, and the UI
+        reflects this selection by updating the filter label or highlighting the chosen
+        option.
+    - step_id_checkpoint: '3_4'
+      what_to_verify: Verify that the third filter option is selected, and the UI
+        reflects this selection by updating the filter label or highlighting the chosen
+        option.
+    - step_id_checkpoint: '3_5'
+      what_to_verify: Verify that the fourth filter option is selected, and the UI
+        reflects this selection by updating the filter label or highlighting the chosen
+        option.
+    - step_id_checkpoint: '3_6'
+      what_to_verify: Verify that the fifth filter option is selected, and the UI
+        reflects this selection by updating the filter label or highlighting the chosen
+        option.
+    - step_id_checkpoint: '3_7'
+      what_to_verify: Verify that the sixth filter option is selected, and the UI
+        reflects this selection by updating the filter label or highlighting the chosen
+        option.
+    - step_id_checkpoint: '3_8'
+      what_to_verify: Verify that the seventh filter option is selected, and the UI
+        reflects this selection by updating the filter label or highlighting the chosen
+        option.
     - step_id_checkpoint: END
-      what_to_verify: Verify the Filter Sidebar remains OPEN.
+      what_to_verify: Verify that the 'Monthly Summary' grid has been updated to reflect
+        the applied filters, showing data relevant to the selected product categories,
+        game days, locations, and season types. Ensure that the BOM OH and Actual
+        Sales metrics are recalculated based on the filtered dataset.
   ? page.locator("div:nth-child(7) > .d-flex").click()|page.locator(".wr-20.font-weight-normal
     > esp-multiselect-dropdown > .multiselect-dropdown > div > .w-100").click()|page.locator(".wr-20.font-weight-normal
     > esp-multiselect-dropdown > .multiselect-dropdown > div > .w-100 > .d-flex.align-items-center
@@ -616,118 +255,324 @@ cached_chunks:
     > .d-flex").click()|page.locator("div:nth-child(10) > .d-flex").click()|page.locator("div:nth-child(11)
     > .d-flex").click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()
   : ui_graph:
-      Updated_VDOM_Here:
-        Filter_Sidebar:
-          state: OPEN
-          children:
-            Hierarchy_Option:
-              state: VISIBLE
-              selected: false
-              children:
-                League:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    MLS:
-                      state: VISIBLE
-                      selected: true
-                Team:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Team 1:
-                      state: VISIBLE
-                      selected: true
-                    Team 2:
-                      state: VISIBLE
-                      selected: true
-                    Team 3:
-                      state: VISIBLE
-                      selected: true
-                    Team 4:
-                      state: VISIBLE
-                      selected: true
-                    Team 5:
-                      state: VISIBLE
-                      selected: true
-                    Team 6:
-                      state: VISIBLE
-                      selected: true
-                Department:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Checkbox_1:
-                      state: VISIBLE
-                      selected: true
-                Attribute:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Product Line:
-                      state: VISIBLE
-                      expanded: true
-                      children:
-                        Checkbox_1:
-                          state: VISIBLE
-                          selected: true
-                        Checkbox_2:
-                          state: VISIBLE
-                          selected: false
-                        Checkbox_3:
-                          state: VISIBLE
-                          selected: false
-                    Aggregate Values:
-                      state: VISIBLE
-                      selected: true
-        Dropdowns:
-          Location:
-            state: OPEN
-            selected: null
-          Season Type:
-            state: OPEN
-            selected: null
-          Columns:
-            state: OPEN
-            children:
-              Select All:
-                state: VISIBLE
-                selected: true
-              BOM OH:
-                state: VISIBLE
-                selected: true
-              Actual Sales:
-                state: VISIBLE
-                selected: true
-              Actual Sales ($):
-                state: VISIBLE
-                selected: true
-              Actual Sales & ROY Fcst:
-                state: VISIBLE
-                selected: true
-              Actual Sales & ROY Fcst ($):
-                state: VISIBLE
-                selected: true
-              LY Unit Sales:
-                state: VISIBLE
-                selected: true
-              LY Sales ($):
-                state: VISIBLE
-                selected: false
-              OO:
-                state: VISIBLE
-                selected: false
-              Recommended Unit Needs:
-                state: VISIBLE
-                selected: false
-              Recommended Retail Needs:
-                state: VISIBLE
-                selected: false
+      Updated_VDOM_Here: {}
     verification_plan:
+    - step_id_checkpoint: '3_9'
+      what_to_verify: Verify that clicking on the dropdown menu expands the list of
+        available metrics for selection, such as 'Actual Sales' and 'LY Unit Sales.'
+        Ensure the dropdown is visible and interactive.
+    - step_id_checkpoint: '3_10'
+      what_to_verify: Verify that clicking on the multiselect dropdown allows the
+        user to select or deselect specific metrics. Confirm that the selected metrics
+        are highlighted and reflected in the grid.
+    - step_id_checkpoint: '3_11'
+      what_to_verify: Verify that clicking the dropdown caret expands additional options
+        for metric selection. Ensure the dropdown behaves as expected and displays
+        all available metrics.
+    - step_id_checkpoint: '3_12'
+      what_to_verify: Verify that selecting 'div:nth-child(8)' updates the grid to
+        include or exclude the corresponding metric. Confirm that the grid dynamically
+        reflects the change.
+    - step_id_checkpoint: '3_13'
+      what_to_verify: Verify that selecting 'div:nth-child(9)' updates the grid to
+        include or exclude the corresponding metric. Ensure the grid dynamically reflects
+        the change.
+    - step_id_checkpoint: '3_14'
+      what_to_verify: Verify that selecting 'div:nth-child(10)' updates the grid to
+        include or exclude the corresponding metric. Confirm that the grid dynamically
+        reflects the change.
+    - step_id_checkpoint: '3_15'
+      what_to_verify: Verify that selecting 'div:nth-child(11)' updates the grid to
+        include or exclude the corresponding metric. Ensure the grid dynamically reflects
+        the change.
     - step_id_checkpoint: '3_16'
-      what_to_verify: Verify Checkbox is CHECKED
+      what_to_verify: Verify that clicking the first element in '.d-flex.flex-column.justify-content-center'
+        applies the final selection of metrics to the grid. Confirm that the grid
+        updates to display only the selected metrics.
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar is still OPEN
+      what_to_verify: Verify that the 'Category Needs' grid accurately reflects the
+        selected metrics, such as 'Actual Sales' and 'LY Unit Sales,' and that the
+        data aligns with the user's selections. Ensure no discrepancies in the displayed
+        data.
+  ? "page.locator(\".wr-20.font-weight-normal > esp-multiselect-dropdown > .multiselect-dropdown\
+    \ > div > .w-100 > .d-flex.align-items-center > .dropdown-caret\").click()|page.get_by_role(\"\
+    button\", name=\"\uE0BFcolumns\").click()|page.get_by_role(\"checkbox\", name=\"\
+    Toggle All Columns Visibility\").uncheck()|page.get_by_role(\"treeitem\", name=\"\
+    Feb-26 Column\").get_by_label(\"Press SPACE to toggle\").check()|page.get_by_role(\"\
+    treeitem\", name=\"Mar-26 Column\").get_by_label(\"Press SPACE to toggle\").check()|page.get_by_role(\"\
+    treeitem\", name=\"Apr-26 Column\").get_by_label(\"Press SPACE to toggle\").check()"
+  : ui_graph:
+      Updated_VDOM_Here:
+        Monthly Summary Grid:
+          Visible Columns:
+          - Feb-26
+          - Mar-26
+          - Apr-26
+          Hidden Columns:
+          - Jul-26
+          - Aug-26
+          - Sep-26
+          - Nov-26
+          - Other Columns
+    verification_plan:
+    - step_id_checkpoint: '3_19'
+      what_to_verify: Ensure that all columns in the Monthly Summary grid are hidden
+        after unchecking 'Toggle All Columns Visibility'.
+    - step_id_checkpoint: '3_20'
+      what_to_verify: Verify that the 'Feb-26' column is visible in the Monthly Summary
+        grid after being toggled on.
+    - step_id_checkpoint: '3_21'
+      what_to_verify: Verify that the 'Mar-26' column is visible in the Monthly Summary
+        grid after being toggled on.
+    - step_id_checkpoint: '3_22'
+      what_to_verify: Verify that the 'Apr-26' column is visible in the Monthly Summary
+        grid after being toggled on.
+    - step_id_checkpoint: END
+      what_to_verify: Confirm that the Monthly Summary grid displays only the selected
+        columns (Feb-26, Mar-26, Apr-26) and that all other columns remain hidden.
+  ? page.get_by_role("treeitem", name="Apr-26 Column").get_by_label("Press SPACE to
+    toggle").uncheck()|page.get_by_role("treeitem", name="May-26 Column").get_by_label("Press
+    SPACE to toggle").check()|page.get_by_role("treeitem", name="May-26 Column").get_by_label("Press
+    SPACE to toggle").uncheck()|page.get_by_role("treeitem", name="Jul-26 Column").get_by_label("Press
+    SPACE to toggle").check()|page.get_by_role("treeitem", name="Jul-26 Column").get_by_label("Press
+    SPACE to toggle").uncheck()|page.get_by_role("treeitem", name="Aug-26 Column").get_by_label("Press
+    SPACE to toggle").check()|page.get_by_role("treeitem", name="Aug-26 Column").get_by_label("Press
+    SPACE to toggle").uncheck()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Monthly Summary Grid:
+          Visible Columns:
+          - Feb-26
+          - Mar-26
+          - Apr-26
+          Hidden Columns:
+          - Jul-26
+          - Aug-26
+          - Sep-26
+          - Nov-26
+          - Other Columns
+    verification_plan:
+    - step_id_checkpoint: '3_23'
+      what_to_verify: Verify that the 'Apr-26' column remains visible in the 'Monthly
+        Summary' grid after the toggle action is performed.
+    - step_id_checkpoint: '3_24'
+      what_to_verify: Verify that the 'May-26' column becomes visible in the 'Monthly
+        Summary' grid after the toggle action is performed.
+    - step_id_checkpoint: '3_25'
+      what_to_verify: Verify that the 'May-26' column is hidden again in the 'Monthly
+        Summary' grid after the toggle action is performed.
+    - step_id_checkpoint: '3_26'
+      what_to_verify: Verify that the 'Jul-26' column becomes visible in the 'Monthly
+        Summary' grid after the toggle action is performed.
+    - step_id_checkpoint: '3_27'
+      what_to_verify: Verify that the 'Jul-26' column is hidden again in the 'Monthly
+        Summary' grid after the toggle action is performed.
+    - step_id_checkpoint: '3_28'
+      what_to_verify: Verify that the 'Aug-26' column becomes visible in the 'Monthly
+        Summary' grid after the toggle action is performed.
+    - step_id_checkpoint: '3_29'
+      what_to_verify: Verify that the 'Aug-26' column is hidden again in the 'Monthly
+        Summary' grid after the toggle action is performed.
+    - step_id_checkpoint: END
+      what_to_verify: Ensure that the final state of the 'Monthly Summary' grid reflects
+        the correct visibility of columns based on the toggling actions performed,
+        with 'Feb-26,' 'Mar-26,' and 'Apr-26' remaining visible.
+  ? page.get_by_role("treeitem", name="Sep-26 Column").get_by_label("Press SPACE to
+    toggle visibility (hidden)").check()|page.get_by_role("treeitem", name="Sep-26
+    Column").get_by_label("Press SPACE to toggle visibility (hidden)").uncheck()|page.get_by_role("treeitem",
+    name="Oct-26 Column").get_by_label("Press SPACE to toggle visibility (hidden)").check()|page.get_by_role("treeitem",
+    name="Oct-26 Column").get_by_label("Press SPACE to toggle visibility (hidden)").uncheck()|page.locator("#ag-1797-input").check()|page.get_by_role("treeitem",
+    name="Nov-26 Column").get_by_label("Press SPACE to toggle visibility (visible)").uncheck()|page.locator("#ag-1797-input").check()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Monthly Summary Grid:
+          Visible Columns:
+          - Feb-26
+          - Mar-26
+          - Apr-26
+          Hidden Columns:
+          - Jul-26
+          - Aug-26
+          - Sep-26
+          - Oct-26
+          - Nov-26
+          - Other Columns
+    verification_plan:
+    - step_id_checkpoint: '3_30'
+      what_to_verify: Verify that the 'Sep-26' column is toggled to visible in the
+        'Monthly Summary' grid, and confirm that the grid updates to include data
+        for 'Sep-26'.
+    - step_id_checkpoint: '3_31'
+      what_to_verify: Verify that the 'Sep-26' column is toggled back to hidden in
+        the 'Monthly Summary' grid, and confirm that the grid updates to exclude data
+        for 'Sep-26'.
+    - step_id_checkpoint: '3_32'
+      what_to_verify: Verify that the 'Oct-26' column is toggled to visible in the
+        'Monthly Summary' grid, and confirm that the grid updates to include data
+        for 'Oct-26'.
+    - step_id_checkpoint: '3_33'
+      what_to_verify: Verify that the 'Oct-26' column is toggled back to hidden in
+        the 'Monthly Summary' grid, and confirm that the grid updates to exclude data
+        for 'Oct-26'.
+    - step_id_checkpoint: '3_35'
+      what_to_verify: Verify that the 'Nov-26' column is toggled to hidden in the
+        'Monthly Summary' grid, and confirm that the grid updates to exclude data
+        for 'Nov-26'.
+    - step_id_checkpoint: END
+      what_to_verify: Ensure that the final state of the 'Monthly Summary' grid reflects
+        the visibility toggles applied to the columns (e.g., 'Sep-26', 'Oct-26', 'Nov-26')
+        and that the displayed data aligns with the selected columns.
+  ? "page.get_by_role(\"button\", name=\"\uE0BFcolumns\").click()|page.get_by_role(\"\
+    button\", name=\"\uE0BFcolumns\").click()|page.get_by_role(\"checkbox\", name=\"\
+    Toggle All Columns Visibility\").check()|page.get_by_role(\"button\", name=\"\uE0BF\
+    columns\").click()|page.locator(\".pointer.zeb-adjustments\").click()|page.get_by_text(\"\
+    Save Preference\").click()"
+  : ui_graph:
+      Updated_VDOM_Here:
+        Monthly Summary Grid:
+          Visible Columns:
+          - Feb-26
+          - Mar-26
+          - Apr-26
+          - May-26
+          - Jul-26
+          - Aug-26
+          - Sep-26
+          - Oct-26
+          - Nov-26
+          - Other Columns
+          Hidden Columns: []
+    verification_plan:
+    - step_id_checkpoint: '3_39'
+      what_to_verify: Verify that all columns in the 'Monthly Summary' grid are now
+        visible, including previously hidden months such as 'Jul-26', 'Aug-26', and
+        'Nov-26'.
+    - step_id_checkpoint: '3_42'
+      what_to_verify: Verify that the 'Save Preference' action successfully stores
+        the updated column visibility settings, ensuring the same configuration is
+        applied when the user revisits the dashboard.
+  ? page.locator(".icon-color-toolbar-active.zeb-download-underline").click()|page.locator(".dropdown-caret.p-l-16").first.click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.get_by_text("ResetApply").click()|page.get_by_role("button",
+    name="Apply").click()|page.locator(".ag-header-cell.ag-header-parent-hidden.ag-header-cell-sortable.ag-header-background.ag-focus-managed.ag-header-active
+    > .ag-header-cell-comp-wrapper > .ag-cell-label-container").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Monthly Summary Grid:
+          Visible Columns:
+          - Feb-26
+          - Mar-26
+          - Apr-26
+          - May-26
+          - Jul-26
+          - Aug-26
+          - Sep-26
+          - Oct-26
+          - Nov-26
+          - Other Columns
+          Hidden Columns: []
+    verification_plan:
+    - step_id_checkpoint: '3_43'
+      what_to_verify: Verify that clicking the toolbar icon triggers the dropdown
+        menu for filter options, allowing the user to reset or apply filters.
+    - step_id_checkpoint: '3_44'
+      what_to_verify: Verify that the dropdown menu expands, displaying filter options
+        relevant to the 'Monthly Summary' grid.
+    - step_id_checkpoint: '3_45'
+      what_to_verify: Verify that selecting a filter option updates the filter selection
+        in the UI, preparing the grid for data refinement.
+    - step_id_checkpoint: '3_46'
+      what_to_verify: Verify that clicking 'ResetApply' clears any previously applied
+        filters, resetting the grid to its default state.
+    - step_id_checkpoint: '3_47'
+      what_to_verify: Verify that clicking 'Apply' applies the selected filters, updating
+        the 'Monthly Summary' grid to reflect the refined dataset.
+    - step_id_checkpoint: '3_48'
+      what_to_verify: Verify that clicking the column header triggers sorting functionality,
+        reordering the data in the 'Monthly Summary' grid based on the selected column.
+  ? page.locator(".zeb-filter").first.click()|page.get_by_text("Hierarchy").click()|page.get_by_text("League").click()|page.get_by_role("radio",
+    name="MLS").check()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Game Day: All Days
+          Location: All
+          Season Type: All Season Types
+          League: MLS
+        Monthly Summary:
+          Measures:
+          - BOM OH
+          - Actual Sales
+          Data: Updated to reflect metrics for the MLS league.
+    verification_plan:
+    - step_id_checkpoint: '1_3'
+      what_to_verify: Verify that the 'League' filter is selected and the dropdown
+        options are displayed, allowing the user to choose a specific league.
+    - step_id_checkpoint: '1_4'
+      what_to_verify: Verify that the 'MLS' radio button is selected, and the filter
+        is applied to the dataset.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the 'Monthly Summary' grid and any other relevant
+        sections (e.g., charts or tables) are updated to display data specific to
+        the 'MLS' league, including metrics such as 'BOM OH' and 'Actual Sales'.
+  ? page.get_by_text("League").click()|page.get_by_text("Team", exact=True).click()|page.locator(".filter-values.d-flex.align-items-center.p-l-32.p-r-24
+    > .custom-checkbox-wrapper > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8.pointer.white-background-color
+    > .pointer").first.click()|page.get_by_text("Team 6 selected").click()
+  : ui_graph:
+      Updated_VDOM_Here:
+        Filter:
+          Game Day: All Days
+          Location: All
+          Season Type: All Season Types
+          League: MLS
+          Team: Team 6
+        Monthly Summary:
+          Measures:
+          - BOM OH
+          - Actual Sales
+          Data: Updated to reflect metrics for Team 6 within the MLS league.
+    verification_plan:
+    - step_id_checkpoint: '1_5'
+      what_to_verify: Verify that the 'League' filter is actively set to MLS and highlighted
+        in the UI, ensuring the dataset is scoped to MLS league data.
+    - step_id_checkpoint: '1_6'
+      what_to_verify: Verify that the 'Team' filter option is displayed and selectable,
+        allowing the user to refine the dataset further within the MLS league.
+    - step_id_checkpoint: '1_13'
+      what_to_verify: Verify that selecting 'Team 6' updates the Monthly Summary grid
+        to display inventory and sales metrics specific to Team 6 within the MLS league.
+        Ensure the forecasting trends and BOM OH values reflect this selection.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Monthly Summary grid and any associated charts
+        or visualizations have successfully re-rendered to display data relevant to
+        Team 6, confirming the filter application.
+  ? page.get_by_text("Player").click()|page.locator(".custom-checkbox-wrapper.overflow-hidden.d-flex.justify-content-center.m-r-8
+    > .pointer").first.click()|page.locator(".aggrigate-panel > .custom-checkbox-wrapper
+    > .pointer").click()|page.get_by_role("button", name="Apply Filters").click()
+  : ui_graph:
+      Updated_VDOM_Here: {}
+    verification_plan:
+    - step_id_checkpoint: '1_22'
+      what_to_verify: Verify that the 'Player' filter section is expanded, allowing
+        the user to select specific options for filtering.
+    - step_id_checkpoint: '1_23'
+      what_to_verify: Verify that the first checkbox under the 'Player' filter is
+        selected, ensuring the corresponding data subset is included in the filter
+        criteria.
+    - step_id_checkpoint: '1_24'
+      what_to_verify: Verify that the 'Aggregate Values' checkbox is selected, indicating
+        that the data in the Monthly Summary grid will be aggregated based on the
+        selected filters.
+    - step_id_checkpoint: '1_25'
+      what_to_verify: Verify that the 'Apply Filters' button triggers the application
+        of the selected filters, updating the Monthly Summary grid and other relevant
+        data visualizations to reflect the filtered dataset.
+    - step_id_checkpoint: END
+      what_to_verify: Verify that the Monthly Summary grid and any associated charts
+        or metrics are updated to display data filtered by the selected 'Player' criteria,
+        with aggregated values if applicable.
   ? "page.locator(\".wr-20.font-weight-normal > esp-multiselect-dropdown > .multiselect-dropdown\
     \ > div > .w-100 > .d-flex.align-items-center > .dropdown-caret\").click()|page.get_by_role(\"\
     button\", name=\"\uE0BFcolumns\").click()|page.get_by_role(\"checkbox\", name=\"\
@@ -739,138 +584,42 @@ cached_chunks:
     treeitem\", name=\"May-26 Column\").get_by_label(\"Press SPACE to toggle\").check()"
   : ui_graph:
       Updated_VDOM_Here:
-        Filter_Sidebar:
-          state: OPEN
-          children:
-            Hierarchy_Option:
-              state: VISIBLE
-              selected: false
-              children:
-                League:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    MLS:
-                      state: VISIBLE
-                      selected: true
-                Team:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Team 1:
-                      state: VISIBLE
-                      selected: true
-                    Team 2:
-                      state: VISIBLE
-                      selected: true
-                    Team 3:
-                      state: VISIBLE
-                      selected: true
-                    Team 4:
-                      state: VISIBLE
-                      selected: true
-                    Team 5:
-                      state: VISIBLE
-                      selected: true
-                    Team 6:
-                      state: VISIBLE
-                      selected: true
-                Department:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Checkbox_1:
-                      state: VISIBLE
-                      selected: true
-                Attribute:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Product Line:
-                      state: VISIBLE
-                      expanded: true
-                      children:
-                        Checkbox_1:
-                          state: VISIBLE
-                          selected: true
-                        Checkbox_2:
-                          state: VISIBLE
-                          selected: false
-                        Checkbox_3:
-                          state: VISIBLE
-                          selected: false
-                    Aggregate Values:
-                      state: VISIBLE
-                      selected: true
-        Dropdowns:
-          Location:
-            state: OPEN
-            selected: null
-          Season Type:
-            state: OPEN
-            selected: null
-          Columns:
-            state: OPEN
-            children:
-              Select All:
-                state: VISIBLE
-                selected: false
-              BOM OH:
-                state: VISIBLE
-                selected: false
-              Actual Sales:
-                state: VISIBLE
-                selected: false
-              Actual Sales ($):
-                state: VISIBLE
-                selected: false
-              Actual Sales & ROY Fcst:
-                state: VISIBLE
-                selected: false
-              Actual Sales & ROY Fcst ($):
-                state: VISIBLE
-                selected: false
-              LY Unit Sales:
-                state: VISIBLE
-                selected: false
-              LY Sales ($):
-                state: VISIBLE
-                selected: false
-              OO:
-                state: VISIBLE
-                selected: false
-              Recommended Unit Needs:
-                state: VISIBLE
-                selected: false
-              Recommended Retail Needs:
-                state: VISIBLE
-                selected: false
-              Feb-26 Column:
-                state: VISIBLE
-                selected: true
-              Mar-26 Column:
-                state: VISIBLE
-                selected: true
-              Apr-26 Column:
-                state: VISIBLE
-                selected: false
-              May-26 Column:
-                state: VISIBLE
-                selected: true
+        Monthly_Summary_Grid:
+          Visible_Columns:
+          - Feb-26
+          - Mar-26
+          - May-26
+          Hidden_Columns:
+          - Apr-26
+          - Other_Unselected_Columns
     verification_plan:
+    - step_id_checkpoint: '3_17'
+      what_to_verify: Verify that the column selection dropdown is expanded, displaying
+        all available columns for selection.
+    - step_id_checkpoint: '3_18'
+      what_to_verify: Verify that the 'Columns' button is clicked, and the column
+        visibility options are displayed.
     - step_id_checkpoint: '3_19'
-      what_to_verify: Verify all columns are unchecked after toggling 'Select All'
-        off.
+      what_to_verify: Verify that all columns are deselected, and the grid updates
+        to reflect no visible columns.
     - step_id_checkpoint: '3_20'
-      what_to_verify: Verify 'Feb-26 Column' is checked.
+      what_to_verify: Verify that the 'Feb-26' column is selected, and the grid updates
+        to display this column.
     - step_id_checkpoint: '3_21'
-      what_to_verify: Verify 'Mar-26 Column' is checked.
+      what_to_verify: Verify that the 'Mar-26' column is selected, and the grid updates
+        to display this column.
+    - step_id_checkpoint: '3_22'
+      what_to_verify: Verify that the 'Apr-26' column is selected, and the grid updates
+        to display this column.
     - step_id_checkpoint: '3_23'
-      what_to_verify: Verify 'Apr-26 Column' is unchecked.
+      what_to_verify: Verify that the 'Apr-26' column is deselected, and the grid
+        updates to hide this column.
     - step_id_checkpoint: '3_24'
-      what_to_verify: Verify 'May-26 Column' is checked.
+      what_to_verify: Verify that the 'May-26' column is selected, and the grid updates
+        to display this column.
     - step_id_checkpoint: END
-      what_to_verify: Verify the 'Columns' dropdown remains open.
+      what_to_verify: Verify that the 'Monthly Summary' grid displays only the selected
+        columns (Feb-26, Mar-26, May-26) and hides all other columns, including Apr-26.
   ? page.get_by_role("treeitem", name="May-26 Column").get_by_label("Press SPACE to
     toggle").uncheck()|page.get_by_role("treeitem", name="Jul-26 Column").get_by_label("Press
     SPACE to toggle").check()|page.get_by_role("treeitem", name="Jul-26 Column").get_by_label("Press
@@ -882,143 +631,57 @@ cached_chunks:
     name="Oct-26 Column").get_by_label("Press SPACE to toggle visibility (hidden)").check()
   : ui_graph:
       Updated_VDOM_Here:
-        Filter_Sidebar:
-          state: OPEN
-          children:
-            Hierarchy_Option:
-              state: VISIBLE
-              selected: false
-              children:
-                League:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    MLS:
-                      state: VISIBLE
-                      selected: true
-                Team:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Team 1:
-                      state: VISIBLE
-                      selected: true
-                    Team 2:
-                      state: VISIBLE
-                      selected: true
-                    Team 3:
-                      state: VISIBLE
-                      selected: true
-                    Team 4:
-                      state: VISIBLE
-                      selected: true
-                    Team 5:
-                      state: VISIBLE
-                      selected: true
-                    Team 6:
-                      state: VISIBLE
-                      selected: true
-                Department:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Checkbox_1:
-                      state: VISIBLE
-                      selected: true
-                Attribute:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Product Line:
-                      state: VISIBLE
-                      expanded: true
-                      children:
-                        Checkbox_1:
-                          state: VISIBLE
-                          selected: true
-                        Checkbox_2:
-                          state: VISIBLE
-                          selected: false
-                        Checkbox_3:
-                          state: VISIBLE
-                          selected: false
-                    Aggregate Values:
-                      state: VISIBLE
-                      selected: true
-        Dropdowns:
-          Location:
-            state: OPEN
-            selected: null
-          Season Type:
-            state: OPEN
-            selected: null
-          Columns:
-            state: OPEN
-            children:
-              Select All:
-                state: VISIBLE
-                selected: false
-              BOM OH:
-                state: VISIBLE
-                selected: false
-              Actual Sales:
-                state: VISIBLE
-                selected: false
-              Actual Sales ($):
-                state: VISIBLE
-                selected: false
-              Actual Sales & ROY Fcst:
-                state: VISIBLE
-                selected: false
-              Actual Sales & ROY Fcst ($):
-                state: VISIBLE
-                selected: false
-              LY Unit Sales:
-                state: VISIBLE
-                selected: false
-              LY Sales ($):
-                state: VISIBLE
-                selected: false
-              OO:
-                state: VISIBLE
-                selected: false
-              Recommended Unit Needs:
-                state: VISIBLE
-                selected: false
-              Recommended Retail Needs:
-                state: VISIBLE
-                selected: false
-              Feb-26 Column:
-                state: VISIBLE
-                selected: true
-              Mar-26 Column:
-                state: VISIBLE
-                selected: true
-              Apr-26 Column:
-                state: VISIBLE
-                selected: false
-              May-26 Column:
-                state: VISIBLE
-                selected: false
-              Jul-26 Column:
-                state: VISIBLE
-                selected: false
-              Aug-26 Column:
-                state: VISIBLE
-                selected: false
-              Sep-26 Column:
-                state: VISIBLE
-                selected: false
-              Oct-26 Column:
-                state: VISIBLE
-                selected: true
+        Monthly_Summary_Grid:
+          Visible_Columns:
+          - Feb-26
+          - Mar-26
+          - May-26
+          - Oct-26
+          Hidden_Columns:
+          - Apr-26
+          - Jul-26
+          - Aug-26
+          - Sep-26
+          - Nov-26
+          - Other_Unselected_Columns
     verification_plan:
     - step_id_checkpoint: '3_25'
-      what_to_verify: Verify May-26 Column is UNCHECKED
+      what_to_verify: Verify that the 'May-26' column is successfully hidden from
+        the 'Monthly Summary' grid, ensuring the dataset excludes this month from
+        the visible analysis.
+    - step_id_checkpoint: '3_26'
+      what_to_verify: Verify that the 'Jul-26' column is added to the visible columns
+        in the 'Monthly Summary' grid, updating the dataset to include this month
+        for analysis.
+    - step_id_checkpoint: '3_27'
+      what_to_verify: Verify that the 'Jul-26' column is removed from the visible
+        columns in the 'Monthly Summary' grid, reverting the dataset to exclude this
+        month.
+    - step_id_checkpoint: '3_28'
+      what_to_verify: Verify that the 'Aug-26' column is added to the visible columns
+        in the 'Monthly Summary' grid, updating the dataset to include this month
+        for analysis.
+    - step_id_checkpoint: '3_29'
+      what_to_verify: Verify that the 'Aug-26' column is removed from the visible
+        columns in the 'Monthly Summary' grid, reverting the dataset to exclude this
+        month.
+    - step_id_checkpoint: '3_30'
+      what_to_verify: Verify that the 'Sep-26' column is added to the visible columns
+        in the 'Monthly Summary' grid, updating the dataset to include this month
+        for analysis.
+    - step_id_checkpoint: '3_31'
+      what_to_verify: Verify that the 'Sep-26' column is removed from the visible
+        columns in the 'Monthly Summary' grid, reverting the dataset to exclude this
+        month.
     - step_id_checkpoint: '3_32'
-      what_to_verify: Verify Oct-26 Column is CHECKED
+      what_to_verify: Verify that the 'Oct-26' column is added to the visible columns
+        in the 'Monthly Summary' grid, updating the dataset to include this month
+        for analysis.
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar is still OPEN
+      what_to_verify: Verify that the 'Monthly Summary' grid reflects the final state
+        of visible columns ('Feb-26', 'Mar-26', 'Oct-26') and hidden columns ('Apr-26',
+        'May-26', 'Jul-26', 'Aug-26', 'Sep-26', 'Nov-26'), ensuring the dataset aligns
+        with the user's toggling actions.
   ? "page.get_by_role(\"treeitem\", name=\"Oct-26 Column\").get_by_label(\"Press SPACE\
     \ to toggle visibility (hidden)\").uncheck()|page.locator(\"#ag-1797-input\").check()|page.get_by_role(\"\
     treeitem\", name=\"Nov-26 Column\").get_by_label(\"Press SPACE to toggle visibility\
@@ -1028,289 +691,90 @@ cached_chunks:
     \ Visibility\").check()|page.get_by_role(\"button\", name=\"\uE0BFcolumns\").click()"
   : ui_graph:
       Updated_VDOM_Here:
-        Filter_Sidebar:
-          state: OPEN
-          children:
-            Hierarchy_Option:
-              state: VISIBLE
-              selected: false
-              children:
-                League:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    MLS:
-                      state: VISIBLE
-                      selected: true
-                Team:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Team 1:
-                      state: VISIBLE
-                      selected: true
-                    Team 2:
-                      state: VISIBLE
-                      selected: true
-                    Team 3:
-                      state: VISIBLE
-                      selected: true
-                    Team 4:
-                      state: VISIBLE
-                      selected: true
-                    Team 5:
-                      state: VISIBLE
-                      selected: true
-                    Team 6:
-                      state: VISIBLE
-                      selected: true
-                Department:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Checkbox_1:
-                      state: VISIBLE
-                      selected: true
-                Attribute:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Product Line:
-                      state: VISIBLE
-                      expanded: true
-                      children:
-                        Checkbox_1:
-                          state: VISIBLE
-                          selected: true
-                        Checkbox_2:
-                          state: VISIBLE
-                          selected: false
-                        Checkbox_3:
-                          state: VISIBLE
-                          selected: false
-                    Aggregate Values:
-                      state: VISIBLE
-                      selected: true
-        Dropdowns:
-          Location:
-            state: OPEN
-            selected: null
-          Season Type:
-            state: OPEN
-            selected: null
-          Columns:
-            state: OPEN
-            children:
-              Select All:
-                state: VISIBLE
-                selected: true
-              BOM OH:
-                state: VISIBLE
-                selected: true
-              Actual Sales:
-                state: VISIBLE
-                selected: true
-              Actual Sales ($):
-                state: VISIBLE
-                selected: true
-              Actual Sales & ROY Fcst:
-                state: VISIBLE
-                selected: true
-              Actual Sales & ROY Fcst ($):
-                state: VISIBLE
-                selected: true
-              LY Unit Sales:
-                state: VISIBLE
-                selected: true
-              LY Sales ($):
-                state: VISIBLE
-                selected: true
-              OO:
-                state: VISIBLE
-                selected: true
-              Recommended Unit Needs:
-                state: VISIBLE
-                selected: true
-              Recommended Retail Needs:
-                state: VISIBLE
-                selected: true
-              Feb-26 Column:
-                state: VISIBLE
-                selected: true
-              Mar-26 Column:
-                state: VISIBLE
-                selected: true
-              Apr-26 Column:
-                state: VISIBLE
-                selected: true
-              May-26 Column:
-                state: VISIBLE
-                selected: true
-              Jul-26 Column:
-                state: VISIBLE
-                selected: true
-              Aug-26 Column:
-                state: VISIBLE
-                selected: true
-              Sep-26 Column:
-                state: VISIBLE
-                selected: true
-              Oct-26 Column:
-                state: VISIBLE
-                selected: false
-              Nov-26 Column:
-                state: VISIBLE
-                selected: false
+        Monthly_Summary_Grid:
+          Visible_Columns:
+          - Feb-26
+          - Mar-26
+          - May-26
+          - Oct-26
+          Hidden_Columns:
+          - Apr-26
+          - Jul-26
+          - Aug-26
+          - Sep-26
+          - Nov-26
+          - Other_Unselected_Columns
     verification_plan:
     - step_id_checkpoint: '3_33'
-      what_to_verify: Verify Oct-26 Column is UNCHECKED
+      what_to_verify: Verify that the 'Oct-26' column is toggled to visible in the
+        'Monthly Summary' grid, ensuring its data is displayed for analysis.
     - step_id_checkpoint: '3_35'
-      what_to_verify: Verify Nov-26 Column is UNCHECKED
+      what_to_verify: Verify that the 'Nov-26' column is toggled to hidden in the
+        'Monthly Summary' grid, ensuring its data is excluded from the current view.
     - step_id_checkpoint: '3_39'
-      what_to_verify: Verify All Columns are CHECKED
+      what_to_verify: Verify that the 'Toggle All Columns Visibility' checkbox is
+        checked, ensuring all columns are set to visible in the 'Monthly Summary'
+        grid.
     - step_id_checkpoint: END
-      what_to_verify: Verify Columns Dropdown is CLOSED
+      what_to_verify: Verify that the 'Monthly Summary' grid reflects the updated
+        column visibility settings, displaying all columns as visible and re-rendering
+        the data accordingly.
   ? page.locator(".pointer.zeb-adjustments").click()|page.get_by_text("Save Preference").click()|page.locator(".icon-color-toolbar-active.zeb-download-underline").click()|page.locator(".dropdown-caret.p-l-16").first.click()|page.locator(".d-flex.flex-column.justify-content-center").first.click()|page.get_by_text("ResetApply").click()|page.get_by_role("button",
     name="Apply").click()|page.locator(".ag-header-cell.ag-header-parent-hidden.ag-header-cell-sortable.ag-header-background.ag-focus-managed.ag-header-active
     > .ag-header-cell-comp-wrapper > .ag-cell-label-container").click()
   : ui_graph:
       Updated_VDOM_Here:
-        Filter_Sidebar:
-          state: OPEN
-          children:
-            Hierarchy_Option:
-              state: VISIBLE
-              selected: false
-              children:
-                League:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    MLS:
-                      state: VISIBLE
-                      selected: true
-                Team:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Team 1:
-                      state: VISIBLE
-                      selected: true
-                    Team 2:
-                      state: VISIBLE
-                      selected: true
-                    Team 3:
-                      state: VISIBLE
-                      selected: true
-                    Team 4:
-                      state: VISIBLE
-                      selected: true
-                    Team 5:
-                      state: VISIBLE
-                      selected: true
-                    Team 6:
-                      state: VISIBLE
-                      selected: true
-                Department:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Checkbox_1:
-                      state: VISIBLE
-                      selected: true
-                Attribute:
-                  state: VISIBLE
-                  expanded: true
-                  children:
-                    Product Line:
-                      state: VISIBLE
-                      expanded: true
-                      children:
-                        Checkbox_1:
-                          state: VISIBLE
-                          selected: true
-                        Checkbox_2:
-                          state: VISIBLE
-                          selected: false
-                        Checkbox_3:
-                          state: VISIBLE
-                          selected: false
-                    Aggregate Values:
-                      state: VISIBLE
-                      selected: true
-        Dropdowns:
-          Location:
-            state: OPEN
-            selected: null
-          Season Type:
-            state: OPEN
-            selected: null
-          Columns:
-            state: OPEN
-            children:
-              Select All:
-                state: VISIBLE
-                selected: true
-              BOM OH:
-                state: VISIBLE
-                selected: true
-              Actual Sales:
-                state: VISIBLE
-                selected: true
-              Actual Sales ($):
-                state: VISIBLE
-                selected: true
-              Actual Sales & ROY Fcst:
-                state: VISIBLE
-                selected: true
-              Actual Sales & ROY Fcst ($):
-                state: VISIBLE
-                selected: true
-              LY Unit Sales:
-                state: VISIBLE
-                selected: true
-              LY Sales ($):
-                state: VISIBLE
-                selected: true
-              OO:
-                state: VISIBLE
-                selected: true
-              Recommended Unit Needs:
-                state: VISIBLE
-                selected: true
-              Recommended Retail Needs:
-                state: VISIBLE
-                selected: true
-              Feb-26 Column:
-                state: VISIBLE
-                selected: true
-              Mar-26 Column:
-                state: VISIBLE
-                selected: true
-              Apr-26 Column:
-                state: VISIBLE
-                selected: true
-              May-26 Column:
-                state: VISIBLE
-                selected: true
-              Jul-26 Column:
-                state: VISIBLE
-                selected: true
-              Aug-26 Column:
-                state: VISIBLE
-                selected: true
-              Sep-26 Column:
-                state: VISIBLE
-                selected: true
-              Oct-26 Column:
-                state: VISIBLE
-                selected: false
-              Nov-26 Column:
-                state: VISIBLE
-                selected: false
+        Monthly_Summary_Grid:
+          Visible_Columns:
+          - Feb-26
+          - Mar-26
+          - May-26
+          - Oct-26
+          Hidden_Columns:
+          - Apr-26
+          - Jul-26
+          - Aug-26
+          - Sep-26
+          - Nov-26
+          - Other_Unselected_Columns
     verification_plan:
+    - step_id_checkpoint: '3_41'
+      what_to_verify: Verify that the column adjustment interface is activated, allowing
+        the user to select or deselect columns for visibility in the Monthly Summary
+        grid.
+    - step_id_checkpoint: '3_42'
+      what_to_verify: Verify that the 'Save Preference' action persists the user's
+        column visibility settings for future sessions and updates the grid accordingly.
+    - step_id_checkpoint: '3_43'
+      what_to_verify: Verify that the download option is enabled and reflects the
+        updated column visibility settings in the exported data.
+    - step_id_checkpoint: '3_44'
+      what_to_verify: Verify that the dropdown menu is opened, allowing the user to
+        select additional filters or options for refining the data view.
     - step_id_checkpoint: '3_45'
-      what_to_verify: Verify Checkbox is CHECKED
+      what_to_verify: Verify that the user-selected filter is applied to the dataset,
+        dynamically updating the Monthly Summary grid to reflect the filtered data.
+    - step_id_checkpoint: '3_46'
+      what_to_verify: Verify that the 'ResetApply' button clears previous filters
+        and prepares the interface for new filter applications.
+    - step_id_checkpoint: '3_47'
+      what_to_verify: Verify that the 'Apply' button commits the selected filters
+        and updates the Monthly Summary grid to display data relevant to the applied
+        filters.
+    - step_id_checkpoint: '3_48'
+      what_to_verify: Verify that the column sorting functionality is activated, allowing
+        the user to sort data within the Monthly Summary grid by the selected column.
     - step_id_checkpoint: END
-      what_to_verify: Verify Sidebar is still OPEN
+      what_to_verify: Verify that the Monthly Summary grid reflects the user's adjustments,
+        including column visibility, applied filters, and sorting preferences, ensuring
+        accurate forecasting and inventory analysis.
 global_rules: []
+global_domain_context: This dashboard appears to be part of a demand forecasting application
+  tailored for retail or event-driven industries. The core business purpose is to
+  analyze and predict product demand based on various factors such as game days, locations,
+  and season types. Key components include filters for refining data views (e.g.,
+  "Game Day," "Location," "Season Type"), a product selector (e.g., "MLB"), and a
+  "Monthly Summary" grid displaying metrics like "BOM OH" (Beginning of Month On-Hand
+  inventory) and "Actual Sales" across different time periods. The application supports
+  decision-making by providing insights into inventory levels, sales trends, and category
+  needs.
